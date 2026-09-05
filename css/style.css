@@ -1929,14 +1929,24 @@ img {
 .folder-name-wrap {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.folder-icon {
-  font-size: 1.05rem;
+.folder-svg-icon {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.archive-folder-item:hover .folder-svg-icon {
+  transform: scale(1.1);
+}
+
+.archive-folder-item.active .folder-svg-icon {
+  color: var(--accent-gold-light);
 }
 
 .folder-count-badge {

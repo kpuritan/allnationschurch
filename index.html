@@ -691,19 +691,7 @@
             <label>폴더 이름 (화면에 표시될 제목)</label>
             <input type="text" id="modal-folder-title" class="modal-form-input" placeholder="예: 마태복음 강해" required />
           </div>
-          <div class="modal-form-group">
-            <label>폴더 아이콘</label>
-            <select id="modal-folder-icon" class="modal-form-select">
-              <option value="📖">📖 책 / 성경</option>
-              <option value="📜">📜 두루마리</option>
-              <option value="✝️">✝️ 십자가</option>
-              <option value="🏛️">🏛️ 교리 / 신조</option>
-              <option value="🌄">🌄 천로역정 / 비전</option>
-              <option value="🌱">🌱 창세기 / 시작</option>
-              <option value="🔥">🔥 사도행전 / 부흥</option>
-              <option value="🌊">🌊 출애굽기</option>
-            </select>
-          </div>
+          <input type="hidden" id="modal-folder-icon" value="📁" />
           <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
             <button type="submit" class="modal-btn-submit" style="flex: 2;">➕ 폴더 생성하기</button>
             <button type="button" class="modal-btn-submit" onclick="closeFolderCreateModal()" style="flex: 1; background: #94a3b8;">취소</button>

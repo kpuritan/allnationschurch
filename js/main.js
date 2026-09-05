@@ -110,20 +110,26 @@ function navigateToPage(pageId, subFolderKey) {
  * 말씀 강해 2단 폴더 아카이브 시스템 (Image 2 레이아웃 & 동작)
  * ==========================================================
  */
+const UNIFIED_FOLDER_SVG = `
+  <svg class="folder-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-1.5V6.75A2.25 2.25 0 0 0 15.75 4.5H8.25A2.25 2.25 0 0 0 6 6.75V10.5H4.5a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h15ZM4.5 12h15a1.5 1.5 0 0 1 1.5 1.5V18a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 18v-4.5A1.5 1.5 0 0 1 4.5 12Z"/>
+  </svg>
+`;
+
 const ARCHIVE_FOLDERS = [
-  { key: 'ot', title: '구약성경 권별 개관설교', count: '39편', icon: '📜', bgClass: 'bg-ot' },
-  { key: 'john', title: '요한복음 강해', count: '40강', icon: '📖', bgClass: 'bg-nt', thumb: 'images/john_gospel.jpg' },
-  { key: 'romans', title: '로마서 강해 (1-11장)', count: '31강', icon: '📖', bgClass: 'bg-nt' },
-  { key: 'dort', title: '도르트 신조', count: '19편', icon: '🏛️', bgClass: 'bg-doctrine' },
-  { key: 'dort_review', title: '다시보는 도르트 신조', count: '12편', icon: '💡', bgClass: 'bg-doctrine' },
-  { key: 'pilgrim', title: '천로역정 완주 강해', count: '52강', icon: '🌄', bgClass: 'bg-special', thumb: 'images/pilgrims_progress.jpg' },
-  { key: 'commandments', title: '십계명 강해', count: '10편', icon: '⚖️', bgClass: 'bg-doctrine' },
-  { key: 'exodus', title: '출애굽기 강해', count: '22편', icon: '🌊', bgClass: 'bg-ot' },
-  { key: 'genesis_classic', title: '창세기 강해 (13편)', count: '13편', icon: '🌱', bgClass: 'bg-ot' },
-  { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '🌱', bgClass: 'bg-ot' },
-  { key: 'luke', title: '누가복음 강해', count: '30편', icon: '📖', bgClass: 'bg-nt' },
-  { key: 'hebrews', title: '히브리서 강해', count: '15편', icon: '✝️', bgClass: 'bg-nt' },
-  { key: 'acts', title: '사도행전 강해', count: '15편', icon: '🔥', bgClass: 'bg-nt' }
+  { key: 'ot', title: '구약성경 권별 개관설교', count: '39편', icon: '📁', bgClass: 'bg-ot' },
+  { key: 'john', title: '요한복음 강해', count: '40강', icon: '📁', bgClass: 'bg-nt', thumb: 'images/john_gospel.jpg' },
+  { key: 'romans', title: '로마서 강해 (1-11장)', count: '31강', icon: '📁', bgClass: 'bg-nt' },
+  { key: 'dort', title: '도르트 신조', count: '19편', icon: '📁', bgClass: 'bg-doctrine' },
+  { key: 'dort_review', title: '다시보는 도르트 신조', count: '12편', icon: '📁', bgClass: 'bg-doctrine' },
+  { key: 'pilgrim', title: '천로역정 완주 강해', count: '52강', icon: '📁', bgClass: 'bg-special', thumb: 'images/pilgrims_progress.jpg' },
+  { key: 'commandments', title: '십계명 강해', count: '10편', icon: '📁', bgClass: 'bg-doctrine' },
+  { key: 'exodus', title: '출애굽기 강해', count: '22편', icon: '📁', bgClass: 'bg-ot' },
+  { key: 'genesis_classic', title: '창세기 강해 (13편)', count: '13편', icon: '📁', bgClass: 'bg-ot' },
+  { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '📁', bgClass: 'bg-ot' },
+  { key: 'luke', title: '누가복음 강해', count: '30편', icon: '📁', bgClass: 'bg-nt' },
+  { key: 'hebrews', title: '히브리서 강해', count: '15편', icon: '📁', bgClass: 'bg-nt' },
+  { key: 'acts', title: '사도행전 강해', count: '15편', icon: '📁', bgClass: 'bg-nt' }
 ];
 
 let currentFolderKey = 'ot';
@@ -223,7 +229,7 @@ function renderArchiveFolderSidebar() {
     return `
       <li class="archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
         <div class="folder-name-wrap" style="flex-grow: 1; min-width: 0;">
-          <span class="folder-icon">${f.icon || '📁'}</span>
+          ${UNIFIED_FOLDER_SVG}
           <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${f.title}</span>
         </div>
         <div style="display: flex; align-items: center; gap: 4px;">
