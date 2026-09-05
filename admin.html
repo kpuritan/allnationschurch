@@ -100,6 +100,8 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .admin-header-title {
@@ -112,23 +114,43 @@
 
     .admin-header-nav {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .admin-nav-link {
       color: #cbd5e1;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
       transition: all 0.2s;
     }
 
     .admin-nav-link:hover {
       background: rgba(255,255,255,0.1);
       color: #ffffff;
+    }
+
+    .btn-gh-quick-sync {
+      background: #238636;
+      color: #ffffff;
+      border: none;
+      padding: 0.45rem 0.95rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .btn-gh-quick-sync:hover {
+      background: #2ea043;
     }
 
     /* 관리자 레이아웃 */
@@ -270,6 +292,25 @@
       color: #0369a1;
       border: 1px solid #bae6fd;
     }
+
+    .gh-guide-card {
+      background: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .gh-guide-card ol {
+      margin: 0.8rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .gh-guide-card li {
+      margin-bottom: 0.4rem;
+    }
   </style>
 </head>
 <body>
@@ -294,6 +335,9 @@
       <span>✝</span> 불로 열방교회 관리자 대시보드
     </div>
     <div class="admin-header-nav">
+      <button type="button" onclick="syncAllToGitHub()" class="btn-gh-quick-sync" id="btn-header-sync">
+        <span>🚀</span> GitHub 영구 저장 &amp; 전세계 배포
+      </button>
       <a href="index.html" class="admin-nav-link" target="_blank">🏠 홈페이지 보기 ↗</a>
       <button onclick="handleLogout()" class="admin-nav-link" style="background:none; border:none; cursor:pointer;">로그아웃 ✕</button>
     </div>
@@ -307,7 +351,8 @@
       <button class="admin-tab-btn active" onclick="switchAdminTab('folders')">📂 1. 강해 폴더 관리</button>
       <button class="admin-tab-btn" onclick="switchAdminTab('lectures')">🎬 2. 설교 영상 및 자료 등록</button>
       <button class="admin-tab-btn" onclick="switchAdminTab('posts')">📝 3. 교회 소식 &amp; PDF 등록</button>
-      <button class="admin-tab-btn" onclick="switchAdminTab('backup')">💾 4. 데이터 백업 &amp; 복원</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('github')">🐙 4. GitHub 연동 &amp; 자동 배포</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('backup')">💾 5. 백업 &amp; 복원</button>
     </div>
 
     <!-- 탭 1: 강해 폴더 관리 -->
@@ -508,7 +553,67 @@
       </div>
     </div>
 
-    <!-- 탭 4: 데이터 백업 & 복원 -->
+    <!-- 탭 4: GitHub 연동 & 자동 배포 -->
+    <div id="tab-github" class="admin-panel">
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--admin-primary); margin-bottom: 0.5rem;">
+        🐙 GitHub 저장소 연동 &amp; 전세계 자동 배포
+      </h3>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem;">
+        관리자 모드에서 등록한 설교와 폴더를 GitHub 저장소(<code>kpuritan/allnationschurch</code>)로 바로 커밋(Commit)하여, 모든 기기(스마트폰, 다른 PC 등)에서 항상 최신 말씀이 보이도록 배포합니다.
+      </p>
+
+      <div class="alert-box" id="gh-status-box">
+        ⚪ <strong>GitHub 연동 대기:</strong> 아래에 GitHub 개인 액세스 토큰(Personal Access Token)을 1회 등록하시면, 버튼 한 번으로 깃허브 서버에 즉시 영구 저장됩니다.
+      </div>
+
+      <form onsubmit="handleSaveGitHubSettings(event)" style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--admin-border); margin-bottom: 2rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">GitHub 저장소 (Repository)</label>
+            <input type="text" id="gh-repo" class="form-input" value="kpuritan/allnationschurch" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">배포 브랜치 (Branch)</label>
+            <input type="text" id="gh-branch" class="form-input" value="main" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">GitHub 개인 액세스 토큰 (Personal Access Token - PAT)</label>
+          <input type="password" id="gh-token" class="form-input" placeholder="ghp_... 또는 github_pat_..." />
+        </div>
+
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <button type="submit" class="btn-submit" style="background: var(--admin-primary);">
+            💾 GitHub 설정 저장하기
+          </button>
+          <button type="button" onclick="testGitHubConnection()" class="btn-submit" style="background: #0284c7;">
+            🔍 연동 상태 테스트
+          </button>
+          <button type="button" onclick="syncAllToGitHub()" class="btn-submit" style="background: #238636;">
+            🚀 지금 GitHub에 모든 데이터 영구 저장 (Commit &amp; Push)
+          </button>
+        </div>
+      </form>
+
+      <div class="gh-guide-card">
+        <h4 style="font-weight: 800; margin-bottom: 0.6rem; color: var(--admin-primary);">
+          📌 GitHub 토큰 발급 1분 가이드 (최초 1회만 등록)
+        </h4>
+        <p style="color: #475569; font-size: 0.9rem;">
+          GitHub 계정에서 토큰을 발급받아 위에 입력하시면, 웹 관리자 모드에서 수정할 때마다 깃허브가 자동으로 업데이트됩니다.
+        </p>
+        <ol style="color: #334155; font-size: 0.88rem;">
+          <li><a href="https://github.com/settings/tokens/new" target="_blank" style="color: #0969da; font-weight: 700;">GitHub 토큰 발급 페이지 ↗</a>로 이동하여 로그인합니다.</li>
+          <li><strong>Note</strong>에 <code>AllNations Church CMS</code> 입력</li>
+          <li><strong>Expiration</strong>(유효기간)을 <code>No expiration</code>(무제한) 또는 원하는 기간으로 선택</li>
+          <li><strong>Select scopes</strong> 항목 중 <strong><code>repo</code></strong>(저장소 전체 권한) 체크박스를 선택</li>
+          <li>맨 아래 초록색 <strong>[Generate token]</strong> 버튼 클릭 후 생성된 <code>ghp_...</code> 토큰 복사 ➔ 위의 입력창에 붙여넣기</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 탭 5: 데이터 백업 & 복원 -->
     <div id="tab-backup" class="admin-panel">
       <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--admin-primary); margin-bottom: 0.5rem;">
         💾 데이터 백업, 내보내기 &amp; 복원
@@ -543,6 +648,8 @@
     // 관리자 PIN 인증 로직
     const ADMIN_STORAGE_KEY = 'ALLNATIONS_ADMIN_DATA_V1';
     const ADMIN_PIN_KEY = 'ALLNATIONS_ADMIN_PIN';
+    const GH_SETTINGS_KEY = 'ALLNATIONS_GH_SETTINGS';
+
     let defaultPin = localStorage.getItem(ADMIN_PIN_KEY) || '7777';
 
     function checkAdminLogin() {
@@ -551,6 +658,7 @@
       if (isAuth === 'true') {
         lockScreen.style.display = 'none';
         loadAdminData();
+        loadGitHubSettings();
       } else {
         lockScreen.style.display = 'flex';
       }
@@ -563,6 +671,7 @@
         sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
         document.getElementById('admin-lock-screen').style.display = 'none';
         loadAdminData();
+        loadGitHubSettings();
       } else {
         alert('비밀번호(PIN)가 일치하지 않습니다. (기본 PIN: 7777)');
       }
@@ -686,7 +795,7 @@
       saveAdminData();
       loadAdminData();
       document.getElementById('form-create-folder').reset();
-      alert(`🎉 '${title}' 강해 폴더가 성공적으로 생성되었습니다!`);
+      alert(`🎉 '${title}' 강해 폴더가 성공적으로 생성되었습니다! 상단의 [GitHub 영구 저장] 버튼을 누르면 실서버에 즉시 배포됩니다.`);
     }
 
     function deleteFolder(fKey) {
@@ -776,7 +885,7 @@
       renderLecturesTable();
       populateFolderSelect();
       document.getElementById('form-create-lecture').reset();
-      alert(`🎉 ${ep}강 '${title}' 설교가 성공적으로 등록되었습니다!`);
+      alert(`🎉 ${ep}강 '${title}' 설교가 성공적으로 등록되었습니다! 상단의 [GitHub 영구 저장]을 누르면 실서버에 바로 반영됩니다.`);
     }
 
     function deleteLecture(fKey, epNum) {
@@ -851,7 +960,183 @@
       renderPostsTable();
     }
 
-    // 5. 백업 & 복원
+    // 5. GitHub API 연동 로직
+    function loadGitHubSettings() {
+      const saved = localStorage.getItem(GH_SETTINGS_KEY);
+      if (saved) {
+        try {
+          const cfg = JSON.parse(saved);
+          if (cfg.repo) document.getElementById('gh-repo').value = cfg.repo;
+          if (cfg.branch) document.getElementById('gh-branch').value = cfg.branch;
+          if (cfg.token) {
+            document.getElementById('gh-token').value = cfg.token;
+            updateGhStatusBox(true, '토큰이 설정되어 있습니다.');
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+
+    function handleSaveGitHubSettings(e) {
+      e.preventDefault();
+      const repo = document.getElementById('gh-repo').value.trim();
+      const branch = document.getElementById('gh-branch').value.trim();
+      const token = document.getElementById('gh-token').value.trim();
+
+      const cfg = { repo, branch, token };
+      localStorage.setItem(GH_SETTINGS_KEY, JSON.stringify(cfg));
+      updateGhStatusBox(!!token, token ? 'GitHub 설정이 저장되었습니다.' : '토큰을 입력해 주세요.');
+      alert('🎉 GitHub 설정이 성공적으로 저장되었습니다!');
+    }
+
+    function updateGhStatusBox(isConnected, msg) {
+      const box = document.getElementById('gh-status-box');
+      if (!box) return;
+      if (isConnected) {
+        box.style.background = '#dcfce7';
+        box.style.color = '#15803d';
+        box.style.borderColor = '#86efac';
+        box.innerHTML = `🟢 <strong>GitHub 연동 활성화:</strong> ${msg || 'GitHub API와 안전하게 연결되어 있습니다.'}`;
+      } else {
+        box.style.background = '#e0f2fe';
+        box.style.color = '#0369a1';
+        box.style.borderColor = '#bae6fd';
+        box.innerHTML = `⚪ <strong>GitHub 연동 대기:</strong> ${msg || 'GitHub 개인 액세스 토큰(PAT)을 등록해 주세요.'}`;
+      }
+    }
+
+    // UTF-8 안전 Base64 인코딩
+    function utf8ToB64(str) {
+      return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+        return String.fromCharCode('0x' + p1);
+      }));
+    }
+
+    async function testGitHubConnection() {
+      const saved = localStorage.getItem(GH_SETTINGS_KEY);
+      const cfg = saved ? JSON.parse(saved) : null;
+      const token = (cfg && cfg.token) || document.getElementById('gh-token').value.trim();
+      const repo = (cfg && cfg.repo) || document.getElementById('gh-repo').value.trim() || 'kpuritan/allnationschurch';
+
+      if (!token) {
+        alert('GitHub 토큰을 입력하고 [저장하기]를 먼저 눌러주세요.');
+        return;
+      }
+
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          updateGhStatusBox(true, `저장소 '${data.full_name}'에 정상 연결되었습니다!`);
+          alert(`🎉 GitHub 저장소 '${data.full_name}' 연결 성공! 즉시 자동 배포를 이용하실 수 있습니다.`);
+        } else {
+          const err = await res.json();
+          alert('연결 실패: ' + (err.message || res.statusText));
+        }
+      } catch (e) {
+        alert('연결 오류: ' + e.message);
+      }
+    }
+
+    async function commitFileToGitHub(repo, branch, token, path, contentStr, message) {
+      let currentSha = null;
+      try {
+        const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}&t=${Date.now()}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        if (getRes.ok) {
+          const fileData = await getRes.json();
+          currentSha = fileData.sha;
+        }
+      } catch (e) {
+        console.warn('파일 SHA 조회 건너뜀 (신규 생성 가능)', e);
+      }
+
+      const bodyPayload = {
+        message: message,
+        content: utf8ToB64(contentStr),
+        branch: branch
+      };
+      if (currentSha) bodyPayload.sha = currentSha;
+
+      const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyPayload)
+      });
+
+      if (!putRes.ok) {
+        const err = await putRes.json();
+        throw new Error(`${path} 커밋 실패: ${err.message || putRes.statusText}`);
+      }
+      return await putRes.json();
+    }
+
+    async function syncAllToGitHub() {
+      const saved = localStorage.getItem(GH_SETTINGS_KEY);
+      const cfg = saved ? JSON.parse(saved) : null;
+      const token = (cfg && cfg.token) || document.getElementById('gh-token')?.value.trim();
+      const repo = (cfg && cfg.repo) || 'kpuritan/allnationschurch';
+      const branch = (cfg && cfg.branch) || 'main';
+
+      if (!token) {
+        alert('GitHub 토큰이 등록되어 있지 않습니다. [4. GitHub 연동] 탭에서 토큰을 먼저 입력해 주세요.');
+        switchAdminTab('github');
+        return;
+      }
+
+      const btn = document.getElementById('btn-header-sync');
+      const originalText = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '⏳ 깃허브 커밋 & 배포 중...';
+      }
+
+      try {
+        // 1. data/sermons_archive.json 커밋
+        await commitFileToGitHub(
+          repo, branch, token,
+          'data/sermons_archive.json',
+          JSON.stringify(adminArchive, null, 2),
+          `Update sermons_archive.json from Admin CMS (${new Date().toLocaleString('ko-KR')})`
+        );
+
+        // 2. posts/posts.json 커밋
+        if (adminPosts && adminPosts.length > 0) {
+          await commitFileToGitHub(
+            repo, branch, token,
+            'posts/posts.json',
+            JSON.stringify(adminPosts, null, 2),
+            `Update posts.json from Admin CMS (${new Date().toLocaleString('ko-KR')})`
+          );
+        }
+
+        alert('🎉 GitHub 저장소에 성공적으로 영구 저장(Commit)되었습니다!\n약 1~2분 뒤 GitHub Pages를 통해 전세계 모든 기기에 자동 배포가 완료됩니다.');
+      } catch (err) {
+        alert('GitHub 배포 중 오류 발생: ' + err.message);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }
+      }
+    }
+
+    // 6. 백업 & 복원
     function exportDataToJson() {
       const data = {
         folders: adminFolders,
