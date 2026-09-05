@@ -273,8 +273,8 @@ async function openSermonSeriesModal(seriesKey) {
 
       <div class="pilgrim-modal-footer">
         <span>© 불로 열방교회 공식 말씀 아카이브</span>
-        <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(series.searchKeyword)}" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
-          ▶ 유튜브에서 '${series.title}' 전체 검색결과 보기
+        <a href="${series.playlistUrl || ('https://www.youtube.com/results?search_query=' + encodeURIComponent(series.searchKeyword))}" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
+          ▶ 유튜브에서 '${series.title}' ${series.playlistUrl ? '재생목록 바로가기' : '검색결과 보기'}
         </a>
       </div>
     </div>
@@ -329,7 +329,7 @@ function renderSeriesEpisodes(series, query) {
   }
 
   container.innerHTML = episodes.map(item => {
-    const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.search || ('불로열방교회 ' + series.title + ' ' + item.ep + '강 ' + item.title))}`;
+    const ytUrl = item.url || `https://www.youtube.com/results?search_query=${encodeURIComponent(item.search || ('불로열방교회 ' + series.title + ' ' + item.ep + '강 ' + item.title))}`;
     return `
       <div class="pilgrim-item-card">
         <div class="p-item-left">
