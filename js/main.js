@@ -198,59 +198,161 @@ async function openPilgrimModal() {
   }
 }
 
-function renderPilgrimList(tab, query) {
-  const container = document.getElementById('pilgrim-lecture-list');
-  if (!container || !pilgrimLecturesData) return;
+/**
+ * 전체 강해 시리즈 상세 목록 모달 뷰어
+ * (요한복음, 로마서, 구약 권별개관, 도르트신조, 누가복음, 히브리서, 창세기, 사도행전 등)
+ */
+let allSeriesArchiveData = null;
 
-  let filtered = pilgrimLecturesData;
+async function openSermonSeriesModal(seriesKey) {
+  const existing = document.getElementById('series-modal');
+  if (existing) existing.remove();
 
-  if (tab === 'part1') {
-    filtered = filtered.filter(item => item.ep <= 40);
-  } else if (tab === 'part2') {
-    filtered = filtered.filter(item => item.ep >= 41);
+  if (!allSeriesArchiveData) {
+    try {
+      const res = await fetch('data/sermons_archive.json?v=' + Date.now());
+      if (res.ok) {
+        allSeriesArchiveData = await res.json();
+      }
+    } catch (e) {
+      console.error('시리즈 아카이브 로드 실패', e);
+    }
   }
+
+  const series = (allSeriesArchiveData && allSeriesArchiveData[seriesKey]) || null;
+  if (!series) {
+    // 만약 데이터가 없으면 유튜브 검색으로 안내
+    window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent('불로열방교회 ' + seriesKey)}`, '_blank');
+    return;
+  }
+
+  const modal = document.createElement('div');
+  modal.id = 'series-modal';
+  modal.className = 'pilgrim-modal-backdrop';
+
+  const thumbHtml = series.thumb 
+    ? `<img src="${series.thumb}" alt="${series.title}">` 
+    : `<div class="video-thumb-placeholder bg-${seriesKey}" style="width:100%; height:100%;">
+         <span class="thumb-topic">${series.category}</span>
+         <span class="thumb-korean">${series.title}</span>
+       </div>`;
+
+  modal.innerHTML = `
+    <div class="pilgrim-modal-container">
+      <button type="button" class="pilgrim-modal-close" onclick="closeSeriesModal()">✕</button>
+      
+      <div class="pilgrim-modal-header">
+        <div class="pilgrim-header-thumb">
+          ${thumbHtml}
+        </div>
+        <div class="pilgrim-header-info">
+          <span class="pilgrim-header-badge">${series.category} · ${series.speaker}</span>
+          <h2 class="pilgrim-header-title">${series.title}</h2>
+          <p class="pilgrim-header-desc">
+            ${series.desc}
+          </p>
+        </div>
+      </div>
+
+      <!-- 모달 내 탭 & 검색 -->
+      <div class="pilgrim-controls">
+        <div class="pilgrim-tabs">
+          <span style="font-size: 0.9rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px;">
+            📋 전체 강해 목록 (총 ${series.episodes.length}편)
+          </span>
+        </div>
+        <div class="pilgrim-search-box">
+          <input type="text" id="series-search-input" placeholder="회차, 제목, 본문 검색 (예: 1강, 십자가, 1장)..." />
+        </div>
+      </div>
+
+      <!-- 강의 리스트 그리드 -->
+      <div class="pilgrim-lecture-list" id="series-lecture-list">
+        <!-- 동적 렌더링 -->
+      </div>
+
+      <div class="pilgrim-modal-footer">
+        <span>© 불로 열방교회 공식 말씀 아카이브</span>
+        <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(series.searchKeyword)}" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
+          ▶ 유튜브에서 '${series.title}' 전체 검색결과 보기
+        </a>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+
+  // 배경 클릭 시 닫기
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeSeriesModal();
+    }
+  });
+
+  // 렌더링 실행
+  renderSeriesEpisodes(series, '');
+
+  // 검색 이벤트
+  const searchInput = document.getElementById('series-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      renderSeriesEpisodes(series, e.target.value.trim());
+    });
+  }
+}
+
+function renderSeriesEpisodes(series, query) {
+  const container = document.getElementById('series-lecture-list');
+  if (!container || !series) return;
+
+  let episodes = series.episodes || [];
 
   if (query) {
     const q = query.toLowerCase();
-    filtered = filtered.filter(item => 
+    episodes = episodes.filter(item => 
       item.title.toLowerCase().includes(q) ||
-      item.passage.toLowerCase().includes(q) ||
+      (item.passage && item.passage.toLowerCase().includes(q)) ||
       (item.ep + '강').includes(q) ||
+      (item.ep + '편').includes(q) ||
       item.ep.toString() === q
     );
   }
 
-  if (filtered.length === 0) {
+  if (episodes.length === 0) {
     container.innerHTML = `
       <div style="text-align:center; padding: 3rem; color:#888; grid-column: 1 / -1;">
-        검색 결과에 해당하는 강의가 없습니다.
+        검색어에 해당하는 강의가 없습니다.
       </div>
     `;
     return;
   }
 
-  container.innerHTML = filtered.map(item => `
-    <div class="pilgrim-item-card ${item.ep >= 41 ? 'part2-card' : ''}">
-      <div class="p-item-left">
-        <span class="p-ep-badge">${item.ep}강</span>
-        <div class="p-info">
-          <h4 class="p-title">${item.title}</h4>
-          <div class="p-meta">
-            <span class="p-passage">📖 ${item.passage}</span>
-            <span class="p-source">${item.source}</span>
+  container.innerHTML = episodes.map(item => {
+    const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.search || ('불로열방교회 ' + series.title + ' ' + item.ep + '강 ' + item.title))}`;
+    return `
+      <div class="pilgrim-item-card">
+        <div class="p-item-left">
+          <span class="p-ep-badge">${item.ep}강</span>
+          <div class="p-info">
+            <h4 class="p-title">${item.title}</h4>
+            <div class="p-meta">
+              <span class="p-passage">📖 ${item.passage}</span>
+            </div>
           </div>
         </div>
+        <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="p-watch-btn">
+          <span>시청하기</span> ▶
+        </a>
       </div>
-      <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="p-watch-btn">
-        <span>시청하기</span> ▶
-      </a>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
-function closePilgrimModal() {
-  const modal = document.getElementById('pilgrim-modal');
+function closeSeriesModal() {
+  const modal = document.getElementById('series-modal');
   if (modal) modal.remove();
   document.body.style.overflow = '';
 }
+
 

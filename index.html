@@ -273,33 +273,34 @@
       <div class="video-series-grid">
         
         <!-- 1. 요한복음 강해 (맞춤 썸네일) -->
-        <div class="video-card featured" data-vcat="nt">
+        <div class="video-card featured" data-vcat="nt" onclick="openSermonSeriesModal('john')" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
             <img src="images/john_gospel.jpg" alt="요한복음 강해" class="video-thumb-img">
             <span class="video-badge badge-nt">신약 강해</span>
+            <span class="video-count-badge">전편 1강~40강</span>
             <div class="video-play-overlay">
               <span class="play-icon-circle">▶</span>
             </div>
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
-              <span class="video-count">시리즈 진행</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
+              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 40강 시리즈</span>
             </div>
             <h3 class="video-title">요한복음 강해</h3>
             <p class="video-desc">
-              말씀이 육신이 되어 우리 가운데 거하심에... 빛과 생명 되신 예수 그리스도의 복음을 깊이 있게 전하는 요한복음 강해 설교 시리즈입니다.
+              말씀이 육신이 되어 우리 가운데 거하심에... 빛과 생명 되신 예수 그리스도의 복음을 깊이 있게 전하는 요한복음 1강~40강 전편 강해 설교입니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                영상 시청하기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('john');" style="background:none; border:none; cursor:pointer;">
+                1강 ~ 40강 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
 
         <!-- 2. 로마서 강해 (1-11장) -->
-        <div class="video-card featured" data-vcat="nt">
+        <div class="video-card featured" data-vcat="nt" onclick="openSermonSeriesModal('romans')" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
             <div class="video-thumb-placeholder bg-romans">
               <span class="thumb-topic">The Epistle to the Romans</span>
@@ -314,23 +315,23 @@
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
-              <span class="video-count">동영상 83개</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
+              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">동영상 83개 완주</span>
             </div>
             <h3 class="video-title">로마서 강해 (1-11장)</h3>
             <p class="video-desc">
               오직 의인은 믿음으로 살리라! 사도 바울이 전한 이신칭의와 구원의 은혜, 하나님의 절대 주권을 명쾌하게 강해합니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                재생목록 바로가기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('romans');" style="background:none; border:none; cursor:pointer;">
+                로마서 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
 
         <!-- 3. 구약성경 권별설교 (개관설교) -->
-        <div class="video-card featured" data-vcat="ot">
+        <div class="video-card featured" data-vcat="ot" onclick="openSermonSeriesModal('ot')" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
             <div class="video-thumb-placeholder bg-ot">
               <span class="thumb-topic">Old Testament Overview</span>
@@ -338,30 +339,30 @@
               <span class="thumb-sub">구약 39권 개관설교</span>
             </div>
             <span class="video-badge badge-ot">구약 강해</span>
-            <span class="video-count-badge">동영상 39개</span>
+            <span class="video-count-badge">구약 39권 완주</span>
             <div class="video-play-overlay">
               <span class="play-icon-circle">▶</span>
             </div>
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
-              <span class="video-count">동영상 39개</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
+              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">39권 전권 완주</span>
             </div>
             <h3 class="video-title">구약성경 권별 개관설교</h3>
             <p class="video-desc">
               창세기부터 말라기까지 구약 39권의 핵심 주제와 구속사적 맥락을 성도들의 눈높이에 맞추어 체계적으로 개관합니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                재생목록 바로가기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('ot');" style="background:none; border:none; cursor:pointer;">
+                구약 39권 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
 
         <!-- 4. 도르트신조 강해 -->
-        <div class="video-card featured" data-vcat="doctrine">
+        <div class="video-card featured" data-vcat="doctrine" onclick="openSermonSeriesModal('dort')" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
             <div class="video-thumb-placeholder bg-dort">
               <span class="thumb-topic">Canons of Dort</span>
@@ -369,29 +370,30 @@
               <span class="thumb-sub">개혁주의 5대 교리</span>
             </div>
             <span class="video-badge badge-doctrine">교리 &amp; 신조</span>
+            <span class="video-count-badge">교리 완주 강해</span>
             <div class="video-play-overlay">
               <span class="play-icon-circle">▶</span>
             </div>
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
-              <span class="video-count">교리 시리즈</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
+              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">교리 시리즈</span>
             </div>
             <h3 class="video-title">도르트신조 강해</h3>
             <p class="video-desc">
               전적 타락, 무조건적 선택, 제한 속죄, 불가항력적 은혜, 성도의 견인 등 성경이 증언하는 하나님의 절대적 은혜 교리를 강해합니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                재생목록 바로가기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('dort');" style="background:none; border:none; cursor:pointer;">
+                도르트신조 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
 
         <!-- 5. 사도행전 강해 -->
-        <div class="video-card" data-vcat="nt">
+        <div class="video-card" data-vcat="nt" onclick="openSermonSeriesModal('acts')" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
             <div class="video-thumb-placeholder bg-acts">
               <span class="thumb-topic">Acts of the Apostles</span>
@@ -405,7 +407,7 @@
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
               <span class="video-count">강해 시리즈</span>
             </div>
             <h3 class="video-title">사도행전 강해</h3>
@@ -413,15 +415,15 @@
               오직 성령이 너희에게 임하시면... 초대교회의 태동과 복음의 확장 역사를 생생하게 전합니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                영상 시청하기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('acts');" style="background:none; border:none; cursor:pointer;">
+                사도행전 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
 
         <!-- 6. 히브리서 강해 -->
-        <div class="video-card" data-vcat="nt">
+        <div class="video-card" data-vcat="nt" onclick="openSermonSeriesModal('hebrews')" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
             <div class="video-thumb-placeholder bg-hebrews">
               <span class="thumb-topic">The Epistle to the Hebrews</span>
@@ -436,7 +438,7 @@
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
               <span class="video-count">동영상 15개</span>
             </div>
             <h3 class="video-title">히브리서 강해 (언약신학 중심)</h3>
@@ -444,15 +446,15 @@
               더 나은 언약의 중보자 되신 대제사장 예수 그리스도와 믿음의 본질을 언약신학 관점에서 밝힙니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                재생목록 바로가기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('hebrews');" style="background:none; border:none; cursor:pointer;">
+                히브리서 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
 
         <!-- 7. 창세기 설교 -->
-        <div class="video-card" data-vcat="ot">
+        <div class="video-card" data-vcat="ot" onclick="openSermonSeriesModal('genesis')" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
             <div class="video-thumb-placeholder bg-genesis">
               <span class="thumb-topic">The Book of Genesis</span>
@@ -467,7 +469,7 @@
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
               <span class="video-count">동영상 15개</span>
             </div>
             <h3 class="video-title">창세기 설교</h3>
@@ -475,9 +477,9 @@
               태초에 하나님이 천지를 창조하시니라... 하나님의 창조 경륜과 언약의 역사를 배웁니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                재생목록 바로가기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('genesis');" style="background:none; border:none; cursor:pointer;">
+                창세기 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
