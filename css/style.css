@@ -1516,3 +1516,308 @@ img {
   }
 }
 
+/* ==========================================================
+   Pilgrim's Progress 52 Lectures Modal Viewer
+   ========================================================== */
+.pilgrim-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pilgrim-modal-container {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.pilgrim-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.pilgrim-modal-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.pilgrim-modal-header {
+  display: flex;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pilgrim-header-thumb {
+  width: 320px;
+  flex-shrink: 0;
+  background: #000;
+}
+
+.pilgrim-header-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pilgrim-header-info {
+  padding: 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pilgrim-header-badge {
+  display: inline-block;
+  background: rgba(197, 155, 39, 0.25);
+  color: var(--accent-gold-light);
+  border: 1px solid rgba(197, 155, 39, 0.4);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+  width: fit-content;
+}
+
+.pilgrim-header-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+}
+
+.pilgrim-header-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.pilgrim-controls {
+  padding: 1.2rem 2rem;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.pilgrim-tabs {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.p-tab-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.p-tab-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.pilgrim-search-box {
+  flex-grow: 1;
+  max-width: 320px;
+}
+
+.pilgrim-search-box input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.pilgrim-search-box input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(25, 42, 69, 0.1);
+}
+
+.pilgrim-lecture-list {
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  flex-grow: 1;
+}
+
+.pilgrim-item-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  transition: var(--transition);
+}
+
+.pilgrim-item-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.pilgrim-item-card.part2-card {
+  border-left: 3px solid #ff4b4b;
+}
+
+.p-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  overflow: hidden;
+}
+
+.p-ep-badge {
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.part2-card .p-ep-badge {
+  background: #dc2626;
+}
+
+.p-info {
+  overflow: hidden;
+}
+
+.p-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+}
+
+.p-meta {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.p-watch-btn {
+  background: #f1f5f9;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.p-watch-btn:hover {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.pilgrim-modal-footer {
+  padding: 1rem 2rem;
+  background: #f8fafc;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.btn-yt-direct {
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.btn-yt-direct:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .pilgrim-modal-header {
+    flex-direction: column;
+  }
+  .pilgrim-header-thumb {
+    width: 100%;
+    height: 160px;
+  }
+  .pilgrim-lecture-list {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .pilgrim-controls {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pilgrim-search-box {
+    max-width: 100%;
+  }
+}
+
+

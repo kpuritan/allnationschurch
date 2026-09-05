@@ -482,32 +482,29 @@
           </div>
         </div>
 
-        <!-- 8. 천로역정 강해 -->
-        <div class="video-card" data-vcat="special">
+        <!-- 8. 천로역정 강해 (1-52강 완주 시리즈) -->
+        <div class="video-card featured" data-vcat="special" onclick="openPilgrimModal()" style="cursor: pointer;">
           <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-pilgrim">
-              <span class="thumb-topic">The Pilgrim's Progress</span>
-              <span class="thumb-korean">천로역정 강해</span>
-              <span class="thumb-sub">존 번연의 순례자의 길</span>
-            </div>
-            <span class="video-badge badge-special">특별 강해</span>
+            <img src="images/pilgrims_progress.jpg" alt="천로역정 강해 완주 시리즈" class="video-thumb-img">
+            <span class="video-badge badge-special">특별 강해 완주</span>
+            <span class="video-count-badge">1강 ~ 52강 전편</span>
             <div class="video-play-overlay">
               <span class="play-icon-circle">▶</span>
             </div>
           </div>
           <div class="video-card-content">
             <div class="video-meta">
-              <span class="video-speaker">담임목사 강해</span>
-              <span class="video-count">순례 강해</span>
+              <span class="video-speaker">박훈 담임목사 강해</span>
+              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 52강 완주</span>
             </div>
-            <h3 class="video-title">천로역정 강해</h3>
+            <h3 class="video-title">천로역정 완주 강해 (1~52강)</h3>
             <p class="video-desc">
-              멸망의 도시를 떠나 천성을 향해 걸어가는 그리스도인의 영적 여정과 승리의 비결을 전합니다.
+              존 번연의 천로역정 1부 전편(1강~52강) 통합 강해 시리즈입니다. 멸망의 도시를 떠나 천성에 이르기까지 순례자의 영적 여정을 1강부터 순서대로 시청하실 수 있습니다.
             </p>
             <div class="video-card-footer">
-              <a href="https://www.youtube.com/@불로열방교회/playlists" target="_blank" rel="noopener noreferrer" class="video-link-btn">
-                영상 시청하기 ➔
-              </a>
+              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openPilgrimModal();" style="background:none; border:none; cursor:pointer;">
+                1강 ~ 52강 전편 목록 보기 ➔
+              </button>
             </div>
           </div>
         </div>
