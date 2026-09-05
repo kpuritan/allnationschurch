@@ -133,7 +133,7 @@ async function openPilgrimModal() {
           <h2 class="pilgrim-header-title">천로역정 완주 강해 (1강 ~ 52강 전편)</h2>
           <p class="pilgrim-header-desc">
             박훈 담임목사님의 천로역정 1부 전편 완주 설교 목록입니다.<br>
-            <strong>1~40강</strong>(금요기도회 강해)과 <strong>41~52강</strong>(불로열방교회 유튜브 재생목록)이 통합되어 순서대로 시청하실 수 있습니다.
+            <strong>1~40강</strong>과 <strong>41~52강</strong> 전편이 통합되어 1강부터 순서대로 바로 시청하실 수 있습니다.
           </p>
         </div>
       </div>
@@ -157,9 +157,9 @@ async function openPilgrimModal() {
 
       <div class="pilgrim-modal-footer">
         <span>© 불로 열방교회 말씀 아카이브</span>
-        <a href="https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
-          ▶ 유튜브 41-52강 재생목록 바로가기
-        </a>
+        <button type="button" class="btn-yt-direct" onclick="closePilgrimModal()" style="border:none; cursor:pointer;">
+          목록 닫기 ✕
+        </button>
       </div>
     </div>
   `;
@@ -283,10 +283,10 @@ async function openSermonSeriesModal(seriesKey) {
       </div>
 
       <div class="pilgrim-modal-footer">
-        <span>© 불로 열방교회 공식 말씀 아카이브</span>
-        <a href="${series.playlistUrl || ('https://www.youtube.com/results?search_query=' + encodeURIComponent(series.searchKeyword))}" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
-          ▶ 유튜브에서 '${series.title}' ${series.playlistUrl ? '재생목록 바로가기' : '전체 채널 바로가기'}
-        </a>
+        <span>© 불로 열방교회 성경 66권 강해 아카이브</span>
+        <button type="button" class="btn-yt-direct" onclick="closeSeriesModal()" style="border:none; cursor:pointer;">
+          목록 닫기 ✕
+        </button>
       </div>
     </div>
   `;
