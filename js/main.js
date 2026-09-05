@@ -242,26 +242,29 @@ function renderArchiveFolderSidebar() {
 }
 
 async function loadArchiveData() {
+  try {
+    const res = await fetch('data/sermons_archive.json?v=' + Date.now());
+    if (res.ok) {
+      const fetchedArchive = await res.json();
+      archiveDataCache = fetchedArchive;
+    }
+  } catch (e) {
+    console.error('sermons_archive load error', e);
+  }
+
   const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
       if (parsed.archive) {
-        archiveDataCache = parsed.archive;
+        // 병합: 서버 기본 데이터 위에 로컬 추가분 병합 (단, romans 등 정규 강의는 서버 최신 유지)
+        archiveDataCache = { ...archiveDataCache, ...parsed.archive };
       }
     } catch (e) {
       console.error(e);
     }
   }
 
-  if (!archiveDataCache) {
-    try {
-      const res = await fetch('data/sermons_archive.json?v=' + Date.now());
-      if (res.ok) archiveDataCache = await res.json();
-    } catch (e) {
-      console.error('sermons_archive load error', e);
-    }
-  }
   if (!pilgrimDataCache) {
     try {
       const res = await fetch('data/pilgrim_progress.json?v=' + Date.now());
@@ -367,7 +370,7 @@ function renderArchiveFolderContent(folderKey, query) {
   }
 
   // 카드 그리드 렌더링
-  gridEl.innerHTML = adminAddBarHtml + episodes.map(item => {
+  gridEl.innerHTML = adminAddBarHtml + episodes.map((item, idx) => {
     let thumbHtml = '';
     if (folderMeta.thumb) {
       thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="card-thumb-img">`;
@@ -383,15 +386,16 @@ function renderArchiveFolderContent(folderKey, query) {
     const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.72rem; padding:2px 6px; border-radius:4px; font-weight:700; margin-left:6px;">PDF 교재</span>` : '';
 
     // 관리자 수정/삭제 버튼
+    const epSafeParam = encodeURIComponent(String(item.ep));
     const adminActionsHtml = isAdmin ? `
       <div class="card-admin-actions" onclick="event.stopPropagation()">
-        <button type="button" class="btn-card-edit" onclick="openLectureEditModal('${folderKey}', ${item.ep})">✏️ 수정</button>
-        <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('${folderKey}', ${item.ep})">🗑️ 삭제</button>
+        <button type="button" class="btn-card-edit" onclick="openLectureEditModal('${folderKey}', decodeURIComponent('${epSafeParam}'))">✏️ 수정</button>
+        <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">🗑️ 삭제</button>
       </div>
     ` : '';
 
     return `
-      <div class="video-thumb-card" style="position: relative;" onclick="playArchiveLecture('${folderKey}', ${item.ep})">
+      <div class="video-thumb-card" style="position: relative;" onclick="playArchiveLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">
         ${adminActionsHtml}
         <div class="card-thumb-wrap">
           ${thumbHtml}
@@ -421,7 +425,7 @@ function playArchiveLecture(folderKey, epNumber) {
 
   if (folderKey === 'pilgrim') {
     const list = pilgrimDataCache || [];
-    const p = list.find(x => x.ep === epNumber);
+    const p = list.find(x => x.ep === epNumber || String(x.ep) === String(epNumber) || x.ep == epNumber);
     if (p) {
       item = {
         ep: p.ep,
@@ -435,10 +439,20 @@ function playArchiveLecture(folderKey, epNumber) {
   } else if (archiveDataCache && archiveDataCache[folderKey]) {
     const s = archiveDataCache[folderKey];
     seriesTitle = s.title;
-    item = (s.episodes || []).find(x => x.ep === epNumber);
+    const num = parseInt(epNumber);
+    item = (s.episodes || []).find(x => 
+      x.ep === epNumber || 
+      x.ep === num || 
+      String(x.ep) === String(epNumber) || 
+      (x.ep + '강') === String(epNumber) ||
+      (typeof x.ep === 'string' && x.ep.replace(/[^0-9]/g, '') === String(epNumber).replace(/[^0-9]/g, ''))
+    );
   }
 
-  if (!item) return;
+  if (!item) {
+    console.warn('Lecture not found:', folderKey, epNumber);
+    return;
+  }
 
   const playerArea = document.getElementById('archive-top-player');
   const iframe = document.getElementById('archive-player-iframe');
@@ -579,7 +593,14 @@ function openLectureAddModal(folderKey) {
 
 function openLectureEditModal(folderKey, epNumber) {
   if (!archiveDataCache || !archiveDataCache[folderKey]) return;
-  const item = (archiveDataCache[folderKey].episodes || []).find(x => x.ep === epNumber);
+  const num = parseInt(epNumber);
+  const item = (archiveDataCache[folderKey].episodes || []).find(x => 
+    x.ep === epNumber || 
+    x.ep === num || 
+    String(x.ep) === String(epNumber) || 
+    (x.ep + '강') === String(epNumber) ||
+    (typeof x.ep === 'string' && x.ep.replace(/[^0-9]/g, '') === String(epNumber).replace(/[^0-9]/g, ''))
+  );
   if (!item) return;
 
   const modal = document.getElementById('modal-lecture-edit');
@@ -611,7 +632,7 @@ function handleSaveSiteLecture(e) {
   e.preventDefault();
   const folderKey = document.getElementById('modal-lec-folder-select').value;
   const mode = document.getElementById('modal-lec-mode').value;
-  const origEp = parseInt(document.getElementById('modal-lec-original-ep').value);
+  const origEp = document.getElementById('modal-lec-original-ep').value;
   const ep = parseInt(document.getElementById('modal-lec-ep').value);
   const title = document.getElementById('modal-lec-title').value.trim();
   const passage = document.getElementById('modal-lec-passage').value.trim();
@@ -640,7 +661,7 @@ function handleSaveSiteLecture(e) {
 
   if (mode === 'add') {
     // 중복 체크
-    const idx = epList.findIndex(x => x.ep === ep);
+    const idx = epList.findIndex(x => x.ep === ep || String(x.ep) === String(ep));
     if (idx !== -1) {
       if (!confirm(`${ep}강이 이미 존재합니다. 덮어쓰시겠습니까?`)) return;
       epList[idx] = newItem;
@@ -649,7 +670,8 @@ function handleSaveSiteLecture(e) {
     }
   } else {
     // edit 모드
-    const idx = epList.findIndex(x => x.ep === origEp);
+    const origNum = parseInt(origEp);
+    const idx = epList.findIndex(x => x.ep === origEp || x.ep === origNum || String(x.ep) === String(origEp));
     if (idx !== -1) {
       epList[idx] = newItem;
     } else {
@@ -658,7 +680,7 @@ function handleSaveSiteLecture(e) {
   }
 
   // 회차별 오름차순 정렬
-  epList.sort((a, b) => a.ep - b.ep);
+  epList.sort((a, b) => (parseInt(a.ep) || 0) - (parseInt(b.ep) || 0));
 
   saveEffectiveData();
   closeLectureEditModal();
@@ -672,7 +694,8 @@ function handleDeleteSiteLecture(folderKey, epNumber) {
   if (!archiveDataCache || !archiveDataCache[folderKey]) return;
 
   const list = archiveDataCache[folderKey].episodes || [];
-  const idx = list.findIndex(x => x.ep === epNumber);
+  const num = parseInt(epNumber);
+  const idx = list.findIndex(x => x.ep === epNumber || x.ep === num || String(x.ep) === String(epNumber));
   if (idx !== -1) {
     list.splice(idx, 1);
     saveEffectiveData();
