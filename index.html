@@ -224,392 +224,61 @@
     </div>
   </section>
 
-  <!-- ================= Sermon Series Section ================= -->
+  <!-- ================= Sermon Series Section (Image 2 Structure) ================= -->
   <section id="sermon-videos" class="section section-bg-warm">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Sermon Archive</span>
         <h2 class="section-title">말씀 강해 아카이브</h2>
         <p class="section-desc">
-          성경 66권 강해 및 개혁주의 교리 강해 전편 아카이브입니다. 원하시는 시리즈를 선택하여 1강부터 바로 시청하실 수 있습니다.
+          성경 66권 강해 및 개혁주의 교리 강해 전편 목록입니다. 좌측 폴더에서 원하시는 강해를 선택하시면 상세 목록이 전시되며, 각 설교 카드를 누르면 즉시 방영됩니다.
         </p>
       </div>
 
-      <!-- 영상 카테고리 / 폴더 탭 -->
-      <div class="video-filter-tabs">
-        <button class="v-tab-btn active" data-vfilter="all">전체 강해 목록</button>
-        <button class="v-tab-btn" data-vfilter="nt">신약 강해</button>
-        <button class="v-tab-btn" data-vfilter="ot">구약 강해</button>
-        <button class="v-tab-btn" data-vfilter="doctrine">교리 &amp; 신조</button>
-        <button class="v-tab-btn" data-vfilter="special">특별 강해 &amp; 주제별</button>
-      </div>
+      <!-- 2단 아카이브 폴더 레이아웃 (Image 2 스타일) -->
+      <div class="archive-main-layout">
+        <!-- 좌측 폴더 사이드바 -->
+        <aside class="archive-sidebar">
+          <div class="sidebar-header">
+            <span class="sidebar-title">📁 말씀 강해 폴더 목록</span>
+          </div>
+          <ul class="archive-folder-list" id="archive-folder-list">
+            <!-- JS 동적 렌더링 -->
+          </ul>
+        </aside>
 
-      <!-- 영상 시리즈 카드 그리드 -->
-      <div class="video-series-grid">
-        
-        <!-- 1. 요한복음 강해 (맞춤 썸네일) -->
-        <div class="video-card featured" data-vcat="nt" onclick="openSermonSeriesModal('john')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <img src="images/john_gospel.jpg" alt="요한복음 강해" class="video-thumb-img">
-            <span class="video-badge badge-nt">신약 강해</span>
-            <span class="video-count-badge">전편 1강~40강</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
+        <!-- 우측 콘텐츠 영역 -->
+        <main class="archive-content-area">
+          <!-- 상단 비디오 플레이어 영역 (영상 클릭 시 즉시 방영) -->
+          <div id="archive-top-player" class="archive-top-player" style="display:none;">
+            <div class="player-wrapper">
+              <iframe id="archive-player-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="player-info-bar">
+              <div class="player-playing-title" id="archive-player-title">▶ 방영 중: 레위기 개관설교</div>
+              <div class="player-actions">
+                <a id="archive-player-yt-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-player-ext">유튜브로 보기 ↗</a>
+                <button type="button" class="btn-player-close" onclick="closeArchivePlayer()">플레이어 닫기 ✕</button>
+              </div>
             </div>
           </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 40강 시리즈</span>
-            </div>
-            <h3 class="video-title">요한복음 강해</h3>
-            <p class="video-desc">
-              말씀이 육신이 되어 우리 가운데 거하심에... 빛과 생명 되신 예수 그리스도의 복음을 깊이 있게 전하는 요한복음 1강~40강 전편 강해 설교입니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('john');" style="background:none; border:none; cursor:pointer;">
-                1강 ~ 40강 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <!-- 2. 로마서 강해 (1-11장) -->
-        <div class="video-card featured" data-vcat="nt" onclick="openSermonSeriesModal('romans')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-romans">
-              <span class="thumb-topic">The Epistle to the Romans</span>
-              <span class="thumb-korean">로마서 강해</span>
-              <span class="thumb-sub">1장 ~ 11장 (83편)</span>
+          <!-- 아카이브 헤더 (제목 + 건수 + 검색) -->
+          <div class="archive-header-row">
+            <div>
+              <h3 class="archive-current-title" id="archive-current-title">구약성경 권별 개관설교 자료 목록</h3>
+              <p class="archive-item-count" id="archive-item-count">총 39개 자료 전부</p>
             </div>
-            <span class="video-badge badge-nt">신약 강해</span>
-            <span class="video-count-badge">동영상 83개</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
+            <div class="archive-search-wrap">
+              <input type="text" id="archive-search-input" placeholder="강의 제목 또는 본문 검색 (예: 레위기, 1강)..." />
             </div>
           </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">동영상 83개 완주</span>
-            </div>
-            <h3 class="video-title">로마서 강해 (1-11장)</h3>
-            <p class="video-desc">
-              오직 의인은 믿음으로 살리라! 사도 바울이 전한 이신칭의와 구원의 은혜, 하나님의 절대 주권을 명쾌하게 강해합니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('romans');" style="background:none; border:none; cursor:pointer;">
-                로마서 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <!-- 3. 구약성경 권별설교 (개관설교) -->
-        <div class="video-card featured" data-vcat="ot" onclick="openSermonSeriesModal('ot')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-ot">
-              <span class="thumb-topic">Old Testament Overview</span>
-              <span class="thumb-korean">구약성경 권별설교</span>
-              <span class="thumb-sub">구약 39권 개관설교</span>
-            </div>
-            <span class="video-badge badge-ot">구약 강해</span>
-            <span class="video-count-badge">구약 39권 완주</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
+          <!-- 3열 카드 그리드 (Image 2 디자인) -->
+          <div class="archive-video-grid" id="archive-video-grid">
+            <!-- JS 동적 렌더링 -->
           </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">39권 전권 완주</span>
-            </div>
-            <h3 class="video-title">구약성경 권별 개관설교</h3>
-            <p class="video-desc">
-              창세기부터 말라기까지 구약 39권의 핵심 주제와 구속사적 맥락을 성도들의 눈높이에 맞추어 체계적으로 개관합니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('ot');" style="background:none; border:none; cursor:pointer;">
-                구약 39권 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. 도르트 신조 (19편 완주) -->
-        <div class="video-card featured" data-vcat="doctrine" onclick="openSermonSeriesModal('dort')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-dort">
-              <span class="thumb-topic">Canons of Dort</span>
-              <span class="thumb-korean">도르트 신조</span>
-              <span class="thumb-sub">주일 오전예배 19편 완주</span>
-            </div>
-            <span class="video-badge badge-doctrine">교리 &amp; 신조</span>
-            <span class="video-count-badge">동영상 19개</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">19편 전편 완주</span>
-            </div>
-            <h3 class="video-title">도르트 신조</h3>
-            <p class="video-desc">
-              주일 오전예배를 통해 전한 도르트 신조 19편 전편 완주 설교입니다. 하나님의 선택과 유기, 대속의 가치, 중생과 회심, 성도의 견인을 순서대로 시청하실 수 있습니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('dort');" style="background:none; border:none; cursor:pointer;">
-                19편 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-2. 다시보는 도르트 신조 -->
-        <div class="video-card featured" data-vcat="doctrine" onclick="openSermonSeriesModal('dort_review')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-dort" style="background: linear-gradient(135deg, #065f46 0%, #022c22 100%);">
-              <span class="thumb-topic">Reformed Theology</span>
-              <span class="thumb-korean">다시보는 도르트 신조</span>
-              <span class="thumb-sub">칼빈주의 5대 교리</span>
-            </div>
-            <span class="video-badge badge-doctrine">교리 &amp; 신조</span>
-            <span class="video-count-badge">특별 교리 시리즈</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">TULIP 교리</span>
-            </div>
-            <h3 class="video-title">다시보는 도르트 신조</h3>
-            <p class="video-desc">
-              불로 열방교회에서 새롭게 조명한 도르트 신조 특별 강해 시리즈입니다. 전적 타락부터 성도의 견인까지 5대 교리를 명쾌하게 전합니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('dort_review');" style="background:none; border:none; cursor:pointer;">
-                교리 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-3. 십계명 강해 -->
-        <div class="video-card featured" data-vcat="doctrine" onclick="openSermonSeriesModal('commandments')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-commandments">
-              <span class="thumb-topic">The Ten Commandments</span>
-              <span class="thumb-korean">십계명 강해</span>
-              <span class="thumb-sub">제1계명 ~ 제10계명 (10편)</span>
-            </div>
-            <span class="video-badge badge-doctrine">교리 &amp; 율법</span>
-            <span class="video-count-badge">동영상 10개 완주</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 10편 완주</span>
-            </div>
-            <h3 class="video-title">십계명 강해</h3>
-            <p class="video-desc">
-              하나님의 거룩하신 성품과 언약 백성을 향한 십계명 전편 강해입니다. 제1계명부터 제10계명까지 성도의 참된 순종과 복음을 전합니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('commandments');" style="background:none; border:none; cursor:pointer;">
-                10편 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-4. 출애굽기 강해 -->
-        <div class="video-card featured" data-vcat="ot" onclick="openSermonSeriesModal('exodus')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-exodus">
-              <span class="thumb-topic">The Book of Exodus</span>
-              <span class="thumb-korean">출애굽기 강해</span>
-              <span class="thumb-sub">구속의 은혜와 성막 (22편)</span>
-            </div>
-            <span class="video-badge badge-ot">구약 강해</span>
-            <span class="video-count-badge">동영상 22개 완주</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 22편 완주</span>
-            </div>
-            <h3 class="video-title">출애굽기 강해</h3>
-            <p class="video-desc">
-              유월절 어린 양의 피, 홍해의 기적, 시내산 언약, 성막의 설계와 하나님의 영광에 이르기까지 구속의 대서사시를 강해합니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('exodus');" style="background:none; border:none; cursor:pointer;">
-                22편 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-5. 창세기 강해 (13편) -->
-        <div class="video-card featured" data-vcat="ot" onclick="openSermonSeriesModal('genesis_classic')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-genesis">
-              <span class="thumb-topic">The Book of Genesis</span>
-              <span class="thumb-korean">창세기 강해</span>
-              <span class="thumb-sub">창조와 족장들의 언약 (13편)</span>
-            </div>
-            <span class="video-badge badge-ot">구약 강해</span>
-            <span class="video-count-badge">동영상 13개 완주</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 13편 완주</span>
-            </div>
-            <h3 class="video-title">창세기 강해 (13편)</h3>
-            <p class="video-desc">
-              태초의 창조부터 아브라함, 이삭, 야곱, 요셉에 이르기까지 구속사의 기초를 놓으신 하나님의 주권적 역사를 전합니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('genesis_classic');" style="background:none; border:none; cursor:pointer;">
-                13편 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. 사도행전 강해 -->
-        <div class="video-card" data-vcat="nt" onclick="openSermonSeriesModal('acts')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-acts">
-              <span class="thumb-topic">Acts of the Apostles</span>
-              <span class="thumb-korean">사도행전 강해</span>
-              <span class="thumb-sub">성령과 교회의 탄생</span>
-            </div>
-            <span class="video-badge badge-nt">신약 강해</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count">강해 시리즈</span>
-            </div>
-            <h3 class="video-title">사도행전 강해</h3>
-            <p class="video-desc">
-              오직 성령이 너희에게 임하시면... 초대교회의 태동과 복음의 확장 역사를 생생하게 전합니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('acts');" style="background:none; border:none; cursor:pointer;">
-                사도행전 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. 히브리서 강해 -->
-        <div class="video-card" data-vcat="nt" onclick="openSermonSeriesModal('hebrews')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-hebrews">
-              <span class="thumb-topic">The Epistle to the Hebrews</span>
-              <span class="thumb-korean">히브리서 강해</span>
-              <span class="thumb-sub">언약신학 중심 (15편)</span>
-            </div>
-            <span class="video-badge badge-nt">신약 강해</span>
-            <span class="video-count-badge">동영상 15개</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count">동영상 15개</span>
-            </div>
-            <h3 class="video-title">히브리서 강해 (언약신학 중심)</h3>
-            <p class="video-desc">
-              더 나은 언약의 중보자 되신 대제사장 예수 그리스도와 믿음의 본질을 언약신학 관점에서 밝힙니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('hebrews');" style="background:none; border:none; cursor:pointer;">
-                히브리서 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7. 창세기 설교 (15편) -->
-        <div class="video-card featured" data-vcat="ot" onclick="openSermonSeriesModal('genesis')" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <div class="video-thumb-placeholder bg-genesis">
-              <span class="thumb-topic">The Book of Genesis</span>
-              <span class="thumb-korean">창세기 설교</span>
-              <span class="thumb-sub">창조의 시작 하나님의 이야기 (15편)</span>
-            </div>
-            <span class="video-badge badge-ot">구약 강해</span>
-            <span class="video-count-badge">동영상 15개 완주</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 15편 완주</span>
-            </div>
-            <h3 class="video-title">창세기 설교 (15편)</h3>
-            <p class="video-desc">
-              태초의 창조부터 아브라함, 이삭, 야곱, 요셉에 이르는 하나님의 언약과 구원 이야기를 전하는 불로 열방교회 15편 설교 시리즈입니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openSermonSeriesModal('genesis');" style="background:none; border:none; cursor:pointer;">
-                15편 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. 천로역정 강해 (1-52강 완주 시리즈) -->
-        <div class="video-card featured" data-vcat="special" onclick="openPilgrimModal()" style="cursor: pointer;">
-          <div class="video-card-thumb-wrap">
-            <img src="images/pilgrims_progress.jpg" alt="천로역정 강해 완주 시리즈" class="video-thumb-img">
-            <span class="video-badge badge-special">특별 강해 완주</span>
-            <span class="video-count-badge">1강 ~ 52강 전편</span>
-            <div class="video-play-overlay">
-              <span class="play-icon-circle">▶</span>
-            </div>
-          </div>
-          <div class="video-card-content">
-            <div class="video-meta">
-              <span class="video-speaker">박훈 담임목사 강해</span>
-              <span class="video-count" style="color: var(--accent-gold); font-weight: 700;">총 52강 완주</span>
-            </div>
-            <h3 class="video-title">천로역정 완주 강해 (1~52강)</h3>
-            <p class="video-desc">
-              존 번연의 천로역정 1부 전편(1강~52강) 통합 강해 시리즈입니다. 멸망의 도시를 떠나 천성에 이르기까지 순례자의 영적 여정을 1강부터 순서대로 시청하실 수 있습니다.
-            </p>
-            <div class="video-card-footer">
-              <button type="button" class="video-link-btn" onclick="event.stopPropagation(); openPilgrimModal();" style="background:none; border:none; cursor:pointer;">
-                1강 ~ 52강 전편 목록 보기 ➔
-              </button>
-            </div>
-          </div>
-        </div>
-
+        </main>
       </div>
     </div>
   </section>

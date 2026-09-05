@@ -69,341 +69,284 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 비디오 강해 시리즈 카테고리 필터링
+  // 비디오 강해 시리즈 카테고리 필터링 (기존 지원)
   const videoFilterBtns = document.querySelectorAll('.v-tab-btn');
-  const videoCards = document.querySelectorAll('.video-card');
-
-  videoFilterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      videoFilterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-vfilter');
-
-      videoCards.forEach(card => {
-        const cardCat = card.getAttribute('data-vcat');
-        if (filterValue === 'all' || cardCat === filterValue) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-        } else {
-          card.style.display = 'none';
-        }
+  if (videoFilterBtns.length > 0) {
+    videoFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        videoFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
       });
     });
-  });
+  }
+
+  // 말씀 강해 아카이브 시스템 초기화
+  initArchiveSystem();
 });
 
 /**
- * 천로역정 1~52강 전편 통합 뷰어 모달
+ * ==========================================================
+ * 말씀 강해 2단 폴더 아카이브 시스템 (Image 2 레이아웃 & 동작)
+ * ==========================================================
  */
-let pilgrimLecturesData = null;
+const ARCHIVE_FOLDERS = [
+  { key: 'ot', title: '구약성경 권별 개관설교', count: '39편', icon: '📜', bgClass: 'bg-ot' },
+  { key: 'john', title: '요한복음 강해', count: '40강', icon: '📖', bgClass: 'bg-nt', thumb: 'images/john_gospel.jpg' },
+  { key: 'romans', title: '로마서 강해 (1-11장)', count: '31강', icon: '📖', bgClass: 'bg-nt' },
+  { key: 'dort', title: '도르트 신조', count: '19편', icon: '🏛️', bgClass: 'bg-doctrine' },
+  { key: 'dort_review', title: '다시보는 도르트 신조', count: '12편', icon: '💡', bgClass: 'bg-doctrine' },
+  { key: 'pilgrim', title: '천로역정 완주 강해', count: '52강', icon: '🌄', bgClass: 'bg-special', thumb: 'images/pilgrims_progress.jpg' },
+  { key: 'commandments', title: '십계명 강해', count: '10편', icon: '⚖️', bgClass: 'bg-doctrine' },
+  { key: 'exodus', title: '출애굽기 강해', count: '22편', icon: '🌊', bgClass: 'bg-ot' },
+  { key: 'genesis_classic', title: '창세기 강해 (13편)', count: '13편', icon: '🌱', bgClass: 'bg-ot' },
+  { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '🌱', bgClass: 'bg-ot' },
+  { key: 'luke', title: '누가복음 강해', count: '30편', icon: '📖', bgClass: 'bg-nt' },
+  { key: 'hebrews', title: '히브리서 강해', count: '15편', icon: '✝️', bgClass: 'bg-nt' },
+  { key: 'acts', title: '사도행전 강해', count: '15편', icon: '🔥', bgClass: 'bg-nt' }
+];
 
-async function openPilgrimModal() {
-  const existing = document.getElementById('pilgrim-modal');
-  if (existing) existing.remove();
+let currentFolderKey = 'ot';
+let archiveDataCache = null;
+let pilgrimDataCache = null;
 
-  // 데이터 로드
-  if (!pilgrimLecturesData) {
-    try {
-      const res = await fetch('data/pilgrim_progress.json?v=' + Date.now());
-      if (res.ok) {
-        pilgrimLecturesData = await res.json();
-      }
-    } catch (e) {
-      console.error('천로역정 데이터 로드 실패', e);
-    }
-  }
+async function initArchiveSystem() {
+  const folderListEl = document.getElementById('archive-folder-list');
+  if (!folderListEl) return;
 
-  const lectures = pilgrimLecturesData || [];
-
-  const modal = document.createElement('div');
-  modal.id = 'pilgrim-modal';
-  modal.className = 'pilgrim-modal-backdrop';
-
-  modal.innerHTML = `
-    <div class="pilgrim-modal-container">
-      <button type="button" class="pilgrim-modal-close" onclick="closePilgrimModal()">✕</button>
-      
-      <div class="pilgrim-modal-header">
-        <div class="pilgrim-header-thumb">
-          <img src="images/pilgrims_progress.jpg" alt="천로역정 강해 1-52강">
-        </div>
-        <div class="pilgrim-header-info">
-          <span class="pilgrim-header-badge">존 번연의 순례자의 길</span>
-          <h2 class="pilgrim-header-title">천로역정 완주 강해 (1강 ~ 52강 전편)</h2>
-          <p class="pilgrim-header-desc">
-            박훈 담임목사님의 천로역정 1부 전편 완주 설교 목록입니다.<br>
-            <strong>1~40강</strong>과 <strong>41~52강</strong> 전편이 통합되어 1강부터 순서대로 바로 시청하실 수 있습니다.
-          </p>
-        </div>
+  // 1. 좌측 폴더 목록 렌더링
+  folderListEl.innerHTML = ARCHIVE_FOLDERS.map(f => `
+    <li class="archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
+      <div class="folder-name-wrap">
+        <span class="folder-icon">📁</span>
+        <span>${f.title}</span>
       </div>
+      <span class="folder-count-badge">${f.count}</span>
+    </li>
+  `).join('');
 
-      <!-- 모달 내 탭 & 검색 -->
-      <div class="pilgrim-controls">
-        <div class="pilgrim-tabs">
-          <button class="p-tab-btn active" data-ptab="all">전체보기 (52강)</button>
-          <button class="p-tab-btn" data-ptab="part1">1부 (1~40강)</button>
-          <button class="p-tab-btn" data-ptab="part2">2부 (41~52강)</button>
-        </div>
-        <div class="pilgrim-search-box">
-          <input type="text" id="pilgrim-search-input" placeholder="강의 제목 또는 본문 검색 (예: 십자가, 41강, 마태복음)..." />
-        </div>
-      </div>
+  // 2. 데이터 미리 로드
+  await loadArchiveData();
 
-      <!-- 강의 리스트 그리드 -->
-      <div class="pilgrim-lecture-list" id="pilgrim-lecture-list">
-        <!-- 동적 렌더링 -->
-      </div>
+  // 3. 기본 선택 폴더 렌더링
+  renderArchiveFolderContent(currentFolderKey, '');
 
-      <div class="pilgrim-modal-footer">
-        <span>© 불로 열방교회 말씀 아카이브</span>
-        <button type="button" class="btn-yt-direct" onclick="closePilgrimModal()" style="border:none; cursor:pointer;">
-          목록 닫기 ✕
-        </button>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-  document.body.style.overflow = 'hidden';
-
-  // 배경 클릭 시 닫기
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closePilgrimModal();
-    }
-  });
-
-  // 렌더링 함수 실행
-  renderPilgrimList('all', '');
-
-  // 탭 클릭 이벤트
-  modal.querySelectorAll('.p-tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      modal.querySelectorAll('.p-tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const tab = btn.getAttribute('data-ptab');
-      const searchVal = document.getElementById('pilgrim-search-input').value.trim();
-      renderPilgrimList(tab, searchVal);
-    });
-  });
-
-  // 검색 입력 이벤트
-  const searchInput = document.getElementById('pilgrim-search-input');
+  // 4. 검색창 이벤트
+  const searchInput = document.getElementById('archive-search-input');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      const activeTab = modal.querySelector('.p-tab-btn.active').getAttribute('data-ptab');
-      renderPilgrimList(activeTab, e.target.value.trim());
+      renderArchiveFolderContent(currentFolderKey, e.target.value.trim());
     });
   }
 }
 
-/**
- * 전체 강해 시리즈 상세 목록 모달 뷰어
- * (요한복음, 로마서, 구약 권별개관, 도르트신조, 누가복음, 히브리서, 창세기, 사도행전 등)
- */
-let allSeriesArchiveData = null;
-
-async function openSermonSeriesModal(seriesKey) {
-  const existing = document.getElementById('series-modal');
-  if (existing) existing.remove();
-
-  if (!allSeriesArchiveData) {
+async function loadArchiveData() {
+  if (!archiveDataCache) {
     try {
       const res = await fetch('data/sermons_archive.json?v=' + Date.now());
-      if (res.ok) {
-        allSeriesArchiveData = await res.json();
-      }
+      if (res.ok) archiveDataCache = await res.json();
     } catch (e) {
-      console.error('시리즈 아카이브 로드 실패', e);
+      console.error('sermons_archive load error', e);
     }
   }
-
-  const series = (allSeriesArchiveData && allSeriesArchiveData[seriesKey]) || null;
-  if (!series) {
-    // 만약 데이터가 없으면 유튜브 검색으로 안내
-    window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent('불로열방교회 ' + seriesKey)}`, '_blank');
-    return;
-  }
-
-  const modal = document.createElement('div');
-  modal.id = 'series-modal';
-  modal.className = 'pilgrim-modal-backdrop';
-
-  const thumbHtml = series.thumb 
-    ? `<img src="${series.thumb}" alt="${series.title}">` 
-    : `<div class="video-thumb-placeholder bg-${seriesKey}" style="width:100%; height:100%;">
-         <span class="thumb-topic">${series.category}</span>
-         <span class="thumb-korean">${series.title}</span>
-       </div>`;
-
-  modal.innerHTML = `
-    <div class="pilgrim-modal-container">
-      <button type="button" class="pilgrim-modal-close" onclick="closeSeriesModal()">✕</button>
-      
-      <!-- 인라인 비디오 플레이어 영역 (클릭 시 즉시 방영) -->
-      <div id="series-video-player-area" style="display:none; background:#000; width:100%; position:relative;">
-        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-          <iframe id="series-video-iframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div id="series-video-bar" style="padding:0.75rem 1.2rem; background:#1e293b; color:#fff; display:flex; justify-content:space-between; align-items:center; font-size:0.85rem;">
-          <span id="series-now-playing-title" style="font-weight:700;">방영 중: ...</span>
-          <button type="button" onclick="closePlayerArea()" style="background:#334155; color:#fff; border:none; padding:0.3rem 0.7rem; border-radius:4px; cursor:pointer; font-size:0.8rem;">플레이어 닫기 ✕</button>
-        </div>
-      </div>
-
-      <div class="pilgrim-modal-header" id="series-modal-header-info">
-        <div class="pilgrim-header-thumb">
-          ${thumbHtml}
-        </div>
-        <div class="pilgrim-header-info">
-          <span class="pilgrim-header-badge">${series.category} · ${series.speaker}</span>
-          <h2 class="pilgrim-header-title">${series.title}</h2>
-          <p class="pilgrim-header-desc">
-            ${series.desc}
-          </p>
-        </div>
-      </div>
-
-      <!-- 모달 내 탭 & 검색 -->
-      <div class="pilgrim-controls">
-        <div class="pilgrim-tabs">
-          <span style="font-size: 0.9rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px;">
-            📋 전체 강해 목록 (총 ${series.episodes.length}편) · 클릭 시 즉시 방영
-          </span>
-        </div>
-        <div class="pilgrim-search-box">
-          <input type="text" id="series-search-input" placeholder="회차, 제목, 본문 검색 (예: 1강, 십자가, 1장)..." />
-        </div>
-      </div>
-
-      <!-- 강의 리스트 그리드 -->
-      <div class="pilgrim-lecture-list" id="series-lecture-list">
-        <!-- 동적 렌더링 -->
-      </div>
-
-      <div class="pilgrim-modal-footer">
-        <span>© 불로 열방교회 성경 66권 강해 아카이브</span>
-        <button type="button" class="btn-yt-direct" onclick="closeSeriesModal()" style="border:none; cursor:pointer;">
-          목록 닫기 ✕
-        </button>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-  document.body.style.overflow = 'hidden';
-
-  // 배경 클릭 시 닫기
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeSeriesModal();
+  if (!pilgrimDataCache) {
+    try {
+      const res = await fetch('data/pilgrim_progress.json?v=' + Date.now());
+      if (res.ok) pilgrimDataCache = await res.json();
+    } catch (e) {
+      console.error('pilgrim_progress load error', e);
     }
-  });
-
-  // 렌더링 실행
-  renderSeriesEpisodes(series, '');
-
-  // 검색 이벤트
-  const searchInput = document.getElementById('series-search-input');
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      renderSeriesEpisodes(series, e.target.value.trim());
-    });
   }
 }
 
-function renderSeriesEpisodes(series, query) {
-  const container = document.getElementById('series-lecture-list');
-  if (!container || !series) return;
+async function selectArchiveFolder(folderKey) {
+  currentFolderKey = folderKey;
+  
+  // 사이드바 active 업데이트
+  document.querySelectorAll('.archive-folder-item').forEach(el => {
+    if (el.getAttribute('data-fkey') === folderKey) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
+  });
 
-  let episodes = series.episodes || [];
+  const searchInput = document.getElementById('archive-search-input');
+  if (searchInput) searchInput.value = '';
 
+  await loadArchiveData();
+  renderArchiveFolderContent(folderKey, '');
+}
+
+function renderArchiveFolderContent(folderKey, query) {
+  const titleEl = document.getElementById('archive-current-title');
+  const countEl = document.getElementById('archive-item-count');
+  const gridEl = document.getElementById('archive-video-grid');
+  if (!gridEl) return;
+
+  const folderMeta = ARCHIVE_FOLDERS.find(f => f.key === folderKey) || ARCHIVE_FOLDERS[0];
+
+  let episodes = [];
+  let seriesTitle = folderMeta.title;
+
+  if (folderKey === 'pilgrim') {
+    episodes = (pilgrimDataCache || []).map(p => ({
+      ep: p.ep,
+      title: `${p.ep}강 - ${p.title}`,
+      passage: p.passage,
+      url: p.url,
+      search: `불로열방교회 천로역정 ${p.ep}강 ${p.title}`
+    }));
+  } else if (archiveDataCache && archiveDataCache[folderKey]) {
+    const s = archiveDataCache[folderKey];
+    episodes = s.episodes || [];
+    seriesTitle = s.title;
+  }
+
+  // 검색어 필터링
   if (query) {
     const q = query.toLowerCase();
-    episodes = episodes.filter(item => 
-      item.title.toLowerCase().includes(q) ||
-      (item.passage && item.passage.toLowerCase().includes(q)) ||
-      (item.ep + '강').includes(q) ||
-      (item.ep + '편').includes(q) ||
-      item.ep.toString() === q
+    episodes = episodes.filter(ep => 
+      ep.title.toLowerCase().includes(q) ||
+      (ep.passage && ep.passage.toLowerCase().includes(q)) ||
+      (ep.ep + '강').includes(q) ||
+      (ep.ep + '편').includes(q) ||
+      ep.ep.toString() === q
     );
   }
 
+  if (titleEl) titleEl.textContent = `${folderMeta.title} 자료 목록`;
+  if (countEl) countEl.textContent = `총 ${episodes.length}개 자료 전부 (1/1페이지)`;
+
   if (episodes.length === 0) {
-    container.innerHTML = `
-      <div style="text-align:center; padding: 3rem; color:#888; grid-column: 1 / -1;">
-        검색어에 해당하는 강의가 없습니다.
+    gridEl.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--text-muted);">
+        <p style="font-size: 1.1rem; font-weight: 600;">검색 결과에 해당하는 강의가 없습니다.</p>
+        <p style="font-size: 0.88rem; margin-top: 6px;">다른 검색어를 입력하시거나 좌측 폴더를 선택해 주세요.</p>
       </div>
     `;
     return;
   }
 
-  container.innerHTML = episodes.map(item => {
-    const ytUrl = item.url || (series.playlistUrl ? `${series.playlistUrl}&index=${item.ep}` : `https://www.youtube.com/results?search_query=${encodeURIComponent(item.search || ('불로열방교회 ' + series.title + ' ' + item.ep + '강 ' + item.title))}`);
-    
-    // 비디오 ID 추출 (있으면 내장 플레이어로 즉시 방영)
-    let videoId = '';
-    if (item.url && item.url.includes('v=')) {
-      const match = item.url.match(/v=([a-zA-Z0-9_-]+)/);
-      if (match) videoId = match[1];
-    } else if (item.url && item.url.includes('youtu.be/')) {
-      const match = item.url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
-      if (match) videoId = match[1];
+  // 카드 그리드 렌더링 (Image 2 스타일)
+  gridEl.innerHTML = episodes.map(item => {
+    let thumbHtml = '';
+    if (folderMeta.thumb) {
+      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="card-thumb-img">`;
+    } else {
+      thumbHtml = `
+        <div class="card-thumb-placeholder ${folderMeta.bgClass}">
+          <span class="thumb-topic-tag">${folderMeta.title}</span>
+          <span class="thumb-korean-tag">${item.ep}강 / ${item.passage || ''}</span>
+        </div>
+      `;
     }
 
     return `
-      <div class="pilgrim-item-card" onclick="handleEpisodeClick('${videoId}', '${item.title.replace(/'/g, "\\'")}', '${ytUrl}')" style="cursor:pointer;">
-        <div class="p-item-left">
-          <span class="p-ep-badge">${item.ep}강</span>
-          <div class="p-info">
-            <h4 class="p-title">${item.title}</h4>
-            <div class="p-meta">
-              <span class="p-passage">📖 ${item.passage}</span>
-            </div>
-          </div>
+      <div class="video-thumb-card" onclick="playArchiveLecture('${folderKey}', ${item.ep})">
+        <div class="card-thumb-wrap">
+          ${thumbHtml}
+          <div class="play-btn-circle">▶</div>
         </div>
-        <div style="display:flex; gap:4px; align-items:center;">
-          <button type="button" class="p-watch-btn" onclick="event.stopPropagation(); handleEpisodeClick('${videoId}', '${item.title.replace(/'/g, "\\'")}', '${ytUrl}')">
-            <span>바로 방영</span> ▶
-          </button>
+        <div class="card-body">
+          <h4 class="card-title">${item.title}</h4>
+          <div class="card-meta-row">
+            <span class="card-author">👤 박훈 담임목사</span>
+            <span class="card-passage">📖 ${item.passage || (item.ep + '강')}</span>
+          </div>
         </div>
       </div>
     `;
   }).join('');
 }
 
-function handleEpisodeClick(videoId, title, fallbackUrl) {
-  if (videoId) {
-    const playerArea = document.getElementById('series-video-player-area');
-    const iframe = document.getElementById('series-video-iframe');
-    const titleSpan = document.getElementById('series-now-playing-title');
-    if (playerArea && iframe) {
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-      if (titleSpan) titleSpan.textContent = `▶ 방영 중: ${title}`;
-      playerArea.style.display = 'block';
-      playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
+function playArchiveLecture(folderKey, epNumber) {
+  let item = null;
+  let seriesTitle = '';
+
+  if (folderKey === 'pilgrim') {
+    const list = pilgrimDataCache || [];
+    const p = list.find(x => x.ep === epNumber);
+    if (p) {
+      item = {
+        ep: p.ep,
+        title: `${p.ep}강 - ${p.title}`,
+        passage: p.passage,
+        url: p.url,
+        search: `불로열방교회 천로역정 ${p.ep}강 ${p.title}`
+      };
+      seriesTitle = '천로역정 완주 강해';
+    }
+  } else if (archiveDataCache && archiveDataCache[folderKey]) {
+    const s = archiveDataCache[folderKey];
+    seriesTitle = s.title;
+    item = (s.episodes || []).find(x => x.ep === epNumber);
+  }
+
+  if (!item) return;
+
+  const playerArea = document.getElementById('archive-top-player');
+  const iframe = document.getElementById('archive-player-iframe');
+  const titleSpan = document.getElementById('archive-player-title');
+  const extLink = document.getElementById('archive-player-yt-link');
+
+  if (!playerArea || !iframe) return;
+
+  // 비디오 ID 추출
+  let videoId = '';
+  if (item.url) {
+    if (item.url.includes('v=')) {
+      const m = item.url.match(/v=([a-zA-Z0-9_-]+)/);
+      if (m) videoId = m[1];
+    } else if (item.url.includes('youtu.be/')) {
+      const m = item.url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+      if (m) videoId = m[1];
     }
   }
-  // videoId가 없거나 직접 이동 시 fallbackUrl로 즉시 새 창 열기
-  window.open(fallbackUrl, '_blank');
+
+  const queryTerm = item.search || ('불로열방교회 ' + item.title);
+  const extUrl = item.url || `https://www.youtube.com/results?search_query=${encodeURIComponent(queryTerm)}`;
+
+  if (extLink) extLink.href = extUrl;
+  if (titleSpan) titleSpan.textContent = `▶ 방영 중: ${item.title}`;
+
+  if (videoId) {
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  } else {
+    // 검색 임베드 또는 폴백 플레이어
+    iframe.src = `https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(queryTerm)}&autoplay=1`;
+  }
+
+  playerArea.style.display = 'block';
+  playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function closePlayerArea() {
-  const playerArea = document.getElementById('series-video-player-area');
-  const iframe = document.getElementById('series-video-iframe');
+function closeArchivePlayer() {
+  const playerArea = document.getElementById('archive-top-player');
+  const iframe = document.getElementById('archive-player-iframe');
   if (playerArea && iframe) {
     iframe.src = '';
     playerArea.style.display = 'none';
   }
 }
 
-function closeSeriesModal() {
-  closePlayerArea();
-  const modal = document.getElementById('series-modal');
-  if (modal) modal.remove();
-  document.body.style.overflow = '';
+/**
+ * 하위 호환 모달 뷰어 (GNB 드롭다운 등에서 호출 시 바로 해당 폴더로 이동 & 스크롤)
+ */
+async function openSermonSeriesModal(seriesKey) {
+  await selectArchiveFolder(seriesKey);
+  const section = document.getElementById('sermon-videos');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
 }
+
+async function openPilgrimModal() {
+  await selectArchiveFolder('pilgrim');
+  const section = document.getElementById('sermon-videos');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 
 
