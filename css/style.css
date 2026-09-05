@@ -1358,6 +1358,12 @@ img {
 .video-thumb-placeholder.bg-genesis {
   background: linear-gradient(135deg, #0284c7 0%, #0c4a6e 100%);
 }
+.video-thumb-placeholder.bg-exodus {
+  background: linear-gradient(135deg, #c2410c 0%, #7c2d12 100%);
+}
+.video-thumb-placeholder.bg-commandments {
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+}
 .video-thumb-placeholder.bg-pilgrim {
   background: linear-gradient(135deg, #475569 0%, #1e293b 100%);
 }
