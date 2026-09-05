@@ -1076,247 +1076,244 @@
     "category": "구약 강해",
     "desc": "구약 39권 성경 각 권의 역사적 배경, 중심 주제, 그리고 신약의 예수 그리스도를 가리키는 구속사적 맥락을 성도들의 눈높이에 맞추어 체계적으로 개관합니다.",
     "searchKeyword": "불로열방교회 구약성경 권별",
-    "playlistUrl": "https://www.youtube.com/watch?v=Go4OwdYguN0",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PLSaHerzUahU_NQbOVeFf4-nsRnXY_I3Sx",
     "episodes": [
       {
         "ep": 1,
-        "title": "창세기 - 창조와 타락, 그리고 언약의 시작",
-        "passage": "창세기 1~50장",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0",
-        "search": "불로열방교회 창세기 설교"
+        "title": "2022년 7월 24일 주일예배 (창세기 개관설교)",
+        "passage": "창세기",
+        "url": "https://www.youtube.com/watch?v=kKrE0AOYMuM"
       },
       {
         "ep": 2,
-        "title": "출애굽기 - 유월절 어린 양과 구원, 성막의 하나님",
-        "passage": "출애굽기 1~40장",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0",
-        "search": "불로열방교회 출애굽기 설교"
+        "title": "2022년 7월 31일 주일예배 (출애굽기 개관설교)",
+        "passage": "출애굽기",
+        "url": "https://www.youtube.com/watch?v=TElQnNzu980"
       },
       {
         "ep": 3,
-        "title": "레위기 개관 - 거룩하신 하나님 앞에서의 제사와 거룩한 삶",
-        "passage": "레위기 1~27장",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0",
-        "search": "불로열방교회 레위기 설교",
-        "date": "2022-08-07"
+        "title": "2022년 8월 7일 주일예배 (레위기 개관설교)",
+        "passage": "레위기",
+        "url": "https://www.youtube.com/watch?v=_2JK345r2rc"
       },
       {
         "ep": 4,
-        "title": "민수기 - 광야 여정과 하나님의 신실하신 인도하심",
-        "passage": "민수기 1~36장",
-        "search": "불로열방교회 민수기 설교"
+        "title": "2022년 8월 14일 주일예배 (민수기 개관설교)",
+        "passage": "민수기",
+        "url": "https://www.youtube.com/watch?v=rjpOctFPNQk"
       },
       {
         "ep": 5,
-        "title": "신명기 - 마음을 다하여 네 하나님 여호와를 사랑하라",
-        "passage": "신명기 1~34장",
-        "search": "불로열방교회 신명기 설교"
+        "title": "2022년 8월 21일 주일예배 (신명기 개관설교)",
+        "passage": "신명기",
+        "url": "https://www.youtube.com/watch?v=6nbz8Wuc6VE"
       },
       {
         "ep": 6,
-        "title": "여호수아 - 약속의 땅 정복과 믿음의 순종",
-        "passage": "여호수아 1~24장",
-        "search": "불로열방교회 여호수아 설교"
+        "title": "2022년 8월 28일 주일예배 (여호수아 개관설교)",
+        "passage": "여호수아",
+        "url": "https://www.youtube.com/watch?v=1IisPuQFn2U"
       },
       {
         "ep": 7,
-        "title": "사사기 - 자기 소견에 옳은 대로 행한 시대와 사사들",
-        "passage": "사사기 1~21장",
-        "search": "불로열방교회 사사기 설교"
+        "title": "2022년 9월 4일 주일예배 (사사기 개관설교)",
+        "passage": "사사기",
+        "url": "https://www.youtube.com/watch?v=KrJJanDc7uk"
       },
       {
         "ep": 8,
-        "title": "룻기 - 기업 무를 자(보아스)와 이방 여인의 은혜",
-        "passage": "룻기 1~4장",
-        "search": "불로열방교회 룻기 설교"
+        "title": "2022년 9월 11일 주일예배 (룻기 개관설교)",
+        "passage": "룻기",
+        "url": "https://www.youtube.com/watch?v=JokEHmQrsK4"
       },
       {
         "ep": 9,
-        "title": "사무엘상 - 한나의 기도, 사울의 실패, 다윗의 기름부음",
-        "passage": "사무엘상 1~31장",
-        "search": "불로열방교회 사무엘상 설교"
+        "title": "2022년 9월 18일 주일예배 (사무엘상 개관 설교)",
+        "passage": "사무엘상",
+        "url": "https://www.youtube.com/watch?v=ht36i9IQCkc"
       },
       {
         "ep": 10,
-        "title": "사무엘하 - 다윗 언약과 하나님의 영원한 나라",
-        "passage": "사무엘하 1~24장",
-        "search": "불로열방교회 사무엘하 설교"
+        "title": "2022년 9월 25일 주일예배 (사무엘하 개관설교)",
+        "passage": "사무엘하",
+        "url": "https://www.youtube.com/watch?v=ya0W65l1QWQ"
       },
       {
         "ep": 11,
-        "title": "열왕기상 - 솔로몬의 성전과 왕국의 분열, 엘리야의 사역",
-        "passage": "열왕기상 1~22장",
-        "search": "불로열방교회 열왕기상 설교"
+        "title": "2022년 10월 2일 주일예배 (열왕기상 개관설교)",
+        "passage": "열왕기상",
+        "url": "https://www.youtube.com/watch?v=G0x6tJ7QFpA"
       },
       {
         "ep": 12,
-        "title": "열왕기하 - 북이스라엘과 남유다의 멸망과 하나님의 경고",
-        "passage": "열왕기하 1~25장",
-        "search": "불로열방교회 열왕기하 설교"
+        "title": "2022년 10월 9일 주일예배 (열왕기하 개관설교)",
+        "passage": "열왕기하",
+        "url": "https://www.youtube.com/watch?v=0cbKpu81OWc"
       },
       {
         "ep": 13,
-        "title": "역대상 - 족보 속에 흐르는 하나님의 은혜와 성전 준비",
-        "passage": "역대상 1~29장",
-        "search": "불로열방교회 역대상 설교"
+        "title": "2022년 10월 16일 주일예배 (역대상 개관설교)",
+        "passage": "역대상",
+        "url": "https://www.youtube.com/watch?v=5jkg1MPf2oQ"
       },
       {
         "ep": 14,
-        "title": "역대하 - 성전 중심의 신앙 부흥과 회복",
-        "passage": "역대하 1~36장",
-        "search": "불로열방교회 역대하 설교"
+        "title": "2022년 10월 23일 주일예배 (역대하 개관설교)",
+        "passage": "역대하",
+        "url": "https://www.youtube.com/watch?v=6vOCUOBvmgE"
       },
       {
         "ep": 15,
-        "title": "에스라 - 포로 귀환과 제2성전 재건, 말씀 부흥",
-        "passage": "에스라 1~10장",
-        "search": "불로열방교회 에스라 설교"
+        "title": "2022년 10월 30일 주일예배 (에스라 개관설교)",
+        "passage": "에스라",
+        "url": "https://www.youtube.com/watch?v=msUq5Hu2uqk"
       },
       {
         "ep": 16,
-        "title": "느헤미야 - 예루살렘 성벽 재건과 거룩한 공동체 회복",
-        "passage": "느헤미야 1~13장",
-        "search": "불로열방교회 느헤미야 설교"
+        "title": "2022년 11월 6일 주일예배 (느헤미야 개관설교)",
+        "passage": "느헤미야",
+        "url": "https://www.youtube.com/watch?v=oD9f2iVZygM"
       },
       {
         "ep": 17,
-        "title": "에스더 - 보이지 않는 하나님의 섭리와 구원",
-        "passage": "에스더 1~10장",
-        "search": "불로열방교회 에스더 설교"
+        "title": "2022 11월 13일 주일예배 (에스더 개관설교)",
+        "passage": "에스더",
+        "url": "https://www.youtube.com/watch?v=pq2Bf0Pm778"
       },
       {
         "ep": 18,
-        "title": "욥기 - 의인의 고난과 하나님의 절대 주권",
-        "passage": "욥기 1~42장",
-        "search": "불로열방교회 욥기 설교"
+        "title": "11월 20일 주일예배 (욥기 개관설교)",
+        "passage": "욥기",
+        "url": "https://www.youtube.com/watch?v=krmlhr-xnzk"
       },
       {
         "ep": 19,
-        "title": "시편 - 성도의 찬양과 탄원, 메시아 예언",
-        "passage": "시편 1~150편",
-        "search": "불로열방교회 시편 강해"
+        "title": "2022년 11월 27일 주일예배 (시편 개관설교)",
+        "passage": "시편",
+        "url": "https://www.youtube.com/watch?v=bvnaY2IDdSw"
       },
       {
         "ep": 20,
-        "title": "잠언 - 여호와를 경외하는 것이 지혜의 근본이라",
-        "passage": "잠언 1~31장",
-        "search": "불로열방교회 잠언 설교"
+        "title": "2022년 12월 4일 주일예배 (잠언 개관설교)",
+        "passage": "잠언",
+        "url": "https://www.youtube.com/watch?v=M_v654kd7uw"
       },
       {
         "ep": 21,
-        "title": "전도서 - 헛되고 헛되도다, 오직 창조주를 기억하라",
-        "passage": "전도서 1~12장",
-        "search": "불로열방교회 전도서 설교"
+        "title": "2022년 12월 11일 주일예배 (전도서 개관설교)",
+        "passage": "전도서",
+        "url": "https://www.youtube.com/watch?v=kKf9IC9wUNQ"
       },
       {
         "ep": 22,
-        "title": "아가 - 신랑 되신 그리스도와 신부 된 교회의 사랑",
-        "passage": "아가 1~8장",
-        "search": "불로열방교회 아가 설교"
+        "title": "2022년 12월 18일 주일예배 (아가 개관설교)",
+        "passage": "아가",
+        "url": "https://www.youtube.com/watch?v=2Vizss4fjiE"
       },
       {
         "ep": 23,
-        "title": "이사야 - 고난받는 종 메시아와 임마누엘의 소망",
-        "passage": "이사야 1~66장",
-        "search": "불로열방교회 이사야 설교"
+        "title": "2022년 12월 25일 주일예배 (이사야 개관설교)",
+        "passage": "이사야",
+        "url": "https://www.youtube.com/watch?v=fJtkask7L4I"
       },
       {
         "ep": 24,
-        "title": "예레미야 - 눈물의 선지자와 새 언약의 약속",
-        "passage": "예레미야 1~52장",
-        "search": "불로열방교회 예레미야 설교"
+        "title": "2023년 1월 8일 주일예배 (예레미야 개관설교)",
+        "passage": "예레미야",
+        "url": "https://www.youtube.com/watch?v=Ot5mugtrkFk"
       },
       {
         "ep": 25,
-        "title": "예레미야애가 - 무너진 시온을 향한 슬픔과 여호와의 인자하심",
-        "passage": "예레미야애가 1~5장",
-        "search": "불로열방교회 예레미야애가 설교"
+        "title": "2023년 1월 15일 주일예배 (예레미야 애가 개관설교)",
+        "passage": "예레미야",
+        "url": "https://www.youtube.com/watch?v=CPV3EMpwJu0"
       },
       {
         "ep": 26,
-        "title": "에스겔 - 마른 뼈의 부활과 새 성전의 환상",
-        "passage": "에스겔 1~48장",
-        "search": "불로열방교회 에스겔 설교"
+        "title": "2023년 1월 22일 주일예배 (에스겔 개관설교)",
+        "passage": "에스겔",
+        "url": "https://www.youtube.com/watch?v=HJ_brS9qEI4"
       },
       {
         "ep": 27,
-        "title": "다니엘 - 제국들의 흥망성쇠와 영원한 하나님의 나라",
-        "passage": "다니엘 1~12장",
-        "search": "불로열방교회 다니엘 설교"
+        "title": "2023년 1월 29일 주일예배 (다니엘 개관설교)",
+        "passage": "다니엘",
+        "url": "https://www.youtube.com/watch?v=YGyLP_IUuGc"
       },
       {
         "ep": 28,
-        "title": "호세아 - 변함없는 하나님의 긍휼과 사랑",
-        "passage": "호세아 1~14장",
-        "search": "불로열방교회 호세아 설교"
+        "title": "2023년 2월 5일 주일예배 (호세아 개관설교)",
+        "passage": "호세아",
+        "url": "https://www.youtube.com/watch?v=UaLG4E722YM"
       },
       {
         "ep": 29,
-        "title": "요엘 - 여호와의 날과 성령 강림의 약속",
-        "passage": "요엘 1~3장",
-        "search": "불로열방교회 요엘 설교"
+        "title": "2023년 2월 12일 주일예배 (요엘 개관설교)",
+        "passage": "요엘",
+        "url": "https://www.youtube.com/watch?v=-IzqJJ9_Tr8"
       },
       {
         "ep": 30,
-        "title": "아모스 - 오직 정의를 물 같이, 공의를 마르지 않는 강 같이",
-        "passage": "아모스 1~9장",
-        "search": "불로열방교회 아모스 설교"
+        "title": "2023년 2월 19일 주일예배 (아모스 개관설교)",
+        "passage": "아모스",
+        "url": "https://www.youtube.com/watch?v=N6v84A_WYBU"
       },
       {
         "ep": 31,
-        "title": "오바댜 - 교만한 에돔을 향한 심판과 시온의 승리",
-        "passage": "오바댜 1장",
-        "search": "불로열방교회 오바댜 설교"
+        "title": "2023년 2월 26일 주일예배 (오바댜 개관설교)",
+        "passage": "오바댜",
+        "url": "https://www.youtube.com/watch?v=HWITURAWBmk"
       },
       {
         "ep": 32,
-        "title": "요나 - 물고기 뱃속의 회개와 이방인을 향한 하나님의 사랑",
-        "passage": "요나 1~4장",
-        "search": "불로열방교회 요나 설교"
+        "title": "2023년 3월 5일 주일예배 (요나 개관설교)",
+        "passage": "요나",
+        "url": "https://www.youtube.com/watch?v=0oV1s7bAQac"
       },
       {
         "ep": 33,
-        "title": "미가 - 베들레헴 에브라다야, 다스릴 자가 네게서 나오리라",
-        "passage": "미가 1~7장",
-        "search": "불로열방교회 미가 설교"
+        "title": "2023년 3월 12일 주일예배 (미가 개관설교)",
+        "passage": "미가",
+        "url": "https://www.youtube.com/watch?v=-WPc6m21DO0"
       },
       {
         "ep": 34,
-        "title": "나훔 - 니느웨의 멸망과 하나님의 공의로운 심판",
-        "passage": "나훔 1~3장",
-        "search": "불로열방교회 나훔 설교"
+        "title": "2023년 3월 19일 주일예배 (나훔 개관설교)",
+        "passage": "나훔",
+        "url": "https://www.youtube.com/watch?v=ew8nf1xMUkQ"
       },
       {
         "ep": 35,
-        "title": "하박국 - 비록 무화과나무가 무성하지 못할지라도 (믿음으로 살리라)",
-        "passage": "하박국 1~3장",
-        "search": "불로열방교회 하박국 설교"
+        "title": "2023년 3월 26일 주일예배 (하박국 개관설교)",
+        "passage": "하박국",
+        "url": "https://www.youtube.com/watch?v=M_bjuVvjpLY"
       },
       {
         "ep": 36,
-        "title": "스바냐 - 여호와의 질투의 불과 기쁨을 이기지 못하시는 하나님",
-        "passage": "스바냐 1~3장",
-        "search": "불로열방교회 스바냐 설교"
+        "title": "2023년 4월 2일 주일예배 (스바냐 개관설교)",
+        "passage": "스바냐",
+        "url": "https://www.youtube.com/watch?v=nRPixyNmTtM"
       },
       {
         "ep": 37,
-        "title": "학개 - 너희는 성전을 건축하라 (성전 재건 독려)",
-        "passage": "학개 1~2장",
-        "search": "불로열방교회 학개 설교"
+        "title": "2023년 4월 9일 주일예배 (학개 개관설교)",
+        "passage": "학개",
+        "url": "https://www.youtube.com/watch?v=JQgod_9LLME"
       },
       {
         "ep": 38,
-        "title": "스가랴 - 이는 힘으로 되지 아니하고 오직 나의 영으로 되느니라",
-        "passage": "스가랴 1~14장",
-        "search": "불로열방교회 스가랴 설교"
+        "title": "2023년 4월 16일 주일예배 (스가랴 개관설교)",
+        "passage": "스가랴",
+        "url": "https://www.youtube.com/watch?v=5HPt2xsd9iw"
       },
       {
         "ep": 39,
-        "title": "말라기 - 공의로운 해가 떠올라서 (엘리야의 도래와 메시아 대망)",
-        "passage": "말라기 1~4장",
-        "search": "불로열방교회 말라기 설교"
+        "title": "2023년 4월 23일 주일예배 (말라기 개관설교)",
+        "passage": "말라기",
+        "url": "https://www.youtube.com/watch?v=eJ7oxxmHE18"
       }
-    ]
+    ],
+    "count": 39
   },
   "dort": {
     "id": "dort",
