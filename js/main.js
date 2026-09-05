@@ -68,4 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 비디오 강해 시리즈 카테고리 필터링
+  const videoFilterBtns = document.querySelectorAll('.v-tab-btn');
+  const videoCards = document.querySelectorAll('.video-card');
+
+  videoFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      videoFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-vfilter');
+
+      videoCards.forEach(card => {
+        const cardCat = card.getAttribute('data-vcat');
+        if (filterValue === 'all' || cardCat === filterValue) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 });
