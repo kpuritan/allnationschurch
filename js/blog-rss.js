@@ -1,201 +1,132 @@
 /**
- * 불로 열방교회 네이버 블로그 실시간 RSS 연동 모듈
- * Blog URL: https://blog.naver.com/blallnationsch
- * RSS URL: https://rss.blog.naver.com/blallnationsch.xml
+ * 불로 열방교회 홈페이지 자체 글 관리 시스템
+ * posts/posts.json 에서 글을 불러와 표시합니다
  */
 
-const NAVER_BLOG_ID = 'blallnationsch';
-const NAVER_BLOG_RSS = `https://rss.blog.naver.com/${NAVER_BLOG_ID}.xml`;
-
-// 백업용 최신 글 데이터 (오프라인 / CORS 차단 시 fallback)
-const FALLBACK_POSTS = [
-  {
-    title: "2023년 8월 13일 주일예배 (로마서 강해 16 - 이신칭의 복음의 귀결)",
-    link: "https://blog.naver.com/blallnationsch/223651000890",
-    pubDate: "2024.11.07",
-    category: "로마서 강해",
-    description: "2023년 8월 13일 주일예배 설교 말씀입니다. 이신칭의 복음의 귀결에 관한 말씀으로 오직 의인은 믿음으로 살리라 함과 같은 은혜를 나눕니다."
-  },
-  {
-    title: "2023년 8월 6일 주일예배 (로마서 강해 15 - 하나님이 세우신 화목제물)",
-    link: "https://blog.naver.com/blallnationsch/223651000254",
-    pubDate: "2024.11.07",
-    category: "로마서 강해",
-    description: "2023년 8월 6일 주일예배 설교 말씀입니다. 하나님께서 세우신 화목제물 되신 예수 그리스도의 십자가 은혜를 증거합니다."
-  },
-  {
-    title: "2023년 7월 30일 주일예배 (로마서 강해 14 - 그러나 이제는)",
-    link: "https://blog.naver.com/blallnationsch/223650999185",
-    pubDate: "2024.11.07",
-    category: "로마서 강해",
-    description: "율법 외에 하나님의 한 의가 나타났으니... '그러나 이제는' 우리에게 나타난 하나님의 의와 구원의 은혜를 묵상합니다."
-  },
-  {
-    title: "2023년 7월 23일 주일예배 (로마서 강해 13 - 의인은 없나니 하나도 없으며)",
-    link: "https://blog.naver.com/blallnationsch/223650998476",
-    pubDate: "2024.11.07",
-    category: "로마서 강해",
-    description: "로마서 3장 말씀 강해 - 기록된 바 의인은 없나니 하나도 없으며 깨닫는 자도 없고 하나님을 찾는 자도 없는 인간의 실존과 하나님의 은혜."
-  },
-  {
-    title: "불로 열방교회 주일예배 및 신앙고백 안내",
-    link: "https://blog.naver.com/blallnationsch",
-    pubDate: "상시안내",
-    category: "교회소식",
-    description: "웨스트민스터 신앙고백서와 하이델베르크 요리문답을 통해 성경을 바르게 해석하고 삶에 적용하는 불로 열방교회입니다."
-  }
-];
-
-let allBlogPosts = [];
+let allPosts = [];
 let currentCategory = 'all';
 
-// 날짜 포맷 함수
+// 날짜 포맷
 function formatDate(dateStr) {
-  try {
-    const d = new Date(dateStr);
-    if (isNaN(d.getTime())) return dateStr;
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-    return `${year}.${month}.${day}`;
-  } catch (e) {
-    return dateStr;
-  }
+  return dateStr || '';
 }
 
-// HTML 태그 제거 및 텍스트 정제
-function stripHtml(html) {
-  if (!html) return '';
-  const tmp = document.createElement('DIV');
-  tmp.innerHTML = html;
-  return tmp.textContent || tmp.innerText || '';
-}
-
-// 네이버 블로그 RSS 피드 가져오기
-async function fetchNaverBlogPosts() {
+// 글 목록 불러오기
+async function fetchPosts() {
   const container = document.getElementById('blog-posts-container');
   if (!container) return;
 
-  // 로딩 상태 표시
   container.innerHTML = `
     <div class="blog-loading">
       <div class="spinner"></div>
-      <p>네이버 블로그에서 최신 말씀과 소식을 불러오는 중입니다...</p>
+      <p>말씀을 불러오는 중입니다...</p>
     </div>
   `;
 
-  // RSS 프록시 API 엔드포인트 목록 (순차적 시도)
-  const proxyEndpoints = [
-    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(NAVER_BLOG_RSS)}`,
-    `https://api.allorigins.win/get?url=${encodeURIComponent(NAVER_BLOG_RSS)}`
-  ];
-
-  let fetched = false;
-
-  for (const url of proxyEndpoints) {
-    try {
-      const response = await fetch(url, { cache: 'no-cache' });
-      if (!response.ok) continue;
-      
-      const data = await response.json();
-      
-      if (data.items && Array.isArray(data.items)) {
-        // rss2json 구조
-        allBlogPosts = data.items.map(item => ({
-          title: item.title,
-          link: item.link,
-          pubDate: formatDate(item.pubDate),
-          category: item.categories && item.categories.length > 0 ? item.categories[0] : (item.title.includes('강해') ? '로마서 강해' : '주일예배'),
-          description: stripHtml(item.description || item.content).replace(/#[^\s]+/g, '').trim() || item.title
-        }));
-        fetched = true;
-        break;
-      } else if (data.contents) {
-        // allorigins XML 파싱 구조
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(data.contents, "text/xml");
-        const items = xmlDoc.querySelectorAll("item");
-        
-        if (items.length > 0) {
-          allBlogPosts = Array.from(items).map(item => {
-            const title = item.querySelector("title") ? item.querySelector("title").textContent : '';
-            const link = item.querySelector("link") ? item.querySelector("link").textContent : '';
-            const pubDate = item.querySelector("pubDate") ? formatDate(item.querySelector("pubDate").textContent) : '';
-            const category = item.querySelector("category") ? item.querySelector("category").textContent : (title.includes('강해') ? '로마서 강해' : '주일예배');
-            const desc = item.querySelector("description") ? stripHtml(item.querySelector("description").textContent) : '';
-            return {
-              title,
-              link,
-              pubDate,
-              category,
-              description: desc.replace(/#[^\s]+/g, '').trim() || title
-            };
-          });
-          fetched = true;
-          break;
-        }
-      }
-    } catch (err) {
-      console.warn('Proxy fetch attempt error:', err);
-    }
+  try {
+    const response = await fetch('posts/posts.json?t=' + Date.now());
+    if (!response.ok) throw new Error('파일을 불러올 수 없습니다');
+    allPosts = await response.json();
+    // 최신 글이 위로
+    allPosts.sort((a, b) => b.date.localeCompare(a.date));
+  } catch (err) {
+    console.error('글 불러오기 실패:', err);
+    allPosts = [];
   }
 
-  // 모든 API 실패 시 Fallback 데이터 사용
-  if (!fetched || allBlogPosts.length === 0) {
-    allBlogPosts = FALLBACK_POSTS;
-  }
-
-  renderBlogPosts();
+  renderPosts();
 }
 
-// 블로그 포스트 카드 렌더링
-function renderBlogPosts() {
+// 글 카드 렌더링
+function renderPosts() {
   const container = document.getElementById('blog-posts-container');
   if (!container) return;
 
-  const filteredPosts = currentCategory === 'all' 
-    ? allBlogPosts 
-    : allBlogPosts.filter(p => p.category.includes(currentCategory) || p.title.includes(currentCategory));
+  const filtered = currentCategory === 'all'
+    ? allPosts
+    : allPosts.filter(p => p.category.includes(currentCategory) || p.title.includes(currentCategory));
 
-  if (filteredPosts.length === 0) {
+  if (filtered.length === 0) {
     container.innerHTML = `
       <div class="blog-loading">
-        <p>해당 카테고리의 글이 없습니다.</p>
+        <p>등록된 글이 없습니다.</p>
       </div>
     `;
     return;
   }
 
-  container.innerHTML = filteredPosts.map(post => `
-    <article class="blog-card">
+  container.innerHTML = filtered.map(post => `
+    <article class="blog-card" onclick="openPost('${post.id}')" style="cursor:pointer;">
       <div class="blog-card-thumb">
-        <span class="blog-card-thumb-badge">네이버 블로그</span>
+        <span class="blog-card-thumb-badge">${post.category}</span>
         <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.35">
           <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
-          <path d="M6 6h10"/>
-          <path d="M6 10h10"/>
+          <path d="M6 6h10"/><path d="M6 10h10"/>
         </svg>
       </div>
       <div class="blog-card-body">
-        <span class="blog-card-category">${post.category || '말씀 강해'}</span>
-        <h3 class="blog-card-title">
-          <a href="${post.link}" target="_blank" rel="noopener noreferrer" title="${post.title}">
-            ${post.title}
-          </a>
-        </h3>
-        <p class="blog-card-snippet">${post.description}</p>
+        <span class="blog-card-category">${post.category}</span>
+        <h3 class="blog-card-title">${post.title}</h3>
+        <p class="blog-card-snippet">${post.summary}</p>
         <div class="blog-card-footer">
-          <span class="blog-card-date">📅 ${post.pubDate}</span>
-          <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="blog-card-link-btn">
-            블로그 읽기 ➔
-          </a>
+          <span class="blog-card-date">📅 ${post.date}</span>
+          <span class="blog-card-link-btn">자세히 보기 ➔</span>
         </div>
       </div>
     </article>
   `).join('');
 }
 
-// 필터 탭 초기화
+// 글 상세보기 (모달)
+function openPost(id) {
+  const post = allPosts.find(p => p.id === id);
+  if (!post) return;
+
+  // 기존 모달 제거
+  const existing = document.getElementById('post-modal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'post-modal';
+  modal.style.cssText = `
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.6); z-index:9999;
+    display:flex; align-items:center; justify-content:center;
+    padding: 1rem;
+  `;
+
+  const contentHtml = post.content
+    .split('\n')
+    .map(line => line.trim() ? `<p style="margin-bottom:1rem; line-height:1.8;">${line}</p>` : '<br>')
+    .join('');
+
+  modal.innerHTML = `
+    <div style="background:#fff; border-radius:16px; max-width:700px; width:100%;
+      max-height:85vh; overflow-y:auto; padding:2rem; position:relative;">
+      <button onclick="document.getElementById('post-modal').remove()"
+        style="position:absolute; top:1rem; right:1rem; background:none; border:none;
+        font-size:1.5rem; cursor:pointer; color:#666;">✕</button>
+      <span style="display:inline-block; background:#e8f0e8; color:#2d5a2d;
+        padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem; margin-bottom:1rem;">
+        ${post.category}
+      </span>
+      <h2 style="font-size:1.4rem; font-weight:800; color:#1a2e1a; margin-bottom:0.5rem; line-height:1.4;">
+        ${post.title}
+      </h2>
+      <p style="color:#888; font-size:0.9rem; margin-bottom:1.5rem;">📅 ${post.date}</p>
+      <hr style="border:none; border-top:1px solid #eee; margin-bottom:1.5rem;">
+      <div style="color:#333; font-size:0.97rem;">${contentHtml}</div>
+    </div>
+  `;
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.remove();
+  });
+
+  document.body.appendChild(modal);
+}
+
+// 필터 탭
 function setupFilterTabs() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   filterButtons.forEach(btn => {
@@ -203,13 +134,13 @@ function setupFilterTabs() {
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategory = btn.getAttribute('data-filter') || 'all';
-      renderBlogPosts();
+      renderPosts();
     });
   });
 }
 
-// DOM 로드 시 실행
+// 초기화
 document.addEventListener('DOMContentLoaded', () => {
   setupFilterTabs();
-  fetchNaverBlogPosts();
+  fetchPosts();
 });
