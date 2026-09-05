@@ -26,19 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburgerBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // 모바일 환경에서 드롭다운 토글
-    gnbItems.forEach(item => {
-      const link = item.querySelector('.gnb-link');
-      if (link && window.innerWidth <= 768) {
-        link.addEventListener('click', (e) => {
-          const dropdown = item.querySelector('.gnb-dropdown');
-          if (dropdown) {
-            item.classList.toggle('active');
-          }
-        });
-      }
-    });
-
     // 링크 클릭 시 모바일 메뉴 닫기
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -49,27 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 부드러운 스크롤 네비게이션
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        e.preventDefault();
-        const headerOffset = 80;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // 비디오 강해 시리즈 카테고리 필터링 (기존 지원)
+  // 비디오 강해 시리즈 카테고리 필터링
   const videoFilterBtns = document.querySelectorAll('.v-tab-btn');
   if (videoFilterBtns.length > 0) {
     videoFilterBtns.forEach(btn => {
@@ -89,6 +56,54 @@ document.addEventListener('DOMContentLoaded', () => {
   // BGM 최초 클릭 자동재생 리스너 (브라우저 오디오 정책)
   document.addEventListener('click', initBgmOnFirstInteraction, { once: true });
 });
+
+/**
+ * ==========================================================
+ * 📑 탭/페이지 전환형 네비게이션 시스템 (SPA Navigation)
+ * ==========================================================
+ */
+function navigateToPage(pageId, subFolderKey) {
+  // 1. 모든 페이지 뷰 숨기기
+  const pages = document.querySelectorAll('.page-view');
+  pages.forEach(p => {
+    p.classList.remove('active');
+  });
+
+  // 2. 대상 페이지 활성화
+  const targetPage = document.getElementById('page-' + pageId);
+  if (targetPage) {
+    targetPage.classList.add('active');
+  }
+
+  // 3. GNB 활성 메뉴 표시
+  document.querySelectorAll('.gnb-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === '#' + pageId || (pageId === 'home' && href === '#home')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // 4. 모바일 메뉴 닫기
+  const gnbMenu = document.querySelector('.gnb-menu');
+  if (gnbMenu && gnbMenu.classList.contains('open')) {
+    gnbMenu.classList.remove('open');
+  }
+
+  // 5. 만약 특정 말씀 강해 폴더가 지정된 경우 폴더 선택
+  if (pageId === 'sermons' && subFolderKey) {
+    if (subFolderKey === 'news') {
+      const newsSection = document.getElementById('sermons-news');
+      if (newsSection) newsSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      selectArchiveFolder(subFolderKey);
+    }
+  }
+
+  // 6. 상단으로 부드럽게 스크롤
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 /**
  * ==========================================================
@@ -388,6 +403,12 @@ function renderArchiveFolderContent(folderKey, query) {
   }).join('');
 }
 
+function extractYouTubeId(url) {
+  if (!url) return '';
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+  return match ? match[1] : '';
+}
+
 function playArchiveLecture(folderKey, epNumber) {
   let item = null;
   let seriesTitle = '';
@@ -416,7 +437,6 @@ function playArchiveLecture(folderKey, epNumber) {
   const playerArea = document.getElementById('archive-top-player');
   const iframe = document.getElementById('archive-player-iframe');
   const titleSpan = document.getElementById('archive-player-title');
-  const extLink = document.getElementById('archive-player-yt-link');
 
   if (!playerArea || !iframe) return;
 
@@ -424,21 +444,18 @@ function playArchiveLecture(folderKey, epNumber) {
   pauseBgm();
 
   // 비디오 ID 추출
-  let videoId = '';
-  if (item.url) {
-    if (item.url.includes('v=')) {
-      const m = item.url.match(/v=([a-zA-Z0-9_-]+)/);
-      if (m) videoId = m[1];
-    } else if (item.url.includes('youtu.be/')) {
-      const m = item.url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
-      if (m) videoId = m[1];
+  let videoId = extractYouTubeId(item.url);
+  
+  // 만약 개별 videoId가 등록되지 않은 경우 불로열방교회 대표 영상 ID로 안전하게 폴백
+  if (!videoId) {
+    if (archiveDataCache && archiveDataCache[folderKey] && archiveDataCache[folderKey].playlistUrl) {
+      videoId = extractYouTubeId(archiveDataCache[folderKey].playlistUrl);
+    }
+    if (!videoId) {
+      videoId = 'Go4OwdYguN0'; // 도르트 신조 및 불로열방교회 대표 기본 영상 ID
     }
   }
 
-  const queryTerm = item.search || ('불로열방교회 ' + item.title);
-  const extUrl = item.url || `https://www.youtube.com/results?search_query=${encodeURIComponent(queryTerm)}`;
-
-  if (extLink) extLink.href = extUrl;
   if (titleSpan) titleSpan.textContent = `▶ 방영 중: ${item.title}`;
 
   const pdfLink = document.getElementById('archive-player-pdf-link');
@@ -451,11 +468,7 @@ function playArchiveLecture(folderKey, epNumber) {
     }
   }
 
-  if (videoId) {
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-  } else {
-    iframe.src = `https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(queryTerm)}&autoplay=1`;
-  }
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
 
   playerArea.style.display = 'block';
   playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -471,15 +484,11 @@ function closeArchivePlayer() {
 }
 
 async function openSermonSeriesModal(seriesKey) {
-  await selectArchiveFolder(seriesKey);
-  const section = document.getElementById('sermon-videos');
-  if (section) section.scrollIntoView({ behavior: 'smooth' });
+  navigateToPage('sermons', seriesKey);
 }
 
 async function openPilgrimModal() {
-  await selectArchiveFolder('pilgrim');
-  const section = document.getElementById('sermon-videos');
-  if (section) section.scrollIntoView({ behavior: 'smooth' });
+  navigateToPage('sermons', 'pilgrim');
 }
 
 /**
