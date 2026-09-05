@@ -960,29 +960,37 @@
       renderPostsTable();
     }
 
+    const DEFAULT_GH_TOKEN = 'ghp_tEitadzTJxjyvvIMyGmXfrc8qAI5o1RFIisB';
+    const DEFAULT_GH_REPO = 'kpuritan/allnationschurch';
+    const DEFAULT_GH_BRANCH = 'main';
+
     // 5. GitHub API 연동 로직
     function loadGitHubSettings() {
       const saved = localStorage.getItem(GH_SETTINGS_KEY);
+      let cfg = { repo: DEFAULT_GH_REPO, branch: DEFAULT_GH_BRANCH, token: DEFAULT_GH_TOKEN };
       if (saved) {
         try {
-          const cfg = JSON.parse(saved);
-          if (cfg.repo) document.getElementById('gh-repo').value = cfg.repo;
-          if (cfg.branch) document.getElementById('gh-branch').value = cfg.branch;
-          if (cfg.token) {
-            document.getElementById('gh-token').value = cfg.token;
-            updateGhStatusBox(true, '토큰이 설정되어 있습니다.');
-          }
+          const parsed = JSON.parse(saved);
+          cfg = { ...cfg, ...parsed };
         } catch (e) {
           console.error(e);
         }
+      }
+      
+      if (document.getElementById('gh-repo')) document.getElementById('gh-repo').value = cfg.repo || DEFAULT_GH_REPO;
+      if (document.getElementById('gh-branch')) document.getElementById('gh-branch').value = cfg.branch || DEFAULT_GH_BRANCH;
+      if (document.getElementById('gh-token')) document.getElementById('gh-token').value = cfg.token || DEFAULT_GH_TOKEN;
+      
+      if (cfg.token) {
+        updateGhStatusBox(true, `GitHub 저장소(${cfg.repo})와 자동 연동되었습니다.`);
       }
     }
 
     function handleSaveGitHubSettings(e) {
       e.preventDefault();
-      const repo = document.getElementById('gh-repo').value.trim();
-      const branch = document.getElementById('gh-branch').value.trim();
-      const token = document.getElementById('gh-token').value.trim();
+      const repo = document.getElementById('gh-repo').value.trim() || DEFAULT_GH_REPO;
+      const branch = document.getElementById('gh-branch').value.trim() || DEFAULT_GH_BRANCH;
+      const token = document.getElementById('gh-token').value.trim() || DEFAULT_GH_TOKEN;
 
       const cfg = { repo, branch, token };
       localStorage.setItem(GH_SETTINGS_KEY, JSON.stringify(cfg));
@@ -1016,8 +1024,8 @@
     async function testGitHubConnection() {
       const saved = localStorage.getItem(GH_SETTINGS_KEY);
       const cfg = saved ? JSON.parse(saved) : null;
-      const token = (cfg && cfg.token) || document.getElementById('gh-token').value.trim();
-      const repo = (cfg && cfg.repo) || document.getElementById('gh-repo').value.trim() || 'kpuritan/allnationschurch';
+      const token = (cfg && cfg.token) || document.getElementById('gh-token')?.value.trim() || DEFAULT_GH_TOKEN;
+      const repo = (cfg && cfg.repo) || document.getElementById('gh-repo')?.value.trim() || DEFAULT_GH_REPO;
 
       if (!token) {
         alert('GitHub 토큰을 입력하고 [저장하기]를 먼저 눌러주세요.');
@@ -1089,9 +1097,9 @@
     async function syncAllToGitHub() {
       const saved = localStorage.getItem(GH_SETTINGS_KEY);
       const cfg = saved ? JSON.parse(saved) : null;
-      const token = (cfg && cfg.token) || document.getElementById('gh-token')?.value.trim();
-      const repo = (cfg && cfg.repo) || 'kpuritan/allnationschurch';
-      const branch = (cfg && cfg.branch) || 'main';
+      const token = (cfg && cfg.token) || document.getElementById('gh-token')?.value.trim() || DEFAULT_GH_TOKEN;
+      const repo = (cfg && cfg.repo) || document.getElementById('gh-repo')?.value.trim() || DEFAULT_GH_REPO;
+      const branch = (cfg && cfg.branch) || document.getElementById('gh-branch')?.value.trim() || DEFAULT_GH_BRANCH;
 
       if (!token) {
         alert('GitHub 토큰이 등록되어 있지 않습니다. [4. GitHub 연동] 탭에서 토큰을 먼저 입력해 주세요.');
