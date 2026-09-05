@@ -108,24 +108,50 @@ const ARCHIVE_FOLDERS = [
 let currentFolderKey = 'ot';
 let archiveDataCache = null;
 let pilgrimDataCache = null;
+let activeFoldersList = ARCHIVE_FOLDERS;
+
+function getEffectiveFolders() {
+  const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1');
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      if (parsed.folders && parsed.folders.length > 0) {
+        return parsed.folders;
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  return ARCHIVE_FOLDERS;
+}
 
 async function initArchiveSystem() {
   const folderListEl = document.getElementById('archive-folder-list');
   if (!folderListEl) return;
 
-  // 1. 좌측 폴더 목록 렌더링
-  folderListEl.innerHTML = ARCHIVE_FOLDERS.map(f => `
-    <li class="archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
-      <div class="folder-name-wrap">
-        <span class="folder-icon">📁</span>
-        <span>${f.title}</span>
-      </div>
-      <span class="folder-count-badge">${f.count}</span>
-    </li>
-  `).join('');
-
-  // 2. 데이터 미리 로드
+  // 1. 데이터 미리 로드
   await loadArchiveData();
+
+  activeFoldersList = getEffectiveFolders();
+
+  // 2. 좌측 폴더 목록 렌더링
+  folderListEl.innerHTML = activeFoldersList.map(f => {
+    let epCount = f.count;
+    if (archiveDataCache && archiveDataCache[f.key]) {
+      epCount = `${(archiveDataCache[f.key].episodes || []).length}편`;
+    } else if (f.key === 'pilgrim' && pilgrimDataCache) {
+      epCount = `${pilgrimDataCache.length}강`;
+    }
+    return `
+      <li class="archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
+        <div class="folder-name-wrap">
+          <span class="folder-icon">${f.icon || '📁'}</span>
+          <span>${f.title}</span>
+        </div>
+        <span class="folder-count-badge">${epCount}</span>
+      </li>
+    `;
+  }).join('');
 
   // 3. 기본 선택 폴더 렌더링
   renderArchiveFolderContent(currentFolderKey, '');
@@ -140,6 +166,18 @@ async function initArchiveSystem() {
 }
 
 async function loadArchiveData() {
+  const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1');
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      if (parsed.archive) {
+        archiveDataCache = parsed.archive;
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   if (!archiveDataCache) {
     try {
       const res = await fetch('data/sermons_archive.json?v=' + Date.now());
@@ -183,7 +221,8 @@ function renderArchiveFolderContent(folderKey, query) {
   const gridEl = document.getElementById('archive-video-grid');
   if (!gridEl) return;
 
-  const folderMeta = ARCHIVE_FOLDERS.find(f => f.key === folderKey) || ARCHIVE_FOLDERS[0];
+  const folders = getEffectiveFolders();
+  const folderMeta = folders.find(f => f.key === folderKey) || folders[0] || ARCHIVE_FOLDERS[0];
 
   let episodes = [];
   let seriesTitle = folderMeta.title;
@@ -234,12 +273,14 @@ function renderArchiveFolderContent(folderKey, query) {
       thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="card-thumb-img">`;
     } else {
       thumbHtml = `
-        <div class="card-thumb-placeholder ${folderMeta.bgClass}">
+        <div class="card-thumb-placeholder ${folderMeta.bgClass || 'bg-ot'}">
           <span class="thumb-topic-tag">${folderMeta.title}</span>
           <span class="thumb-korean-tag">${item.ep}강 / ${item.passage || ''}</span>
         </div>
       `;
     }
+
+    const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.72rem; padding:2px 6px; border-radius:4px; font-weight:700; margin-left:6px;">PDF 교재</span>` : '';
 
     return `
       <div class="video-thumb-card" onclick="playArchiveLecture('${folderKey}', ${item.ep})">
@@ -248,7 +289,7 @@ function renderArchiveFolderContent(folderKey, query) {
           <div class="play-btn-circle">▶</div>
         </div>
         <div class="card-body">
-          <h4 class="card-title">${item.title}</h4>
+          <h4 class="card-title">${item.title} ${pdfBadge}</h4>
           <div class="card-meta-row">
             <span class="card-author">👤 박훈 담임목사</span>
             <span class="card-passage">📖 ${item.passage || (item.ep + '강')}</span>
@@ -308,6 +349,16 @@ function playArchiveLecture(folderKey, epNumber) {
 
   if (extLink) extLink.href = extUrl;
   if (titleSpan) titleSpan.textContent = `▶ 방영 중: ${item.title}`;
+
+  const pdfLink = document.getElementById('archive-player-pdf-link');
+  if (pdfLink) {
+    if (item.pdfUrl) {
+      pdfLink.href = item.pdfUrl;
+      pdfLink.style.display = 'inline-flex';
+    } else {
+      pdfLink.style.display = 'none';
+    }
+  }
 
   if (videoId) {
     iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;

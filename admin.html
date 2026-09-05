@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>불로 열방교회 | 관리자 모드 (Admin CMS)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --admin-bg: #f1f5f9;
+      --admin-card: #ffffff;
+      --admin-primary: #0f172a;
+      --admin-accent: #c59b27;
+      --admin-border: #cbd5e1;
+    }
+
+    body {
+      background-color: var(--admin-bg);
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 로그인 잠금 화면 */
+    #admin-lock-screen {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    .lock-box {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .lock-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--admin-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .lock-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 1.8rem;
+    }
+
+    .pin-input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+      letter-spacing: 4px;
+      border: 2px solid var(--admin-border);
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .pin-input:focus {
+      border-color: var(--admin-accent);
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--admin-primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-login:hover {
+      background: #334155;
+    }
+
+    /* 관리자 헤더 */
+    .admin-header {
+      background: var(--admin-primary);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .admin-header-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .admin-header-nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .admin-nav-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .admin-nav-link:hover {
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+    }
+
+    /* 관리자 레이아웃 */
+    .admin-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .admin-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--admin-border);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .admin-tab-btn {
+      padding: 0.8rem 1.4rem;
+      background: transparent;
+      border: none;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #64748b;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+
+    .admin-tab-btn.active {
+      color: var(--admin-primary);
+      border-bottom-color: var(--admin-accent);
+      background: #ffffff;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .admin-panel {
+      display: none;
+      background: #ffffff;
+      border: 1px solid var(--admin-border);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    .admin-panel.active {
+      display: block;
+    }
+
+    /* 폼 스타일 */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--admin-primary);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--admin-border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      outline: none;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--admin-primary);
+      box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .btn-submit {
+      background: var(--admin-accent);
+      color: #ffffff;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: #b58c20;
+    }
+
+    /* 리스트 테이블 */
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .admin-table th, .admin-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--admin-border);
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .admin-table th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: var(--admin-primary);
+    }
+
+    .btn-sm-del {
+      background: #ef4444;
+      color: #ffffff;
+      border: none;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .alert-box {
+      padding: 1rem 1.2rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 관리자 PIN 로그인 모달 -->
+  <div id="admin-lock-screen">
+    <div class="lock-box">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">✝️</div>
+      <h2 class="lock-title">불로 열방교회 관리자 모드</h2>
+      <p class="lock-desc">말씀 강해 폴더 생성 및 설교 영상, PDF 등록 시스템</p>
+      
+      <form onsubmit="handlePinLogin(event)">
+        <input type="password" id="admin-pin" class="pin-input" placeholder="비밀번호 입력 (기본: 7777)" autofocus />
+        <button type="submit" class="btn-login">관리자 모드 접속 ➔</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. 관리자 메인 네비게이션 헤더 -->
+  <header class="admin-header">
+    <div class="admin-header-title">
+      <span>✝</span> 불로 열방교회 관리자 대시보드
+    </div>
+    <div class="admin-header-nav">
+      <a href="index.html" class="admin-nav-link" target="_blank">🏠 홈페이지 보기 ↗</a>
+      <button onclick="handleLogout()" class="admin-nav-link" style="background:none; border:none; cursor:pointer;">로그아웃 ✕</button>
+    </div>
+  </header>
+
+  <!-- 3. 관리자 본문 컨테이너 -->
+  <div class="admin-container">
+    
+    <!-- 탭 네비게이션 -->
+    <div class="admin-tabs">
+      <button class="admin-tab-btn active" onclick="switchAdminTab('folders')">📂 1. 강해 폴더 관리</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('lectures')">🎬 2. 설교 영상 및 자료 등록</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('posts')">📝 3. 교회 소식 &amp; PDF 등록</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('backup')">💾 4. 데이터 백업 &amp; 복원</button>
+    </div>
+
+    <!-- 탭 1: 강해 폴더 관리 -->
+    <div id="tab-folders" class="admin-panel active">
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--admin-primary); margin-bottom: 0.5rem;">
+        📂 새로운 강해 폴더 생성 및 관리
+      </h3>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem;">
+        홈페이지 좌측 사이드바에 표시될 말씀 강해 시리즈 폴더(예: 마가복음 강해, 요한일서 강해 등)를 직접 생성하고 관리합니다.
+      </p>
+
+      <form id="form-create-folder" onsubmit="handleCreateFolder(event)" style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--admin-border); margin-bottom: 2rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">폴더 고유 식별자 (영문 소문자 ID)</label>
+            <input type="text" id="folder-id" class="form-input" placeholder="예: mark, ephesians, james" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">폴더 제목 (화면 표시 명칭)</label>
+            <input type="text" id="folder-title" class="form-input" placeholder="예: 마가복음 강해, 에베소서 강해" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">카테고리 구분</label>
+            <select id="folder-category" class="form-select">
+              <option value="신약 강해">신약 강해</option>
+              <option value="구약 강해">구약 강해</option>
+              <option value="교리 & 신조">교리 &amp; 신조</option>
+              <option value="특별 강해">특별 강해 &amp; 주제별</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">폴더 대표 아이콘 (이모지)</label>
+            <input type="text" id="folder-icon" class="form-input" placeholder="예: 📖, 📜, ✝️, 💡" value="📖" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">폴더 설명 (시리즈 요약 안내문)</label>
+          <textarea id="folder-desc" class="form-textarea" rows="2" placeholder="이 강해 시리즈의 중심 주제와 은혜의 말씀을 간략히 적어주세요."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">➕ 새 강해 폴더 생성하기</button>
+      </form>
+
+      <h4 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.8rem;">현재 생성된 강해 폴더 목록</h4>
+      <div style="overflow-x: auto;">
+        <table class="admin-table" id="folders-table">
+          <thead>
+            <tr>
+              <th>순번</th>
+              <th>폴더 식별자</th>
+              <th>폴더 제목</th>
+              <th>카테고리</th>
+              <th>등록 설교수</th>
+              <th>관리</th>
+            </tr>
+          </thead>
+          <tbody id="folders-tbody">
+            <!-- 동적 렌더링 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 탭 2: 설교 영상 및 자료 등록 -->
+    <div id="tab-lectures" class="admin-panel">
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--admin-primary); margin-bottom: 0.5rem;">
+        🎬 설교 영상 및 PDF 교재 등록
+      </h3>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem;">
+        원하는 강해 폴더를 선택하고, 해당 폴더 안에 설교 회차, 성경 본문, 유튜브 영상 링크, PDF 교재 등을 차근차근 등록합니다.
+      </p>
+
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label class="form-label" style="font-size: 1.05rem;">📍 설교를 등록할 대상 폴더 선택</label>
+        <select id="lecture-target-folder" class="form-select" onchange="handleSelectFolderForLectures()" style="font-weight: 700; font-size: 1rem; padding: 0.85rem;">
+          <!-- 동적 렌더링 -->
+        </select>
+      </div>
+
+      <form id="form-create-lecture" onsubmit="handleCreateLecture(event)" style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--admin-border); margin-bottom: 2rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">회차 번호 (강의 번호)</label>
+            <input type="number" id="lec-ep" class="form-input" placeholder="예: 1, 2, 3..." required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">설교 제목</label>
+            <input type="text" id="lec-title" class="form-input" placeholder="예: 레위기 개관 - 거룩하신 하나님 앞에서의 제사와 삶" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">성경 본문</label>
+            <input type="text" id="lec-passage" class="form-input" placeholder="예: 레위기 1:1~17 또는 레위기 1~27장" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">설교 일자</label>
+            <input type="date" id="lec-date" class="form-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">유튜브 영상 링크 또는 검색어</label>
+            <input type="text" id="lec-url" class="form-input" placeholder="예: https://www.youtube.com/watch?v=... 또는 불로열방교회 레위기 설교" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">첨부 PDF 파일 또는 교재 다운로드 링크 (선택)</label>
+            <input type="text" id="lec-pdf" class="form-input" placeholder="예: https://.../lecture_01.pdf 또는 주보 링크" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">➕ 설교 영상 및 자료 등록하기</button>
+      </form>
+
+      <h4 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.8rem;" id="current-folder-lectures-title">
+        선택된 폴더의 등록된 설교 목록
+      </h4>
+      <div style="overflow-x: auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>회차</th>
+              <th>설교 제목</th>
+              <th>성경 본문</th>
+              <th>영상 링크</th>
+              <th>PDF 교재</th>
+              <th>관리</th>
+            </tr>
+          </thead>
+          <tbody id="lectures-tbody">
+            <!-- 동적 렌더링 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 탭 3: 교회 소식 & 글 등록 -->
+    <div id="tab-posts" class="admin-panel">
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--admin-primary); margin-bottom: 0.5rem;">
+        📝 교회 소식, 주보 및 PDF 자료실
+      </h3>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem;">
+        성도들에게 안내할 교회 주간 소식, 설교 요약, 주보 PDF 파일을 등록합니다.
+      </p>
+
+      <form id="form-create-post" onsubmit="handleCreatePost(event)" style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--admin-border); margin-bottom: 2rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">글 제목</label>
+            <input type="text" id="post-title" class="form-input" placeholder="예: 이번 주 주보 및 성경공부 교재 안내" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">카테고리</label>
+            <select id="post-category" class="form-select">
+              <option value="교회 소식">교회 소식</option>
+              <option value="주일예배 설교">주일예배 설교</option>
+              <option value="로마서 강해">로마서 강해</option>
+              <option value="성경공부 교재">성경공부 교재</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">첨부 PDF 파일 링크 (선택)</label>
+          <input type="text" id="post-pdf" class="form-input" placeholder="예: https://.../weekly_bulletin.pdf" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">본문 내용 (요약 및 나눔)</label>
+          <textarea id="post-content" class="form-textarea" rows="4" placeholder="성도들과 나눌 말씀 요약 및 안내 사항을 적어주세요."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">➕ 새 글/소식 등록하기</button>
+      </form>
+
+      <h4 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.8rem;">등록된 교회 소식 목록</h4>
+      <div style="overflow-x: auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>날짜</th>
+              <th>카테고리</th>
+              <th>제목</th>
+              <th>PDF 첨부</th>
+              <th>관리</th>
+            </tr>
+          </thead>
+          <tbody id="posts-tbody">
+            <!-- 동적 렌더링 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 탭 4: 데이터 백업 & 복원 -->
+    <div id="tab-backup" class="admin-panel">
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--admin-primary); margin-bottom: 0.5rem;">
+        💾 데이터 백업, 내보내기 &amp; 복원
+      </h3>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem;">
+        등록한 모든 강해 폴더와 설교 영상 데이터를 JSON 파일로 안전하게 백업하고 복원할 수 있습니다.
+      </p>
+
+      <div class="alert-box">
+        💡 <strong>안내:</strong> 관리자 모드에서 등록하신 모든 폴더와 설교는 즉시 브라우저 로컬 저장소에 안전하게 보관되어 홈페이지에 실시간 반영됩니다. 정기적으로 '데이터 JSON 다운로드'를 눌러 백업 파일을 보관해 두시면 더욱 안전합니다.
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        <button type="button" onclick="exportDataToJson()" class="btn-submit" style="background: #0284c7;">
+          📥 전체 데이터 JSON 백업 다운로드
+        </button>
+        <label class="btn-submit" style="background: #16a34a; cursor: pointer; display: inline-flex; align-items: center;">
+          📤 백업 JSON 파일 불러오기 (복원)
+          <input type="file" id="import-json-file" accept=".json" onchange="importDataFromJson(event)" style="display:none;" />
+        </label>
+        <button type="button" onclick="resetToDefaultData()" class="btn-submit" style="background: #dc2626;">
+          🔄 기본 데이터로 초기화
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 관리자 스크립트 로직 -->
+  <script src="js/main.js"></script>
+  <script>
+    // 관리자 PIN 인증 로직
+    const ADMIN_STORAGE_KEY = 'ALLNATIONS_ADMIN_DATA_V1';
+    const ADMIN_PIN_KEY = 'ALLNATIONS_ADMIN_PIN';
+    let defaultPin = localStorage.getItem(ADMIN_PIN_KEY) || '7777';
+
+    function checkAdminLogin() {
+      const isAuth = sessionStorage.getItem('ALLNATIONS_ADMIN_AUTH');
+      const lockScreen = document.getElementById('admin-lock-screen');
+      if (isAuth === 'true') {
+        lockScreen.style.display = 'none';
+        loadAdminData();
+      } else {
+        lockScreen.style.display = 'flex';
+      }
+    }
+
+    function handlePinLogin(e) {
+      e.preventDefault();
+      const inputPin = document.getElementById('admin-pin').value.trim();
+      if (inputPin === defaultPin) {
+        sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
+        document.getElementById('admin-lock-screen').style.display = 'none';
+        loadAdminData();
+      } else {
+        alert('비밀번호(PIN)가 일치하지 않습니다. (기본 PIN: 7777)');
+      }
+    }
+
+    function handleLogout() {
+      sessionStorage.removeItem('ALLNATIONS_ADMIN_AUTH');
+      location.reload();
+    }
+
+    // 탭 전환
+    function switchAdminTab(tabName) {
+      document.querySelectorAll('.admin-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.admin-panel').forEach(panel => panel.classList.remove('active'));
+
+      event.target.classList.add('active');
+      const targetPanel = document.getElementById('tab-' + tabName);
+      if (targetPanel) targetPanel.classList.add('active');
+    }
+
+    // 데이터 로드 & 렌더링
+    let adminFolders = [];
+    let adminArchive = {};
+
+    async function loadAdminData() {
+      const saved = localStorage.getItem(ADMIN_STORAGE_KEY);
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          adminFolders = parsed.folders || ARCHIVE_FOLDERS;
+          adminArchive = parsed.archive || {};
+        } catch (e) {
+          console.error(e);
+        }
+      } else {
+        // 기본 데이터 복사
+        adminFolders = [...ARCHIVE_FOLDERS];
+        if (!archiveDataCache) await loadArchiveData();
+        adminArchive = archiveDataCache || {};
+      }
+
+      renderFoldersTable();
+      populateFolderSelect();
+      renderLecturesTable();
+      renderPostsTable();
+    }
+
+    function saveAdminData() {
+      const payload = {
+        folders: adminFolders,
+        archive: adminArchive,
+        updatedAt: new Date().toISOString()
+      };
+      localStorage.setItem(ADMIN_STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    // 1. 폴더 테이블 렌더링
+    function renderFoldersTable() {
+      const tbody = document.getElementById('folders-tbody');
+      if (!tbody) return;
+
+      tbody.innerHTML = adminFolders.map((f, idx) => {
+        const episodes = (adminArchive[f.key] && adminArchive[f.key].episodes) || [];
+        return `
+          <tr>
+            <td><strong>${idx + 1}</strong></td>
+            <td><code>${f.key}</code></td>
+            <td><strong>${f.icon || '📁'} ${f.title}</strong></td>
+            <td>${f.category || '신약 강해'}</td>
+            <td><span style="color:var(--admin-accent); font-weight:700;">${episodes.length}편</span></td>
+            <td>
+              <button type="button" class="btn-sm-del" onclick="deleteFolder('${f.key}')">삭제 ✕</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function populateFolderSelect() {
+      const select = document.getElementById('lecture-target-folder');
+      if (!select) return;
+
+      select.innerHTML = adminFolders.map(f => `
+        <option value="${f.key}">${f.icon || '📁'} ${f.title} (${(adminArchive[f.key]?.episodes || []).length}편)</option>
+      `).join('');
+    }
+
+    // 2. 새 폴더 생성
+    function handleCreateFolder(e) {
+      e.preventDefault();
+      const id = document.getElementById('folder-id').value.trim().toLowerCase();
+      const title = document.getElementById('folder-title').value.trim();
+      const category = document.getElementById('folder-category').value;
+      const icon = document.getElementById('folder-icon').value.trim() || '📁';
+      const desc = document.getElementById('folder-desc').value.trim();
+
+      if (adminFolders.some(f => f.key === id)) {
+        alert('이미 존재하는 폴더 식별자 ID입니다. 다른 영문 ID를 입력해 주세요.');
+        return;
+      }
+
+      const newFolder = {
+        key: id,
+        title: title,
+        count: '0편',
+        icon: icon,
+        category: category,
+        bgClass: category.includes('구약') ? 'bg-ot' : (category.includes('교리') ? 'bg-doctrine' : 'bg-nt')
+      };
+
+      adminFolders.push(newFolder);
+      adminArchive[id] = {
+        id: id,
+        title: title,
+        category: category,
+        speaker: '박훈 담임목사',
+        desc: desc || `${title} 전편 강해 아카이브입니다.`,
+        episodes: []
+      };
+
+      saveAdminData();
+      loadAdminData();
+      document.getElementById('form-create-folder').reset();
+      alert(`🎉 '${title}' 강해 폴더가 성공적으로 생성되었습니다!`);
+    }
+
+    function deleteFolder(fKey) {
+      if (!confirm(`정말로 이 폴더('${fKey}')와 포함된 모든 설교 데이터를 삭제하시겠습니까?`)) return;
+      adminFolders = adminFolders.filter(f => f.key !== fKey);
+      delete adminArchive[fKey];
+      saveAdminData();
+      loadAdminData();
+    }
+
+    // 3. 설교 영상 등록
+    function handleSelectFolderForLectures() {
+      renderLecturesTable();
+    }
+
+    function renderLecturesTable() {
+      const select = document.getElementById('lecture-target-folder');
+      const tbody = document.getElementById('lectures-tbody');
+      if (!select || !tbody) return;
+
+      const fKey = select.value || (adminFolders[0] && adminFolders[0].key);
+      const s = adminArchive[fKey];
+      const episodes = (s && s.episodes) || [];
+
+      document.getElementById('current-folder-lectures-title').textContent = `선택된 폴더: '${s ? s.title : ''}' 등록 설교 목록 (총 ${episodes.length}편)`;
+
+      if (episodes.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:2rem; color:#888;">등록된 설교 영상이 없습니다. 위의 양식을 통해 설교를 등록해 주세요.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = episodes.map(ep => `
+        <tr>
+          <td><strong>${ep.ep}강</strong></td>
+          <td><strong>${ep.title}</strong></td>
+          <td>${ep.passage || '-'}</td>
+          <td><a href="${ep.url || '#'}" target="_blank" style="color:#3b82f6;">${ep.url ? '영상 링크 확인 ↗' : '검색 연동'}</a></td>
+          <td>${ep.pdfUrl ? `<a href="${ep.pdfUrl}" target="_blank" style="color:#10b981; font-weight:700;">📄 PDF 교재</a>` : '-'}</td>
+          <td>
+            <button type="button" class="btn-sm-del" onclick="deleteLecture('${fKey}', ${ep.ep})">삭제 ✕</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function handleCreateLecture(e) {
+      e.preventDefault();
+      const fKey = document.getElementById('lecture-target-folder').value;
+      const ep = parseInt(document.getElementById('lec-ep').value, 10);
+      const title = document.getElementById('lec-title').value.trim();
+      const passage = document.getElementById('lec-passage').value.trim();
+      const date = document.getElementById('lec-date').value;
+      const url = document.getElementById('lec-url').value.trim();
+      const pdf = document.getElementById('lec-pdf').value.trim();
+
+      if (!adminArchive[fKey]) {
+        adminArchive[fKey] = { id: fKey, title: fKey, episodes: [] };
+      }
+
+      const episodes = adminArchive[fKey].episodes || [];
+      const existingIdx = episodes.findIndex(x => x.ep === ep);
+
+      const newEp = {
+        ep: ep,
+        title: title,
+        passage: passage,
+        date: date,
+        url: url.startsWith('http') ? url : '',
+        search: url.startsWith('http') ? '' : url,
+        pdfUrl: pdf
+      };
+
+      if (existingIdx >= 0) {
+        episodes[existingIdx] = newEp;
+      } else {
+        episodes.push(newEp);
+        episodes.sort((a,b) => a.ep - b.ep);
+      }
+
+      adminArchive[fKey].episodes = episodes;
+
+      // 폴더 count 업데이트
+      const folderObj = adminFolders.find(f => f.key === fKey);
+      if (folderObj) folderObj.count = `${episodes.length}편`;
+
+      saveAdminData();
+      renderLecturesTable();
+      populateFolderSelect();
+      document.getElementById('form-create-lecture').reset();
+      alert(`🎉 ${ep}강 '${title}' 설교가 성공적으로 등록되었습니다!`);
+    }
+
+    function deleteLecture(fKey, epNum) {
+      if (!confirm(`${epNum}강 설교를 삭제하시겠습니까?`)) return;
+      if (adminArchive[fKey]) {
+        adminArchive[fKey].episodes = (adminArchive[fKey].episodes || []).filter(x => x.ep !== epNum);
+        const folderObj = adminFolders.find(f => f.key === fKey);
+        if (folderObj) folderObj.count = `${adminArchive[fKey].episodes.length}편`;
+      }
+      saveAdminData();
+      renderLecturesTable();
+      populateFolderSelect();
+    }
+
+    // 4. 소식 & 글 등록
+    const POSTS_STORAGE_KEY = 'ALLNATIONS_POSTS_DATA';
+    let adminPosts = [];
+
+    function renderPostsTable() {
+      const saved = localStorage.getItem(POSTS_STORAGE_KEY);
+      if (saved) {
+        try { adminPosts = JSON.parse(saved); } catch (e) { adminPosts = []; }
+      }
+      const tbody = document.getElementById('posts-tbody');
+      if (!tbody) return;
+
+      if (adminPosts.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:2rem; color:#888;">등록된 교회 소식이 없습니다.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = adminPosts.map((p, idx) => `
+        <tr>
+          <td>${p.date || '2026-09-06'}</td>
+          <td><span style="font-weight:700; color:var(--admin-accent);">${p.category}</span></td>
+          <td><strong>${p.title}</strong></td>
+          <td>${p.pdfUrl ? `<a href="${p.pdfUrl}" target="_blank" style="color:#10b981; font-weight:700;">📄 PDF 다운</a>` : '-'}</td>
+          <td>
+            <button type="button" class="btn-sm-del" onclick="deletePost(${idx})">삭제 ✕</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function handleCreatePost(e) {
+      e.preventDefault();
+      const title = document.getElementById('post-title').value.trim();
+      const category = document.getElementById('post-category').value;
+      const pdf = document.getElementById('post-pdf').value.trim();
+      const content = document.getElementById('post-content').value.trim();
+
+      const newPost = {
+        id: Date.now(),
+        title: title,
+        category: category,
+        date: new Date().toISOString().split('T')[0],
+        pdfUrl: pdf,
+        content: content
+      };
+
+      adminPosts.unshift(newPost);
+      localStorage.setItem(POSTS_STORAGE_KEY, JSON.stringify(adminPosts));
+      renderPostsTable();
+      document.getElementById('form-create-post').reset();
+      alert(`🎉 '${title}' 소식이 등록되었습니다.`);
+    }
+
+    function deletePost(idx) {
+      if (!confirm('해당 글을 삭제하시겠습니까?')) return;
+      adminPosts.splice(idx, 1);
+      localStorage.setItem(POSTS_STORAGE_KEY, JSON.stringify(adminPosts));
+      renderPostsTable();
+    }
+
+    // 5. 백업 & 복원
+    function exportDataToJson() {
+      const data = {
+        folders: adminFolders,
+        archive: adminArchive,
+        posts: adminPosts,
+        exportDate: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `allnations_church_backup_${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importDataFromJson(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const parsed = JSON.parse(evt.target.result);
+          if (parsed.folders && parsed.archive) {
+            adminFolders = parsed.folders;
+            adminArchive = parsed.archive;
+            if (parsed.posts) adminPosts = parsed.posts;
+            saveAdminData();
+            if (parsed.posts) localStorage.setItem(POSTS_STORAGE_KEY, JSON.stringify(adminPosts));
+            loadAdminData();
+            alert('🎉 백업 JSON 데이터가 성공적으로 복원되었습니다!');
+          } else {
+            alert('올바른 백업 JSON 형식이 아닙니다.');
+          }
+        } catch (err) {
+          alert('JSON 파일 파싱 실패: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetToDefaultData() {
+      if (!confirm('정말로 모든 관리자 설정을 초기화하고 기본 데이터로 복구하시겠습니까?')) return;
+      localStorage.removeItem(ADMIN_STORAGE_KEY);
+      localStorage.removeItem(POSTS_STORAGE_KEY);
+      location.reload();
+    }
+
+    // 초기 실행
+    window.addEventListener('DOMContentLoaded', checkAdminLogin);
+  </script>
+</body>
+</html>

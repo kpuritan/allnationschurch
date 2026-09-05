@@ -23,15 +23,27 @@ async function fetchPosts() {
     </div>
   `;
 
+  let localPosts = [];
+  const saved = localStorage.getItem('ALLNATIONS_POSTS_DATA');
+  if (saved) {
+    try { localPosts = JSON.parse(saved); } catch (e) { localPosts = []; }
+  }
+
   try {
     const response = await fetch('posts/posts.json?t=' + Date.now());
-    if (!response.ok) throw new Error('파일을 불러올 수 없습니다');
-    allPosts = await response.json();
-    // 최신 글이 위로
-    allPosts.sort((a, b) => b.date.localeCompare(a.date));
+    if (response.ok) {
+      const serverPosts = await response.json();
+      // localPosts와 serverPosts 병합
+      const existingIds = new Set(localPosts.map(p => p.id));
+      const merged = [...localPosts, ...serverPosts.filter(p => !existingIds.has(p.id))];
+      allPosts = merged;
+    } else {
+      allPosts = localPosts;
+    }
+    allPosts.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   } catch (err) {
     console.error('글 불러오기 실패:', err);
-    allPosts = [];
+    allPosts = localPosts;
   }
 
   renderPosts();

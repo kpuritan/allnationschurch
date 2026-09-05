@@ -257,6 +257,7 @@
             <div class="player-info-bar">
               <div class="player-playing-title" id="archive-player-title">▶ 방영 중: 레위기 개관설교</div>
               <div class="player-actions">
+                <a id="archive-player-pdf-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-player-ext" style="display:none; background: #10b981;">📄 교재 PDF 보기</a>
                 <a id="archive-player-yt-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-player-ext">유튜브로 보기 ↗</a>
                 <button type="button" class="btn-player-close" onclick="closeArchivePlayer()">플레이어 닫기 ✕</button>
               </div>
@@ -526,8 +527,13 @@
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
       <div>© 2026 불로 열방교회 (대한예수교장로회 백석교단). All rights reserved.</div>
+      <div>
+        <a href="admin.html" target="_blank" style="color: #64748b; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+          <span>⚙️</span> 관리자 모드
+        </a>
+      </div>
     </div>
   </footer>
 
