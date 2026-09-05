@@ -2248,5 +2248,383 @@ img {
   }
 }
 
+/* ==========================================================
+   관리자 전용 상단 툴바 & 사이트 모드 인라인 편집 스타일
+   ========================================================== */
+.admin-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background: #0f172a;
+  color: #ffffff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 0.88rem;
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+body.admin-logged-in {
+  padding-top: 46px;
+}
+
+.admin-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-badge-live {
+  background: #22c55e;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.admin-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-bar-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+}
+
+.admin-bar-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+}
+
+.admin-bar-btn.btn-primary-sync {
+  background: #238636;
+  border-color: #2ea043;
+}
+
+.admin-bar-btn.btn-primary-sync:hover {
+  background: #2ea043;
+}
+
+/* 관리자 모드 시 인라인 카드 컨트롤 */
+.card-admin-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  z-index: 10;
+}
+
+.btn-card-edit, .btn-card-del {
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.15s;
+}
+
+.btn-card-edit:hover {
+  background: #2563eb;
+  border-color: #3b82f6;
+}
+
+.btn-card-del:hover {
+  background: #dc2626;
+  border-color: #ef4444;
+}
+
+.admin-quick-add-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+/* 퀵 모달 팝업 공통 */
+.site-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.site-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-modal-box {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+  animation: modalScaleIn 0.25s ease;
+}
+
+@keyframes modalScaleIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.site-modal-header {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-modal-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-modal-close {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.site-modal-close:hover {
+  color: #ffffff;
+}
+
+.site-modal-body {
+  padding: 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-form-group {
+  margin-bottom: 1.1rem;
+}
+
+.modal-form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.4rem;
+}
+
+.modal-form-input, .modal-form-select, .modal-form-textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  background: #f8fafc;
+}
+
+.modal-form-input:focus, .modal-form-select:focus, .modal-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(25, 42, 69, 0.12);
+}
+
+.modal-btn-submit {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-btn-submit:hover {
+  background: var(--primary-dark);
+}
+
+/* ==========================================================
+   🎵 BGM 찬양 플레이어 위젯 (YouTube Background Music)
+   ========================================================== */
+.bgm-player-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  background: rgba(15, 23, 42, 0.94);
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 8px 16px 8px 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 380px;
+}
+
+.bgm-player-widget.minimized {
+  max-width: 52px;
+  padding: 8px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.bgm-player-widget.minimized .bgm-info,
+.bgm-player-widget.minimized .bgm-volume-wrap,
+.bgm-player-widget.minimized .bgm-close-btn {
+  display: none !important;
+}
+
+.bgm-disc {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-gold), #b45309);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.5);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.bgm-disc.spinning {
+  animation: spinDisc 4s linear infinite;
+}
+
+@keyframes spinDisc {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bgm-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.bgm-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--accent-gold-light);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bgm-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #f8fafc;
+}
+
+.bgm-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bgm-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.bgm-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
+}
+
+.bgm-btn.btn-play-pause {
+  background: var(--accent-gold);
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.bgm-btn.btn-play-pause:hover {
+  background: var(--accent-gold-light);
+}
+
+.bgm-minimize-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.bgm-minimize-btn:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .bgm-player-widget {
+    bottom: 16px;
+    right: 16px;
+    max-width: 300px;
+  }
+}
+
+
 
 

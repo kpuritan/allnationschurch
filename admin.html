@@ -335,10 +335,12 @@
       <span>✝</span> 불로 열방교회 관리자 대시보드
     </div>
     <div class="admin-header-nav">
+      <a href="index.html" class="admin-nav-link" style="background: #2563eb; color: #fff; font-weight: 700; border-radius: 6px; padding: 6px 14px;">
+        🌐 사이트 모드로 이동 (직접 수정 가능) ➔
+      </a>
       <button type="button" onclick="syncAllToGitHub()" class="btn-gh-quick-sync" id="btn-header-sync">
         <span>🚀</span> GitHub 영구 저장 &amp; 전세계 배포
       </button>
-      <a href="index.html" class="admin-nav-link" target="_blank">🏠 홈페이지 보기 ↗</a>
       <button onclick="handleLogout()" class="admin-nav-link" style="background:none; border:none; cursor:pointer;">로그아웃 ✕</button>
     </div>
   </header>
@@ -653,9 +655,11 @@
     let defaultPin = localStorage.getItem(ADMIN_PIN_KEY) || '7777';
 
     function checkAdminLogin() {
-      const isAuth = sessionStorage.getItem('ALLNATIONS_ADMIN_AUTH');
+      const isAuth = localStorage.getItem('allnations_admin_auth') === 'true' || sessionStorage.getItem('ALLNATIONS_ADMIN_AUTH') === 'true';
       const lockScreen = document.getElementById('admin-lock-screen');
-      if (isAuth === 'true') {
+      if (isAuth) {
+        sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
+        localStorage.setItem('allnations_admin_auth', 'true');
         lockScreen.style.display = 'none';
         loadAdminData();
         loadGitHubSettings();
@@ -669,6 +673,7 @@
       const inputPin = document.getElementById('admin-pin').value.trim();
       if (inputPin === defaultPin) {
         sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
+        localStorage.setItem('allnations_admin_auth', 'true');
         document.getElementById('admin-lock-screen').style.display = 'none';
         loadAdminData();
         loadGitHubSettings();
@@ -679,6 +684,7 @@
 
     function handleLogout() {
       sessionStorage.removeItem('ALLNATIONS_ADMIN_AUTH');
+      localStorage.removeItem('allnations_admin_auth');
       location.reload();
     }
 

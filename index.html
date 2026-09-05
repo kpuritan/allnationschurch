@@ -18,6 +18,25 @@
 </head>
 <body>
 
+  <!-- ================= Admin Floating Bar (로그인 시 노출) ================= -->
+  <div id="admin-top-bar" class="admin-top-bar" style="display: none;">
+    <div class="admin-bar-left">
+      <span class="admin-badge-live">● 관리자 접속 중</span>
+      <span style="font-weight: 700; color: #f8fafc;">불로 열방교회 사이트 실시간 편집 모드</span>
+    </div>
+    <div class="admin-bar-right">
+      <a href="admin.html" class="admin-bar-btn" title="전체 관리자 패널로 이동">
+        <span>⚙️</span> 관리자 패널(대시보드)
+      </a>
+      <button type="button" onclick="syncSiteChangesToGitHub()" class="admin-bar-btn btn-primary-sync" id="btn-site-sync">
+        <span>🚀</span> GitHub 영구 저장 &amp; 배포
+      </button>
+      <button type="button" onclick="handleSiteAdminLogout()" class="admin-bar-btn">
+        로그아웃 ✕
+      </button>
+    </div>
+  </div>
+
   <!-- ================= Header Top Bar ================= -->
   <div class="header-top-bar">
     <div class="top-bar-container">
@@ -25,8 +44,11 @@
         <span class="top-badge">대한예수교장로회 백석교단</span>
         <span>📍 불로 열방교회에 오신 것을 환영합니다</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 15px;">
         <span>주일예배: 오전 11:00</span>
+        <button type="button" id="btn-open-admin-login" onclick="openAdminLoginModal()" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+          <span>🔐</span> 관리자 로그인
+        </button>
       </div>
     </div>
   </div>
@@ -530,13 +552,154 @@
     <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
       <div>© 2026 불로 열방교회 (대한예수교장로회 백석교단). All rights reserved.</div>
       <div>
-        <a href="admin.html" target="_blank" style="color: #64748b; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-          <span>⚙️</span> 관리자 모드
-        </a>
+  <!-- ================= 🎵 BGM 찬양 플레이어 위젯 ================= -->
+  <div id="bgm-player-widget" class="bgm-player-widget">
+    <div class="bgm-disc" id="bgm-disc" onclick="toggleBgmPlay()" title="찬양 재생 / 일시정지">
+      <span>✝️</span>
+    </div>
+    <div class="bgm-info">
+      <div class="bgm-tag">
+        <span>● LIVE PRAISE</span>
+        <span>배경 찬양</span>
+      </div>
+      <div class="bgm-title" id="bgm-title-text" title="잠들며 듣는 찬송가 / 깊은잠 잔잔한 찬양">
+        [Deep Sleep] 잠들며 듣는 찬송가
       </div>
     </div>
-  </footer>
+    <div class="bgm-controls">
+      <button type="button" class="bgm-btn btn-play-pause" id="btn-bgm-toggle" onclick="toggleBgmPlay()" title="재생/일시정지">
+        ▶
+      </button>
+      <button type="button" class="bgm-btn" id="btn-bgm-mute" onclick="toggleBgmMute()" title="음소거">
+        🔊
+      </button>
+      <button type="button" class="bgm-minimize-btn" onclick="toggleBgmWidget()" title="플레이어 최소화/펼치기">
+        ✕
+      </button>
+    </div>
+  </div>
+  
+  <!-- 숨겨진 YouTube BGM Iframe -->
+  <div style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none;">
+    <div id="yt-bgm-player"></div>
+  </div>
 
+  <!-- ================= 🔐 관리자 로그인 모달 ================= -->
+  <div id="modal-admin-login" class="site-modal-overlay">
+    <div class="site-modal-box" style="max-width: 400px;">
+      <div class="site-modal-header">
+        <h3>🔐 불로 열방교회 관리자 로그인</h3>
+        <button class="site-modal-close" onclick="closeAdminLoginModal()">✕</button>
+      </div>
+      <div class="site-modal-body">
+        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.2rem;">
+          관리자 PIN 번호를 입력하시면 홈페이지 상에서 설교 영상 및 폴더를 실시간으로 직접 등록/수정/삭제하실 수 있습니다.
+        </p>
+        <form onsubmit="handleSiteAdminLogin(event)">
+          <div class="modal-form-group">
+            <label>관리자 PIN 번호</label>
+            <input type="password" id="site-admin-pin-input" class="modal-form-input" placeholder="비밀번호 입력 (기본: 7777)" autofocus required />
+          </div>
+          <button type="submit" class="modal-btn-submit">관리자 모드 활성화 ➔</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ✏️ 설교 영상 등록/수정 모달 (사이트 모드) ================= -->
+  <div id="modal-lecture-edit" class="site-modal-overlay">
+    <div class="site-modal-box">
+      <div class="site-modal-header">
+        <h3 id="modal-lecture-title-text">➕ 설교 영상 등록/수정</h3>
+        <button class="site-modal-close" onclick="closeLectureEditModal()">✕</button>
+      </div>
+      <div class="site-modal-body">
+        <form id="form-site-lecture" onsubmit="handleSaveSiteLecture(event)">
+          <input type="hidden" id="modal-lec-mode" value="add" />
+          <input type="hidden" id="modal-lec-folder" value="" />
+          <input type="hidden" id="modal-lec-original-ep" value="" />
+
+          <div class="modal-form-group">
+            <label>폴더 (말씀 강해 분류)</label>
+            <select id="modal-lec-folder-select" class="modal-form-select" required></select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 10px;">
+            <div class="modal-form-group">
+              <label>회차(숫자)</label>
+              <input type="number" id="modal-lec-ep" class="modal-form-input" placeholder="예: 1" required />
+            </div>
+            <div class="modal-form-group">
+              <label>설교 제목</label>
+              <input type="text" id="modal-lec-title" class="modal-form-input" placeholder="예: 로마서 강해 1강 - 하나님의 복음" required />
+            </div>
+          </div>
+
+          <div class="modal-form-group">
+            <label>성경 본문</label>
+            <input type="text" id="modal-lec-passage" class="modal-form-input" placeholder="예: 로마서 1:1~7 또는 창세기 1장" required />
+          </div>
+
+          <div class="modal-form-group">
+            <label>유튜브 영상 링크 또는 검색어</label>
+            <input type="text" id="modal-lec-url" class="modal-form-input" placeholder="예: https://www.youtube.com/watch?v=... 또는 불로열방교회 로마서 1강" required />
+          </div>
+
+          <div class="modal-form-group">
+            <label>첨부 PDF 교재 링크 (선택)</label>
+            <input type="text" id="modal-lec-pdf" class="modal-form-input" placeholder="예: https://.../lecture_01.pdf" />
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
+            <button type="submit" class="modal-btn-submit" style="flex: 2;">💾 저장하기</button>
+            <button type="button" class="modal-btn-submit" onclick="closeLectureEditModal()" style="flex: 1; background: #94a3b8;">취소</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 📁 새 폴더 추가 모달 (사이트 모드) ================= -->
+  <div id="modal-folder-create" class="site-modal-overlay">
+    <div class="site-modal-box" style="max-width: 450px;">
+      <div class="site-modal-header">
+        <h3>📁 새 말씀 강해 폴더 생성</h3>
+        <button class="site-modal-close" onclick="closeFolderCreateModal()">✕</button>
+      </div>
+      <div class="site-modal-body">
+        <form onsubmit="handleSaveSiteFolder(event)">
+          <div class="modal-form-group">
+            <label>폴더 식별 키 (영문/숫자, 예: matthew, psalms)</label>
+            <input type="text" id="modal-folder-key" class="modal-form-input" placeholder="예: matthew" required />
+          </div>
+          <div class="modal-form-group">
+            <label>폴더 이름 (화면에 표시될 제목)</label>
+            <input type="text" id="modal-folder-title" class="modal-form-input" placeholder="예: 마태복음 강해" required />
+          </div>
+          <div class="modal-form-group">
+            <label>폴더 아이콘</label>
+            <select id="modal-folder-icon" class="modal-form-select">
+              <option value="📖">📖 책 / 성경</option>
+              <option value="📜">📜 두루마리</option>
+              <option value="✝️">✝️ 십자가</option>
+              <option value="🏛️">🏛️ 교리 / 신조</option>
+              <option value="🌄">🌄 천로역정 / 비전</option>
+              <option value="🌱">🌱 창세기 / 시작</option>
+              <option value="🔥">🔥 사도행전 / 부흥</option>
+              <option value="🌊">🌊 출애굽기</option>
+            </select>
+          </div>
+          <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
+            <button type="submit" class="modal-btn-submit" style="flex: 2;">➕ 폴더 생성하기</button>
+            <button type="button" class="modal-btn-submit" onclick="closeFolderCreateModal()" style="flex: 1; background: #94a3b8;">취소</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Scripts -->
   <script src="js/blog-rss.js"></script>
   <script src="js/main.js"></script>

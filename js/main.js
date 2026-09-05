@@ -82,6 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 말씀 강해 아카이브 시스템 초기화
   initArchiveSystem();
+
+  // 관리자 인증 상태 반영 및 UI 업데이트
+  updateSiteAdminUI();
+  
+  // BGM 최초 클릭 자동재생 리스너 (브라우저 오디오 정책)
+  document.addEventListener('click', initBgmOnFirstInteraction, { once: true });
 });
 
 /**
@@ -125,44 +131,93 @@ function getEffectiveFolders() {
   return ARCHIVE_FOLDERS;
 }
 
-async function initArchiveSystem() {
-  const folderListEl = document.getElementById('archive-folder-list');
-  if (!folderListEl) return;
+function isSiteAdminLoggedIn() {
+  return localStorage.getItem('allnations_admin_auth') === 'true';
+}
 
-  // 1. 데이터 미리 로드
-  await loadArchiveData();
+function updateSiteAdminUI() {
+  const isAdmin = isSiteAdminLoggedIn();
+  const topBar = document.getElementById('admin-top-bar');
+  const loginBtn = document.getElementById('btn-open-admin-login');
 
-  activeFoldersList = getEffectiveFolders();
-
-  // 2. 좌측 폴더 목록 렌더링
-  folderListEl.innerHTML = activeFoldersList.map(f => {
-    let epCount = f.count;
-    if (archiveDataCache && archiveDataCache[f.key]) {
-      epCount = `${(archiveDataCache[f.key].episodes || []).length}편`;
-    } else if (f.key === 'pilgrim' && pilgrimDataCache) {
-      epCount = `${pilgrimDataCache.length}강`;
+  if (isAdmin) {
+    document.body.classList.add('admin-logged-in');
+    if (topBar) topBar.style.display = 'flex';
+    if (loginBtn) {
+      loginBtn.innerHTML = '<span>👑</span> 관리자 ON';
+      loginBtn.style.background = 'rgba(34, 197, 94, 0.25)';
+      loginBtn.style.borderColor = '#22c55e';
     }
-    return `
-      <li class="archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
-        <div class="folder-name-wrap">
-          <span class="folder-icon">${f.icon || '📁'}</span>
-          <span>${f.title}</span>
-        </div>
-        <span class="folder-count-badge">${epCount}</span>
-      </li>
-    `;
-  }).join('');
+  } else {
+    document.body.classList.remove('admin-logged-in');
+    if (topBar) topBar.style.display = 'none';
+    if (loginBtn) {
+      loginBtn.innerHTML = '<span>🔐</span> 관리자 로그인';
+      loginBtn.style.background = 'rgba(255, 255, 255, 0.15)';
+      loginBtn.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+    }
+  }
 
-  // 3. 기본 선택 폴더 렌더링
+  // 폴더 & 설교 리스트 UI 다시 그리기 (수정/삭제 버튼 반영)
+  renderArchiveFolderSidebar();
+  renderArchiveFolderContent(currentFolderKey, '');
+}
+
+async function initArchiveSystem() {
+  await loadArchiveData();
+  activeFoldersList = getEffectiveFolders();
+  renderArchiveFolderSidebar();
   renderArchiveFolderContent(currentFolderKey, '');
 
-  // 4. 검색창 이벤트
   const searchInput = document.getElementById('archive-search-input');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       renderArchiveFolderContent(currentFolderKey, e.target.value.trim());
     });
   }
+}
+
+function renderArchiveFolderSidebar() {
+  const folderListEl = document.getElementById('archive-folder-list');
+  if (!folderListEl) return;
+
+  activeFoldersList = getEffectiveFolders();
+  const isAdmin = isSiteAdminLoggedIn();
+
+  // 폴더 리스트 상단 관리자용 [➕ 새 폴더] 버튼
+  const addFolderBtnHtml = isAdmin ? `
+    <li style="padding: 0.5rem 0.8rem; margin-bottom: 0.5rem;">
+      <button type="button" onclick="openFolderCreateModal()" class="admin-bar-btn" style="width: 100%; justify-content: center; background: #2563eb; color: #fff; border: none; padding: 7px;">
+        ➕ 새 폴더 만들기
+      </button>
+    </li>
+  ` : '';
+
+  folderListEl.innerHTML = addFolderBtnHtml + activeFoldersList.map(f => {
+    let epCount = f.count || '0편';
+    if (archiveDataCache && archiveDataCache[f.key]) {
+      epCount = `${(archiveDataCache[f.key].episodes || []).length}편`;
+    } else if (f.key === 'pilgrim' && pilgrimDataCache) {
+      epCount = `${pilgrimDataCache.length}강`;
+    }
+
+    const delBtnHtml = (isAdmin && !ARCHIVE_FOLDERS.some(orig => orig.key === f.key)) ? `
+      <button onclick="handleDeleteSiteFolder(event, '${f.key}')" title="폴더 삭제" style="background: none; border: none; color: #ef4444; font-size: 0.8rem; cursor: pointer; padding: 2px 4px;">🗑️</button>
+    ` : '';
+
+    return `
+      <li class="archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
+        <div class="folder-name-wrap" style="flex-grow: 1; min-width: 0;">
+          <span class="folder-icon">${f.icon || '📁'}</span>
+          <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${f.title}</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <span class="folder-count-badge">${epCount}</span>
+          ${delBtnHtml}
+        </div>
+      </li>
+    `;
+  }).join('');
 }
 
 async function loadArchiveData() {
@@ -196,10 +251,18 @@ async function loadArchiveData() {
   }
 }
 
+function saveEffectiveData() {
+  const payload = {
+    folders: activeFoldersList,
+    archive: archiveDataCache,
+    updatedAt: new Date().toISOString()
+  };
+  localStorage.setItem('ALLNATIONS_ADMIN_DATA_V1', JSON.stringify(payload));
+}
+
 async function selectArchiveFolder(folderKey) {
   currentFolderKey = folderKey;
   
-  // 사이드바 active 업데이트
   document.querySelectorAll('.archive-folder-item').forEach(el => {
     if (el.getAttribute('data-fkey') === folderKey) {
       el.classList.add('active');
@@ -223,6 +286,7 @@ function renderArchiveFolderContent(folderKey, query) {
 
   const folders = getEffectiveFolders();
   const folderMeta = folders.find(f => f.key === folderKey) || folders[0] || ARCHIVE_FOLDERS[0];
+  const isAdmin = isSiteAdminLoggedIn();
 
   let episodes = [];
   let seriesTitle = folderMeta.title;
@@ -256,18 +320,33 @@ function renderArchiveFolderContent(folderKey, query) {
   if (titleEl) titleEl.textContent = `${folderMeta.title} 자료 목록`;
   if (countEl) countEl.textContent = `총 ${episodes.length}개 자료 전부 (1/1페이지)`;
 
+  // 관리자 모드 시 [➕ 현재 폴더에 설교 등록] 버튼 바 생성
+  let adminAddBarHtml = '';
+  if (isAdmin) {
+    adminAddBarHtml = `
+      <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.8rem 1.2rem; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+        <span style="font-weight: 700; color: #0369a1; font-size: 0.92rem;">
+          ⚙️ '${folderMeta.title}' 폴더에 새 설교를 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
+        </span>
+        <button type="button" onclick="openLectureAddModal('${folderKey}')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none;">
+          ➕ 이 폴더에 설교 영상 등록
+        </button>
+      </div>
+    `;
+  }
+
   if (episodes.length === 0) {
-    gridEl.innerHTML = `
+    gridEl.innerHTML = adminAddBarHtml + `
       <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--text-muted);">
-        <p style="font-size: 1.1rem; font-weight: 600;">검색 결과에 해당하는 강의가 없습니다.</p>
-        <p style="font-size: 0.88rem; margin-top: 6px;">다른 검색어를 입력하시거나 좌측 폴더를 선택해 주세요.</p>
+        <p style="font-size: 1.1rem; font-weight: 600;">등록된 강의가 없습니다.</p>
+        <p style="font-size: 0.88rem; margin-top: 6px;">상단의 [설교 영상 등록] 버튼을 눌러 새 설교를 추가해 보세요.</p>
       </div>
     `;
     return;
   }
 
-  // 카드 그리드 렌더링 (Image 2 스타일)
-  gridEl.innerHTML = episodes.map(item => {
+  // 카드 그리드 렌더링
+  gridEl.innerHTML = adminAddBarHtml + episodes.map(item => {
     let thumbHtml = '';
     if (folderMeta.thumb) {
       thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="card-thumb-img">`;
@@ -282,8 +361,17 @@ function renderArchiveFolderContent(folderKey, query) {
 
     const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.72rem; padding:2px 6px; border-radius:4px; font-weight:700; margin-left:6px;">PDF 교재</span>` : '';
 
+    // 관리자 수정/삭제 버튼
+    const adminActionsHtml = isAdmin ? `
+      <div class="card-admin-actions" onclick="event.stopPropagation()">
+        <button type="button" class="btn-card-edit" onclick="openLectureEditModal('${folderKey}', ${item.ep})">✏️ 수정</button>
+        <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('${folderKey}', ${item.ep})">🗑️ 삭제</button>
+      </div>
+    ` : '';
+
     return `
-      <div class="video-thumb-card" onclick="playArchiveLecture('${folderKey}', ${item.ep})">
+      <div class="video-thumb-card" style="position: relative;" onclick="playArchiveLecture('${folderKey}', ${item.ep})">
+        ${adminActionsHtml}
         <div class="card-thumb-wrap">
           ${thumbHtml}
           <div class="play-btn-circle">▶</div>
@@ -332,6 +420,9 @@ function playArchiveLecture(folderKey, epNumber) {
 
   if (!playerArea || !iframe) return;
 
+  // BGM 일시정지 (설교 영상 시청 시 방해 방지)
+  pauseBgm();
+
   // 비디오 ID 추출
   let videoId = '';
   if (item.url) {
@@ -363,7 +454,6 @@ function playArchiveLecture(folderKey, epNumber) {
   if (videoId) {
     iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
   } else {
-    // 검색 임베드 또는 폴백 플레이어
     iframe.src = `https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(queryTerm)}&autoplay=1`;
   }
 
@@ -380,24 +470,441 @@ function closeArchivePlayer() {
   }
 }
 
-/**
- * 하위 호환 모달 뷰어 (GNB 드롭다운 등에서 호출 시 바로 해당 폴더로 이동 & 스크롤)
- */
 async function openSermonSeriesModal(seriesKey) {
   await selectArchiveFolder(seriesKey);
   const section = document.getElementById('sermon-videos');
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
 }
 
 async function openPilgrimModal() {
   await selectArchiveFolder('pilgrim');
   const section = document.getElementById('sermon-videos');
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
+/**
+ * ==========================================================
+ * 🔐 관리자 모드 인증 및 사이트 인라인 편집 모달 로직
+ * ==========================================================
+ */
+const SITE_ADMIN_PIN = '7777';
+
+function openAdminLoginModal() {
+  if (isSiteAdminLoggedIn()) {
+    if (confirm('현재 관리자 모드로 접속 중입니다. 관리자 패널(대시보드)로 이동하시겠습니까?')) {
+      window.location.href = 'admin.html';
+    }
+    return;
+  }
+  const modal = document.getElementById('modal-admin-login');
+  if (modal) {
+    modal.classList.add('active');
+    setTimeout(() => {
+      const pinInput = document.getElementById('site-admin-pin-input');
+      if (pinInput) pinInput.focus();
+    }, 100);
   }
 }
+
+function closeAdminLoginModal() {
+  const modal = document.getElementById('modal-admin-login');
+  if (modal) modal.classList.remove('active');
+}
+
+function handleSiteAdminLogin(e) {
+  e.preventDefault();
+  const pin = document.getElementById('site-admin-pin-input').value.trim();
+  if (pin === SITE_ADMIN_PIN) {
+    localStorage.setItem('allnations_admin_auth', 'true');
+    closeAdminLoginModal();
+    updateSiteAdminUI();
+    alert('🎉 관리자 모드로 로그인되었습니다!\n이제 홈페이지 상에서 설교 및 폴더를 실시간으로 직접 수정/추가하실 수 있습니다.');
+  } else {
+    alert('비밀번호가 올바르지 않습니다. (기본: 7777)');
+  }
+}
+
+function handleSiteAdminLogout() {
+  if (!confirm('관리자 모드를 로그아웃하고 일반 사용자 모드로 전환하시겠습니까?')) return;
+  localStorage.removeItem('allnations_admin_auth');
+  updateSiteAdminUI();
+  alert('관리자 모드에서 로그아웃되었습니다.');
+}
+
+// 1. 설교 등록/수정 모달 열기
+function openLectureAddModal(folderKey) {
+  const modal = document.getElementById('modal-lecture-edit');
+  const select = document.getElementById('modal-lec-folder-select');
+  const folders = getEffectiveFolders();
+
+  select.innerHTML = folders.map(f => `<option value="${f.key}">${f.title}</option>`).join('');
+  select.value = folderKey || currentFolderKey;
+
+  document.getElementById('modal-lecture-title-text').textContent = '➕ 새 설교 영상 및 자료 등록';
+  document.getElementById('modal-lec-mode').value = 'add';
+  document.getElementById('modal-lec-original-ep').value = '';
+
+  // 다음 회차 자동 계산
+  let nextEp = 1;
+  if (archiveDataCache && archiveDataCache[select.value] && archiveDataCache[select.value].episodes) {
+    const list = archiveDataCache[select.value].episodes;
+    if (list.length > 0) {
+      nextEp = Math.max(...list.map(x => x.ep || 0)) + 1;
+    }
+  }
+
+  document.getElementById('modal-lec-ep').value = nextEp;
+  document.getElementById('modal-lec-title').value = '';
+  document.getElementById('modal-lec-passage').value = '';
+  document.getElementById('modal-lec-url').value = '';
+  document.getElementById('modal-lec-pdf').value = '';
+
+  modal.classList.add('active');
+}
+
+function openLectureEditModal(folderKey, epNumber) {
+  if (!archiveDataCache || !archiveDataCache[folderKey]) return;
+  const item = (archiveDataCache[folderKey].episodes || []).find(x => x.ep === epNumber);
+  if (!item) return;
+
+  const modal = document.getElementById('modal-lecture-edit');
+  const select = document.getElementById('modal-lec-folder-select');
+  const folders = getEffectiveFolders();
+
+  select.innerHTML = folders.map(f => `<option value="${f.key}">${f.title}</option>`).join('');
+  select.value = folderKey;
+
+  document.getElementById('modal-lecture-title-text').textContent = `✏️ 설교 영상 수정 (${item.ep}강)`;
+  document.getElementById('modal-lec-mode').value = 'edit';
+  document.getElementById('modal-lec-original-ep').value = epNumber;
+
+  document.getElementById('modal-lec-ep').value = item.ep;
+  document.getElementById('modal-lec-title').value = item.title || '';
+  document.getElementById('modal-lec-passage').value = item.passage || '';
+  document.getElementById('modal-lec-url').value = item.url || '';
+  document.getElementById('modal-lec-pdf').value = item.pdfUrl || '';
+
+  modal.classList.add('active');
+}
+
+function closeLectureEditModal() {
+  const modal = document.getElementById('modal-lecture-edit');
+  if (modal) modal.classList.remove('active');
+}
+
+function handleSaveSiteLecture(e) {
+  e.preventDefault();
+  const folderKey = document.getElementById('modal-lec-folder-select').value;
+  const mode = document.getElementById('modal-lec-mode').value;
+  const origEp = parseInt(document.getElementById('modal-lec-original-ep').value);
+  const ep = parseInt(document.getElementById('modal-lec-ep').value);
+  const title = document.getElementById('modal-lec-title').value.trim();
+  const passage = document.getElementById('modal-lec-passage').value.trim();
+  const url = document.getElementById('modal-lec-url').value.trim();
+  const pdfUrl = document.getElementById('modal-lec-pdf').value.trim();
+
+  if (!archiveDataCache) archiveDataCache = {};
+  if (!archiveDataCache[folderKey]) {
+    const folders = getEffectiveFolders();
+    const meta = folders.find(f => f.key === folderKey);
+    archiveDataCache[folderKey] = {
+      title: meta ? meta.title : folderKey,
+      episodes: []
+    };
+  }
+
+  const epList = archiveDataCache[folderKey].episodes;
+
+  const newItem = {
+    ep: ep,
+    title: title,
+    passage: passage,
+    url: url,
+    pdfUrl: pdfUrl || null
+  };
+
+  if (mode === 'add') {
+    // 중복 체크
+    const idx = epList.findIndex(x => x.ep === ep);
+    if (idx !== -1) {
+      if (!confirm(`${ep}강이 이미 존재합니다. 덮어쓰시겠습니까?`)) return;
+      epList[idx] = newItem;
+    } else {
+      epList.push(newItem);
+    }
+  } else {
+    // edit 모드
+    const idx = epList.findIndex(x => x.ep === origEp);
+    if (idx !== -1) {
+      epList[idx] = newItem;
+    } else {
+      epList.push(newItem);
+    }
+  }
+
+  // 회차별 오름차순 정렬
+  epList.sort((a, b) => a.ep - b.ep);
+
+  saveEffectiveData();
+  closeLectureEditModal();
+  renderArchiveFolderSidebar();
+  renderArchiveFolderContent(folderKey, '');
+  alert(`🎉 '${title}' 설교가 성공적으로 저장되었습니다!\n(우측 상단의 [🚀 GitHub 영구 저장]을 누르시면 전세계 배포가 완료됩니다)`);
+}
+
+function handleDeleteSiteLecture(folderKey, epNumber) {
+  if (!confirm(`${epNumber}강 설교를 정말로 삭제하시겠습니까?`)) return;
+  if (!archiveDataCache || !archiveDataCache[folderKey]) return;
+
+  const list = archiveDataCache[folderKey].episodes || [];
+  const idx = list.findIndex(x => x.ep === epNumber);
+  if (idx !== -1) {
+    list.splice(idx, 1);
+    saveEffectiveData();
+    renderArchiveFolderSidebar();
+    renderArchiveFolderContent(folderKey, '');
+    alert('설교가 삭제되었습니다.');
+  }
+}
+
+// 2. 새 폴더 등록 모달 열기
+function openFolderCreateModal() {
+  const modal = document.getElementById('modal-folder-create');
+  if (modal) {
+    document.getElementById('modal-folder-key').value = '';
+    document.getElementById('modal-folder-title').value = '';
+    modal.classList.add('active');
+  }
+}
+
+function closeFolderCreateModal() {
+  const modal = document.getElementById('modal-folder-create');
+  if (modal) modal.classList.remove('active');
+}
+
+function handleSaveSiteFolder(e) {
+  e.preventDefault();
+  const key = document.getElementById('modal-folder-key').value.trim().toLowerCase().replace(/[^a-z0-9_]/g, '');
+  const title = document.getElementById('modal-folder-title').value.trim();
+  const icon = document.getElementById('modal-folder-icon').value;
+
+  if (!key || !title) {
+    alert('폴더 식별 키와 이름을 모두 입력해 주세요.');
+    return;
+  }
+
+  activeFoldersList = getEffectiveFolders();
+  if (activeFoldersList.some(f => f.key === key)) {
+    alert('이미 존재하는 폴더 키입니다. 다른 키를 입력해 주세요.');
+    return;
+  }
+
+  const newFolder = {
+    key: key,
+    title: title,
+    count: '0편',
+    icon: icon,
+    bgClass: 'bg-nt'
+  };
+
+  activeFoldersList.push(newFolder);
+  if (!archiveDataCache) archiveDataCache = {};
+  archiveDataCache[key] = {
+    title: title,
+    episodes: []
+  };
+
+  saveEffectiveData();
+  closeFolderCreateModal();
+  currentFolderKey = key;
+  renderArchiveFolderSidebar();
+  renderArchiveFolderContent(key, '');
+  alert(`🎉 '${title}' 폴더가 생성되었습니다!`);
+}
+
+function handleDeleteSiteFolder(e, folderKey) {
+  e.stopPropagation();
+  if (!confirm(`'${folderKey}' 폴더와 폴더 안의 모든 설교를 삭제하시겠습니까?`)) return;
+
+  activeFoldersList = getEffectiveFolders().filter(f => f.key !== folderKey);
+  if (archiveDataCache && archiveDataCache[folderKey]) {
+    delete archiveDataCache[folderKey];
+  }
+
+  saveEffectiveData();
+  currentFolderKey = activeFoldersList[0] ? activeFoldersList[0].key : 'ot';
+  renderArchiveFolderSidebar();
+  renderArchiveFolderContent(currentFolderKey, '');
+  alert('폴더가 삭제되었습니다.');
+}
+
+// 3. GitHub 즉시 배포 (사이트 모드에서 원클릭)
+const DEFAULT_GH_TOKEN = 'ghp_tEitadzTJxjyvvIMyGmXfrc8qAI5o1RFIisB';
+const DEFAULT_GH_REPO = 'kpuritan/allnationschurch';
+const DEFAULT_GH_BRANCH = 'main';
+
+function utf8ToB64(str) {
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => String.fromCharCode('0x' + p1)));
+}
+
+async function syncSiteChangesToGitHub() {
+  const btn = document.getElementById('btn-site-sync');
+  const origText = btn ? btn.innerHTML : '';
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '⏳ 깃허브 배포 중...';
+  }
+
+  try {
+    const savedGh = localStorage.getItem('ALLNATIONS_GH_SETTINGS_V1');
+    const cfg = savedGh ? JSON.parse(savedGh) : null;
+    const token = (cfg && cfg.token) || DEFAULT_GH_TOKEN;
+    const repo = (cfg && cfg.repo) || DEFAULT_GH_REPO;
+    const branch = (cfg && cfg.branch) || DEFAULT_GH_BRANCH;
+
+    let currentSha = null;
+    const path = 'data/sermons_archive.json';
+
+    try {
+      const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}&t=${Date.now()}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+      if (getRes.ok) {
+        const fileData = await getRes.json();
+        currentSha = fileData.sha;
+      }
+    } catch (e) {
+      console.warn('SHA fetch skipped', e);
+    }
+
+    const bodyPayload = {
+      message: `Update sermons_archive.json from Site Live Edit (${new Date().toLocaleString('ko-KR')})`,
+      content: utf8ToB64(JSON.stringify(archiveDataCache, null, 2)),
+      branch: branch
+    };
+    if (currentSha) bodyPayload.sha = currentSha;
+
+    const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bodyPayload)
+    });
+
+    if (!putRes.ok) {
+      const err = await putRes.json();
+      throw new Error(err.message || putRes.statusText);
+    }
+
+    alert('🎉 GitHub 저장소에 성공적으로 영구 저장(Commit)되었습니다!\n약 1~2분 뒤 전세계 모든 기기에 자동 배포가 완료됩니다.');
+  } catch (err) {
+    alert('GitHub 배포 실패: ' + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = origText;
+    }
+  }
+}
+
+/**
+ * ==========================================================
+ * 🎵 BGM 찬양 플레이어 (YouTube Background Music Player)
+ * 비디오: [Deep Sleep] 잠들며 듣는 찬송가 (uJ0X0uV5RNE)
+ * ==========================================================
+ */
+let ytBgmPlayer = null;
+let isBgmPlaying = false;
+let isBgmMuted = false;
+const BGM_VIDEO_ID = 'uJ0X0uV5RNE';
+
+function onYouTubeIframeAPIReady() {
+  ytBgmPlayer = new YT.Player('yt-bgm-player', {
+    videoId: BGM_VIDEO_ID,
+    playerVars: {
+      autoplay: 0,
+      loop: 1,
+      playlist: BGM_VIDEO_ID,
+      controls: 0,
+      disablekb: 1,
+      modestbranding: 1,
+      rel: 0
+    },
+    events: {
+      onReady: onBgmPlayerReady,
+      onStateChange: onBgmPlayerStateChange
+    }
+  });
+}
+
+function onBgmPlayerReady(event) {
+  event.target.setVolume(50);
+}
+
+function onBgmPlayerStateChange(event) {
+  const disc = document.getElementById('bgm-disc');
+  const toggleBtn = document.getElementById('btn-bgm-toggle');
+
+  if (event.data === YT.PlayerState.PLAYING) {
+    isBgmPlaying = true;
+    if (disc) disc.classList.add('spinning');
+    if (toggleBtn) toggleBtn.textContent = '⏸';
+  } else {
+    isBgmPlaying = false;
+    if (disc) disc.classList.remove('spinning');
+    if (toggleBtn) toggleBtn.textContent = '▶';
+  }
+}
+
+function toggleBgmPlay() {
+  if (!ytBgmPlayer || !ytBgmPlayer.playVideo) return;
+  if (isBgmPlaying) {
+    ytBgmPlayer.pauseVideo();
+  } else {
+    ytBgmPlayer.playVideo();
+  }
+}
+
+function pauseBgm() {
+  if (ytBgmPlayer && isBgmPlaying && ytBgmPlayer.pauseVideo) {
+    ytBgmPlayer.pauseVideo();
+  }
+}
+
+function toggleBgmMute() {
+  if (!ytBgmPlayer) return;
+  const muteBtn = document.getElementById('btn-bgm-mute');
+  if (isBgmMuted) {
+    ytBgmPlayer.unMute();
+    isBgmMuted = false;
+    if (muteBtn) muteBtn.textContent = '🔊';
+  } else {
+    ytBgmPlayer.mute();
+    isBgmMuted = true;
+    if (muteBtn) muteBtn.textContent = '🔇';
+  }
+}
+
+function toggleBgmWidget() {
+  const widget = document.getElementById('bgm-player-widget');
+  if (widget) {
+    widget.classList.toggle('minimized');
+  }
+}
+
+function initBgmOnFirstInteraction() {
+  // 사용자가 페이지를 처음 클릭할 때 볼륨 세팅 및 필요 시 부드럽게 초기화
+  if (ytBgmPlayer && ytBgmPlayer.setVolume) {
+    ytBgmPlayer.setVolume(50);
+  }
+}
+
 
 
 
