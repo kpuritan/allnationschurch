@@ -87,142 +87,188 @@
     "subtitle": "구속의 은혜와 성막의 영광 (총 22편 완주)",
     "speaker": "박훈 담임목사",
     "category": "구약 강해",
-    "desc": "애굽의 종 되었던 집에서 구원해 내신 하나님의 전적인 은혜와 유월절 어린 양, 시내산 언약, 성막과 하나님의 임재를 다루는 22편 완주 강해입니다.",
+    "desc": "출애굽기 1장부터 20장 십계명까지 구원의 은혜와 언약 백성의 삶을 조명하는 박훈 목사의 출애굽기 주일 강해 전 22편입니다.",
     "searchKeyword": "열방교회 출애굽기 박훈 목사",
     "episodes": [
       {
         "ep": 1,
-        "title": "출애굽기 1강 - 애굽의 학대와 하나님의 구원 준비",
-        "passage": "출애굽기 1:1~22",
-        "search": "열방교회 출애굽기 1강"
+        "title": "1강 - 역사를 아는 일의 중요성!",
+        "passage": "출애굽기 1:1~14, 2:11~15",
+        "url": "https://www.youtube.com/watch?v=xmavqr5_Dcc",
+        "videoId": "xmavqr5_Dcc",
+        "fullTitle": "주일 오전예배(201803011) / 출애굽기 1장 1 - 14절, 2장 11 15절 / 역사를 아는 일의 중요성! / 열방교회 박훈 목사"
       },
       {
         "ep": 2,
-        "title": "출애굽기 2강 - 모세의 출생과 갈대상자",
-        "passage": "출애굽기 2:1~10",
-        "search": "열방교회 출애굽기 2강"
+        "title": "2강 - 결단!",
+        "passage": "출애굽기 2:1~15",
+        "url": "https://www.youtube.com/watch?v=PLVZwRkcfns",
+        "videoId": "PLVZwRkcfns",
+        "fullTitle": "주일 오전예배(20180318) / 출애굽기 2장 1~15절 / 결단! / 열방교회 박훈목사 설교"
       },
       {
         "ep": 3,
-        "title": "출애굽기 3강 - 떨기나무 불꽃 가운데 부르심",
-        "passage": "출애굽기 3:1~12",
-        "search": "열방교회 출애굽기 3강"
+        "title": "3강 - 모세! 예수 그리스도의 표상!",
+        "passage": "출애굽기 2:23~25",
+        "url": "https://www.youtube.com/watch?v=xHK16SkQgE0",
+        "videoId": "xHK16SkQgE0",
+        "fullTitle": "주일 오전예배(20180325) / 출애굽기 2장 23 ~ 25절 / 모세! 예수 그리스도의 표상! / 열방교회 박훈 목사"
       },
       {
         "ep": 4,
-        "title": "출애굽기 4강 - 스스로 있는 자 (여호와 하나님)",
-        "passage": "출애굽기 3:13~22",
-        "search": "열방교회 출애굽기 4강"
+        "title": "4강 - 복음에 접근하는 자세!",
+        "passage": "출애굽기 3:1~12",
+        "url": "https://www.youtube.com/watch?v=uzHIewUgDlA",
+        "videoId": "uzHIewUgDlA",
+        "fullTitle": "주일 오전예배(20180401) / 출애굽기 3장 1 ~12절 / \"복음에 접근하는 자세!\" / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 5,
-        "title": "출애굽기 5강 - 모세의 순종과 바로 앞에서의 선포",
-        "passage": "출애굽기 4~5장",
-        "search": "열방교회 출애굽기 5강"
+        "title": "5강 - 내가 여호와 인 줄 알리라!",
+        "passage": "출애굽기 7:16~19",
+        "url": "https://www.youtube.com/watch?v=vhlCGjGYRVU",
+        "videoId": "vhlCGjGYRVU",
+        "fullTitle": "주일 오전예배(20180408 ) / 출애굽기 7장 16 ~19절 / \"내가 여호와 인 줄 알리라!\" / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 6,
-        "title": "출애굽기 6강 - 열 가지 재앙과 애굽 신들의 심판 (1)",
-        "passage": "출애굽기 7~8장",
-        "search": "열방교회 출애굽기 6강"
+        "title": "6강 - 한 표징을 보이리니.",
+        "passage": "출애굽기 11:1~12:14",
+        "url": "https://www.youtube.com/watch?v=LzcmoTrwaI0",
+        "videoId": "LzcmoTrwaI0",
+        "fullTitle": "주일 오전예배(20180415) / 출애굽기 11장 1절~ 12장 1~14 / 한 표징을 보이리니. / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 7,
-        "title": "출애굽기 7강 - 열 가지 재앙과 하나님의 구별하심 (2)",
-        "passage": "출애굽기 9~10장",
-        "search": "열방교회 출애굽기 7강"
+        "title": "7강 - 구원의 목적!",
+        "passage": "출애굽기 13:1~10",
+        "url": "https://www.youtube.com/watch?v=nVbB_0wjRKk",
+        "videoId": "nVbB_0wjRKk",
+        "fullTitle": "주일오전예배(20180422) / 출애굽기 13장 1 ~10절 / 구원의 목적! / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 8,
-        "title": "출애굽기 8강 - 유월절 어린 양의 피 (구속의 완성)",
-        "passage": "출애굽기 12:1~14",
-        "search": "열방교회 출애굽기 8강"
+        "title": "8강 - 신자가 살아가는 방식!",
+        "passage": "출애굽기 13:17~22, 레위기 16:2",
+        "url": "https://www.youtube.com/watch?v=5xuVC-WHGCs",
+        "videoId": "5xuVC-WHGCs",
+        "fullTitle": "주일오전예배(20180429) / 출애굽기 13장 17절 ~ 22절, 레위기 16장 2절 / 신자가 살아가는 방식! / 열방교회 박훈 목사"
       },
       {
         "ep": 9,
-        "title": "출애굽기 9강 - 출애굽과 구름기둥, 불기둥의 인도",
-        "passage": "출애굽기 13:17~22",
-        "search": "열방교회 출애굽기 9강"
+        "title": "9강 - 율법을 준행하나 아니하나 시험하리라!",
+        "passage": "출애굽기 16:1~12",
+        "url": "https://www.youtube.com/watch?v=dU6tbQ_-Gts",
+        "videoId": "dU6tbQ_-Gts",
+        "fullTitle": "주일오전예배(20180506) / 출애굽기 16장 1~12절 / \"율법을 준행하나 아니하나 시험하리라!\" / 열방교회 박훈 목사"
       },
       {
         "ep": 10,
-        "title": "출애굽기 10강 - 홍해의 기적 (너희는 가만히 있어 보라)",
-        "passage": "출애굽기 14:1~31",
-        "search": "열방교회 출애굽기 10강"
+        "title": "10강 - 주 너의 하나님을 시험하지 말라!!",
+        "passage": "출애굽기 17:1~7",
+        "url": "https://www.youtube.com/watch?v=HuOMbb_4Lj4",
+        "videoId": "HuOMbb_4Lj4",
+        "fullTitle": "주일오전예배(201800513) / 출애굽기 17장 1 ~7절 / 주 너의 하나님을 시험하지 말라!! / 열방교회 박훈 목사"
       },
       {
         "ep": 11,
-        "title": "출애굽기 11강 - 마라의 쓴 물과 치료하시는 여호와 라파",
-        "passage": "출애굽기 15:22~27",
-        "search": "열방교회 출애굽기 11강"
+        "title": "11강 - 전쟁의 한복판, 광야!",
+        "passage": "출애굽기 17:8~16",
+        "url": "https://www.youtube.com/watch?v=ew7_lWKtUg8",
+        "videoId": "ew7_lWKtUg8",
+        "fullTitle": "주일오전예배(201800520) / 출애굽기 17장 8-16절 /전쟁의 한복판, 광야! / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 12,
-        "title": "출애굽기 12강 - 하늘의 만나와 메추라기",
-        "passage": "출애굽기 16:1~36",
-        "search": "열방교회 출애굽기 12강"
+        "title": "12강 - 언약을 맺으시는 하나님!",
+        "passage": "출애굽기 19:1~15",
+        "url": "https://www.youtube.com/watch?v=kQOx6p8N_38",
+        "videoId": "kQOx6p8N_38",
+        "fullTitle": "주일오전예배(201800527) / 출애굽기 19장 1 ~15절 / 언약을 맺으시는 하나님! / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 13,
-        "title": "출애굽기 13강 - 므리바 반석의 생수와 아말렉 전투 (여호와 닛시)",
-        "passage": "출애굽기 17:1~16",
-        "search": "열방교회 출애굽기 13강"
+        "title": "13강 - 십계명 1, 2 계명 (다른 신을 두지 말며 우상을 만들지 말라)",
+        "passage": "출애굽기 20:1~6",
+        "url": "https://www.youtube.com/watch?v=tp8czyqbT8A",
+        "videoId": "tp8czyqbT8A",
+        "fullTitle": "주일오전예배(201800603) / 출애굽기 20장 1 ~6절 / 십계명 1, 2 계명 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 14,
-        "title": "출애굽기 14강 - 이드로의 조언과 동역자 세우기",
-        "passage": "출애굽기 18:1~27",
-        "search": "열방교회 출애굽기 14강"
+        "title": "14강 - 십계명 3계명 (여호와의 이름을 망령되게 부르지 말라)",
+        "passage": "출애굽기 20:7",
+        "url": "https://www.youtube.com/watch?v=mNbIiLOIaLU",
+        "videoId": "mNbIiLOIaLU",
+        "fullTitle": "주일 오전예배(20180610) / 출애굽기 20장 7절 / 십계명 3계명 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 15,
-        "title": "출애굽기 15강 - 시내산 언약과 제사장 나라, 거룩한 백성",
-        "passage": "출애굽기 19:1~8",
-        "search": "열방교회 출애굽기 15강"
+        "title": "15강 - 십계명 4계명 (안식일을 기억하여 거룩하게 지키라)",
+        "passage": "출애굽기 20:8~11",
+        "url": "https://www.youtube.com/watch?v=J0o_81DDh44",
+        "videoId": "J0o_81DDh44",
+        "fullTitle": "주일 오전예배(20180617) / 출애굽기 20장 8~11 / 십계명 4계명 / 열방교회 박훈목사 설교"
       },
       {
         "ep": 16,
-        "title": "출애굽기 16강 - 십계명의 반포와 율법의 목적",
-        "passage": "출애굽기 20:1~21",
-        "search": "열방교회 출애굽기 16강"
+        "title": "16강 - 고기, 안식일, 십계명",
+        "passage": "출애굽기 20:8~11",
+        "url": "https://www.youtube.com/watch?v=RjIe4jWGUJ4",
+        "videoId": "RjIe4jWGUJ4",
+        "fullTitle": "주일 오전예배(20180624) / 고기,안식일,십계명 / 출애굽기 20장 8~11 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 17,
-        "title": "출애굽기 17강 - 언약서의 규례와 하나님의 공의",
-        "passage": "출애굽기 21~23장",
-        "search": "열방교회 출애굽기 17강"
+        "title": "17강 - 십계명 제5계명 (네 부모를 공경하라)",
+        "passage": "출애굽기 20:12",
+        "url": "https://www.youtube.com/watch?v=owfOpYsalfw",
+        "videoId": "owfOpYsalfw",
+        "fullTitle": "주일 오전예배(20180701) / 십계명 제 5계명 / 출애굽기 20장 12절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 18,
-        "title": "출애굽기 18강 - 피의 언약 체결과 산 위의 영광",
-        "passage": "출애굽기 24:1~18",
-        "search": "열방교회 출애굽기 18강"
+        "title": "18강 - 십계명 제6계명 (살인하지 말라)",
+        "passage": "출애굽기 20:13",
+        "url": "https://www.youtube.com/watch?v=iGgvxU2BWJg",
+        "videoId": "iGgvxU2BWJg",
+        "fullTitle": "주일 오전예배20180708 / 십계명 제 6계명 / 출애굽기 20장 13절 / 열방교회 주일오전예배 / 박훈 목사 설교"
       },
       {
         "ep": 19,
-        "title": "출애굽기 19강 - 성막의 설계도와 언약궤, 속죄소",
-        "passage": "출애굽기 25~27장",
-        "search": "열방교회 출애굽기 19강"
+        "title": "19강 - 십계명 제7계명 (간음하지 말라)",
+        "passage": "출애굽기 20:14",
+        "url": "https://www.youtube.com/watch?v=gaWUUZ-PLXE",
+        "videoId": "gaWUUZ-PLXE",
+        "fullTitle": "주일 오전예배(20180715) / 십계명 제 7계명 / 출애굽기 20장 14절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 20,
-        "title": "출애굽기 20강 - 제사장의 거룩한 옷과 흉패 (대제사장 예수)",
-        "passage": "출애굽기 28~29장",
-        "search": "열방교회 출애굽기 20강"
+        "title": "20강 - 십계명 제8계명 (도둑질하지 말라)",
+        "passage": "출애굽기 20:15",
+        "url": "https://www.youtube.com/watch?v=iU9SZbRpjQU",
+        "videoId": "iU9SZbRpjQU",
+        "fullTitle": "주일 오전예배(20180722) / 십계명 제 8계명 / 출애굽기 20장 15절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 21,
-        "title": "출애굽기 21강 - 금송아지 우상 숭배와 모세의 중보기도",
-        "passage": "출애굽기 32:1~35",
-        "search": "열방교회 출애굽기 21강"
+        "title": "21강 - 십계명 제9계명 (네 이웃에 대하여 거짓 증거하지 말라)",
+        "passage": "출애굽기 20:16",
+        "url": "https://www.youtube.com/watch?v=u-Zygzv3WPI",
+        "videoId": "u-Zygzv3WPI",
+        "fullTitle": "주일 오전예배(20180729) / 십계명 제 9계명 / 출애굽기 20장 16절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 22,
-        "title": "출애굽기 22강 - 성막의 봉헌과 여호와의 영광의 충만",
-        "passage": "출애굽기 40:1~38",
-        "search": "열방교회 출애굽기 22강"
+        "title": "22강 - 십계명 제10계명 (네 이웃의 집을 탐내지 말라)",
+        "passage": "출애굽기 20:17",
+        "url": "https://www.youtube.com/watch?v=CT7mN6eEIdI",
+        "videoId": "CT7mN6eEIdI",
+        "fullTitle": "주일 오전예배(20180805) / 십계명 제 10계명 / 출애굽기 20장 17절 / 열방교회 박훈 목사 설교"
       }
-    ]
+    ],
+    "count": "22편",
+    "playlistUrl": "https://www.youtube.com/watch?v=xmavqr5_Dcc"
   },
   "genesis_classic": {
     "id": "genesis_classic",

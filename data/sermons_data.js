@@ -1,3 +1,4 @@
+// Bundled Sermons Archive Data for reliable synchronous loading
 window.INITIAL_SERMONS_ARCHIVE = {
   "commandments": {
     "id": "commandments",
@@ -87,142 +88,188 @@ window.INITIAL_SERMONS_ARCHIVE = {
     "subtitle": "구속의 은혜와 성막의 영광 (총 22편 완주)",
     "speaker": "박훈 담임목사",
     "category": "구약 강해",
-    "desc": "애굽의 종 되었던 집에서 구원해 내신 하나님의 전적인 은혜와 유월절 어린 양, 시내산 언약, 성막과 하나님의 임재를 다루는 22편 완주 강해입니다.",
+    "desc": "출애굽기 1장부터 20장 십계명까지 구원의 은혜와 언약 백성의 삶을 조명하는 박훈 목사의 출애굽기 주일 강해 전 22편입니다.",
     "searchKeyword": "열방교회 출애굽기 박훈 목사",
     "episodes": [
       {
         "ep": 1,
-        "title": "출애굽기 1강 - 애굽의 학대와 하나님의 구원 준비",
-        "passage": "출애굽기 1:1~22",
-        "search": "열방교회 출애굽기 1강"
+        "title": "1강 - 역사를 아는 일의 중요성!",
+        "passage": "출애굽기 1:1~14, 2:11~15",
+        "url": "https://www.youtube.com/watch?v=xmavqr5_Dcc",
+        "videoId": "xmavqr5_Dcc",
+        "fullTitle": "주일 오전예배(201803011) / 출애굽기 1장 1 - 14절, 2장 11 15절 / 역사를 아는 일의 중요성! / 열방교회 박훈 목사"
       },
       {
         "ep": 2,
-        "title": "출애굽기 2강 - 모세의 출생과 갈대상자",
-        "passage": "출애굽기 2:1~10",
-        "search": "열방교회 출애굽기 2강"
+        "title": "2강 - 결단!",
+        "passage": "출애굽기 2:1~15",
+        "url": "https://www.youtube.com/watch?v=PLVZwRkcfns",
+        "videoId": "PLVZwRkcfns",
+        "fullTitle": "주일 오전예배(20180318) / 출애굽기 2장 1~15절 / 결단! / 열방교회 박훈목사 설교"
       },
       {
         "ep": 3,
-        "title": "출애굽기 3강 - 떨기나무 불꽃 가운데 부르심",
-        "passage": "출애굽기 3:1~12",
-        "search": "열방교회 출애굽기 3강"
+        "title": "3강 - 모세! 예수 그리스도의 표상!",
+        "passage": "출애굽기 2:23~25",
+        "url": "https://www.youtube.com/watch?v=xHK16SkQgE0",
+        "videoId": "xHK16SkQgE0",
+        "fullTitle": "주일 오전예배(20180325) / 출애굽기 2장 23 ~ 25절 / 모세! 예수 그리스도의 표상! / 열방교회 박훈 목사"
       },
       {
         "ep": 4,
-        "title": "출애굽기 4강 - 스스로 있는 자 (여호와 하나님)",
-        "passage": "출애굽기 3:13~22",
-        "search": "열방교회 출애굽기 4강"
+        "title": "4강 - 복음에 접근하는 자세!",
+        "passage": "출애굽기 3:1~12",
+        "url": "https://www.youtube.com/watch?v=uzHIewUgDlA",
+        "videoId": "uzHIewUgDlA",
+        "fullTitle": "주일 오전예배(20180401) / 출애굽기 3장 1 ~12절 / \"복음에 접근하는 자세!\" / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 5,
-        "title": "출애굽기 5강 - 모세의 순종과 바로 앞에서의 선포",
-        "passage": "출애굽기 4~5장",
-        "search": "열방교회 출애굽기 5강"
+        "title": "5강 - 내가 여호와 인 줄 알리라!",
+        "passage": "출애굽기 7:16~19",
+        "url": "https://www.youtube.com/watch?v=vhlCGjGYRVU",
+        "videoId": "vhlCGjGYRVU",
+        "fullTitle": "주일 오전예배(20180408 ) / 출애굽기 7장 16 ~19절 / \"내가 여호와 인 줄 알리라!\" / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 6,
-        "title": "출애굽기 6강 - 열 가지 재앙과 애굽 신들의 심판 (1)",
-        "passage": "출애굽기 7~8장",
-        "search": "열방교회 출애굽기 6강"
+        "title": "6강 - 한 표징을 보이리니.",
+        "passage": "출애굽기 11:1~12:14",
+        "url": "https://www.youtube.com/watch?v=LzcmoTrwaI0",
+        "videoId": "LzcmoTrwaI0",
+        "fullTitle": "주일 오전예배(20180415) / 출애굽기 11장 1절~ 12장 1~14 / 한 표징을 보이리니. / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 7,
-        "title": "출애굽기 7강 - 열 가지 재앙과 하나님의 구별하심 (2)",
-        "passage": "출애굽기 9~10장",
-        "search": "열방교회 출애굽기 7강"
+        "title": "7강 - 구원의 목적!",
+        "passage": "출애굽기 13:1~10",
+        "url": "https://www.youtube.com/watch?v=nVbB_0wjRKk",
+        "videoId": "nVbB_0wjRKk",
+        "fullTitle": "주일오전예배(20180422) / 출애굽기 13장 1 ~10절 / 구원의 목적! / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 8,
-        "title": "출애굽기 8강 - 유월절 어린 양의 피 (구속의 완성)",
-        "passage": "출애굽기 12:1~14",
-        "search": "열방교회 출애굽기 8강"
+        "title": "8강 - 신자가 살아가는 방식!",
+        "passage": "출애굽기 13:17~22, 레위기 16:2",
+        "url": "https://www.youtube.com/watch?v=5xuVC-WHGCs",
+        "videoId": "5xuVC-WHGCs",
+        "fullTitle": "주일오전예배(20180429) / 출애굽기 13장 17절 ~ 22절, 레위기 16장 2절 / 신자가 살아가는 방식! / 열방교회 박훈 목사"
       },
       {
         "ep": 9,
-        "title": "출애굽기 9강 - 출애굽과 구름기둥, 불기둥의 인도",
-        "passage": "출애굽기 13:17~22",
-        "search": "열방교회 출애굽기 9강"
+        "title": "9강 - 율법을 준행하나 아니하나 시험하리라!",
+        "passage": "출애굽기 16:1~12",
+        "url": "https://www.youtube.com/watch?v=dU6tbQ_-Gts",
+        "videoId": "dU6tbQ_-Gts",
+        "fullTitle": "주일오전예배(20180506) / 출애굽기 16장 1~12절 / \"율법을 준행하나 아니하나 시험하리라!\" / 열방교회 박훈 목사"
       },
       {
         "ep": 10,
-        "title": "출애굽기 10강 - 홍해의 기적 (너희는 가만히 있어 보라)",
-        "passage": "출애굽기 14:1~31",
-        "search": "열방교회 출애굽기 10강"
+        "title": "10강 - 주 너의 하나님을 시험하지 말라!!",
+        "passage": "출애굽기 17:1~7",
+        "url": "https://www.youtube.com/watch?v=HuOMbb_4Lj4",
+        "videoId": "HuOMbb_4Lj4",
+        "fullTitle": "주일오전예배(201800513) / 출애굽기 17장 1 ~7절 / 주 너의 하나님을 시험하지 말라!! / 열방교회 박훈 목사"
       },
       {
         "ep": 11,
-        "title": "출애굽기 11강 - 마라의 쓴 물과 치료하시는 여호와 라파",
-        "passage": "출애굽기 15:22~27",
-        "search": "열방교회 출애굽기 11강"
+        "title": "11강 - 전쟁의 한복판, 광야!",
+        "passage": "출애굽기 17:8~16",
+        "url": "https://www.youtube.com/watch?v=ew7_lWKtUg8",
+        "videoId": "ew7_lWKtUg8",
+        "fullTitle": "주일오전예배(201800520) / 출애굽기 17장 8-16절 /전쟁의 한복판, 광야! / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 12,
-        "title": "출애굽기 12강 - 하늘의 만나와 메추라기",
-        "passage": "출애굽기 16:1~36",
-        "search": "열방교회 출애굽기 12강"
+        "title": "12강 - 언약을 맺으시는 하나님!",
+        "passage": "출애굽기 19:1~15",
+        "url": "https://www.youtube.com/watch?v=kQOx6p8N_38",
+        "videoId": "kQOx6p8N_38",
+        "fullTitle": "주일오전예배(201800527) / 출애굽기 19장 1 ~15절 / 언약을 맺으시는 하나님! / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 13,
-        "title": "출애굽기 13강 - 므리바 반석의 생수와 아말렉 전투 (여호와 닛시)",
-        "passage": "출애굽기 17:1~16",
-        "search": "열방교회 출애굽기 13강"
+        "title": "13강 - 십계명 1, 2 계명 (다른 신을 두지 말며 우상을 만들지 말라)",
+        "passage": "출애굽기 20:1~6",
+        "url": "https://www.youtube.com/watch?v=tp8czyqbT8A",
+        "videoId": "tp8czyqbT8A",
+        "fullTitle": "주일오전예배(201800603) / 출애굽기 20장 1 ~6절 / 십계명 1, 2 계명 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 14,
-        "title": "출애굽기 14강 - 이드로의 조언과 동역자 세우기",
-        "passage": "출애굽기 18:1~27",
-        "search": "열방교회 출애굽기 14강"
+        "title": "14강 - 십계명 3계명 (여호와의 이름을 망령되게 부르지 말라)",
+        "passage": "출애굽기 20:7",
+        "url": "https://www.youtube.com/watch?v=mNbIiLOIaLU",
+        "videoId": "mNbIiLOIaLU",
+        "fullTitle": "주일 오전예배(20180610) / 출애굽기 20장 7절 / 십계명 3계명 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 15,
-        "title": "출애굽기 15강 - 시내산 언약과 제사장 나라, 거룩한 백성",
-        "passage": "출애굽기 19:1~8",
-        "search": "열방교회 출애굽기 15강"
+        "title": "15강 - 십계명 4계명 (안식일을 기억하여 거룩하게 지키라)",
+        "passage": "출애굽기 20:8~11",
+        "url": "https://www.youtube.com/watch?v=J0o_81DDh44",
+        "videoId": "J0o_81DDh44",
+        "fullTitle": "주일 오전예배(20180617) / 출애굽기 20장 8~11 / 십계명 4계명 / 열방교회 박훈목사 설교"
       },
       {
         "ep": 16,
-        "title": "출애굽기 16강 - 십계명의 반포와 율법의 목적",
-        "passage": "출애굽기 20:1~21",
-        "search": "열방교회 출애굽기 16강"
+        "title": "16강 - 고기, 안식일, 십계명",
+        "passage": "출애굽기 20:8~11",
+        "url": "https://www.youtube.com/watch?v=RjIe4jWGUJ4",
+        "videoId": "RjIe4jWGUJ4",
+        "fullTitle": "주일 오전예배(20180624) / 고기,안식일,십계명 / 출애굽기 20장 8~11 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 17,
-        "title": "출애굽기 17강 - 언약서의 규례와 하나님의 공의",
-        "passage": "출애굽기 21~23장",
-        "search": "열방교회 출애굽기 17강"
+        "title": "17강 - 십계명 제5계명 (네 부모를 공경하라)",
+        "passage": "출애굽기 20:12",
+        "url": "https://www.youtube.com/watch?v=owfOpYsalfw",
+        "videoId": "owfOpYsalfw",
+        "fullTitle": "주일 오전예배(20180701) / 십계명 제 5계명 / 출애굽기 20장 12절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 18,
-        "title": "출애굽기 18강 - 피의 언약 체결과 산 위의 영광",
-        "passage": "출애굽기 24:1~18",
-        "search": "열방교회 출애굽기 18강"
+        "title": "18강 - 십계명 제6계명 (살인하지 말라)",
+        "passage": "출애굽기 20:13",
+        "url": "https://www.youtube.com/watch?v=iGgvxU2BWJg",
+        "videoId": "iGgvxU2BWJg",
+        "fullTitle": "주일 오전예배20180708 / 십계명 제 6계명 / 출애굽기 20장 13절 / 열방교회 주일오전예배 / 박훈 목사 설교"
       },
       {
         "ep": 19,
-        "title": "출애굽기 19강 - 성막의 설계도와 언약궤, 속죄소",
-        "passage": "출애굽기 25~27장",
-        "search": "열방교회 출애굽기 19강"
+        "title": "19강 - 십계명 제7계명 (간음하지 말라)",
+        "passage": "출애굽기 20:14",
+        "url": "https://www.youtube.com/watch?v=gaWUUZ-PLXE",
+        "videoId": "gaWUUZ-PLXE",
+        "fullTitle": "주일 오전예배(20180715) / 십계명 제 7계명 / 출애굽기 20장 14절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 20,
-        "title": "출애굽기 20강 - 제사장의 거룩한 옷과 흉패 (대제사장 예수)",
-        "passage": "출애굽기 28~29장",
-        "search": "열방교회 출애굽기 20강"
+        "title": "20강 - 십계명 제8계명 (도둑질하지 말라)",
+        "passage": "출애굽기 20:15",
+        "url": "https://www.youtube.com/watch?v=iU9SZbRpjQU",
+        "videoId": "iU9SZbRpjQU",
+        "fullTitle": "주일 오전예배(20180722) / 십계명 제 8계명 / 출애굽기 20장 15절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 21,
-        "title": "출애굽기 21강 - 금송아지 우상 숭배와 모세의 중보기도",
-        "passage": "출애굽기 32:1~35",
-        "search": "열방교회 출애굽기 21강"
+        "title": "21강 - 십계명 제9계명 (네 이웃에 대하여 거짓 증거하지 말라)",
+        "passage": "출애굽기 20:16",
+        "url": "https://www.youtube.com/watch?v=u-Zygzv3WPI",
+        "videoId": "u-Zygzv3WPI",
+        "fullTitle": "주일 오전예배(20180729) / 십계명 제 9계명 / 출애굽기 20장 16절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 22,
-        "title": "출애굽기 22강 - 성막의 봉헌과 여호와의 영광의 충만",
-        "passage": "출애굽기 40:1~38",
-        "search": "열방교회 출애굽기 22강"
+        "title": "22강 - 십계명 제10계명 (네 이웃의 집을 탐내지 말라)",
+        "passage": "출애굽기 20:17",
+        "url": "https://www.youtube.com/watch?v=CT7mN6eEIdI",
+        "videoId": "CT7mN6eEIdI",
+        "fullTitle": "주일 오전예배(20180805) / 십계명 제 10계명 / 출애굽기 20장 17절 / 열방교회 박훈 목사 설교"
       }
-    ]
+    ],
+    "count": "22편",
+    "playlistUrl": "https://www.youtube.com/watch?v=xmavqr5_Dcc"
   },
   "genesis_classic": {
     "id": "genesis_classic",
@@ -2077,422 +2124,3 @@ window.INITIAL_SERMONS_ARCHIVE = {
     ]
   }
 };
-
-window.INITIAL_PILGRIM_DATA = [
-  {
-    "ep": 1,
-    "title": "멸망의 도시(장망성)를 떠나다",
-    "passage": "창세기 19:15~17",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+1%EA%B0%95"
-  },
-  {
-    "ep": 2,
-    "title": "전도자와 좁은 문을 향한 출발",
-    "passage": "마태복음 7:13~14",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+2%EA%B0%95"
-  },
-  {
-    "ep": 3,
-    "title": "낙담의 수렁과 유순, 고집",
-    "passage": "시편 40:1~3",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+3%EA%B0%95"
-  },
-  {
-    "ep": 4,
-    "title": "세속 현자와 율법의 산",
-    "passage": "갈라디아서 3:10~14",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+4%EA%B0%95"
-  },
-  {
-    "ep": 5,
-    "title": "좁은 문과 선의 (은혜의 문)",
-    "passage": "누가복음 13:22~30",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+5%EA%B0%95"
-  },
-  {
-    "ep": 6,
-    "title": "해석자의 집 (1) - 기름과 불",
-    "passage": "고린도전서 2:9~14",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+6%EA%B0%95"
-  },
-  {
-    "ep": 7,
-    "title": "해석자의 집 (2) - 쇠창살에 갇힌 사람",
-    "passage": "히브리서 6:4~8",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+7%EA%B0%95"
-  },
-  {
-    "ep": 8,
-    "title": "십자가 언덕과 짐 벗겨짐",
-    "passage": "로마서 8:1~4",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+8%EA%B0%95"
-  },
-  {
-    "ep": 9,
-    "title": "세 사람의 잠자는 자 (단순, 나태, 거만)",
-    "passage": "잠언 6:6~11",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+9%EA%B0%95"
-  },
-  {
-    "ep": 10,
-    "title": "허례와 위선 (담을 넘어온 자들)",
-    "passage": "요한복음 10:1~5",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+10%EA%B0%95"
-  },
-  {
-    "ep": 11,
-    "title": "곤고의 언덕과 잃어버린 두루마리",
-    "passage": "요한계시록 2:4~5",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+11%EA%B0%95"
-  },
-  {
-    "ep": 12,
-    "title": "아름다운 궁전과 사자들 (교회의 모형)",
-    "passage": "시편 84:1~4",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+12%EA%B0%95"
-  },
-  {
-    "ep": 13,
-    "title": "신중, 분별, 경건, 자선의 성도 교제",
-    "passage": "디모데전서 4:6~10",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+13%EA%B0%95"
-  },
-  {
-    "ep": 14,
-    "title": "평화의 방과 하나님의 전신갑주",
-    "passage": "에베소서 6:10~18",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+14%EA%B0%95"
-  },
-  {
-    "ep": 15,
-    "title": "겸손의 골짜기와 아볼루온과의 결전",
-    "passage": "야고보서 4:6~10",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+15%EA%B0%95"
-  },
-  {
-    "ep": 16,
-    "title": "사망의 음침한 골짜기와 오직 기도",
-    "passage": "시편 23:1~6",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+16%EA%B0%95"
-  },
-  {
-    "ep": 17,
-    "title": "신실과의 만남과 첫 번째 동행",
-    "passage": "전도서 4:9~12",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+17%EA%B0%95"
-  },
-  {
-    "ep": 18,
-    "title": "음녀와 첫 사람 아담의 유혹",
-    "passage": "잠언 5:1~8",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+18%EA%B0%95"
-  },
-  {
-    "ep": 19,
-    "title": "모세와 율법의 채찍 (무자비한 율법)",
-    "passage": "로마서 7:7~12",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+19%EA%B0%95"
-  },
-  {
-    "ep": 20,
-    "title": "수치와의 대결 (부끄러움의 유혹)",
-    "passage": "마가복음 8:34~38",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+20%EA%B0%95"
-  },
-  {
-    "ep": 21,
-    "title": "수다쟁이(말만 앞서는 자)의 실체",
-    "passage": "마태복음 23:1~7",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+21%EA%B0%95"
-  },
-  {
-    "ep": 22,
-    "title": "복음전도자와의 재회와 순교의 예고",
-    "passage": "디모데후서 4:1~8",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+22%EA%B0%95"
-  },
-  {
-    "ep": 23,
-    "title": "허영의 시장(Vanity Fair) 입성",
-    "passage": "요한일서 2:15~17",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+23%EA%B0%95"
-  },
-  {
-    "ep": 24,
-    "title": "허영의 시장에서 박해와 체포",
-    "passage": "마태복음 5:10~12",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+24%EA%B0%95"
-  },
-  {
-    "ep": 25,
-    "title": "증오 판사와 거짓 증인들 (선망, 미신, 아첨)",
-    "passage": "요한복음 15:18~25",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+25%EA%B0%95"
-  },
-  {
-    "ep": 26,
-    "title": "신실의 순교와 하늘 병거",
-    "passage": "사도행전 7:54~60",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+26%EA%B0%95"
-  },
-  {
-    "ep": 27,
-    "title": "소망과의 새로운 동행 (은혜의 위로)",
-    "passage": "고린도후서 1:3~7",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+27%EA%B0%95"
-  },
-  {
-    "ep": 28,
-    "title": "이익을 따르는 자들 (욕심쟁이, 돈 사랑)",
-    "passage": "디모데전서 6:6~10",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+28%EA%B0%95"
-  },
-  {
-    "ep": 29,
-    "title": "은혜의 효과와 증거 / 데마와 은광",
-    "passage": "디모데후서 4:9~10",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+29%EA%B0%95"
-  },
-  {
-    "ep": 30,
-    "title": "허영의 시장 1편 / 롯의 처 소금 기둥",
-    "passage": "누가복음 17:28~33",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+30%EA%B0%95"
-  },
-  {
-    "ep": 31,
-    "title": "허영의 시장 2편 / 생명수의 강과 쉼",
-    "passage": "시편 23:1~3",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+31%EA%B0%95"
-  },
-  {
-    "ep": 32,
-    "title": "허영의 시장 3편 / 샛길 초원의 방황",
-    "passage": "잠언 14:12",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+32%EA%B0%95"
-  },
-  {
-    "ep": 33,
-    "title": "두 마음 (의심의 시작)",
-    "passage": "야고보서 1:5~8",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+33%EA%B0%95"
-  },
-  {
-    "ep": 34,
-    "title": "두 미혹의 친구들",
-    "passage": "누가복음 16:14~18",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+34%EA%B0%95"
-  },
-  {
-    "ep": 35,
-    "title": "데마와 은광 (물질의 덫)",
-    "passage": "디모데후서 4:9~10",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+35%EA%B0%95"
-  },
-  {
-    "ep": 36,
-    "title": "생명수의 강과 샛길 초원",
-    "passage": "고린도후서 12:1~10",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+36%EA%B0%95"
-  },
-  {
-    "ep": 37,
-    "title": "의심의 성과 절망 거인",
-    "passage": "창세기 32:1~6",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+37%EA%B0%95"
-  },
-  {
-    "ep": 38,
-    "title": "기쁨의 산과 목자들",
-    "passage": "시편 119:71",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+38%EA%B0%95"
-  },
-  {
-    "ep": 39,
-    "title": "무지와 배신자",
-    "passage": "로마서 10:2~3",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+39%EA%B0%95"
-  },
-  {
-    "ep": 40,
-    "title": "작은 믿음과 큰 믿음",
-    "passage": "마태복음 17:14~20",
-    "part": "1부 (1-40강)",
-    "source": "금요기도회 강해",
-    "url": "https://www.youtube.com/results?search_query=%EC%97%B4%EB%B0%A9%EA%B5%90%ED%9A%8C+%EA%B8%88%EC%9A%94%EA%B8%B0%EB%8F%84%ED%9A%8C+%EC%B2%9C%EB%A1%9C%EC%97%AD%EC%A0%95+40%EA%B0%95"
-  },
-  {
-    "ep": 41,
-    "title": "아첨쟁이",
-    "passage": "잠언 29:5",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=1"
-  },
-  {
-    "ep": 42,
-    "title": "무신론자",
-    "passage": "시편 14:1",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=2"
-  },
-  {
-    "ep": 43,
-    "title": "회심의 체험 1",
-    "passage": "에스겔 36:26~27",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=3"
-  },
-  {
-    "ep": 44,
-    "title": "회심의 체험 2",
-    "passage": "고린도후서 5:17",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=4"
-  },
-  {
-    "ep": 45,
-    "title": "회심의 체험 3",
-    "passage": "갈라디아서 2:20",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=5"
-  },
-  {
-    "ep": 46,
-    "title": "무지와 씨름 (부정한 자)",
-    "passage": "이사야 64:6",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=6"
-  },
-  {
-    "ep": 47,
-    "title": "무지 (잘못된 믿음)",
-    "passage": "로마서 10:2~4",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=7"
-  },
-  {
-    "ep": 48,
-    "title": "근본적 두려움 (거룩한 경외)",
-    "passage": "잠언 9:10",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=8"
-  },
-  {
-    "ep": 49,
-    "title": "일시적 믿음 (타락하는 이유)",
-    "passage": "히브리서 3:12~14",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=9"
-  },
-  {
-    "ep": 50,
-    "title": "쁄라 땅과 죽음의 강",
-    "passage": "이사야 62:4~5",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=10"
-  },
-  {
-    "ep": 51,
-    "title": "축복의 강",
-    "passage": "요한계시록 22:1~2",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=11"
-  },
-  {
-    "ep": 52,
-    "title": "천국 입성과 무지의 최후",
-    "passage": "요한계시록 21:1~7",
-    "part": "2부 (41-52강)",
-    "source": "불로열방교회 유튜브",
-    "url": "https://www.youtube.com/watch?v=k4TW9EVfywA&list=PLSaHerzUahU_GSoYHiCp_X246jruIfXKC&index=12"
-  }
-];
