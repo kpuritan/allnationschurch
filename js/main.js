@@ -144,7 +144,9 @@ function getEffectiveFolders() {
     try {
       const parsed = JSON.parse(saved);
       if (parsed.folders && parsed.folders.length > 0) {
-        return parsed.folders;
+        const defaultKeys = new Set(ARCHIVE_FOLDERS.map(f => f.key));
+        const customFolders = parsed.folders.filter(f => !defaultKeys.has(f.key));
+        return [...ARCHIVE_FOLDERS, ...customFolders];
       }
     } catch (e) {
       console.error(e);
@@ -218,8 +220,13 @@ function renderArchiveFolderSidebar() {
 
   folderListEl.innerHTML = addFolderBtnHtml + activeFoldersList.map(f => {
     let epCount = f.count || '0편';
-    if (archiveDataCache && archiveDataCache[f.key]) {
-      epCount = `${(archiveDataCache[f.key].episodes || []).length}편`;
+    if (archiveDataCache && archiveDataCache[f.key] && archiveDataCache[f.key].episodes) {
+      const count = archiveDataCache[f.key].episodes.length;
+      if (f.key === 'mark' || f.key === 'pilgrim' || f.key === 'luke' || f.key === 'john' || f.key === 'romans') {
+        epCount = `${count}강`;
+      } else {
+        epCount = `${count}편`;
+      }
     } else if (f.key === 'pilgrim' && pilgrimDataCache) {
       epCount = `${pilgrimDataCache.length}강`;
     }
@@ -263,15 +270,10 @@ async function loadArchiveData() {
       const parsed = JSON.parse(saved);
       if (parsed.archive) {
         archiveDataCache = archiveDataCache || {};
+        const defaultKeys = new Set(ARCHIVE_FOLDERS.map(f => f.key));
         for (const k of Object.keys(parsed.archive)) {
-          if (!archiveDataCache[k]) {
+          if (!defaultKeys.has(k)) {
             archiveDataCache[k] = parsed.archive[k];
-          } else {
-            const localEps = (parsed.archive[k].episodes || []).length;
-            const defEps = (archiveDataCache[k].episodes || []).length;
-            if (localEps >= defEps && localEps > 0) {
-              archiveDataCache[k] = parsed.archive[k];
-            }
           }
         }
       }
