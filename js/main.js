@@ -509,7 +509,8 @@ function playArchiveLecture(folderKey, epNumber) {
     }
   }
 
-  iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1`;
+  const originParam = window.location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0${originParam}`;
 
   playerArea.style.display = 'block';
   playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
