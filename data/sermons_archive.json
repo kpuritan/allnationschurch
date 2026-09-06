@@ -226,92 +226,119 @@
   },
   "genesis_classic": {
     "id": "genesis_classic",
-    "title": "창세기 강해 (열방교회 13편)",
-    "subtitle": "태초의 창조와 족장들의 언약 신앙 (총 13편 완주)",
+    "title": "창세기 강해 (13편)",
+    "subtitle": "태초의 창조와 언약의 시작 (총 13편)",
     "speaker": "박훈 담임목사",
     "category": "구약 강해",
-    "desc": "열방교회 주일예배를 통해 전한 창세기 13편 전편 강해입니다. 하나님의 창조와 타락, 아브라함, 이삭, 야곱, 요셉에 이르기까지 구속사의 토대를 명쾌하게 강해합니다.",
-    "searchKeyword": "열방교회 창세기 박훈 목사",
+    "desc": "창세기 1장부터 37장까지 하나님의 절대 주권과 구속 역사의 시작을 밝히는 박훈 목사의 창세기 주일 강해 전편입니다.",
+    "playlistUrl": "https://www.youtube.com/watch?v=jvqaNuhhaRg",
     "episodes": [
       {
         "ep": 1,
-        "title": "창세기 1강 - 태초에 하나님이 천지를 창조하시니라",
-        "passage": "창세기 1:1~5",
-        "search": "열방교회 창세기 1강"
+        "title": "1강 - 절대적인 분을. 절대적인 자리에!",
+        "passage": "창세기 1장 1절, 신명기 6장 4-9절",
+        "url": "https://www.youtube.com/watch?v=jvqaNuhhaRg",
+        "videoId": "jvqaNuhhaRg",
+        "fullTitle": "창세기 1장 1절, 신명기 6장 4-9절 / 절대적인 분을. 절대적인 자리에!/ 주일 오전예배(20171203) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 2,
-        "title": "창세기 2강 - 사람의 창조와 안식",
-        "passage": "창세기 1:26~2:3",
-        "search": "열방교회 창세기 2강"
+        "title": "2강 - 당신의 본분을 찾으라!",
+        "passage": "창세기 2장 4-17절, 창세기 3장 15절",
+        "url": "https://www.youtube.com/watch?v=hp2km19PQPM",
+        "videoId": "hp2km19PQPM",
+        "fullTitle": "창세기 2장 4-17절, 창세기 3장 15절 / 당신의 본분을 찾으라! / 주일 오전예배(20171210) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 3,
-        "title": "창세기 3강 - 선악과 언약과 인간의 타락",
-        "passage": "창세기 2:15~3:7",
-        "search": "열방교회 창세기 3강"
+        "title": "3강 - 하나님이 다가오실 때",
+        "passage": "창세기 4장 1-15절",
+        "url": "https://www.youtube.com/watch?v=FpwUvMDk220",
+        "videoId": "FpwUvMDk220",
+        "fullTitle": "창세기 4장 1-15절 / “하나님이 다가오실 때” / 주일 오전예배(20171217) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 4,
-        "title": "창세기 4강 - 여자의 후손 (원시복음의 약속)",
-        "passage": "창세기 3:8~24",
-        "search": "열방교회 창세기 4강"
+        "title": "4강 - 늦기 전에 타십시오!",
+        "passage": "창세기 6장 9-22절, 7장 17-24절",
+        "url": "https://www.youtube.com/watch?v=YiyY8hgafQo",
+        "videoId": "YiyY8hgafQo",
+        "fullTitle": "창세기 6장 9-22절, 7장 17-24절 / \"늦기 전에 타십시오!\" / 주일 오전예배(20171224) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 5,
-        "title": "창세기 5강 - 가인과 아벨, 셋의 계보",
-        "passage": "창세기 4:1~5:32",
-        "search": "열방교회 창세기 5강"
+        "title": "5강 - 하나님을 대적하는 바벨사상",
+        "passage": "창세기 11장 1-9절",
+        "url": "https://www.youtube.com/watch?v=CFjhlp4tQ2w",
+        "videoId": "CFjhlp4tQ2w",
+        "fullTitle": "창세기 11장 1-9절 / \"하나님을 대적하는 바벨사상\" / 주일 오전예배(20171231) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 6,
-        "title": "창세기 6강 - 노아의 방주와 은혜의 구원",
-        "passage": "창세기 6:1~9:17",
-        "search": "열방교회 창세기 6강"
+        "title": "6강 - 완전한 부르심에 온전한 믿음으로!",
+        "passage": "창세기 12장 1-9절",
+        "url": "https://www.youtube.com/watch?v=mwAsUuHVsto",
+        "videoId": "mwAsUuHVsto",
+        "fullTitle": "창세기 12장 1-9절 / \"완전한 부르심에 온전한 믿음으로!\" / 주일 오전예배(20180107 ) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 7,
-        "title": "창세기 7강 - 바벨탑과 아브람의 부르심",
-        "passage": "창세기 11:1~12:9",
-        "search": "열방교회 창세기 7강"
+        "title": "7강 - 너는 내 앞에서 행하여 완전하라!",
+        "passage": "창세기 17장 1-8절",
+        "url": "https://www.youtube.com/watch?v=ZdzHUR_0ve0",
+        "videoId": "ZdzHUR_0ve0",
+        "fullTitle": "창세기 17장 1-8절 / 너는 내 앞에서 행하여 완전하라! / 주일 오전예배(20180121) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 8,
-        "title": "창세기 8강 - 횃불 언약과 믿음의 의",
-        "passage": "창세기 15:1~21",
-        "search": "열방교회 창세기 8강"
+        "title": "8강 - 인본주의와 하나님의 길로 행하는 삶!",
+        "passage": "창세기 15장 1 ~6절",
+        "url": "https://www.youtube.com/watch?v=CFjhlp4tQ2w",
+        "videoId": "CFjhlp4tQ2w",
+        "fullTitle": "창세기 15장 1 ~6절 / \"인본주의와 하나님의 길로 행하는 삶!\" / 주일 오전예배 설교(20180114) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 9,
-        "title": "창세기 9강 - 할례 언약과 이삭의 출생 약속",
-        "passage": "창세기 17~18장",
-        "search": "열방교회 창세기 9강"
+        "title": "9강 - 순종과 확신!",
+        "passage": "창세기 22장 1~19절",
+        "url": "https://www.youtube.com/watch?v=IxJNPZySFnw",
+        "videoId": "IxJNPZySFnw",
+        "fullTitle": "창세기 22장 1~19절 / 순종과 확신! /주일 오전예배(20180128) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 10,
-        "title": "창세기 10강 - 모리아 산의 순종 (여호와 이레)",
-        "passage": "창세기 22:1~19",
-        "search": "열방교회 창세기 10강"
+        "title": "10강 - 하늘에 속한 자 - 성령을 따라 행하라!",
+        "passage": "창세기 23장 1 ~20절",
+        "url": "https://www.youtube.com/watch?v=mik_pibe8d8",
+        "videoId": "mik_pibe8d8",
+        "fullTitle": "창세기 23장 1 ~20절 / \"하늘에 속한 자 - 성령을 따라 행하라!\" / 주일 오전예배(20180204) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 11,
-        "title": "창세기 11강 - 이삭의 우물과 벧엘의 야곱",
-        "passage": "창세기 26~28장",
-        "search": "열방교회 창세기 11강"
+        "title": "11강 - 하나님의 절대주권에 반응하는 합당한 자세!",
+        "passage": "창세기 27장 30 ~ 40절",
+        "url": "https://www.youtube.com/watch?v=TIOcs9RuMFQ",
+        "videoId": "TIOcs9RuMFQ",
+        "fullTitle": "창세기 27장 30 ~ 40절 / \"하나님의 절대주권에 반응하는 합당한 자세!\" / 주일오전예배(2018.02.18) / 열방교회 박훈목사 설교"
       },
       {
         "ep": 12,
-        "title": "창세기 12강 - 얍복강의 씨름과 이스라엘의 회복",
-        "passage": "창세기 32~35장",
-        "search": "열방교회 창세기 12강"
+        "title": "12강 - 벧엘로 돌아가라!",
+        "passage": "창세기 28장 10 ~ 22절, 창세기 35장 1~ 7절",
+        "url": "https://www.youtube.com/watch?v=QiH1sIprUUQ",
+        "videoId": "QiH1sIprUUQ",
+        "fullTitle": "창세기 28장 10 ~ 22절, 창세기 35장 1~ 7절 / 벧엘로 돌아가라! / 주일 오전예배(20180225) / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 13,
-        "title": "창세기 13강 - 요셉의 생애와 합력하여 선을 이루시는 하나님",
-        "passage": "창세기 37~50장",
-        "search": "열방교회 창세기 13강"
+        "title": "13강 - 하나님이 저와 함께 계셔!",
+        "passage": "창세기 37장 1~ 11절, 사도행전 7장 9 ~10절",
+        "url": "https://www.youtube.com/watch?v=ntQCyuEUj_M",
+        "videoId": "ntQCyuEUj_M",
+        "fullTitle": "창세기 37장 1~ 11절, 사도행전 7장 9 ~10절 / 하나님이 저와 함께 계셔! / 주일 오전예배(20180304) / 열방교회 박훈 목사 설교"
       }
-    ]
+    ],
+    "count": "13편"
   },
   "john": {
     "id": "john",
