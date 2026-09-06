@@ -633,6 +633,89 @@ function handleSiteAdminLogout() {
   alert('관리자 모드에서 로그아웃되었습니다.');
 }
 
+// 시간 파싱 및 포맷 유틸리티
+function parseTimeToSeconds(input) {
+  if (input === undefined || input === null) return 0;
+  const str = String(input).trim();
+  if (!str) return 0;
+
+  // 순수 숫자 (초 단위)
+  if (/^\d+$/.test(str)) {
+    return parseInt(str, 10);
+  }
+
+  // 1:23:45 (시:분:초) 또는 24:30 (분:초)
+  const colonParts = str.split(':').map(p => parseInt(p.trim(), 10) || 0);
+  if (colonParts.length === 3) {
+    return colonParts[0] * 3600 + colonParts[1] * 60 + colonParts[2];
+  } else if (colonParts.length === 2) {
+    return colonParts[0] * 60 + colonParts[1];
+  }
+
+  // "24분 30초" 또는 "24분" 등 한글 형식
+  const minMatch = str.match(/(\d+)\s*분/);
+  const secMatch = str.match(/(\d+)\s*초/);
+  if (minMatch || secMatch) {
+    const mins = minMatch ? parseInt(minMatch[1], 10) : 0;
+    const secs = secMatch ? parseInt(secMatch[1], 10) : 0;
+    return mins * 60 + secs;
+  }
+
+  return parseInt(str.replace(/[^0-9]/g, ''), 10) || 0;
+}
+
+function formatSecondsToTime(totalSec) {
+  const sec = parseInt(totalSec, 10) || 0;
+  if (sec <= 0) return '0:00';
+  const hours = Math.floor(sec / 3600);
+  const mins = Math.floor((sec % 3600) / 60);
+  const remainingSec = sec % 60;
+
+  if (hours > 0) {
+    return `${hours}:${String(mins).padStart(2, '0')}:${String(remainingSec).padStart(2, '0')}`;
+  }
+  return `${mins}:${String(remainingSec).padStart(2, '0')}`;
+}
+
+function handleStartTimeInput(val) {
+  const sec = parseTimeToSeconds(val);
+  const badge = document.getElementById('modal-lec-time-badge');
+  if (badge) {
+    if (sec > 0) {
+      const formatted = formatSecondsToTime(sec);
+      badge.textContent = `${formatted} (${sec.toLocaleString()}초부터 재생)`;
+      badge.style.background = '#15803d';
+    } else {
+      badge.textContent = '0초(처음)부터 재생';
+      badge.style.background = '#64748b';
+    }
+  }
+}
+
+function setQuickStartTime(timeStr) {
+  const input = document.getElementById('modal-lec-starttime');
+  if (input) {
+    input.value = timeStr;
+    handleStartTimeInput(timeStr);
+  }
+}
+
+function previewModalStartTime() {
+  const urlInput = document.getElementById('modal-lec-url');
+  const timeInput = document.getElementById('modal-lec-starttime');
+  const url = urlInput ? urlInput.value.trim() : '';
+  const vid = extractYouTubeId(url);
+  const sec = parseTimeToSeconds(timeInput ? timeInput.value : '');
+
+  if (!vid) {
+    alert('유튜브 영상 링크를 먼저 올바르게 입력해 주세요.');
+    return;
+  }
+
+  const testUrl = `https://www.youtube.com/watch?v=${vid}&t=${sec}s`;
+  window.open(testUrl, '_blank');
+}
+
 // 1. 설교 등록/수정 모달 열기
 function openLectureAddModal(folderKey) {
   const modal = document.getElementById('modal-lecture-edit');
@@ -660,6 +743,12 @@ function openLectureAddModal(folderKey) {
   document.getElementById('modal-lec-passage').value = '';
   document.getElementById('modal-lec-url').value = '';
   document.getElementById('modal-lec-pdf').value = '';
+
+  const startInput = document.getElementById('modal-lec-starttime');
+  if (startInput) {
+    startInput.value = '';
+    handleStartTimeInput('');
+  }
 
   modal.classList.add('active');
 }
@@ -693,6 +782,14 @@ function openLectureEditModal(folderKey, epNumber) {
   document.getElementById('modal-lec-url').value = item.url || '';
   document.getElementById('modal-lec-pdf').value = item.pdfUrl || '';
 
+  const startInput = document.getElementById('modal-lec-starttime');
+  if (startInput) {
+    const rawTime = item.startTime !== undefined && item.startTime !== null ? item.startTime : extractStartTime(item.url, item);
+    const formatted = rawTime > 0 ? formatSecondsToTime(rawTime) : '';
+    startInput.value = formatted;
+    handleStartTimeInput(formatted);
+  }
+
   modal.classList.add('active');
 }
 
@@ -709,8 +806,10 @@ function handleSaveSiteLecture(e) {
   const ep = parseInt(document.getElementById('modal-lec-ep').value);
   const title = document.getElementById('modal-lec-title').value.trim();
   const passage = document.getElementById('modal-lec-passage').value.trim();
-  const url = document.getElementById('modal-lec-url').value.trim();
+  let url = document.getElementById('modal-lec-url').value.trim();
   const pdfUrl = document.getElementById('modal-lec-pdf').value.trim();
+  const startTimeInput = document.getElementById('modal-lec-starttime');
+  const startSec = startTimeInput ? parseTimeToSeconds(startTimeInput.value) : 0;
 
   if (!archiveDataCache) archiveDataCache = {};
   if (!archiveDataCache[folderKey]) {
@@ -724,11 +823,21 @@ function handleSaveSiteLecture(e) {
 
   const epList = archiveDataCache[folderKey].episodes;
 
+  // URL 내 시간 파라미터 자동 동기화
+  if (url && startSec > 0) {
+    if (/[?&](?:t|start)=\d+s?/.test(url)) {
+      url = url.replace(/([?&](?:t|start)=)\d+s?/, `$1${startSec}s`);
+    } else {
+      url += (url.includes('?') ? '&' : '?') + `t=${startSec}s`;
+    }
+  }
+
   const newItem = {
     ep: ep,
     title: title,
     passage: passage,
     url: url,
+    startTime: startSec > 0 ? startSec : 0,
     pdfUrl: pdfUrl || null
   };
 
@@ -759,7 +868,7 @@ function handleSaveSiteLecture(e) {
   closeLectureEditModal();
   renderArchiveFolderSidebar();
   renderArchiveFolderContent(folderKey, '');
-  alert(`🎉 '${title}' 설교가 성공적으로 저장되었습니다!\n(우측 상단의 [🚀 GitHub 영구 저장]을 누르시면 전세계 배포가 완료됩니다)`);
+  alert(`🎉 '${title}' 설교가 성공적으로 저장되었습니다!\n시작 재생 시간: ${startSec > 0 ? formatSecondsToTime(startSec) + ` (${startSec}초)` : '처음부터'}\n(우측 상단의 [🚀 GitHub 영구 저장]을 누르시면 전세계 배포가 완료됩니다)`);
 }
 
 function handleDeleteSiteLecture(folderKey, epNumber) {

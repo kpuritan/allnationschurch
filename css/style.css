@@ -2794,6 +2794,24 @@ body.admin-logged-in {
   background: var(--primary-dark);
 }
 
+.btn-time-preset {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+  padding: 4px 9px;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-time-preset:hover {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+}
+
 /* ==========================================================
    🎵 BGM 찬양 플레이어 위젯 (YouTube Background Music)
    ========================================================== */

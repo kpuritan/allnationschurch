@@ -8,10 +8,10 @@
   <title>불로 열방교회 | 대한예수교장로회(백석)</title>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=20260907_12">
+  <link rel="stylesheet" href="css/style.css?v=20260907_13">
   
   <!-- Data Bundle (오프라인/로컬/웹 호환 즉시 로드) -->
-  <script src="data/sermons_data.js?v=20260907_12"></script>
+  <script src="data/sermons_data.js?v=20260907_13"></script>
   
   <!-- Security & Referrer Policy (YouTube 플레이어 오류 153 방지) -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -561,6 +561,34 @@
             <input type="text" id="modal-lec-url" class="modal-form-input" placeholder="예: https://www.youtube.com/watch?v=... 또는 불로열방교회 로마서 1강" required />
           </div>
 
+          <!-- ⏱️ 말씀 시작 재생 시간 설정 (분:초 또는 초) -->
+          <div class="modal-form-group" style="background: #f0fdf4; border: 1px solid #86efac; padding: 12px 14px; border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label style="font-weight: 700; color: #166534; font-size: 0.92rem; margin-bottom: 0;">⏱️ 말씀 시작 재생 시간 (선택)</label>
+              <span id="modal-lec-time-badge" style="font-size: 0.78rem; font-weight: 700; background: #22c55e; color: #fff; padding: 2px 8px; border-radius: 12px;">0초부터 재생</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <input type="text" id="modal-lec-starttime" class="modal-form-input" placeholder="예: 24:30 또는 1470 (초)" oninput="handleStartTimeInput(this.value)" style="flex: 1; font-weight: 700; background: #fff;" />
+              <button type="button" onclick="previewModalStartTime()" class="btn-time-preset" style="background: #15803d; color: #fff; padding: 8px 12px; font-size: 0.82rem; white-space: nowrap;">
+                ▶ 시점 테스트
+              </button>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;">
+              <span style="font-size: 0.78rem; color: #166534; font-weight: 600; align-self: center;">빠른 선택:</span>
+              <button type="button" onclick="setQuickStartTime('0:00')" class="btn-time-preset">0:00 (처음)</button>
+              <button type="button" onclick="setQuickStartTime('15:00')" class="btn-time-preset">15:00</button>
+              <button type="button" onclick="setQuickStartTime('18:00')" class="btn-time-preset">18:00</button>
+              <button type="button" onclick="setQuickStartTime('20:00')" class="btn-time-preset">20:00</button>
+              <button type="button" onclick="setQuickStartTime('22:00')" class="btn-time-preset">22:00</button>
+              <button type="button" onclick="setQuickStartTime('24:00')" class="btn-time-preset">24:00</button>
+              <button type="button" onclick="setQuickStartTime('25:00')" class="btn-time-preset">25:00</button>
+              <button type="button" onclick="setQuickStartTime('27:00')" class="btn-time-preset">27:00</button>
+            </div>
+            <div id="modal-lec-time-helper" style="font-size: 0.8rem; color: #15803d; margin-top: 6px;">
+              💡 <b>24:30</b> 처럼 [분:초] 또는 <b>1470</b> 처럼 [초] 단위로 입력하시면, 영상 클릭 시 해당 시점(찬양 후 말씀 시작 지점)부터 즉시 재생됩니다.
+            </div>
+          </div>
+
           <div class="modal-form-group">
             <label>첨부 PDF 교재 링크 (선택)</label>
             <input type="text" id="modal-lec-pdf" class="modal-form-input" placeholder="예: https://.../lecture_01.pdf" />
@@ -605,7 +633,7 @@
   <!-- YouTube IFrame API -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Scripts -->
-  <script src="js/blog-rss.js?v=20260907_12"></script>
-  <script src="js/main.js?v=20260907_12"></script>
+  <script src="js/blog-rss.js?v=20260907_13"></script>
+  <script src="js/main.js?v=20260907_13"></script>
 </body>
 </html>

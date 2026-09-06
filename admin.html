@@ -513,6 +513,14 @@
             <input type="text" id="lec-url" class="form-input" placeholder="예: https://www.youtube.com/watch?v=... 또는 불로열방교회 레위기 설교" required />
           </div>
           <div class="form-group">
+            <label class="form-label">⏱️ 말씀 시작 재생 시간 (선택)</label>
+            <input type="text" id="lec-starttime" class="form-input" placeholder="예: 24:30 또는 1470 (초)" />
+            <small style="color: #16a34a; font-size: 0.8rem;">💡 '24:30' [분:초] 또는 '1470' [초]로 입력하시면 해당 시점부터 재생됩니다.</small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
             <label class="form-label">첨부 PDF 파일 또는 교재 다운로드 링크 (선택)</label>
             <input type="text" id="lec-pdf" class="form-input" placeholder="예: https://.../lecture_01.pdf 또는 주보 링크" />
           </div>
@@ -531,6 +539,7 @@
               <th>회차</th>
               <th>설교 제목</th>
               <th>성경 본문</th>
+              <th>시작 시간</th>
               <th>영상 링크</th>
               <th>PDF 교재</th>
               <th>관리</th>
@@ -884,22 +893,28 @@
       document.getElementById('current-folder-lectures-title').textContent = `선택된 폴더: '${s ? s.title : ''}' 등록 설교 목록 (총 ${episodes.length}편)`;
 
       if (episodes.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:2rem; color:#888;">등록된 설교 영상이 없습니다. 위의 양식을 통해 설교를 등록해 주세요.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:2rem; color:#888;">등록된 설교 영상이 없습니다. 위의 양식을 통해 설교를 등록해 주세요.</td></tr>`;
         return;
       }
 
-      tbody.innerHTML = episodes.map(ep => `
-        <tr>
-          <td><strong>${ep.ep}강</strong></td>
-          <td><strong>${ep.title}</strong></td>
-          <td>${ep.passage || '-'}</td>
-          <td><a href="${ep.url || '#'}" target="_blank" style="color:#3b82f6;">${ep.url ? '영상 링크 확인 ↗' : '검색 연동'}</a></td>
-          <td>${ep.pdfUrl ? `<a href="${ep.pdfUrl}" target="_blank" style="color:#10b981; font-weight:700;">📄 PDF 교재</a>` : '-'}</td>
-          <td>
-            <button type="button" class="btn-sm-del" onclick="deleteLecture('${fKey}', ${ep.ep})">삭제 ✕</button>
-          </td>
-        </tr>
-      `).join('');
+      tbody.innerHTML = episodes.map(ep => {
+        const startSec = ep.startTime || extractStartTime(ep.url, ep);
+        const timeDisplay = startSec > 0 ? `<span style="background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:4px; font-weight:700; font-size:0.85rem;">⏱️ ${formatSecondsToTime(startSec)}</span>` : '<span style="color:#94a3b8;">0:00</span>';
+
+        return `
+          <tr>
+            <td><strong>${ep.ep}강</strong></td>
+            <td><strong>${ep.title}</strong></td>
+            <td>${ep.passage || '-'}</td>
+            <td>${timeDisplay}</td>
+            <td><a href="${ep.url || '#'}" target="_blank" style="color:#3b82f6;">${ep.url ? '영상 링크 확인 ↗' : '검색 연동'}</a></td>
+            <td>${ep.pdfUrl ? `<a href="${ep.pdfUrl}" target="_blank" style="color:#10b981; font-weight:700;">📄 PDF 교재</a>` : '-'}</td>
+            <td>
+              <button type="button" class="btn-sm-del" onclick="deleteLecture('${fKey}', ${ep.ep})">삭제 ✕</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
     }
 
     function handleCreateLecture(e) {
@@ -909,11 +924,21 @@
       const title = document.getElementById('lec-title').value.trim();
       const passage = document.getElementById('lec-passage').value.trim();
       const date = document.getElementById('lec-date').value;
-      const url = document.getElementById('lec-url').value.trim();
+      let url = document.getElementById('lec-url').value.trim();
       const pdf = document.getElementById('lec-pdf').value.trim();
+      const startInput = document.getElementById('lec-starttime');
+      const startSec = startInput ? parseTimeToSeconds(startInput.value) : 0;
 
       if (!adminArchive[fKey]) {
         adminArchive[fKey] = { id: fKey, title: fKey, episodes: [] };
+      }
+
+      if (url && startSec > 0 && url.startsWith('http')) {
+        if (/[?&](?:t|start)=\d+s?/.test(url)) {
+          url = url.replace(/([?&](?:t|start)=)\d+s?/, `$1${startSec}s`);
+        } else {
+          url += (url.includes('?') ? '&' : '?') + `t=${startSec}s`;
+        }
       }
 
       const episodes = adminArchive[fKey].episodes || [];
@@ -925,6 +950,7 @@
         passage: passage,
         date: date,
         url: url.startsWith('http') ? url : '',
+        startTime: startSec > 0 ? startSec : 0,
         search: url.startsWith('http') ? '' : url,
         pdfUrl: pdf
       };
@@ -946,7 +972,7 @@
       renderLecturesTable();
       populateFolderSelect();
       document.getElementById('form-create-lecture').reset();
-      alert(`🎉 ${ep}강 '${title}' 설교가 성공적으로 등록되었습니다! 상단의 [GitHub 영구 저장]을 누르면 실서버에 바로 반영됩니다.`);
+      alert(`🎉 ${ep}강 '${title}' 설교가 성공적으로 등록되었습니다!\n시작 시간: ${startSec > 0 ? formatSecondsToTime(startSec) + ` (${startSec}초)` : '처음부터'}\n상단의 [GitHub 영구 저장]을 누르면 실서버에 바로 반영됩니다.`);
     }
 
     function deleteLecture(fKey, epNum) {
