@@ -103,6 +103,29 @@ img {
 }
 
 /* ==========================================================
+   Page Views (SPA 탭/페이지 전환 시스템)
+   ========================================================== */
+.page-view {
+  display: none;
+}
+
+.page-view.active {
+  display: block;
+  animation: fadeInPage 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
    Header & GNB (Global Navigation Bar with Dropdown)
    ========================================================== */
 .header-top-bar {
@@ -233,6 +256,22 @@ img {
 
 .gnb-link:hover, .gnb-item:hover .gnb-link {
   color: var(--accent-gold);
+}
+
+.gnb-link.active {
+  color: var(--accent-gold);
+  position: relative;
+}
+
+.gnb-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.2rem;
+  right: 1.2rem;
+  height: 4px;
+  background-color: var(--accent-gold);
+  border-radius: 2px;
 }
 
 .gnb-mobile-admin {
