@@ -238,14 +238,21 @@ function renderArchiveFolderSidebar() {
 }
 
 async function loadArchiveData() {
+  if (window.INITIAL_SERMONS_ARCHIVE) {
+    archiveDataCache = JSON.parse(JSON.stringify(window.INITIAL_SERMONS_ARCHIVE));
+  }
+  if (window.INITIAL_PILGRIM_DATA) {
+    pilgrimDataCache = JSON.parse(JSON.stringify(window.INITIAL_PILGRIM_DATA));
+  }
+
   try {
     const res = await fetch('data/sermons_archive.json?v=' + Date.now());
     if (res.ok) {
       const fetchedArchive = await res.json();
-      archiveDataCache = fetchedArchive;
+      archiveDataCache = { ...(archiveDataCache || {}), ...fetchedArchive };
     }
   } catch (e) {
-    console.error('sermons_archive load error', e);
+    console.warn('sermons_archive fetch skipped/fallback to bundle', e);
   }
 
   const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1');
@@ -253,7 +260,18 @@ async function loadArchiveData() {
     try {
       const parsed = JSON.parse(saved);
       if (parsed.archive) {
-        archiveDataCache = { ...archiveDataCache, ...parsed.archive };
+        archiveDataCache = archiveDataCache || {};
+        for (const k of Object.keys(parsed.archive)) {
+          if (!archiveDataCache[k]) {
+            archiveDataCache[k] = parsed.archive[k];
+          } else {
+            const localEps = (parsed.archive[k].episodes || []).length;
+            const defEps = (archiveDataCache[k].episodes || []).length;
+            if (localEps >= defEps && localEps > 0) {
+              archiveDataCache[k] = parsed.archive[k];
+            }
+          }
+        }
       }
     } catch (e) {
       console.error(e);
