@@ -2322,6 +2322,21 @@ img {
   border-color: #dc2626;
 }
 
+.sermon-thumb-ep-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.82);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  z-index: 2;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
 .sermon-card-body {
   padding: 1.25rem 1.4rem;
   display: flex;

@@ -384,9 +384,19 @@ function renderArchiveFolderContent(folderKey, query) {
 
   // 카드 그리드 렌더링
   gridEl.innerHTML = adminAddBarHtml + episodes.map((item, idx) => {
+    let videoId = extractYouTubeId(item.url);
+    if (!videoId && folderMeta.playlistUrl) {
+      videoId = extractYouTubeId(folderMeta.playlistUrl);
+    }
+
     let thumbHtml = '';
-    if (folderMeta.thumb) {
-      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img">`;
+    if (item.thumb) {
+      thumbHtml = `<img src="${item.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
+    } else if (videoId) {
+      // 실제 유튜브 고화질 썸네일 자동 연동
+      thumbHtml = `<img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/mqdefault.jpg'">`;
+    } else if (folderMeta.thumb) {
+      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
     } else {
       thumbHtml = `
         <div class="sermon-card-placeholder card-thumb-placeholder ${folderMeta.bgClass || 'bg-ot'}">
@@ -413,6 +423,7 @@ function renderArchiveFolderContent(folderKey, query) {
         <div class="sermon-card-thumb-wrap card-thumb-wrap">
           ${thumbHtml}
           <div class="sermon-play-badge play-btn-circle">▶</div>
+          <span class="sermon-thumb-ep-badge">${item.ep}강</span>
         </div>
         <div class="sermon-card-body card-body">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 0.8rem;">
