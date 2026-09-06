@@ -518,6 +518,8 @@ function playArchiveLecture(folderKey, epNumber) {
     } else {
       pdfLink.style.display = 'none';
     }
+  }
+
   const startTime = extractStartTime(item.url, item);
   const startParam = startTime > 0 ? `&start=${startTime}` : '';
 
