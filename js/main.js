@@ -471,10 +471,10 @@ function playArchiveLecture(folderKey, epNumber) {
   }
 
   const playerArea = document.getElementById('archive-top-player');
-  const iframe = document.getElementById('archive-player-iframe');
+  const playerWrapper = document.getElementById('archive-player-wrapper') || document.querySelector('#archive-top-player .player-wrapper');
   const titleSpan = document.getElementById('archive-player-title');
 
-  if (!playerArea || !iframe) return;
+  if (!playerArea || !playerWrapper) return;
 
   // BGM 일시정지 (설교 영상 시청 시 방해 방지)
   pauseBgm();
@@ -509,8 +509,17 @@ function playArchiveLecture(folderKey, epNumber) {
     }
   }
 
-  const originParam = window.location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
-  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0${originParam}`;
+  // 매 클릭마다 신규 iframe을 동적으로 생성하여 브라우저 초기화 오류(Error 153) 원천 차단
+  playerWrapper.innerHTML = `
+    <iframe id="archive-player-iframe" 
+      src="https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&enablejsapi=1&feature=oembed" 
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen 
+      title="${item.title.replace(/"/g, '&quot;')}">
+    </iframe>
+  `;
 
   playerArea.style.display = 'block';
   playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -518,9 +527,11 @@ function playArchiveLecture(folderKey, epNumber) {
 
 function closeArchivePlayer() {
   const playerArea = document.getElementById('archive-top-player');
-  const iframe = document.getElementById('archive-player-iframe');
-  if (playerArea && iframe) {
-    iframe.src = '';
+  const playerWrapper = document.getElementById('archive-player-wrapper') || document.querySelector('#archive-top-player .player-wrapper');
+  if (playerWrapper) {
+    playerWrapper.innerHTML = '';
+  }
+  if (playerArea) {
     playerArea.style.display = 'none';
   }
 }
