@@ -1631,191 +1631,548 @@
   "luke": {
     "id": "luke",
     "title": "누가복음 강해",
-    "subtitle": "잃어버린 자를 찾아 구원하러 오신 인자 예수 (총 67편)",
+    "subtitle": "인자로 오신 예수 그리스도의 구속과 은혜 (총 67강)",
     "speaker": "박훈 담임목사",
     "category": "신약 강해",
-    "desc": "가난한 자, 소외된 자, 이방인에게 임한 하나님의 놀라운 구원의 기쁨과 하나님 나라의 은혜를 전하는 누가복음 67편 완주 강해 설교입니다.",
-    "searchKeyword": "불로열방교회 누가복음",
+    "desc": "불로 열방교회 주일 강해를 통해 전해진 누가복음 1장부터 24장까지의 전편 연속 강해입니다. 잃어버린 자를 찾아 구원하러 오신 예수 그리스도의 복음을 깊이 있게 선포합니다.",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO",
+    "count": "67강",
     "episodes": [
       {
         "ep": 1,
-        "title": "누가복음 서문과 사가랴의 환상",
-        "passage": "누가복음 1:1~25",
-        "search": "불로열방교회 누가복음 1강"
+        "title": "1강 - 우리에게 이루어진 일",
+        "passage": "누가복음 1장 1-4절",
+        "url": "https://www.youtube.com/watch?v=3Exwvua4SEs&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=1",
+        "videoId": "3Exwvua4SEs",
+        "fullTitle": "누가복음 1장 1-4절 (우리에게 이루어진 일)"
       },
       {
         "ep": 2,
-        "title": "마리아의 찬가 (마그니피캇)",
-        "passage": "누가복음 1:46~56",
-        "search": "불로열방교회 누가복음 2강"
+        "title": "2강 - 하나님의 계획하심과 일하심",
+        "passage": "누가복음 1장 5-80절",
+        "url": "https://www.youtube.com/watch?v=IG-2_LGoz-g&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=2",
+        "videoId": "IG-2_LGoz-g",
+        "fullTitle": "누가복음 1장 5-80절 (하나님의 계획하심과 일하심)"
       },
       {
         "ep": 3,
-        "title": "지극히 높은 곳에서는 하나님께 영광이요 (성탄)",
-        "passage": "누가복음 2:1~20",
-        "search": "불로열방교회 누가복음 성탄"
+        "title": "3강 - 다윗의 동네에 오신 예수 그리스도",
+        "passage": "누가복음 2장 1-20절",
+        "url": "https://www.youtube.com/watch?v=6fwLnitQxIc&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=3",
+        "videoId": "6fwLnitQxIc",
+        "fullTitle": "누가복음 2장 1-20절 (다윗의 동네에 오신 예수 그리스도)"
       },
       {
         "ep": 4,
-        "title": "세례 요한의 회개 선포와 예수님의 세례",
-        "passage": "누가복음 3:1~22",
-        "search": "불로열방교회 누가복음 3장"
+        "title": "4강 - 율법 아래에 오신 예수 그리스도",
+        "passage": "누가복음 2장 21-40절",
+        "url": "https://www.youtube.com/watch?v=s7Ge7MUdBJg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=4",
+        "videoId": "s7Ge7MUdBJg",
+        "fullTitle": "누가복음 2장 21-40절 (율법 아래에 오신 예수 그리스도)"
       },
       {
         "ep": 5,
-        "title": "광야의 시험을 말씀으로 이기신 예수님",
-        "passage": "누가복음 4:1~13",
-        "search": "불로열방교회 누가복음 4장 시험"
+        "title": "5강 - 아버지 집에 있어야 할 줄을 알지 못하셨나이까",
+        "passage": "누가복음 2장 41-52절",
+        "url": "https://www.youtube.com/watch?v=oEaE3stq4s8&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=5",
+        "videoId": "oEaE3stq4s8",
+        "fullTitle": "누가복음 2장 41-52절 (아버지 집에 있어야 할 줄을 알지 못하셨나이까)"
       },
       {
         "ep": 6,
-        "title": "나사렛 회당에서의 희년 선포",
-        "passage": "누가복음 4:16~30",
-        "search": "불로열방교회 누가복음 희년"
+        "title": "6강 - 광야의 외치는 자의 소리",
+        "passage": "누가복음 3장 1-20절",
+        "url": "https://www.youtube.com/watch?v=AK7TQnnDZOg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=6",
+        "videoId": "AK7TQnnDZOg",
+        "fullTitle": "누가복음 3장 1-20절 (광야의 외치는 자의 소리)"
       },
       {
         "ep": 7,
-        "title": "깊은 데로 가서 그물을 던지라 (베드로의 부르심)",
-        "passage": "누가복음 5:1~11",
-        "search": "불로열방교회 누가복음 베드로"
+        "title": "7강 - 기도와 성령에 의한 삶",
+        "passage": "누가복음 3장 21-22절",
+        "url": "https://www.youtube.com/watch?v=vumWF8asMUI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=7",
+        "videoId": "vumWF8asMUI",
+        "fullTitle": "누가복음 3장 21-22절 (기도와 성령에 의한 삶)"
       },
       {
         "ep": 8,
-        "title": "평지 설교와 제자의 길",
-        "passage": "누가복음 6:17~49",
-        "search": "불로열방교회 누가복음 평지설교"
+        "title": "8강 - 언약의 성취가 되신 예수님",
+        "passage": "누가복음 3장 23-38절",
+        "url": "https://www.youtube.com/watch?v=s0sXdMkPwus&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=8",
+        "videoId": "s0sXdMkPwus",
+        "fullTitle": "누가복음 3장 23-38절 (언약의 성취가 되신 예수님)"
       },
       {
         "ep": 9,
-        "title": "백부장의 믿음과 나인성 과부 아들의 부활",
-        "passage": "누가복음 7:1~17",
-        "search": "불로열방교회 누가복음 백부장"
+        "title": "9강 - 시험에서 승리하신 예수님",
+        "passage": "누가복음 4장 1-13절",
+        "url": "https://www.youtube.com/watch?v=pO7bF1d-VtU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=9",
+        "videoId": "pO7bF1d-VtU",
+        "fullTitle": "누가복음 4장 1-13절 (시험에서 승리하신 예수님)"
       },
       {
         "ep": 10,
-        "title": "씨 뿌리는 자의 비유와 네 가지 마음 밭",
-        "passage": "누가복음 8:4~15",
-        "search": "불로열방교회 누가복음 마음밭"
+        "title": "10강 - 우릴 자유케 하시는 예수님",
+        "passage": "누가복음 4장 14-21절",
+        "url": "https://www.youtube.com/watch?v=yvWWCJDuxNw&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=10",
+        "videoId": "yvWWCJDuxNw",
+        "fullTitle": "누가복음 4장 14-21절 (우릴 자유케 하시는 예수님)"
       },
       {
         "ep": 11,
-        "title": "너희는 나를 누구라 하느냐 (변화산의 영광)",
-        "passage": "누가복음 9:18~36",
-        "search": "불로열방교회 누가복음 변화산"
+        "title": "11강 - 복음을 배척하는 이유",
+        "passage": "누가복음 4장 22-30절",
+        "url": "https://www.youtube.com/watch?v=TmnN-UGP0iI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=11",
+        "videoId": "TmnN-UGP0iI",
+        "fullTitle": "누가복음 4장 22-30절 (복음을 배척하는 이유)"
       },
       {
         "ep": 12,
-        "title": "선한 사마리아인의 비유",
-        "passage": "누가복음 10:25~37",
-        "search": "불로열방교회 누가복음 사마리아인"
+        "title": "12강 - 하나님 나라를 가져오신 예수님",
+        "passage": "누가복음 4장 31-44절",
+        "url": "https://www.youtube.com/watch?v=naJ1drmZhXk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=12",
+        "videoId": "naJ1drmZhXk",
+        "fullTitle": "누가복음 4장 31-44절 (하나님 나라를 가져오신 예수님)"
       },
       {
         "ep": 13,
-        "title": "마르다와 마리아 (오직 한 가지에 집중하라)",
-        "passage": "누가복음 10:38~42",
-        "search": "불로열방교회 누가복음 마르다"
+        "title": "13강 - 우리를 부르시는 예수님",
+        "passage": "누가복음 5장 1-11절",
+        "url": "https://www.youtube.com/watch?v=R5KmywSLmRE&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=13",
+        "videoId": "R5KmywSLmRE",
+        "fullTitle": "누가복음 5장 1-11절 (우리를 부르시는 예수님)"
       },
       {
         "ep": 14,
-        "title": "주기도문과 끈질긴 기도",
-        "passage": "누가복음 11:1~13",
-        "search": "불로열방교회 누가복음 주기도문"
+        "title": "14강 - 나병 환자를 고치신 예수님",
+        "passage": "누가복음 5장 12-16절",
+        "url": "https://www.youtube.com/watch?v=u-yk9F6-Wzs&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=14",
+        "videoId": "u-yk9F6-Wzs",
+        "fullTitle": "누가복음 5장 12-16절 (나병 환자를 고치신 예수님)"
       },
       {
         "ep": 15,
-        "title": "어리석은 부자의 비유 (하나님께 대하여 부요치 못한 자)",
-        "passage": "누가복음 12:13~21",
-        "search": "불로열방교회 누가복음 어리석은 부자"
+        "title": "15강 - 중풍병자를 고치신 예수님",
+        "passage": "누가복음 5장 17-26절",
+        "url": "https://www.youtube.com/watch?v=llkdCOViS1U&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=15",
+        "videoId": "llkdCOViS1U",
+        "fullTitle": "누가복음 5장 17-26절 (중풍병자를 고치신 예수님)"
       },
       {
         "ep": 16,
-        "title": "열매 맺지 못하는 무화과나무의 비유",
-        "passage": "누가복음 13:1~9",
-        "search": "불로열방교회 누가복음 무화과나무"
+        "title": "16강 - 죄인을 부르러 오신 예수님",
+        "passage": "누가복음 5장 27-32절",
+        "url": "https://www.youtube.com/watch?v=Lpynv7rgSMo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=16",
+        "videoId": "Lpynv7rgSMo",
+        "fullTitle": "누가복음 5장 27-32절 (죄인을 부르러 오신 예수님)"
       },
       {
         "ep": 17,
-        "title": "큰 잔치 비유와 제자도의 대가",
-        "passage": "누가복음 14:15~35",
-        "search": "불로열방교회 누가복음 제자도"
+        "title": "17강 - 새 언약의 기쁨과 옛 틀의 한계",
+        "passage": "누가복음 5장 33-39절",
+        "url": "https://www.youtube.com/watch?v=NB3mbT9S9D0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=17",
+        "videoId": "NB3mbT9S9D0",
+        "fullTitle": "누가복음 5장 33-39절 (새 언약의 기쁨과 옛 틀의 한계)"
       },
       {
         "ep": 18,
-        "title": "잃은 양, 잃은 드라크마, 탕자의 귀환",
-        "passage": "누가복음 15:1~32",
-        "search": "불로열방교회 누가복음 탕자"
+        "title": "18강 - 참된 안식을 주시는 예수님",
+        "passage": "누가복음 6장 1-11절",
+        "url": "https://www.youtube.com/watch?v=cvTEL_lcHLk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=18",
+        "videoId": "cvTEL_lcHLk",
+        "fullTitle": "누가복음 6장 1-11절 (참된 안식을 주시는 예수님)"
       },
       {
         "ep": 19,
-        "title": "불의한 청지기 비유와 지혜",
-        "passage": "누가복음 16:1~13",
-        "search": "불로열방교회 누가복음 청지기"
+        "title": "19강 - 제자를 부르시는 예수님",
+        "passage": "누가복음 6장 12-19절",
+        "url": "https://www.youtube.com/watch?v=A5OwfXSHzdo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=19",
+        "videoId": "A5OwfXSHzdo",
+        "fullTitle": "누가복음 6장 12-19절 (제자를 부르시는 예수님)"
       },
       {
         "ep": 20,
-        "title": "부자와 나사로 (영원한 내세의 실존)",
-        "passage": "누가복음 16:19~31",
-        "search": "불로열방교회 누가복음 부자와 나사로"
+        "title": "20강 - 복과 화를 선포하신 예수님",
+        "passage": "누가복음 6장 20-26절",
+        "url": "https://www.youtube.com/watch?v=H7osafe2HVo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=20",
+        "videoId": "H7osafe2HVo",
+        "fullTitle": "누가복음 6장 20-26절 (복과 화를 선포하신 예수님)"
       },
       {
         "ep": 21,
-        "title": "열 명의 나병환자와 감사의 믿음",
-        "passage": "누가복음 17:11~19",
-        "search": "불로열방교회 누가복음 감사"
+        "title": "21강 - 원수를 사랑하라",
+        "passage": "누가복음 6장 27-38절",
+        "url": "https://www.youtube.com/watch?v=MOgusjVHkX0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=21",
+        "videoId": "MOgusjVHkX0",
+        "fullTitle": "누가복음 6장 27-38절 (원수를 사랑하라)"
       },
       {
         "ep": 22,
-        "title": "불의한 재판관과 낙심치 않는 과부의 기도",
-        "passage": "누가복음 18:1~8",
-        "search": "불로열방교회 누가복음 과부의 기도"
+        "title": "22강 - 내 눈 속에 있는 들보",
+        "passage": "누가복음 6장 39-45절",
+        "url": "https://www.youtube.com/watch?v=9DwveKdwtJo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=22",
+        "videoId": "9DwveKdwtJo",
+        "fullTitle": "누가복음 6장 39-45절 (내 눈 속에 있는 들보)"
       },
       {
         "ep": 23,
-        "title": "바리새인과 세리의 기도",
-        "passage": "누가복음 18:9~14",
-        "search": "불로열방교회 누가복음 세리의 기도"
+        "title": "23강 - 열매로 알지니",
+        "passage": "누가복음 6장 42-45절",
+        "url": "https://www.youtube.com/watch?v=8fETihK32bA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=23",
+        "videoId": "8fETihK32bA",
+        "fullTitle": "누가복음 6장 42-45절 (열매로 알지니)"
       },
       {
         "ep": 24,
-        "title": "삭개오야 속히 내려오라 (잃어버린 자를 찾아 오신 예수님)",
-        "passage": "누가복음 19:1~10",
-        "search": "불로열방교회 누가복음 삭개오"
+        "title": "24강 - 듣고 행하는 자와 듣고 행하지 않는 자",
+        "passage": "누가복음 6장 46-49절",
+        "url": "https://www.youtube.com/watch?v=vilzvjcIUJ4&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=24",
+        "videoId": "vilzvjcIUJ4",
+        "fullTitle": "누가복음 6장 46-49절 (듣고 행하는 자와 듣고 행하지 않는 자)"
       },
       {
         "ep": 25,
-        "title": "눈물의 예루살렘 입성과 성전 정결",
-        "passage": "누가복음 19:28~48",
-        "search": "불로열방교회 누가복음 예루살렘"
+        "title": "25강 - 2",
+        "passage": "누가복음 6장 46-49절",
+        "url": "https://www.youtube.com/watch?v=k5NXWHaSrTQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=25",
+        "videoId": "k5NXWHaSrTQ",
+        "fullTitle": "누가복음 6장 46-49절 (2) (하나님의 뜻대로 행하는 자)"
       },
       {
         "ep": 26,
-        "title": "포도원 농부의 비유와 가이사와의 논쟁",
-        "passage": "누가복음 20:9~26",
-        "search": "불로열방교회 누가복음 포도원"
+        "title": "26강 - 자신은 낮게, 그리스도는 높게",
+        "passage": "누가복음 7장 1-10절",
+        "url": "https://www.youtube.com/watch?v=jhR6zVsV-yA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=26",
+        "videoId": "jhR6zVsV-yA",
+        "fullTitle": "누가복음 7장 1-10절 (자신은 낮게, 그리스도는 높게)"
       },
       {
         "ep": 27,
-        "title": "과부의 두 렙돈과 종말의 징조",
-        "passage": "누가복음 21:1~28",
-        "search": "불로열방교회 누가복음 종말"
+        "title": "27강 - 죽음에서 해방시키신 예수님",
+        "passage": "누가복음 7장 11-17절",
+        "url": "https://www.youtube.com/watch?v=ZJYR-19fahY&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=27",
+        "videoId": "ZJYR-19fahY",
+        "fullTitle": "누가복음 7장 11-17절 (죽음에서 해방시키신 예수님)"
       },
       {
         "ep": 28,
-        "title": "최후의 만찬과 겟세마네 동산의 기도",
-        "passage": "누가복음 22:14~46",
-        "search": "불로열방교회 누가복음 겟세마네"
+        "title": "28강 - 나로 인하여 실족하지 아니하는 자가 복이 있도다",
+        "passage": "누가복음 7장 18-23절",
+        "url": "https://www.youtube.com/watch?v=NdPU-wQjLhg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=28",
+        "videoId": "NdPU-wQjLhg",
+        "fullTitle": "누가복음 7장 18-23절 (나로 인하여 실족하지 아니하는 자가 복이 있도다)"
       },
       {
         "ep": 29,
-        "title": "십자가에 못 박히신 예수님과 한 편 강도의 구원",
-        "passage": "누가복음 23:26~49",
-        "search": "불로열방교회 누가복음 십자가"
+        "title": "29강 - 이 세대의 자녀와 지혜의 자녀",
+        "passage": "누가복음 7장 24-35절",
+        "url": "https://www.youtube.com/watch?v=aawlCLdaXgQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=29",
+        "videoId": "aawlCLdaXgQ",
+        "fullTitle": "누가복음 7장 24-35절 (이 세대의 자녀와 지혜의 자녀)"
       },
       {
         "ep": 30,
-        "title": "엠마오 마을로 가는 두 제자와 부활의 주님",
-        "passage": "누가복음 24:13~35",
-        "search": "불로열방교회 누가복음 엠마오"
+        "title": "30강 - 용서가 사랑을 낳는다",
+        "passage": "누가복음 7장 36-50절",
+        "url": "https://www.youtube.com/watch?v=myZCqeaDTd8&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=30",
+        "videoId": "myZCqeaDTd8",
+        "fullTitle": "누가복음 7장 36-50절 (용서가 사랑을 낳는다)"
+      },
+      {
+        "ep": 31,
+        "title": "31강 - 하나님 나라의 도래와 초대",
+        "passage": "누가복음 8장 1-3절",
+        "url": "https://www.youtube.com/watch?v=HChev6ytXf0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=31",
+        "videoId": "HChev6ytXf0",
+        "fullTitle": "누가복음 8장 1-3절 (하나님 나라의 도래와 초대)"
+      },
+      {
+        "ep": 32,
+        "title": "32강 - 하나님 나라와 씨 뿌리는 비유",
+        "passage": "누가복음 8장 4-15절",
+        "url": "https://www.youtube.com/watch?v=5YinbnLmt0Q&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=32",
+        "videoId": "5YinbnLmt0Q",
+        "fullTitle": "누가복음 8장 4-15절 (하나님 나라와 씨 뿌리는 비유)"
+      },
+      {
+        "ep": 33,
+        "title": "33강 - 어떻게 듣는지 스스로 삼가라",
+        "passage": "누가복음 8장 16-18절",
+        "url": "https://www.youtube.com/watch?v=cTy3VNM43Os&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=33",
+        "videoId": "cTy3VNM43Os",
+        "fullTitle": "누가복음 8장 16-18절 (어떻게 듣는지 스스로 삼가라)"
+      },
+      {
+        "ep": 34,
+        "title": "34강 - 누가 하나님의 가족들인가?",
+        "passage": "누가복음 8장 19-21절",
+        "url": "https://www.youtube.com/watch?v=bhgz8LcWo5k&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=34",
+        "videoId": "bhgz8LcWo5k",
+        "fullTitle": "누가복음 8장 19-21절 (누가 하나님의 가족들인가?)"
+      },
+      {
+        "ep": 35,
+        "title": "35강 - 그가 누구이기에!",
+        "passage": "누가복음 8장 22-25절",
+        "url": "https://www.youtube.com/watch?v=oZWRmIdKuTU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=35",
+        "videoId": "oZWRmIdKuTU",
+        "fullTitle": "누가복음 8장 22-25절 (그가 누구이기에!)"
+      },
+      {
+        "ep": 36,
+        "title": "36강 - 광풍을 뚫고 찾아오는 불가항력적인 은혜",
+        "passage": "누가복음 8장 26-39절",
+        "url": "https://www.youtube.com/watch?v=UhcKCesBMs0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=36",
+        "videoId": "UhcKCesBMs0",
+        "fullTitle": "누가복음 8장 26-39절 (광풍을 뚫고 찾아오는 불가항력적인 은혜)"
+      },
+      {
+        "ep": 37,
+        "title": "37강 - 믿기만 하라",
+        "passage": "누가복음 8장 40-56절",
+        "url": "https://www.youtube.com/watch?v=P8bseKMZfEQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=37",
+        "videoId": "P8bseKMZfEQ",
+        "fullTitle": "누가복음 8장 40-56절 (믿기만 하라)"
+      },
+      {
+        "ep": 38,
+        "title": "38강 - 하나님 나라의 대사들",
+        "passage": "누가복음 9장 1-6절",
+        "url": "https://www.youtube.com/watch?v=FbNLvk5n5hA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=38",
+        "videoId": "FbNLvk5n5hA",
+        "fullTitle": "누가복음 9장 1-6절 (하나님 나라의 대사들)"
+      },
+      {
+        "ep": 39,
+        "title": "39강 - 왕의 소식이 들릴 때",
+        "passage": "누가복음 9장 7-9절",
+        "url": "https://www.youtube.com/watch?v=nARckgDAK6M&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=39",
+        "videoId": "nARckgDAK6M",
+        "fullTitle": "누가복음 9장 7-9절 (왕의 소식이 들릴 때)"
+      },
+      {
+        "ep": 40,
+        "title": "40강 - 빈들에서 경험하는 하나님 나라의 잔치",
+        "passage": "누가복음 9장 10-17절",
+        "url": "https://www.youtube.com/watch?v=SohDnRC5B1Q&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=40",
+        "videoId": "SohDnRC5B1Q",
+        "fullTitle": "누가복음 9장 10-17절 (빈들에서 경험하는 하나님 나라의 잔치)"
+      },
+      {
+        "ep": 41,
+        "title": "41강 - 예수님의 인격과 사역",
+        "passage": "누가복음 9장 18-22절",
+        "url": "https://www.youtube.com/watch?v=DFruAZ9eUng&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=41",
+        "videoId": "DFruAZ9eUng",
+        "fullTitle": "누가복음 9장 18-22절 (예수님의 인격과 사역)"
+      },
+      {
+        "ep": 42,
+        "title": "42강 - 자기를 부인하는 삶",
+        "passage": "누가복음 9장 22-27절",
+        "url": "https://www.youtube.com/watch?v=Jsgly16gtPA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=42",
+        "videoId": "Jsgly16gtPA",
+        "fullTitle": "누가복음 9장 22-27절 (자기를 부인하는 삶)"
+      },
+      {
+        "ep": 43,
+        "title": "43강 - 오직 예수 뿐이라",
+        "passage": "누가복음 9장 28-36절",
+        "url": "https://www.youtube.com/watch?v=rkbII3TasaU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=43",
+        "videoId": "rkbII3TasaU",
+        "fullTitle": "누가복음 9장 28-36절 (오직 예수 뿐이라)"
+      },
+      {
+        "ep": 44,
+        "title": "44강 - 무능한 죄인, 충분한 그리스도",
+        "passage": "누가복음 9장 37-45절",
+        "url": "https://www.youtube.com/watch?v=v9V4Fc6ClYY&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=44",
+        "videoId": "v9V4Fc6ClYY",
+        "fullTitle": "누가복음 9장 37-45절 (무능한 죄인, 충분한 그리스도)"
+      },
+      {
+        "ep": 45,
+        "title": "45강 - 낮아짐의 은혜, 영접의 제자도",
+        "passage": "누가복음 9장 46-48절",
+        "url": "https://www.youtube.com/watch?v=TdTRouIn38I&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=45",
+        "videoId": "TdTRouIn38I",
+        "fullTitle": "누가복음 9장 46-48절 (낮아짐의 은혜, 영접의 제자도)"
+      },
+      {
+        "ep": 46,
+        "title": "46강 - 그리스도의 이름이 전파되는 것만으로 당신은 충분합니까?",
+        "passage": "누가복음 9장 49-50절",
+        "url": "https://www.youtube.com/watch?v=Qo3Gjyy1J_c&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=46",
+        "videoId": "Qo3Gjyy1J_c",
+        "fullTitle": "누가복음 9장 49-50절 (그리스도의 이름이 전파되는 것만으로 당신은 충분합니까?)"
+      },
+      {
+        "ep": 47,
+        "title": "47강 - 굳은 결심: 심판 대신 죽음을 택하신 사랑",
+        "passage": "누가복음 9장 51-56절",
+        "url": "https://www.youtube.com/watch?v=0KVdz-QTOUA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=47",
+        "videoId": "0KVdz-QTOUA",
+        "fullTitle": "누가복음 9장 51-56절 (굳은 결심: 심판 대신 죽음을 택하신 사랑)"
+      },
+      {
+        "ep": 48,
+        "title": "48강 - 그리스도와 함께 걷는 좁은 길의 행복",
+        "passage": "누가복음 9장 57-61절",
+        "url": "https://www.youtube.com/watch?v=OxtoLs5QeuE&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=48",
+        "videoId": "OxtoLs5QeuE",
+        "fullTitle": "누가복음 9장 57-61절 (그리스도와 함께 걷는 좁은 길의 행복)"
+      },
+      {
+        "ep": 49,
+        "title": "49강 - 왕의 전령, 그위대한 사명과 엄중한 책임",
+        "passage": "누가복음 10장 1-16절",
+        "url": "https://www.youtube.com/watch?v=-T_NkAdcOeU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=49",
+        "videoId": "-T_NkAdcOeU",
+        "fullTitle": "누가복음 10장 1-16절 (왕의 전령, 그위대한 사명과 엄중한 책임)"
+      },
+      {
+        "ep": 50,
+        "title": "50강 - 내가 행한 일에서 내게 베푸신 은혜로",
+        "passage": "누가복음 10장 17-20절",
+        "url": "https://www.youtube.com/watch?v=2DKrNCVkjHk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=50",
+        "videoId": "2DKrNCVkjHk",
+        "fullTitle": "누가복음 10장 17-20절 (내가 행한 일에서 내게 베푸신 은혜로)"
+      },
+      {
+        "ep": 51,
+        "title": "51강 - 예수님의 기쁨과 제자들의 복",
+        "passage": "누가복음 10장 21-24절",
+        "url": "https://www.youtube.com/watch?v=DWsR0rHZHng&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=51",
+        "videoId": "DWsR0rHZHng",
+        "fullTitle": "누가복음 10장 21-24절 (예수님의 기쁨과 제자들의 복)"
+      },
+      {
+        "ep": 52,
+        "title": "52강 - 내 이웃이 되신 예수님",
+        "passage": "누가복음 10장 25-37절",
+        "url": "https://www.youtube.com/watch?v=SJ1iLdhuTLE&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=52",
+        "videoId": "SJ1iLdhuTLE",
+        "fullTitle": "누가복음 10장 25-37절 (내 이웃이 되신 예수님)"
+      },
+      {
+        "ep": 53,
+        "title": "53강 - 은혜의 보좌 앞에 거하는 삶",
+        "passage": "누가복음 10장 38-42절",
+        "url": "https://www.youtube.com/watch?v=iax7y1fMJ8o&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=53",
+        "videoId": "iax7y1fMJ8o",
+        "fullTitle": "누가복음 10장 38-42절 (은혜의 보좌 앞에 거하는 삶)"
+      },
+      {
+        "ep": 54,
+        "title": "54강 - 우리에게 기도를 가르쳐 주소서",
+        "passage": "누가복음 11장 1-4절",
+        "url": "https://www.youtube.com/watch?v=xwsFFVDC9qI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=54",
+        "videoId": "xwsFFVDC9qI",
+        "fullTitle": "누가복음 11장 1-4절 (우리에게 기도를 가르쳐 주소서)"
+      },
+      {
+        "ep": 55,
+        "title": "55강 - 염치없는 간청, 신실한 응답",
+        "passage": "누가복음 11장 5-13절",
+        "url": "https://www.youtube.com/watch?v=YJ_3z467X58&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=55",
+        "videoId": "YJ_3z467X58",
+        "fullTitle": "누가복음 11장 5-13절 (염치없는 간청, 신실한 응답)"
+      },
+      {
+        "ep": 56,
+        "title": "56강 - 더 강한 자가 다스리는 나라",
+        "passage": "누가복음 11장 14-26절",
+        "url": "https://www.youtube.com/watch?v=hWNQhm8va7s&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=56",
+        "videoId": "hWNQhm8va7s",
+        "fullTitle": "누가복음 11장 14-26절 (더 강한 자가 다스리는 나라)"
+      },
+      {
+        "ep": 57,
+        "title": "57강 - 표적을 구하는 세대, 말씀을 듣는 성도",
+        "passage": "누가복음 11장 27-32절",
+        "url": "https://www.youtube.com/watch?v=0cQ-RiUd7DY&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=57",
+        "videoId": "0cQ-RiUd7DY",
+        "fullTitle": "누가복음 11장 27-32절 (표적을 구하는 세대, 말씀을 듣는 성도)"
+      },
+      {
+        "ep": 58,
+        "title": "58강 - 위대한 선지자, 닫힌 눈을 여시다",
+        "passage": "누가복음 11장 33-36절",
+        "url": "https://www.youtube.com/watch?v=qzr3gz8KtxI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=58",
+        "videoId": "qzr3gz8KtxI",
+        "fullTitle": "누가복음 11장 33-36절 (위대한 선지자, 닫힌 눈을 여시다)"
+      },
+      {
+        "ep": 59,
+        "title": "59강 - 빈 껍데기 종교를 넘어, 영광스러운 복음으로",
+        "passage": "누가복음 11장 37-44절",
+        "url": "https://www.youtube.com/watch?v=kqmHUy5hWps&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=59",
+        "videoId": "kqmHUy5hWps",
+        "fullTitle": "누가복음 11장 37-44절 (빈 껍데기 종교를 넘어, 영광스러운 복음으로)"
+      },
+      {
+        "ep": 60,
+        "title": "60강 - 무거운 짐에서 그리스도의 멍에로",
+        "passage": "누가복음 11장 45-54절",
+        "url": "https://www.youtube.com/watch?v=yr8mxT_y0jo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=60",
+        "videoId": "yr8mxT_y0jo",
+        "fullTitle": "누가복음 11장 45-54절 (무거운 짐에서 그리스도의 멍에로)"
+      },
+      {
+        "ep": 61,
+        "title": "61강 - 하나님을 잊은 위선,  하나님을 깊이 생각하는 회개",
+        "passage": "누가복음 12장 1-12절",
+        "url": "https://www.youtube.com/watch?v=iW06tpOVBMo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=61",
+        "videoId": "iW06tpOVBMo",
+        "fullTitle": "누가복음 12장 1-12절 (하나님을 잊은 위선,  하나님을 깊이 생각하는 회개)"
+      },
+      {
+        "ep": 62,
+        "title": "62강 - 채워지지 않는 탐욕, 채우시는 그리스도",
+        "passage": "누가복음 12장 13-21절",
+        "url": "https://www.youtube.com/watch?v=kAjV-gdMZmg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=62",
+        "videoId": "kAjV-gdMZmg",
+        "fullTitle": "누가복음 12장 13-21절 (채워지지 않는 탐욕, 채우시는 그리스도)"
+      },
+      {
+        "ep": 63,
+        "title": "63강 - 2026 08 09 11 44 33",
+        "passage": "누가복음 63강",
+        "url": "https://www.youtube.com/watch?v=1QU1eZcPgTk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=63",
+        "videoId": "1QU1eZcPgTk",
+        "fullTitle": "2026 08 09 11 44 33"
+      },
+      {
+        "ep": 64,
+        "title": "64강 - 2026 08 16 11 33 20",
+        "passage": "누가복음 64강",
+        "url": "https://www.youtube.com/watch?v=lE3FYZxqba8&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=64",
+        "videoId": "lE3FYZxqba8",
+        "fullTitle": "2026 08 16 11 33 20"
+      },
+      {
+        "ep": 65,
+        "title": "65강 - 2026 08 23 11 42 20",
+        "passage": "누가복음 65강",
+        "url": "https://www.youtube.com/watch?v=cyaioA3iNJU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=65",
+        "videoId": "cyaioA3iNJU",
+        "fullTitle": "2026 08 23 11 42 20"
+      },
+      {
+        "ep": 66,
+        "title": "66강 - 2026 08 30 11 37 40",
+        "passage": "누가복음 66강",
+        "url": "https://www.youtube.com/watch?v=4K8nqJs_QNQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=66",
+        "videoId": "4K8nqJs_QNQ",
+        "fullTitle": "2026 08 30 11 37 40"
+      },
+      {
+        "ep": 67,
+        "title": "67강 - 2026 09 06 11 49 25",
+        "passage": "누가복음 67강",
+        "url": "https://www.youtube.com/watch?v=XlL-ohUpp_Y&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=67",
+        "videoId": "XlL-ohUpp_Y",
+        "fullTitle": "2026 09 06 11 49 25"
       }
     ]
   },
