@@ -3064,5 +3064,314 @@
         "fullTitle": "천로역정 52강 천국 입성과 무지의 최후 / 불로 열방교회 박훈 목사"
       }
     ]
+  },
+  "mark": {
+    "id": "mark",
+    "title": "마가복음 강해",
+    "subtitle": "종으로 오신 하나님의 아들 예수 그리스도 (총 33강)",
+    "speaker": "박훈 담임목사",
+    "category": "신약 강해",
+    "desc": "복음의 시작부터 하나님 나라의 사역과 십자가 대속의 죽음, 부활을 증거하는 박훈 목사의 마가복음 주일 및 특별 강해 전편입니다. (1-26강: 열방교회유튜브 / 27-33강: 불로 열방교회)",
+    "playlistUrl": "https://www.youtube.com/watch?v=rU8LJi9Q7ps&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0",
+    "count": "33강",
+    "episodes": [
+      {
+        "ep": 1,
+        "title": "1강 - 그리스도의 복음의 시작",
+        "passage": "마가복음 1:1~11",
+        "url": "https://www.youtube.com/watch?v=rU8LJi9Q7ps&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=26",
+        "videoId": "rU8LJi9Q7ps",
+        "fullTitle": "주일 오전예배(20190113) / '그리스도 복음의 시작' / 마가 1장 1~11절 / 열방교회 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 2,
+        "title": "2강 - 지는 것이 아닌 승리",
+        "passage": "마가복음 1:12~13",
+        "url": "https://www.youtube.com/watch?v=W1Vtpt0eUM8&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=25",
+        "videoId": "W1Vtpt0eUM8",
+        "fullTitle": "주일 오전예배(20190120) / '지는 것이 아닌 승리' / 마가 1장 12~13절 / 열방교회 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 3,
+        "title": "3강 - 권세있는 새 교훈",
+        "passage": "마가복음 1:21~28",
+        "url": "https://www.youtube.com/watch?v=wyh7wMgRR0k&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=24",
+        "videoId": "wyh7wMgRR0k",
+        "fullTitle": "주일 오전예배(20190210) / '권세있는 새 교훈' / 마가 1장 21~28절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 4,
+        "title": "4강 - 전도의 목적",
+        "passage": "마가복음 1:29~39",
+        "url": "https://www.youtube.com/watch?v=3mfjqZVqB48&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=23",
+        "videoId": "3mfjqZVqB48",
+        "fullTitle": "열방교회 주일 오전예배(20190217) / '전도의 목적' - 마가 1장 29~39절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 5,
+        "title": "5강 - 원하십니까?",
+        "passage": "마가복음 1:40~45",
+        "url": "https://www.youtube.com/watch?v=5zGt_a20iHg&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=22",
+        "videoId": "5zGt_a20iHg",
+        "fullTitle": "주일 오전예배(20190224) / '원하십니까?' / 마가 1장 40~45절 / 열방교회 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 6,
+        "title": "6강 - 죄를 사하는 자인가",
+        "passage": "마가복음 2:1~12",
+        "url": "https://www.youtube.com/watch?v=LP8i-9s3uPc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=21",
+        "videoId": "LP8i-9s3uPc",
+        "fullTitle": "주일 오전예배(20190303) / '죄를 사하는 자인가' - 마가 2장 1~12절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 7,
+        "title": "7강 - 죄인입니까? 의인입니까?",
+        "passage": "마가복음 2:13~17",
+        "url": "https://www.youtube.com/watch?v=6qFnQv-0DHo&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=20",
+        "videoId": "6qFnQv-0DHo",
+        "fullTitle": "열방교회 주일 오전예배(20190310) / 죄인입니까? 의인입니까? / 마가 2장 13~17절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 8,
+        "title": "8강 - 의무와 기쁨의 충돌",
+        "passage": "마가복음 2:18~28",
+        "url": "https://www.youtube.com/watch?v=K9QN5if0s_0&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=19",
+        "videoId": "K9QN5if0s_0",
+        "fullTitle": "열방교회 주일 오전예배(20190317) / 의무와 기쁨의 충돌 / 마가 2장 18~28절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 9,
+        "title": "9강 - 안식일의 주인 예수",
+        "passage": "마가복음 2:23~3:12",
+        "url": "https://www.youtube.com/watch?v=cJ6UXc58JZ8&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=18",
+        "videoId": "cJ6UXc58JZ8",
+        "fullTitle": "열방교회 주일 오전예배(20190324) / 안식일의 주인 예수 / 마가 2장 23~28절, 3장 1~12절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 10,
+        "title": "10강 - 부르심의 목적",
+        "passage": "마가복음 3:13~19",
+        "url": "https://www.youtube.com/watch?v=XiQP-AfHZwY&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=17",
+        "videoId": "XiQP-AfHZwY",
+        "fullTitle": "열방교회 주일 오전예배(20190331) / 부르심의 목적 - 마가 3장 13~19절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 11,
+        "title": "11강 - 성령훼방",
+        "passage": "마가복음 3:20~30",
+        "url": "https://www.youtube.com/watch?v=s-zRXLIaxsE&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=16",
+        "videoId": "s-zRXLIaxsE",
+        "fullTitle": "주일 오전예배(20190407) / 성령훼방 - 마가 3장 20~30절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 12,
+        "title": "12강 - 영적인 가족",
+        "passage": "마가복음 3:31~35",
+        "url": "https://www.youtube.com/watch?v=2CAe5Gn4L4I&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=15",
+        "videoId": "2CAe5Gn4L4I",
+        "fullTitle": "주일 오전예배(20190414) / '영적인 가족' - 마가 3장 31~35절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 13,
+        "title": "13강 - 네 가지 밭의 비유",
+        "passage": "마가복음 4:1~20",
+        "url": "https://www.youtube.com/watch?v=LXIxyrMdnH8&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=14",
+        "videoId": "LXIxyrMdnH8",
+        "fullTitle": "주일 오전예배(20190421) / '네 가지 밭은 어떠합니까' / 마가 4장 1~20절 / 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 14,
+        "title": "14강 - 들으려 하는 자에게 합당한 태도",
+        "passage": "마가복음 4:21~25",
+        "url": "https://www.youtube.com/watch?v=h7KZv8Plxbw&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=13",
+        "videoId": "h7KZv8Plxbw",
+        "fullTitle": "주일 오전예배(20190428) / '들으려 하는 자에게 합당한 태도' / 마가 4장 21~25절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 15,
+        "title": "15강 - 자라나는 씨",
+        "passage": "마가복음 4:26~29",
+        "url": "https://www.youtube.com/watch?v=S2FUpy29vvM&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=12",
+        "videoId": "S2FUpy29vvM",
+        "fullTitle": "주일 오전예배(20190505) / '자라나는 씨' / 마가 4장 26~29절 / 열방교회 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 16,
+        "title": "16강 - 겨자씨와 하나님 나라",
+        "passage": "마가복음 4:30~34",
+        "url": "https://www.youtube.com/watch?v=FDmtOa6OJrg&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=11",
+        "videoId": "FDmtOa6OJrg",
+        "fullTitle": "주일 오전예배(20190512) / '겨자씨와 하나님 나라' / 마가 4장 30~34절 / 열방교회 박훈 목사 설교",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 17,
+        "title": "17강 - 그가 누구이기에!",
+        "passage": "마가복음 4:35~41",
+        "url": "https://www.youtube.com/watch?v=YEY2i91kVdI&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=10",
+        "videoId": "YEY2i91kVdI",
+        "fullTitle": "주일 오전예배(20190519) / '그가 누구이기에!' / 마가 4장 35~41절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 18,
+        "title": "18강 - 아무도 제어할 수 없는 자!",
+        "passage": "마가복음 5:1~20",
+        "url": "https://www.youtube.com/watch?v=qCWptlLoh7E&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=9",
+        "videoId": "qCWptlLoh7E",
+        "fullTitle": "주일 오전예배(20190526) / '아무도 제어할 수 없는 자!' / 마가 5장 1~20절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 19,
+        "title": "19강 - 믿기만 하라!",
+        "passage": "마가복음 5:21~43",
+        "url": "https://www.youtube.com/watch?v=m5HaueUKNZM&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=8",
+        "videoId": "m5HaueUKNZM",
+        "fullTitle": "주일 오전예배(20190602) / '믿기만 하라!' / 마가 5장 21~43절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 20,
+        "title": "20강 - 배척과 불신",
+        "passage": "마가복음 6:1~6",
+        "url": "https://www.youtube.com/watch?v=yhg-4URczQc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=7",
+        "videoId": "yhg-4URczQc",
+        "fullTitle": "주일 오전예배(20190609) / '배척과 불신' - 마가 6장 1~6절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 21,
+        "title": "21강 - 하나님 나라 사역의 본질",
+        "passage": "마가복음 6:7~13",
+        "url": "https://www.youtube.com/watch?v=nS5S1NLsPPs&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=6",
+        "videoId": "nS5S1NLsPPs",
+        "fullTitle": "주일 오전예배(20190616) / '하나님 나라 사역의 본질' / 마가 6장 7~13절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 22,
+        "title": "22강 - 세례 요한의 죽음과 분봉왕 헤롯",
+        "passage": "마가복음 6:14~29",
+        "url": "https://www.youtube.com/watch?v=YXnBet0CmLk&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=5",
+        "videoId": "YXnBet0CmLk",
+        "fullTitle": "주일 오전예배(20190623) / '세례 요한의 죽음과 분봉왕 헤롯' / 마가 6장 14~29절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 23,
+        "title": "23강 - 먹이시는 그리스도 (오병이어)",
+        "passage": "마가복음 6:30~44",
+        "url": "https://www.youtube.com/watch?v=_LuXc3lBdAc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=4",
+        "videoId": "_LuXc3lBdAc",
+        "fullTitle": "주일 오전예배(20190630) / '먹이시는 그리스도' - 마가 6장 30~44절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 24,
+        "title": "24강 - 물 위로 걸으신 주",
+        "passage": "마가복음 6:45~52",
+        "url": "https://www.youtube.com/watch?v=Tav4TwdZsIc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=3",
+        "videoId": "Tav4TwdZsIc",
+        "fullTitle": "주일 오전예배(20190707) / '물 위로 걸으신 주' - 마가 6장 45~52절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 25,
+        "title": "25강 - 손을 대기만 하면!",
+        "passage": "마가복음 6:53~56",
+        "url": "https://www.youtube.com/watch?v=8423sZ8kOcI&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=2",
+        "videoId": "8423sZ8kOcI",
+        "fullTitle": "주일 오전예배(20190714) / '손을 대기만 하면!' / 마가 6장 53~56절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 26,
+        "title": "26강 - 참된 것을 방해하는 자들",
+        "passage": "마가복음 7:1~23",
+        "url": "https://www.youtube.com/watch?v=mKWdu-RWdO4&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=1",
+        "videoId": "mKWdu-RWdO4",
+        "fullTitle": "주일 오전예배(20190721) / '참된 것을 방해하는 자들' - 마가 7장 1~23절 / 열방교회 박훈 목사",
+        "source": "열방교회유튜브"
+      },
+      {
+        "ep": 27,
+        "title": "27강 - 마가복음 서론 및 개관 (불로 열방교회 강해)",
+        "passage": "마가복음 1:1",
+        "url": "https://www.youtube.com/watch?v=xAvLS9ZWAlg&list=PLLdmcUOPXWu4",
+        "videoId": "xAvLS9ZWAlg",
+        "fullTitle": "마가복음 서론 및 개관 / 불로 열방교회 박훈 목사",
+        "source": "불로 열방교회"
+      },
+      {
+        "ep": 28,
+        "title": "28강 - 마가복음 1장 1-13절 (불로 열방교회 강해)",
+        "passage": "마가복음 1:1~13",
+        "url": "https://www.youtube.com/watch?v=YzA1jDHJav0&list=PLLdmcUOPXWu4",
+        "videoId": "YzA1jDHJav0",
+        "fullTitle": "마가복음 1장 1-13절 / 불로 열방교회 박훈 목사",
+        "source": "불로 열방교회"
+      },
+      {
+        "ep": 29,
+        "title": "29강 - 마가복음 1장 14-34절 (불로 열방교회 강해)",
+        "passage": "마가복음 1:14~34",
+        "url": "https://www.youtube.com/watch?v=2j9gWok2Ssw&list=PLLdmcUOPXWu4",
+        "videoId": "2j9gWok2Ssw",
+        "fullTitle": "마가복음 1장 14-34절 / 불로 열방교회 박훈 목사",
+        "source": "불로 열방교회"
+      },
+      {
+        "ep": 30,
+        "title": "30강 - 마가복음 1장 35-45절 (불로 열방교회 강해)",
+        "passage": "마가복음 1:35~45",
+        "url": "https://www.youtube.com/watch?v=Q5pxL_6ZrPA&list=PLLdmcUOPXWu4",
+        "videoId": "Q5pxL_6ZrPA",
+        "fullTitle": "마가복음 1장 35-45절 / 불로 열방교회 박훈 목사",
+        "source": "불로 열방교회"
+      },
+      {
+        "ep": 31,
+        "title": "31강 - 마가복음 2장 1-28절 (불로 열방교회 강해)",
+        "passage": "마가복음 2:1~28",
+        "url": "https://www.youtube.com/watch?v=W4HZ157XFW8&list=PLLdmcUOPXWu4",
+        "videoId": "W4HZ157XFW8",
+        "fullTitle": "마가복음 2장 1-28절 / 불로 열방교회 박훈 목사",
+        "source": "불로 열방교회"
+      },
+      {
+        "ep": 32,
+        "title": "32강 - 마가복음 4장 1-41절 (불로 열방교회 강해)",
+        "passage": "마가복음 4:1~41",
+        "url": "https://www.youtube.com/watch?v=RSxUFX2zhv8&list=PLLdmcUOPXWu4",
+        "videoId": "RSxUFX2zhv8",
+        "fullTitle": "마가복음 4장 1-41절 / 불로 열방교회 박훈 목사",
+        "source": "불로 열방교회"
+      },
+      {
+        "ep": 33,
+        "title": "33강 - 마가복음 5장 1-43절 (불로 열방교회 강해)",
+        "passage": "마가복음 5:1~43",
+        "url": "https://www.youtube.com/watch?v=ZFmcHA_V4bg&list=PLLdmcUOPXWu4",
+        "videoId": "ZFmcHA_V4bg",
+        "fullTitle": "마가복음 5장 1-43절 / 불로 열방교회 박훈 목사",
+        "source": "불로 열방교회"
+      }
+    ]
   }
 }
