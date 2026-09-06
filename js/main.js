@@ -536,10 +536,13 @@ function playArchiveLecture(folderKey, epNumber) {
     return;
   }
 
+  const startTime = extractStartTime(item.url, item);
+  const startParam = startTime > 0 ? `&start=${startTime}` : '';
+
   // 웹 서버 / GitHub Pages 환경: 신규 iframe 동적 주입 및 오류 153 완전 방지
   playerWrapper.innerHTML = `
     <iframe id="archive-player-iframe" 
-      src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1" 
+      src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1${startParam}" 
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       referrerpolicy="strict-origin-when-cross-origin" 
@@ -550,6 +553,25 @@ function playArchiveLecture(folderKey, epNumber) {
 
   playerArea.style.display = 'block';
   playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function extractStartTime(url, item) {
+  if (item && item.startTime !== undefined && item.startTime !== null) return parseInt(item.startTime);
+  if (item && item.start !== undefined && item.start !== null) return parseInt(item.start);
+  if (!url) return 0;
+  
+  const match = url.match(/[?&]t=(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/) || url.match(/[?&]t=(\d+)/);
+  if (match) {
+    if (match[3] !== undefined || match[2] !== undefined || match[1] !== undefined) {
+      const h = parseInt(match[1] || 0);
+      const m = parseInt(match[2] || 0);
+      const s = parseInt(match[3] || 0);
+      return h * 3600 + m * 60 + s;
+    } else if (match[1]) {
+      return parseInt(match[1]);
+    }
+  }
+  return 0;
 }
 
 function closeArchivePlayer() {
