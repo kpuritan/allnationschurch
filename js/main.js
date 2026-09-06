@@ -509,10 +509,37 @@ function playArchiveLecture(folderKey, epNumber) {
     }
   }
 
-  // 매 클릭마다 신규 iframe을 동적으로 생성하여 브라우저 초기화 오류(Error 153) 원천 차단
+  // 로컬 파일(file://) 환경 접속 시 유튜브 보안 정책(Error 153) 대응 안내 처리
+  if (window.location.protocol === 'file:') {
+    playerWrapper.innerHTML = `
+      <div style="width: 100%; min-height: 380px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2.5rem 1.5rem; color: #fff; box-sizing: border-box;">
+        <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">🌐</div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #f8fafc; margin-bottom: 0.8rem;">
+          현재 '내 컴퓨터 파일(file:///)'로 열람 중이십니다
+        </h3>
+        <p style="font-size: 0.92rem; color: #cbd5e1; max-width: 520px; line-height: 1.65; margin-bottom: 1.6rem;">
+          유튜브 본사 정책상 컴퓨터 로컬 파일에서는 보안상의 이유로 영상 재생(오류 153)이 차단됩니다.<br>
+          아래 <strong>[공식 홈페이지에서 바로 시청하기]</strong>를 누르시면 웹사이트 상에서 영상이 즉시 재생됩니다!
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+          <a href="https://kpuritan.github.io/allnationschurch/#sermons" target="_blank" rel="noopener noreferrer" style="background: #2563eb; color: #fff; font-weight: 800; font-size: 0.95rem; padding: 11px 22px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);">
+            🚀 공식 홈페이지에서 바로 시청하기
+          </a>
+          <a href="${item.url || `https://www.youtube.com/watch?v=${videoId}`}" target="_blank" rel="noopener noreferrer" style="background: #dc2626; color: #fff; font-weight: 800; font-size: 0.95rem; padding: 11px 22px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            ▶ YouTube에서 직접 시청
+          </a>
+        </div>
+      </div>
+    `;
+    playerArea.style.display = 'block';
+    playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  // 웹 서버 / GitHub Pages 환경: 신규 iframe 동적 주입 및 오류 153 완전 방지
   playerWrapper.innerHTML = `
     <iframe id="archive-player-iframe" 
-      src="https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&enablejsapi=1&feature=oembed" 
+      src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1" 
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       referrerpolicy="strict-origin-when-cross-origin" 
