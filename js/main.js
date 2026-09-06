@@ -207,9 +207,9 @@ function renderArchiveFolderSidebar() {
 
   // 폴더 리스트 상단 관리자용 [➕ 새 폴더] 버튼
   const addFolderBtnHtml = isAdmin ? `
-    <li style="padding: 0.5rem 0.8rem; margin-bottom: 0.5rem;">
-      <button type="button" onclick="openFolderCreateModal()" class="admin-bar-btn" style="width: 100%; justify-content: center; background: #2563eb; color: #fff; border: none; padding: 7px;">
-        ➕ 새 폴더 만들기
+    <li class="sermon-tab-admin-add">
+      <button type="button" onclick="openFolderCreateModal()" class="admin-bar-btn" style="background: #2563eb; color: #fff; border: none; padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.88rem; cursor: pointer;">
+        ➕ 새 폴더 추가
       </button>
     </li>
   ` : '';
@@ -223,19 +223,15 @@ function renderArchiveFolderSidebar() {
     }
 
     const delBtnHtml = (isAdmin && !ARCHIVE_FOLDERS.some(orig => orig.key === f.key)) ? `
-      <button onclick="handleDeleteSiteFolder(event, '${f.key}')" title="폴더 삭제" style="background: none; border: none; color: #ef4444; font-size: 0.8rem; cursor: pointer; padding: 2px 4px;">🗑️</button>
+      <button onclick="handleDeleteSiteFolder(event, '${f.key}')" title="폴더 삭제" style="background: none; border: none; color: #ef4444; font-size: 0.8rem; cursor: pointer; padding: 2px 4px; margin-left: 4px;">🗑️</button>
     ` : '';
 
     return `
-      <li class="archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
-        <div class="folder-name-wrap" style="flex-grow: 1; min-width: 0;">
-          ${UNIFIED_FOLDER_SVG}
-          <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${f.title}</span>
-        </div>
-        <div style="display: flex; align-items: center; gap: 4px;">
-          <span class="folder-count-badge">${epCount}</span>
-          ${delBtnHtml}
-        </div>
+      <li class="sermon-tab-item archive-folder-item ${f.key === currentFolderKey ? 'active' : ''}" data-fkey="${f.key}" onclick="selectArchiveFolder('${f.key}')">
+        <span class="tab-folder-icon">📁</span>
+        <span class="tab-folder-title">${f.title}</span>
+        <span class="tab-count-badge folder-count-badge">${epCount}</span>
+        ${delBtnHtml}
       </li>
     `;
   }).join('');
@@ -257,7 +253,6 @@ async function loadArchiveData() {
     try {
       const parsed = JSON.parse(saved);
       if (parsed.archive) {
-        // 병합: 서버 기본 데이터 위에 로컬 추가분 병합 (단, romans 등 정규 강의는 서버 최신 유지)
         archiveDataCache = { ...archiveDataCache, ...parsed.archive };
       }
     } catch (e) {
@@ -287,7 +282,7 @@ function saveEffectiveData() {
 async function selectArchiveFolder(folderKey) {
   currentFolderKey = folderKey;
   
-  document.querySelectorAll('.archive-folder-item').forEach(el => {
+  document.querySelectorAll('.archive-folder-item, .sermon-tab-item').forEach(el => {
     if (el.getAttribute('data-fkey') === folderKey) {
       el.classList.add('active');
     } else {
@@ -341,19 +336,19 @@ function renderArchiveFolderContent(folderKey, query) {
     );
   }
 
-  if (titleEl) titleEl.textContent = `${folderMeta.title} 자료 목록`;
-  if (countEl) countEl.textContent = `총 ${episodes.length}개 자료 전부 (1/1페이지)`;
+  if (titleEl) titleEl.textContent = folderMeta.title;
+  if (countEl) countEl.textContent = `총 ${episodes.length}개 말씀 영상`;
 
   // 관리자 모드 시 [➕ 현재 폴더에 설교 등록] 버튼 바 생성
   let adminAddBarHtml = '';
   if (isAdmin) {
     adminAddBarHtml = `
-      <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.8rem 1.2rem; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+      <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.9rem 1.4rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
         <span style="font-weight: 700; color: #0369a1; font-size: 0.92rem;">
-          ⚙️ '${folderMeta.title}' 폴더에 새 설교를 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
+          ⚙️ '${folderMeta.title}' 시리즈에 새 설교를 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
         </span>
-        <button type="button" onclick="openLectureAddModal('${folderKey}')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none;">
-          ➕ 이 폴더에 설교 영상 등록
+        <button type="button" onclick="openLectureAddModal('${folderKey}')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none; padding: 7px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">
+          ➕ 새 설교 영상 등록
         </button>
       </div>
     `;
@@ -361,9 +356,9 @@ function renderArchiveFolderContent(folderKey, query) {
 
   if (episodes.length === 0) {
     gridEl.innerHTML = adminAddBarHtml + `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--text-muted);">
-        <p style="font-size: 1.1rem; font-weight: 600;">등록된 강의가 없습니다.</p>
-        <p style="font-size: 0.88rem; margin-top: 6px;">상단의 [설교 영상 등록] 버튼을 눌러 새 설교를 추가해 보세요.</p>
+      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted);">
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">등록된 설교 영상이 없습니다.</p>
+        <p style="font-size: 0.9rem; margin-top: 6px;">검색어를 확인하시거나 다른 강해 카테고리를 선택해 보세요.</p>
       </div>
     `;
     return;
@@ -373,17 +368,17 @@ function renderArchiveFolderContent(folderKey, query) {
   gridEl.innerHTML = adminAddBarHtml + episodes.map((item, idx) => {
     let thumbHtml = '';
     if (folderMeta.thumb) {
-      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="card-thumb-img">`;
+      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img">`;
     } else {
       thumbHtml = `
-        <div class="card-thumb-placeholder ${folderMeta.bgClass || 'bg-ot'}">
-          <span class="thumb-topic-tag">${folderMeta.title}</span>
-          <span class="thumb-korean-tag">${item.ep}강 / ${item.passage || ''}</span>
+        <div class="sermon-card-placeholder card-thumb-placeholder ${folderMeta.bgClass || 'bg-ot'}">
+          <span class="sermon-card-series-tag thumb-topic-tag">${folderMeta.title}</span>
+          <span class="sermon-card-ep-tag thumb-korean-tag">${item.ep}강 ${item.passage ? '· ' + item.passage : ''}</span>
         </div>
       `;
     }
 
-    const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.72rem; padding:2px 6px; border-radius:4px; font-weight:700; margin-left:6px;">PDF 교재</span>` : '';
+    const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.75rem; padding:3px 8px; border-radius:4px; font-weight:700; white-space:nowrap;">📄 교재</span>` : '';
 
     // 관리자 수정/삭제 버튼
     const epSafeParam = encodeURIComponent(String(item.ep));
@@ -395,17 +390,20 @@ function renderArchiveFolderContent(folderKey, query) {
     ` : '';
 
     return `
-      <div class="video-thumb-card" style="position: relative;" onclick="playArchiveLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">
+      <div class="sermon-card-item video-thumb-card" onclick="playArchiveLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">
         ${adminActionsHtml}
-        <div class="card-thumb-wrap">
+        <div class="sermon-card-thumb-wrap card-thumb-wrap">
           ${thumbHtml}
-          <div class="play-btn-circle">▶</div>
+          <div class="sermon-play-badge play-btn-circle">▶</div>
         </div>
-        <div class="card-body">
-          <h4 class="card-title">${item.title} ${pdfBadge}</h4>
-          <div class="card-meta-row">
-            <span class="card-author">👤 박훈 담임목사</span>
-            <span class="card-passage">📖 ${item.passage || (item.ep + '강')}</span>
+        <div class="sermon-card-body card-body">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 0.8rem;">
+            <h4 class="sermon-card-title card-title" title="${item.title}">${item.title}</h4>
+            ${pdfBadge}
+          </div>
+          <div class="sermon-card-meta card-meta-row">
+            <span class="sermon-card-speaker card-author">👤 박훈 담임목사</span>
+            <span class="sermon-card-passage card-passage">📖 ${item.passage || (item.ep + '강')}</span>
           </div>
         </div>
       </div>
