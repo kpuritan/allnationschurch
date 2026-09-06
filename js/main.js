@@ -185,6 +185,7 @@ function updateSiteAdminUI() {
 }
 
 async function initArchiveSystem() {
+  closeArchivePlayer();
   await loadArchiveData();
   activeFoldersList = getEffectiveFolders();
   renderArchiveFolderSidebar();
@@ -300,6 +301,9 @@ function saveEffectiveData() {
 async function selectArchiveFolder(folderKey) {
   currentFolderKey = folderKey;
   
+  // 강해 카테고리 탭 전환 시 상단 TV 플레이어를 닫고 깨끗한 목록 상태로 초기화
+  closeArchivePlayer();
+
   document.querySelectorAll('.archive-folder-item, .sermon-tab-item').forEach(el => {
     if (el.getAttribute('data-fkey') === folderKey) {
       el.classList.add('active');
