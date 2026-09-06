@@ -247,11 +247,12 @@
         <!-- 2. 상단 비디오 플레이어 영역 (영상 클릭 시 즉시 방영) -->
         <div id="archive-top-player" class="archive-top-player" style="display:none;">
           <div class="player-wrapper">
-            <iframe id="archive-player-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="archive-player-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
           <div class="player-info-bar">
             <div class="player-playing-title" id="archive-player-title">▶ 방영 중: 레위기 개관설교</div>
             <div class="player-actions">
+              <a id="archive-player-yt-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-player-ext" style="background: #dc2626;"><span>▶</span> YouTube에서 보기</a>
               <a id="archive-player-pdf-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-player-ext" style="display:none; background: #10b981;">📄 교재 PDF 보기</a>
               <button type="button" class="btn-player-close" onclick="closeArchivePlayer()">플레이어 닫기 ✕</button>
             </div>

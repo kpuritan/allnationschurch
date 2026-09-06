@@ -494,6 +494,11 @@ function playArchiveLecture(folderKey, epNumber) {
 
   if (titleSpan) titleSpan.textContent = `▶ 방영 중: ${item.title}`;
 
+  const ytLink = document.getElementById('archive-player-yt-link');
+  if (ytLink) {
+    ytLink.href = item.url || `https://www.youtube.com/watch?v=${videoId}`;
+  }
+
   const pdfLink = document.getElementById('archive-player-pdf-link');
   if (pdfLink) {
     if (item.pdfUrl) {
@@ -504,7 +509,7 @@ function playArchiveLecture(folderKey, epNumber) {
     }
   }
 
-  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1`;
 
   playerArea.style.display = 'block';
   playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
