@@ -390,255 +390,212 @@ window.INITIAL_SERMONS_ARCHIVE = {
   "john": {
     "id": "john",
     "title": "요한복음 강해",
-    "subtitle": "빛과 생명 되신 예수 그리스도의 복음 (1장 ~ 21장)",
+    "subtitle": "생명의 빛과 말씀이 육신이 되신 예수 그리스도 (총 20강)",
     "speaker": "박훈 담임목사",
     "category": "신약 강해",
-    "thumb": "images/john_gospel.jpg",
-    "desc": "태초에 말씀이 계시니라... 요한복음 전체를 통해 계시된 독생자 예수 그리스도의 영광과 생명의 은혜를 깊이 있게 나누는 강해 설교 시리즈입니다.",
-    "searchKeyword": "불로열방교회 요한복음",
-    "playlistUrl": "https://www.youtube.com/watch?v=Go4OwdYguN0",
+    "desc": "불로 열방교회 주일 오전예배를 통해 전해진 요한복음 연속 강해 시리즈입니다. 영상 재생 시 앞부분 찬양 후 말씀 봉독 및 설교 시작 시점부터 자동으로 방영됩니다.",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO",
+    "count": "20강",
     "episodes": [
       {
         "ep": 1,
-        "title": "태초에 말씀이 계시니라",
-        "passage": "요한복음 1:1~5",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0",
-        "search": "불로열방교회 요한복음 1장"
+        "title": "1강 - 말씀이 육신이 되어 우리 가운데 거하시매",
+        "passage": "요한복음 1:1~14",
+        "date": "2021.12.5",
+        "url": "https://www.youtube.com/watch?v=eijEaUo4T9I&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=1&t=1500s",
+        "videoId": "eijEaUo4T9I",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2021.12.5) / 요한복음 1:1~14 / 말씀이 육신이 되어 우리 가운데 거하시매 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 2,
-        "title": "빛에 대하여 증언하는 자",
-        "passage": "요한복음 1:6~13",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0",
-        "search": "불로열방교회 요한복음 1장 6절"
+        "title": "2강 - 세상 죄를 지고 가는 하나님의 어린 양",
+        "passage": "요한복음 1:15~34",
+        "date": "2021.12.12",
+        "url": "https://www.youtube.com/watch?v=mmz2QXk2Vsk&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=2&t=1500s",
+        "videoId": "mmz2QXk2Vsk",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2021.12.12) / 요한복음 1:15~34 / 세상 죄를 지고 가는 하나님의 어린 양 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 3,
-        "title": "말씀이 육신이 되어 우리 가운데 거하시매",
-        "passage": "요한복음 1:14~18",
-        "search": "불로열방교회 요한복음 1장 14절"
+        "title": "3강 - 와서 보라 (첫 제자들의 부르심)",
+        "passage": "요한복음 1:35~51",
+        "date": "2021.12.19",
+        "url": "https://www.youtube.com/watch?v=HeF6VKskJrs&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=3&t=1500s",
+        "videoId": "HeF6VKskJrs",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2021.12.19) / 요한복음 1:35~51 / 와서 보라 (첫 제자들의 부르심) / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 4,
-        "title": "보라 세상 죄를 지고 가는 하나님의 어린 양",
-        "passage": "요한복음 1:19~34",
-        "search": "불로열방교회 요한복음 1장 29절"
+        "title": "4강 - 가나의 혼인 잔치와 첫 표적",
+        "passage": "요한복음 2:1~12",
+        "date": "2021.12.26",
+        "url": "https://www.youtube.com/watch?v=JziveQxL2rU&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=4&t=1500s",
+        "videoId": "JziveQxL2rU",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2021.12.26) / 요한복음 2:1~12 / 가나의 혼인 잔치와 첫 표적 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 5,
-        "title": "와서 보라 (첫 제자들의 부르심)",
-        "passage": "요한복음 1:35~51",
-        "search": "불로열방교회 요한복음 1장 39절"
+        "title": "5강 - 성전을 청결하게 하신 예수",
+        "passage": "요한복음 2:13~25",
+        "date": "2022.1.2",
+        "url": "https://www.youtube.com/watch?v=Yv9G9DAI5Q8&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=5&t=1500s",
+        "videoId": "Yv9G9DAI5Q8",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.1.2) / 요한복음 2:13~25 / 성전을 청결하게 하신 예수 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 6,
-        "title": "가나의 혼인 잔치 (첫 표적)",
-        "passage": "요한복음 2:1~11",
-        "search": "불로열방교회 요한복음 2장 가나"
+        "title": "6강 - 니고데모와 거듭남의 비밀",
+        "passage": "요한복음 3:1~15",
+        "date": "2022.1.9",
+        "url": "https://www.youtube.com/watch?v=nhAKUapCuyc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=6&t=1500s",
+        "videoId": "nhAKUapCuyc",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.1.9) / 요한복음 3:1~15 / 니고데모와 거듭남의 비밀 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 7,
-        "title": "이 성전을 헐라 (성전 정결)",
-        "passage": "요한복음 2:12~25",
-        "search": "불로열방교회 요한복음 2장 성전"
+        "title": "7강 - 하나님이 세상을 이처럼 사랑하사",
+        "passage": "요한복음 3:16~21",
+        "date": "2022.1.16",
+        "url": "https://www.youtube.com/watch?v=zW2xyp2tn4U&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=7&t=1500s",
+        "videoId": "zW2xyp2tn4U",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.1.16) / 요한복음 3:16~21 / 하나님이 세상을 이처럼 사랑하사 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 8,
-        "title": "사람이 거듭나지 아니하면 (니고데모의 대화 1)",
-        "passage": "요한복음 3:1~8",
-        "search": "불로열방교회 요한복음 3장 거듭남"
+        "title": "8강 - 그는 흥하여야 하겠고 나는 쇠하여야 하리라",
+        "passage": "요한복음 3:22~36",
+        "date": "2022.1.23",
+        "url": "https://www.youtube.com/watch?v=ADWh7_hzzGo&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=8&t=1500s",
+        "videoId": "ADWh7_hzzGo",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.1.23) / 요한복음 3:22~36 / 그는 흥하여야 하겠고 나는 쇠하여야 하리라 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 9,
-        "title": "하나님이 세상을 이처럼 사랑하사 (니고데모 2)",
-        "passage": "요한복음 3:9~21",
-        "search": "불로열방교회 요한복음 3장 16절"
+        "title": "9강 - 수가성 여인과 생수, 참된 예배",
+        "passage": "요한복음 4:1~26",
+        "date": "2022.1.30",
+        "url": "https://www.youtube.com/watch?v=kjwR3bvBVcg&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=9&t=1500s",
+        "videoId": "kjwR3bvBVcg",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.1.30) / 요한복음 4:1~26 / 수가성 여인과 생수, 참된 예배 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 10,
-        "title": "그는 흥하여야 하겠고 나는 쇠하여야 하리라",
-        "passage": "요한복음 3:22~36",
-        "search": "불로열방교회 요한복음 3장 30절"
+        "title": "10강 - 영원한 양식과 신하의 아들을 고치심",
+        "passage": "요한복음 4:27~54",
+        "date": "2022.2.6",
+        "url": "https://www.youtube.com/watch?v=4dAif8_M1cc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=10&t=1500s",
+        "videoId": "4dAif8_M1cc",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.2.6) / 요한복음 4:27~54 / 영원한 양식과 신하의 아들을 고치심 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 11,
-        "title": "수가성 여인과 영원히 목마르지 않는 생수",
-        "passage": "요한복음 4:1~26",
-        "search": "불로열방교회 요한복음 4장 생수"
+        "title": "11강 - 베데스다 못가의 38년 된 병자",
+        "passage": "요한복음 5:1~18",
+        "date": "2022.2.13",
+        "url": "https://www.youtube.com/watch?v=fQHl3nF12mA&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=11&t=1500s",
+        "videoId": "fQHl3nF12mA",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.2.13) / 요한복음 5:1~18 / 베데스다 못가의 38년 된 병자 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 12,
-        "title": "신령과 진정으로 드리는 예배",
-        "passage": "요한복음 4:27~42",
-        "search": "불로열방교회 요한복음 4장 예배"
+        "title": "12강 - 아들의 권한과 생명의 부활",
+        "passage": "요한복음 5:19~29",
+        "date": "2022.2.20",
+        "url": "https://www.youtube.com/watch?v=F71MC_8-sYU&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=12&t=1500s",
+        "videoId": "F71MC_8-sYU",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.2.20) / 요한복음 5:19~29 / 아들의 권한과 생명의 부활 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 13,
-        "title": "왕의 신하의 아들을 고치신 표적",
-        "passage": "요한복음 4:43~54",
-        "search": "불로열방교회 요한복음 4장 신하"
+        "title": "13강 - 성경이 증언하는 예수 그리스도",
+        "passage": "요한복음 5:30~47",
+        "date": "2022.2.27",
+        "url": "https://www.youtube.com/watch?v=Xs0-p4RSF0M&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=13&t=1500s",
+        "videoId": "Xs0-p4RSF0M",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.2.27) / 요한복음 5:30~47 / 성경이 증언하는 예수 그리스도 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 14,
-        "title": "베데스다 못가의 삼십팔 년 된 병자",
-        "passage": "요한복음 5:1~18",
-        "search": "불로열방교회 요한복음 5장 베데스다"
+        "title": "14강 - 오병이어의 기적과 표적의 참된 의미",
+        "passage": "요한복음 6:1~15",
+        "date": "2022.3.6",
+        "url": "https://www.youtube.com/watch?v=1LIsG2EHBvg&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=14&t=1500s",
+        "videoId": "1LIsG2EHBvg",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.3.6) / 요한복음 6:1~15 / 오병이어의 기적과 표적의 참된 의미 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 15,
-        "title": "사망에서 생명으로 옮겼느니라",
-        "passage": "요한복음 5:19~29",
-        "search": "불로열방교회 요한복음 5장 24절"
+        "title": "15강 - 물 위를 걸으신 예수와 썩을 양식",
+        "passage": "요한복음 6:16~29",
+        "date": "2022.3.13",
+        "url": "https://www.youtube.com/watch?v=pMQd98x8Gus&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=15&t=1500s",
+        "videoId": "pMQd98x8Gus",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.3.13) / 요한복음 6:16~29 / 물 위를 걸으신 예수와 썩을 양식 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 16,
-        "title": "예수님을 증언하는 성경",
-        "passage": "요한복음 5:30~47",
-        "search": "불로열방교회 요한복음 5장 39절"
+        "title": "16강 - 하늘에서 내려온 생명의 떡",
+        "passage": "요한복음 6:30~51",
+        "date": "2022.3.20",
+        "url": "https://www.youtube.com/watch?v=lIFde-_ZQRc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=16&t=1500s",
+        "videoId": "lIFde-_ZQRc",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.3.20) / 요한복음 6:30~51 / 하늘에서 내려온 생명의 떡 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 17,
-        "title": "오병이어의 기적",
-        "passage": "요한복음 6:1~15",
-        "search": "불로열방교회 요한복음 6장 오병이어"
+        "title": "17강 - 영생의 말씀이 주께 있사오니",
+        "passage": "요한복음 6:52~71",
+        "date": "2022.3.27",
+        "url": "https://www.youtube.com/watch?v=VB8bKSlffKc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=17&t=1500s",
+        "videoId": "VB8bKSlffKc",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.3.27) / 요한복음 6:52~71 / 영생의 말씀이 주께 있사오니 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 18,
-        "title": "바다 위를 걸으신 예수님 (내니 두려워 말라)",
-        "passage": "요한복음 6:16~21",
-        "search": "불로열방교회 요한복음 6장 바다"
+        "title": "18강 - 초막절의 예수님과 공의로운 판단",
+        "passage": "요한복음 7:1~24",
+        "date": "2022.4.3",
+        "url": "https://www.youtube.com/watch?v=Ee0kjD-_cEo&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=18&t=1500s",
+        "videoId": "Ee0kjD-_cEo",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.4.3) / 요한복음 7:1~24 / 초막절의 예수님과 공의로운 판단 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 19,
-        "title": "나는 생명의 떡이라",
-        "passage": "요한복음 6:22~40",
-        "search": "불로열방교회 요한복음 6장 생명의 떡"
+        "title": "19강 - 누구든지 목마르거든 내게로 와서 마시라",
+        "passage": "요한복음 7:25~39",
+        "date": "2022.4.10",
+        "url": "https://www.youtube.com/watch?v=_1d2I6Br2NM&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=19&t=1500s",
+        "videoId": "_1d2I6Br2NM",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.4.10) / 요한복음 7:25~39 / 누구든지 목마르거든 내게로 와서 마시라 / 불로 열방교회 박훈 목사"
       },
       {
         "ep": 20,
-        "title": "영생의 말씀이 주께 있사오니",
-        "passage": "요한복음 6:41~71",
-        "search": "불로열방교회 요한복음 6장 68절"
-      },
-      {
-        "ep": 21,
-        "title": "나를 믿는 자는 그 배에서 생수의 강이 흘러나오리라",
-        "passage": "요한복음 7:1~39",
-        "search": "불로열방교회 요한복음 7장 생수의 강"
-      },
-      {
-        "ep": 22,
-        "title": "나도 너를 정죄하지 아니하노니",
-        "passage": "요한복음 8:1~11",
-        "search": "불로열방교회 요한복음 8장 현장"
-      },
-      {
-        "ep": 23,
-        "title": "나는 세상의 빛이니",
-        "passage": "요한복음 8:12~20",
-        "search": "불로열방교회 요한복음 8장 세상의 빛"
-      },
-      {
-        "ep": 24,
-        "title": "진리를 알지니 진리가 너희를 자유롭게 하리라",
-        "passage": "요한복음 8:21~36",
-        "search": "불로열방교회 요한복음 8장 32절"
-      },
-      {
-        "ep": 25,
-        "title": "날 때부터 맹인 된 사람을 고치심",
-        "passage": "요한복음 9:1~12",
-        "search": "불로열방교회 요한복음 9장 실로암"
-      },
-      {
-        "ep": 26,
-        "title": "나는 선한 목자라 (양의 문)",
-        "passage": "요한복음 10:1~18",
-        "search": "불로열방교회 요한복음 10장 선한 목자"
-      },
-      {
-        "ep": 27,
-        "title": "나와 아버지는 하나이니라",
-        "passage": "요한복음 10:19~42",
-        "search": "불로열방교회 요한복음 10장 30절"
-      },
-      {
-        "ep": 28,
-        "title": "나는 부활이요 생명이니 (나사로의 부활)",
-        "passage": "요한복음 11:1~44",
-        "search": "불로열방교회 요한복음 11장 나사로"
-      },
-      {
-        "ep": 29,
-        "title": "마리아의 옥합과 한 알의 밀알",
-        "passage": "요한복음 12:1~26",
-        "search": "불로열방교회 요한복음 12장 옥합"
-      },
-      {
-        "ep": 30,
-        "title": "제자들의 발을 씻기신 예수님 (세족식)",
-        "passage": "요한복음 13:1~20",
-        "search": "불로열방교회 요한복음 13장 세족"
-      },
-      {
-        "ep": 31,
-        "title": "너희는 마음에 근심하지 말라 (길이요 진리요 생명)",
-        "passage": "요한복음 14:1~14",
-        "search": "불로열방교회 요한복음 14장 6절"
-      },
-      {
-        "ep": 32,
-        "title": "보혜사 성령과 평안의 약속",
-        "passage": "요한복음 14:15~31",
-        "search": "불로열방교회 요한복음 14장 보혜사"
-      },
-      {
-        "ep": 33,
-        "title": "나는 참포도나무요 너희는 가지라",
-        "passage": "요한복음 15:1~17",
-        "search": "불로열방교회 요한복음 15장 포도나무"
-      },
-      {
-        "ep": 34,
-        "title": "세상에서는 너희가 환난을 당하나 담대하라",
-        "passage": "요한복음 16:1~33",
-        "search": "불로열방교회 요한복음 16장 33절"
-      },
-      {
-        "ep": 35,
-        "title": "예수님의 대제사장적 중보기도",
-        "passage": "요한복음 17:1~26",
-        "search": "불로열방교회 요한복음 17장 기도"
-      },
-      {
-        "ep": 36,
-        "title": "겟세마네 동산의 체포와 베드로의 부인",
-        "passage": "요한복음 18:1~27",
-        "search": "불로열방교회 요한복음 18장"
-      },
-      {
-        "ep": 37,
-        "title": "빌라도의 심문과 진리 논쟁",
-        "passage": "요한복음 18:28~40",
-        "search": "불로열방교회 요한복음 18장 빌라도"
-      },
-      {
-        "ep": 38,
-        "title": "다 이루었다 (십자가의 속죄 완성)",
-        "passage": "요한복음 19:1~30",
-        "search": "불로열방교회 요한복음 19장 30절"
-      },
-      {
-        "ep": 39,
-        "title": "부활하신 주님과 도마의 신앙고백",
-        "passage": "요한복음 20:1~31",
-        "search": "불로열방교회 요한복음 20장 부활"
-      },
-      {
-        "ep": 40,
-        "title": "네가 나를 사랑하느냐 (내 양을 먹이라)",
-        "passage": "요한복음 21:1~25",
-        "search": "불로열방교회 요한복음 21장 베드로"
+        "title": "20강 - 그리스도에 대한 변론과 대제사장들",
+        "passage": "요한복음 7:40~53",
+        "date": "2022.4.17",
+        "url": "https://www.youtube.com/watch?v=SpQI3nwCuGQ&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=20&t=1500s",
+        "videoId": "SpQI3nwCuGQ",
+        "startTime": 1500,
+        "fullTitle": "주일예배 (2022.4.17) / 요한복음 7:40~53 / 그리스도에 대한 변론과 대제사장들 / 불로 열방교회 박훈 목사"
       }
     ]
   },
@@ -1549,83 +1506,148 @@ window.INITIAL_SERMONS_ARCHIVE = {
   "dort_review": {
     "id": "dort_review",
     "title": "다시보는 도르트 신조",
-    "subtitle": "개혁주의 5대 교리와 은혜의 구원 강해",
+    "subtitle": "개혁주의 5대 교리와 은혜의 구원 강해 (총 17편 완주)",
     "speaker": "박훈 담임목사",
     "category": "교리 & 신조",
-    "desc": "불로 열방교회에서 새롭게 조명하여 전하는 도르트 신조 특별 강해 시리즈입니다. 칼빈주의 5대 튤립(TULIP) 교리의 핵심을 성도들의 삶과 신앙에 비추어 다시 명쾌하게 풀어냅니다.",
-    "searchKeyword": "불로열방교회 도르트 신조",
+    "desc": "불로 열방교회 주일 강해를 통해 전해진 도르트 신조 전편 17강 강해입니다. 무조건적 선택, 제한 속죄, 전적 타락, 거역할 수 없는 은혜, 성도의 견인을 성경 본문과 함께 명쾌하게 밝힙니다.",
+    "playlistUrl": "https://www.youtube.com/watch?v=v6HTE1bwpXY",
+    "count": "17편",
     "episodes": [
       {
         "ep": 1,
-        "title": "도르트 신조의 역사적 배경과 알미니안 논쟁",
-        "passage": "에베소서 1:3~6",
-        "search": "불로열방교회 도르트 신조"
+        "title": "1강 - 죄로 말미암아 잃어버린 생명과 구원에 이르는 회개",
+        "passage": "로마서 3:9~22 (도르트 신조 첫째 교리 1~5항)",
+        "url": "https://www.youtube.com/watch?v=v6HTE1bwpXY",
+        "videoId": "v6HTE1bwpXY",
+        "fullTitle": "주일 오전예배(20180812) / 죄로 말미암아 잃어버린 생명과 구원에 이르는 회개 / 로마서 3장 9~22절 / 열방교회 박훈 목사 설교 / 도르트신조 - 서론 / 첫째 교리 1~5항"
       },
       {
         "ep": 2,
-        "title": "제1교리: 하나님의 선택과 유기 (1) - 무조건적 선택의 기초",
-        "passage": "로마서 9:11~16",
-        "search": "불로열방교회 도르트 신조 1교리"
+        "title": "2강 - 복음의 선포와 하나님의 선택",
+        "passage": "에베소서 1:3~7 (도르트 신조 첫째 교리 6~7항)",
+        "url": "https://www.youtube.com/watch?v=1fArDpVUkBw",
+        "videoId": "1fArDpVUkBw",
+        "fullTitle": "주일 오전예배(20180819) / 복음의 선포와 하나님의 선택 / 에베소서 1장 3~7절 / 도르트 신조 - 첫째 교리 6~7항 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 3,
-        "title": "제1교리: 하나님의 선택과 유기 (2) - 영원한 작정과 구원의 확신",
-        "passage": "에베소서 1:4~11",
-        "search": "불로열방교회 도르트 신조 선택"
+        "title": "3강 - 하나님께 속한 자",
+        "passage": "로마서 9:10~13 (도르트 신조 첫째 교리 8항)",
+        "url": "https://www.youtube.com/watch?v=EaJXdAXVtJI",
+        "videoId": "EaJXdAXVtJI",
+        "fullTitle": "주일 오전예배(20180826) / 하나님께 속한 자 / 로마서 9장 10~13 / 도르트 신조 - 첫째 교리 8항 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 4,
-        "title": "제1교리: 오류의 반박 - 예지예정설에 대한 성경적 비판",
-        "passage": "디모데후서 1:9",
-        "search": "불로열방교회 도르트 신조 예지예정"
+        "title": "4강 - 구원 - 하나님의 은혜의 일하심!",
+        "passage": "디모데후서 2:7~10 (도르트 신조 첫째 교리 15~16항)",
+        "url": "https://www.youtube.com/watch?v=-ISXo8-P16A",
+        "videoId": "-ISXo8-P16A",
+        "fullTitle": "주일 오전예배(20180909) / 구원 - 하나님의 은혜의 일하심! / 디모데후서 2장 7~10절 / 도르트 신조 - 첫째교리 15~16항 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 5,
-        "title": "제2교리: 그리스도의 죽으심과 구속 (1) - 십자가 속죄의 무한한 가치",
-        "passage": "히브리서 9:11~14",
-        "search": "불로열방교회 도르트 신조 2교리"
+        "title": "5강 - 택하심을 받은 자의 유익과 위로!",
+        "passage": "사도행전 16:30~32 (도르트 신조 첫째 교리 17항)",
+        "url": "https://www.youtube.com/watch?v=RSecL0w-bSI",
+        "videoId": "RSecL0w-bSI",
+        "fullTitle": "주일 오전예배(20180916) / 택하심을 받은 자의 유익과 위로! / 사도행전 16장 30~32절 / 도르트 신조 - 첫째 교리 17항 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 6,
-        "title": "제2교리: 그리스도의 죽으심과 구속 (2) - 택함받은 자를 위한 제한 속죄",
-        "passage": "요한복음 10:14~15",
-        "search": "불로열방교회 도르트 신조 제한속죄"
+        "title": "6강 - 그리스도의 죽음과 구속, 그 가치와 효력",
+        "passage": "히브리서 3:19~26 (도르트 신조 둘째 교리 1~2항)",
+        "url": "https://www.youtube.com/watch?v=2KCTz9Jzf-s",
+        "videoId": "2KCTz9Jzf-s",
+        "fullTitle": "주일 오전예배(20180923) / 그리스도의 죽음과 구속, 그 가치와 효력 / 히브리서 3장 19~26 / 도르트 신조 - 둘째 교리 1~2항/ 열방교회 박훈 목사 설교"
       },
       {
         "ep": 7,
-        "title": "제3/4교리: 인간의 전적 부패와 하나님께로의 회심 (1) - 전적 타락",
-        "passage": "에베소서 2:1~3",
-        "search": "불로열방교회 도르트 신조 전적타락"
+        "title": "7강 - 십자가 대속의 죽음의 온전한 성취",
+        "passage": "요한복음 21:4~9 (도르트 신조 둘째 교리 3~5항)",
+        "url": "https://www.youtube.com/watch?v=ErE5EZmmMeA",
+        "videoId": "ErE5EZmmMeA",
+        "fullTitle": "주일 오전예배(20180930) / 십자가 대속의 죽음의 온전한 성취 / 요한복음 21장 4~9절 / 도르트 신조 - 둘째 교리 3~5항 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 8,
-        "title": "제3/4교리: 성령의 유효한 부르심과 불가항력적 은혜",
-        "passage": "요한복음 6:44~45",
-        "search": "불로열방교회 도르트 신조 불가항력"
+        "title": "8강 - 영생을 얻게 하는 '복음'",
+        "passage": "요한복음 5:39~40 (도르트 신조 둘째 교리 6~7항)",
+        "url": "https://www.youtube.com/watch?v=mN-JWW6pRK4",
+        "videoId": "mN-JWW6pRK4",
+        "fullTitle": "주일 오전예배(20181007) / 영생을 얻게 하는 '복음' / 요한복음 5장 39~40절 / 도르트신조 - 둘째 교리 6~7항 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 9,
-        "title": "제3/4교리: 회심의 역사와 중생의 신비",
-        "passage": "에스겔 36:26~27",
-        "search": "불로열방교회 도르트 신조 중생"
+        "title": "9강 - 참된 신앙의 표징과 그리스도의 피",
+        "passage": "요한복음 6:35~40 (도르트 신조 둘째 교리 8~9항)",
+        "url": "https://www.youtube.com/watch?v=F0XoUn8xoa8",
+        "videoId": "F0XoUn8xoa8",
+        "fullTitle": "주일 오전예배(20181014) / 참된 신앙의 표징과 그리스도의 피 / 요한복음 6장 35~40절 / 도르트 신조 - 둘째 교리 8~9항 / 열방교회 박훈목사 설교"
       },
       {
         "ep": 10,
-        "title": "제5교리: 성도의 견인 (1) - 영원토록 잃어버리지 아니하시는 은혜",
-        "passage": "요한복음 10:27~29",
-        "search": "불로열방교회 도르트 신조 성도의 견인"
+        "title": "10강 - 인간의 전적 부패와 거듭남의 필요성",
+        "passage": "에스겔 36:24~28, 37절 (도르트 신조 셋째,넷째 교리 1~5항)",
+        "url": "https://www.youtube.com/watch?v=l1NqtHpzkQ8",
+        "videoId": "l1NqtHpzkQ8",
+        "fullTitle": "주일 오전예배(20181021) / 인간의 전적 부패와 거듭남의 필요성 / 에스겔 36장 24~28,37절 / 도르트 신조 - 셋째,넷째 교리 1~5항 / 열방교회 박훈 목사"
       },
       {
         "ep": 11,
-        "title": "제5교리: 성도의 견인 (2) - 성도의 넘어짐과 하나님의 신실하신 회복",
-        "passage": "빌립보서 1:6",
-        "search": "불로열방교회 도르트 신조 견인"
+        "title": "11강 - 죄의 어둠 속에 비추인 빛과 하나님의 은혜",
+        "passage": "마가복음 7:1~13 (도르트 신조 셋째,넷째 교리 6항)",
+        "url": "https://www.youtube.com/watch?v=0SxlTkS906w",
+        "videoId": "0SxlTkS906w",
+        "fullTitle": "주일 오전예배(20181028) / 죄의 어둠 속에 비추인 빛과 하나님의 은혜 / 마가복음 7장 1~13절 / 도르트 신조 - 셋째,넷째 교리 6항 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 12,
-        "title": "제5교리: 구원의 확신과 거룩한 삶의 열매",
-        "passage": "로마서 8:38~39",
-        "search": "불로열방교회 도르트 신조 구원의 확신"
+        "title": "12강 - 중생의 은혜",
+        "passage": "고린도전서 6:15~18 (도르트 신조 셋째,넷째 교리 11~12항)",
+        "url": "https://www.youtube.com/watch?v=Zj_57puRq5o",
+        "videoId": "Zj_57puRq5o",
+        "fullTitle": "주일 오전예배(20181111) / 중생의 은혜 / 고린도전서 6장 15~18절 / 도르트 신조 셋째,넷째 교리 11~12항 / 열방교회 박훈 목사 설교"
+      },
+      {
+        "ep": 13,
+        "title": "13강 - 하나님의 은혜와 구원",
+        "passage": "에베소서 2:1~10 (도르트 신조 셋째,넷째 교리 13~15항)",
+        "url": "https://www.youtube.com/watch?v=SX-P4h3XHA8",
+        "videoId": "SX-P4h3XHA8",
+        "fullTitle": "주일 오전예배(20181118) / 하나님의 은혜와 구원 / 에베소서 2장 1~10절 / 도르트 신조 셋째,넷째 교리 13~15항 / 열방교회 박훈 목사 설교"
+      },
+      {
+        "ep": 14,
+        "title": "14강 - 성도의 연합과 교제 속에 일하시는 하나님",
+        "passage": "사도행전 2:42~47 (도르트 신조 셋째,넷째 교리 16~17항)",
+        "url": "https://www.youtube.com/watch?v=7XFkbnBwM3M",
+        "videoId": "7XFkbnBwM3M",
+        "fullTitle": "주일 오전예배(20181125) / 성도의 연합과 교제 속에 일하시는 하나님 / 사도행전 2장 42~47절 / 도르트 신조 셋째,넷째 교리 16~17항 / 열방교회 박훈 목사 설교"
+      },
+      {
+        "ep": 15,
+        "title": "15강 - 믿음의 확신과 신자의 견인",
+        "passage": "빌립보서 2:12~18 (도르트 신조 다섯째 교리 1~5항)",
+        "url": "https://www.youtube.com/watch?v=HPwCH_r86us",
+        "videoId": "HPwCH_r86us",
+        "fullTitle": "주일 오전예배(20181202) / 믿음의 확신과 신자의 견인 / 빌립보서 2장 12~18절 / 도르트 신조 - 다섯째 교리 1~5항 / 열방교회 박훈 목사 설교"
+      },
+      {
+        "ep": 16,
+        "title": "16강 - 하나님의 보호하심",
+        "passage": "스바냐 3:9~13 (도르트 신조 다섯째 교리 6~8항)",
+        "url": "https://www.youtube.com/watch?v=92d7q9TuODg",
+        "videoId": "92d7q9TuODg",
+        "fullTitle": "주일 오전예배(20181209) / '하나님의 보호하심' / 스바냐 3장 9~13절 / 도르트 신조 - 다섯째 교리 6~8항 / 열방교회 박훈 목사 설교"
+      },
+      {
+        "ep": 17,
+        "title": "17강 - 확신, 경건의 동기",
+        "passage": "요한일서 3:1~10 (도르트 신조 다섯째 교리 9~15항)",
+        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0",
+        "videoId": "Go4OwdYguN0",
+        "fullTitle": "주일 오전예배(20181216) / 확신, 경건의 동기 / 요한일서 3장 1~10절 / 도르트 신조 다섯째 교리 9~15항 / 열방교회 박훈 목사 설교"
       }
     ]
   },
