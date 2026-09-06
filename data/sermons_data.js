@@ -6,69 +6,80 @@ window.INITIAL_SERMONS_ARCHIVE = {
     "speaker": "박훈 담임목사",
     "category": "교리 & 신조",
     "desc": "열방교회 주일 강해를 통해 전한 십계명 전편 강해입니다. 제1계명부터 제10계명까지 하나님의 거룩하신 성품과 성도의 참된 순종의 길을 명쾌하게 밝힙니다.",
-    "searchKeyword": "열방교회 십계명 박훈 목사",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL7asZlCcW8Jmwq7rWmw8ToVAWlpl3RvFA",
     "episodes": [
       {
         "ep": 1,
-        "title": "제1계명 - 너는 나 외에는 다른 신들을 네게 두지 말라",
-        "passage": "출애굽기 20:1~3",
-        "search": "열방교회 십계명 1계명"
+        "title": "1강 - 제1, 2계명 - 너는 나 외에는 다른 신들을 네게 두지 말라",
+        "passage": "출애굽기 20:1~6",
+        "url": "https://www.youtube.com/watch?v=tp8czyqbT8A",
+        "rawTitle": "주일오전예배(201800603) / 출애굽기 20장 1 ~6절  / 십계명 1, 2 계명 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 2,
-        "title": "제2계명 - 너를 위하여 새긴 우상을 만들지 말라",
-        "passage": "출애굽기 20:4~6",
-        "search": "열방교회 십계명 2계명"
+        "title": "2강 - 제3계명 - 네 하나님 여호와의 이름을 망령되게 부르지 말라",
+        "passage": "출애굽기 20:7",
+        "url": "https://www.youtube.com/watch?v=mNbIiLOIaLU",
+        "rawTitle": "주일 오전예배(20180610) / 출애굽기 20장 7절 / 십계명 3계명  / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 3,
-        "title": "제3계명 - 네 하나님 여호와의 이름을 망령되게 부르지 말라",
-        "passage": "출애굽기 20:7",
-        "search": "열방교회 십계명 3계명"
+        "title": "3강 - 제4계명 - 안식일을 기억하여 거룩하게 지키라",
+        "passage": "출애굽기 20:8~11",
+        "url": "https://www.youtube.com/watch?v=J0o_81DDh44",
+        "rawTitle": "주일 오전예배(20180617) / 출애굽기 20장 8~11 / 십계명 4계명 / 열방교회 박훈목사 설교"
       },
       {
         "ep": 4,
-        "title": "제4계명 - 안식일을 기억하여 거룩하게 지키라",
+        "title": "4강 - 복, 안식, 십계명 (안식일의 참된 의미)",
         "passage": "출애굽기 20:8~11",
-        "search": "열방교회 십계명 4계명"
+        "url": "https://www.youtube.com/watch?v=RjIe4jWGUJ4",
+        "rawTitle": "주일 오전예배(20180624) /  고기,안식일,십계명  /  출애굽기 20장 8~11 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 5,
-        "title": "제5계명 - 네 부모를 공경하라",
+        "title": "5강 - 제5계명 - 네 부모를 공경하라",
         "passage": "출애굽기 20:12",
-        "search": "열방교회 십계명 5계명"
+        "url": "https://www.youtube.com/watch?v=owfOpYsalfw",
+        "rawTitle": "주일 오전예배(20180701) / 십계명 제 5계명  /  출애굽기 20장 12절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 6,
-        "title": "제6계명 - 살인하지 말라",
+        "title": "6강 - 제6계명 - 살인하지 말라",
         "passage": "출애굽기 20:13",
-        "search": "열방교회 십계명 6계명"
+        "url": "https://www.youtube.com/watch?v=iGgvxU2BWJg",
+        "rawTitle": "주일 오전예배20180708 / 십계명 제 6계명  /  출애굽기 20장 13절 / 열방교회 주일 오전예배 / 박훈 목사 설교"
       },
       {
         "ep": 7,
-        "title": "제7계명 - 간음하지 말라",
+        "title": "7강 - 제7계명 - 간음하지 말라",
         "passage": "출애굽기 20:14",
-        "search": "열방교회 십계명 7계명"
+        "url": "https://www.youtube.com/watch?v=gaWUUZ-PLXE",
+        "rawTitle": "주일 오전예배(20180715) / 십계명 제 7계명 /  출애굽기 20장 14절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 8,
-        "title": "제8계명 - 도둑질하지 말라",
+        "title": "8강 - 제8계명 - 도둑질하지 말라",
         "passage": "출애굽기 20:15",
-        "search": "열방교회 십계명 8계명"
+        "url": "https://www.youtube.com/watch?v=iU9SZbRpjQU",
+        "rawTitle": "주일 오전예배(20180722) /  십계명 제 8계명 /   출애굽기 20장 15절  / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 9,
-        "title": "제9계명 - 네 이웃에 대하여 거짓 증거하지 말라",
+        "title": "9강 - 제9계명 - 네 이웃에 대하여 거짓 증거하지 말라",
         "passage": "출애굽기 20:16",
-        "search": "열방교회 십계명 9계명"
+        "url": "https://www.youtube.com/watch?v=u-Zygzv3WPI",
+        "rawTitle": "주일 오전예배(20180729) / 십계명 제 9계명 / 출애굽기 20장 16절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 10,
-        "title": "제10계명 - 네 이웃의 집을 탐내지 말라",
+        "title": "10강 - 제10계명 - 네 이웃의 집을 탐내지 말라",
         "passage": "출애굽기 20:17",
-        "search": "열방교회 십계명 10계명"
+        "url": "https://www.youtube.com/watch?v=CT7mN6eEIdI",
+        "rawTitle": "주일 오전예배(20180805) / 십계명 제 10계명 / 출애굽기 20장 17절 / 열방교회 박훈 목사 설교"
       }
-    ]
+    ],
+    "count": "10편"
   },
   "exodus": {
     "id": "exodus",
