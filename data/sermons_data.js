@@ -1927,100 +1927,132 @@ window.INITIAL_SERMONS_ARCHIVE = {
     "subtitle": "창조의 시작, 타락, 그리고 구원의 언약 (총 15편)",
     "speaker": "박훈 담임목사",
     "category": "구약 강해",
-    "desc": "태초의 창조부터 아브라함, 이삭, 야곱, 요셉에 이르는 족장들의 생애 속에 나타난 하나님의 주권적 구속 역사를 증거합니다.",
+    "desc": "창세기 1장부터 50장까지 전체를 통독 및 강해하며 성경의 구속사적 목적과 의도를 밝히는 창세기 전 15편 설교입니다.",
     "searchKeyword": "불로열방교회 창세기 설교",
     "episodes": [
       {
         "ep": 1,
-        "title": "태초에 하나님이 천지를 창조하시니라",
-        "passage": "창세기 1:1~5",
-        "search": "불로열방교회 창세기 1강"
+        "title": "1편 - 성경의 목적과 의도",
+        "passage": "성경 전체 및 창세기 개관",
+        "url": "https://www.youtube.com/watch?v=HyWIbklRbGI",
+        "videoId": "HyWIbklRbGI",
+        "fullTitle": "성경의 목적과 의도 / 불로 열방교회"
       },
       {
         "ep": 2,
-        "title": "하나님의 형상대로 지음받은 사람",
-        "passage": "창세기 1:26~31",
-        "search": "불로열방교회 창세기 2강"
+        "title": "2편 - 창세기 1-5장",
+        "passage": "창세기 1:1~5:32",
+        "url": "https://www.youtube.com/watch?v=Yrdf_LBc7VQ",
+        "videoId": "Yrdf_LBc7VQ",
+        "fullTitle": "창세기 1-5장 / 불로 열방교회"
       },
       {
         "ep": 3,
-        "title": "선악과와 에덴동산의 언약",
-        "passage": "창세기 2:15~25",
-        "search": "불로열방교회 창세기 3강"
+        "title": "3편 - 창세기 6-9장",
+        "passage": "창세기 6:1~9:29",
+        "url": "https://www.youtube.com/watch?v=ixDVnkF78Bo",
+        "videoId": "ixDVnkF78Bo",
+        "fullTitle": "창세기 6-9장 / 불로 열방교회"
       },
       {
         "ep": 4,
-        "title": "인간의 타락과 원시복음 (여자의 후손)",
-        "passage": "창세기 3:1~24",
-        "search": "불로열방교회 창세기 4강"
+        "title": "4편 - 창세기 10장-12장",
+        "passage": "창세기 10:1~12:20",
+        "url": "https://www.youtube.com/watch?v=HhxvMfOn2pY",
+        "videoId": "HhxvMfOn2pY",
+        "fullTitle": "창세기 10장-12장 / 불로 열방교회"
       },
       {
         "ep": 5,
-        "title": "가인과 아벨의 제사",
-        "passage": "창세기 4:1~16",
-        "search": "불로열방교회 창세기 5강"
+        "title": "5편 - 창세기 12-15장",
+        "passage": "창세기 12:1~15:21",
+        "url": "https://www.youtube.com/watch?v=EWJVrAa2gFU",
+        "videoId": "EWJVrAa2gFU",
+        "fullTitle": "창세기 12-15장 / 불로 열방교회"
       },
       {
         "ep": 6,
-        "title": "에녹의 동행과 노아의 방주",
-        "passage": "창세기 5:21~6:22",
-        "search": "불로열방교회 창세기 6강"
+        "title": "6편 - 창세기 16-17장",
+        "passage": "창세기 16:1~17:27",
+        "url": "https://www.youtube.com/watch?v=LxYauozHewE",
+        "videoId": "LxYauozHewE",
+        "fullTitle": "창세기 16-17장 / 불로 열방교회"
       },
       {
         "ep": 7,
-        "title": "홍수 심판과 무지개 언약",
-        "passage": "창세기 7:1~9:17",
-        "search": "불로열방교회 창세기 7강"
+        "title": "7편 - 창세기 18-19장",
+        "passage": "창세기 18:1~19:38",
+        "url": "https://www.youtube.com/watch?v=oKIpl4GawQY",
+        "videoId": "oKIpl4GawQY",
+        "fullTitle": "창세기 18-19장 / 불로 열방교회"
       },
       {
         "ep": 8,
-        "title": "바벨탑 사건과 인류의 흩어짐",
-        "passage": "창세기 11:1~9",
-        "search": "불로열방교회 창세기 8강"
+        "title": "8편 - 창세기 20-22장",
+        "passage": "창세기 20:1~22:24",
+        "url": "https://www.youtube.com/watch?v=K8BEHhNfo_I",
+        "videoId": "K8BEHhNfo_I",
+        "fullTitle": "창세기 20-22장 / 불로 열방교회"
       },
       {
         "ep": 9,
-        "title": "아브람의 부르심과 언약의 축복",
-        "passage": "창세기 12:1~9",
-        "search": "불로열방교회 창세기 9강"
+        "title": "9편 - 창세기 23-25장",
+        "passage": "창세기 23:1~25:34",
+        "url": "https://www.youtube.com/watch?v=qu77eJjZwqQ",
+        "videoId": "qu77eJjZwqQ",
+        "fullTitle": "창세기 23-25장 / 불로 열방교회"
       },
       {
         "ep": 10,
-        "title": "횃불 언약 (아브라함의 믿음)",
-        "passage": "창세기 15:1~21",
-        "search": "불로열방교회 창세기 10강"
+        "title": "10편 - 창세기 26-28장",
+        "passage": "창세기 26:1~28:22",
+        "url": "https://www.youtube.com/watch?v=O4W1emLvM40",
+        "videoId": "O4W1emLvM40",
+        "fullTitle": "창세기 26-28장 / 불로 열방교회"
       },
       {
         "ep": 11,
-        "title": "모리아 산의 이삭 번제 (여호와 이레)",
-        "passage": "창세기 22:1~19",
-        "search": "불로열방교회 창세기 11강"
+        "title": "11편 - 창세기 29-32장",
+        "passage": "창세기 29:1~32:32",
+        "url": "https://www.youtube.com/watch?v=FyiEB3EsVTc",
+        "videoId": "FyiEB3EsVTc",
+        "fullTitle": "창세기 29-32장 / 불로 열방교회"
       },
       {
         "ep": 12,
-        "title": "이삭의 순종과 브엘세바의 우물",
-        "passage": "창세기 26:1~33",
-        "search": "불로열방교회 창세기 12강"
+        "title": "12편 - 창세기 33-38장",
+        "passage": "창세기 33:1~38:30",
+        "url": "https://www.youtube.com/watch?v=RAAKgAruzpA",
+        "videoId": "RAAKgAruzpA",
+        "fullTitle": "창세기 33-38장 / 불로 열방교회"
       },
       {
         "ep": 13,
-        "title": "벧엘의 하나님과 야곱의 사닥다리",
-        "passage": "창세기 28:10~22",
-        "search": "불로열방교회 창세기 13강"
+        "title": "13편 - 창세기 39-42장",
+        "passage": "창세기 39:1~42:38",
+        "url": "https://www.youtube.com/watch?v=MKYXCdwDnew",
+        "videoId": "MKYXCdwDnew",
+        "fullTitle": "창세기 39-42장 / 불로 열방교회"
       },
       {
         "ep": 14,
-        "title": "얍복 나루의 씨름과 이스라엘의 탄생",
-        "passage": "창세기 32:22~32",
-        "search": "불로열방교회 창세기 14강"
+        "title": "14편 - 창세기 43-47장",
+        "passage": "창세기 43:1~47:31",
+        "url": "https://www.youtube.com/watch?v=e0P6yS-WuxA",
+        "videoId": "e0P6yS-WuxA",
+        "fullTitle": "창세기 43-47장 / 불로 열방교회"
       },
       {
         "ep": 15,
-        "title": "요셉의 꿈과 하나님의 선한 섭리",
-        "passage": "창세기 37~50장",
-        "search": "불로열방교회 창세기 15강"
+        "title": "15편 - 창세기 48-50장",
+        "passage": "창세기 48:1~50:26",
+        "url": "https://www.youtube.com/watch?v=esM1HHU5xyU",
+        "videoId": "esM1HHU5xyU",
+        "fullTitle": "창세기 48-50장 / 불로 열방교회"
       }
-    ]
+    ],
+    "count": "15편",
+    "playlistUrl": "https://www.youtube.com/watch?v=HyWIbklRbGI"
   },
   "acts": {
     "id": "acts",
