@@ -3068,12 +3068,12 @@
   "mark": {
     "id": "mark",
     "title": "마가복음 강해",
-    "subtitle": "종으로 오신 하나님의 아들 예수 그리스도 (총 33강)",
+    "subtitle": "마가복음 1-10장 연속 강해 (44편 완결)",
     "speaker": "박훈 담임목사",
     "category": "신약 강해",
-    "desc": "복음의 시작부터 하나님 나라의 사역과 십자가 대속의 죽음, 부활을 증거하는 박훈 목사의 마가복음 주일 및 특별 강해 전편입니다. (1-26강: 열방교회유튜브 / 27-33강: 불로 열방교회)",
+    "desc": "열방교회 및 불로열방교회 마가복음 연속 강해 설교 (총 44강)",
     "playlistUrl": "https://www.youtube.com/watch?v=rU8LJi9Q7ps&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0",
-    "count": "33강",
+    "count": 44,
     "episodes": [
       {
         "ep": 1,
@@ -3311,66 +3311,165 @@
       },
       {
         "ep": 27,
-        "title": "27강 - 마가복음 서론 및 개관 (불로 열방교회 강해)",
-        "passage": "마가복음 1:1",
-        "url": "https://www.youtube.com/watch?v=xAvLS9ZWAlg&list=PLLdmcUOPXWu4",
-        "videoId": "xAvLS9ZWAlg",
-        "fullTitle": "마가복음 서론 및 개관 / 불로 열방교회 박훈 목사",
-        "source": "불로 열방교회"
+        "title": "27강 - 부스러기 은혜라도",
+        "passage": "막 7:24~30",
+        "url": "https://www.youtube.com/watch?v=uQM9fjNxrOc&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=1",
+        "videoId": "uQM9fjNxrOc",
+        "fullTitle": "마가복음 강해 / '부스러기 은혜라도' / 막 7:24~30 / 불로열방교회",
+        "source": "불로열방교회"
       },
       {
         "ep": 28,
-        "title": "28강 - 마가복음 1장 1-13절 (불로 열방교회 강해)",
-        "passage": "마가복음 1:1~13",
-        "url": "https://www.youtube.com/watch?v=YzA1jDHJav0&list=PLLdmcUOPXWu4",
-        "videoId": "YzA1jDHJav0",
-        "fullTitle": "마가복음 1장 1-13절 / 불로 열방교회 박훈 목사",
-        "source": "불로 열방교회"
+        "title": "28강 - 열려라",
+        "passage": "막 7:31~37",
+        "url": "https://www.youtube.com/watch?v=BYj_LrkmopU&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=2",
+        "videoId": "BYj_LrkmopU",
+        "fullTitle": "마가복음 강해 / '열려라' / 막 7:31~37 / 불로열방교회",
+        "source": "불로열방교회"
       },
       {
         "ep": 29,
-        "title": "29강 - 마가복음 1장 14-34절 (불로 열방교회 강해)",
-        "passage": "마가복음 1:14~34",
-        "url": "https://www.youtube.com/watch?v=2j9gWok2Ssw&list=PLLdmcUOPXWu4",
-        "videoId": "2j9gWok2Ssw",
-        "fullTitle": "마가복음 1장 14-34절 / 불로 열방교회 박훈 목사",
-        "source": "불로 열방교회"
+        "title": "29강 - 칠병이어의 은혜",
+        "passage": "막 8:1~10",
+        "url": "https://www.youtube.com/watch?v=XeZD3jRVqOM&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=3",
+        "videoId": "XeZD3jRVqOM",
+        "fullTitle": "마가복음 강해 / '칠병이어의 은혜' / 막 8:1~10 / 불로열방교회",
+        "source": "불로열방교회"
       },
       {
         "ep": 30,
-        "title": "30강 - 마가복음 1장 35-45절 (불로 열방교회 강해)",
-        "passage": "마가복음 1:35~45",
-        "url": "https://www.youtube.com/watch?v=Q5pxL_6ZrPA&list=PLLdmcUOPXWu4",
-        "videoId": "Q5pxL_6ZrPA",
-        "fullTitle": "마가복음 1장 35-45절 / 불로 열방교회 박훈 목사",
-        "source": "불로 열방교회"
+        "title": "30강 - 모든 누룩을 주의하라",
+        "passage": "막 8:11~21",
+        "url": "https://www.youtube.com/watch?v=_wT-Lxw9dxk&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=4",
+        "videoId": "_wT-Lxw9dxk",
+        "fullTitle": "마가복음 강해 / '모든 누룩을 주의하라' / 막 8:11~21 / 불로열방교회",
+        "source": "불로열방교회"
       },
       {
         "ep": 31,
-        "title": "31강 - 마가복음 2장 1-28절 (불로 열방교회 강해)",
-        "passage": "마가복음 2:1~28",
-        "url": "https://www.youtube.com/watch?v=W4HZ157XFW8&list=PLLdmcUOPXWu4",
-        "videoId": "W4HZ157XFW8",
-        "fullTitle": "마가복음 2장 1-28절 / 불로 열방교회 박훈 목사",
-        "source": "불로 열방교회"
+        "title": "31강 - 다시 만지시는 예수님",
+        "passage": "막 8:22~26",
+        "url": "https://www.youtube.com/watch?v=5hSJ210F1Gc&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=5",
+        "videoId": "5hSJ210F1Gc",
+        "fullTitle": "마가복음 강해 / '다시 만지시는 예수님' / 막 8:22~26 / 불로열방교회",
+        "source": "불로열방교회"
       },
       {
         "ep": 32,
-        "title": "32강 - 마가복음 4장 1-41절 (불로 열방교회 강해)",
-        "passage": "마가복음 4:1~41",
-        "url": "https://www.youtube.com/watch?v=RSxUFX2zhv8&list=PLLdmcUOPXWu4",
-        "videoId": "RSxUFX2zhv8",
-        "fullTitle": "마가복음 4장 1-41절 / 불로 열방교회 박훈 목사",
-        "source": "불로 열방교회"
+        "title": "32강 - 너희는 나를 누구라 하느냐",
+        "passage": "막 8:27~38",
+        "url": "https://www.youtube.com/watch?v=vaHiohmc7U4&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=6",
+        "videoId": "vaHiohmc7U4",
+        "fullTitle": "마가복음 강해 / '너희는 나를 누구라 하느냐' / 막 8:27~38 / 불로열방교회",
+        "source": "불로열방교회"
       },
       {
         "ep": 33,
-        "title": "33강 - 마가복음 5장 1-43절 (불로 열방교회 강해)",
-        "passage": "마가복음 5:1~43",
-        "url": "https://www.youtube.com/watch?v=ZFmcHA_V4bg&list=PLLdmcUOPXWu4",
-        "videoId": "ZFmcHA_V4bg",
-        "fullTitle": "마가복음 5장 1-43절 / 불로 열방교회 박훈 목사",
-        "source": "불로 열방교회"
+        "title": "33강 - 나를 따르라",
+        "passage": "막 8:27~9:1",
+        "url": "https://www.youtube.com/watch?v=4Ex840vAtfg&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=7",
+        "videoId": "4Ex840vAtfg",
+        "fullTitle": "마가복음 강해 / '나를 따르라' / 막 8:27~9:1 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 34,
+        "title": "34강 - 너희는 그의 말을 들으라",
+        "passage": "막 9:2~13",
+        "url": "https://www.youtube.com/watch?v=5gBbACoxGvo&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=8",
+        "videoId": "5gBbACoxGvo",
+        "fullTitle": "마가복음 강해 / '너희는 그의 말을 들으라' / 막 9:2~13 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 35,
+        "title": "35강 - 부흥을 위한 준비 1",
+        "passage": "막 9:14~29",
+        "url": "https://www.youtube.com/watch?v=2Ha_5OuRXfg&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=9",
+        "videoId": "2Ha_5OuRXfg",
+        "fullTitle": "마가복음 강해 / '부흥을 위한 준비 1' / 막 9:14~29 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 36,
+        "title": "36강 - 부흥을 위한 준비 2",
+        "passage": "막 9:28~29",
+        "url": "https://www.youtube.com/watch?v=UpB6t_aWXbM&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=10",
+        "videoId": "UpB6t_aWXbM",
+        "fullTitle": "마가복음 강해 / '부흥을 위한 준비 2' / 막 9:28~29 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 37,
+        "title": "37강 - 성경대로 죽으시고 부활하신 주",
+        "passage": "막 9:30~32",
+        "url": "https://www.youtube.com/watch?v=LBqUdPAdF8o&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=11",
+        "videoId": "LBqUdPAdF8o",
+        "fullTitle": "마가복음 강해 / '성경대로 죽으시고 부활하신 주' / 막 9:30~32 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 38,
+        "title": "38강 - 하나님 나라의 질서",
+        "passage": "막 9:33~37",
+        "url": "https://www.youtube.com/watch?v=d61WYvGtX4g&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=12",
+        "videoId": "d61WYvGtX4g",
+        "fullTitle": "마가복음 강해 / '하나님 나라의 질서' / 막 9:33~37 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 39,
+        "title": "39강 - 소금을 두고 서로 화목하라",
+        "passage": "막 9:38~50",
+        "url": "https://www.youtube.com/watch?v=G6o6xUuHmA0&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=13",
+        "videoId": "G6o6xUuHmA0",
+        "fullTitle": "마가복음 강해 / '소금을 두고 서로 화목하라' / 막 9:38~50 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 40,
+        "title": "40강 - 둘이 한 몸이 될지니라",
+        "passage": "막 10:1~12",
+        "url": "https://www.youtube.com/watch?v=UVDE-dD_CDI&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=14",
+        "videoId": "UVDE-dD_CDI",
+        "fullTitle": "마가복음 강해 / '둘이 한 몸이 될지니라' / 막 10:1~12 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 41,
+        "title": "41강 - 하나님의 나라는 이런 자의 것이니라",
+        "passage": "막 10:13~16",
+        "url": "https://www.youtube.com/watch?v=JP7ICNMviU4&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=15",
+        "videoId": "JP7ICNMviU4",
+        "fullTitle": "마가복음 강해 / '하나님의 나라는 이런 자의 것이니라' / 막 10:13~16 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 42,
+        "title": "42강 - 사람으로는 할 수 없으되 하나님으로서는 다 하실 수 있느니라",
+        "passage": "막 10:17~31",
+        "url": "https://www.youtube.com/watch?v=SEYaFn6QUXs&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=16",
+        "videoId": "SEYaFn6QUXs",
+        "fullTitle": "마가복음 강해 / '사람으로는 할 수 없으되 하나님으로서는 다 하실 수 있느니라' / 막 10:17~31 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 43,
+        "title": "43강 - 우리 때문에",
+        "passage": "막 10:32~34",
+        "url": "https://www.youtube.com/watch?v=t8ETNTP9ZlU&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=17",
+        "videoId": "t8ETNTP9ZlU",
+        "fullTitle": "마가복음 강해 / '우리 때문에' / 막 10:32~34 / 불로열방교회",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 44,
+        "title": "44강 - 인자가 오신 목적",
+        "passage": "막 10:35~45",
+        "url": "https://www.youtube.com/watch?v=V71pCarfFyw&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=18",
+        "videoId": "V71pCarfFyw",
+        "fullTitle": "마가복음 강해 / '인자가 오신 목적' / 막 10:35~45 / 불로열방교회",
+        "source": "불로열방교회"
       }
     ]
   }
