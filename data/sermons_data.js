@@ -1526,148 +1526,192 @@ window.INITIAL_SERMONS_ARCHIVE = {
   "dort_review": {
     "id": "dort_review",
     "title": "다시보는 도르트 신조",
-    "subtitle": "개혁주의 5대 교리와 은혜의 구원 강해 (총 17편 완주)",
-    "speaker": "박훈 담임목사",
-    "category": "교리 & 신조",
-    "desc": "불로 열방교회 주일 강해를 통해 전해진 도르트 신조 전편 17강 강해입니다. 무조건적 선택, 제한 속죄, 전적 타락, 거역할 수 없는 은혜, 성도의 견인을 성경 본문과 함께 명쾌하게 밝힙니다.",
-    "playlistUrl": "https://www.youtube.com/watch?v=v6HTE1bwpXY",
-    "count": "17편",
+    "subtitle": "구원의 5대 교리 심화 강해 (총 20편 완결)",
+    "speaker": "김진수 담임목사",
+    "category": "교리 & 신앙고백",
+    "desc": "불로 열방교회 도르트 신조 강해 설교 (총 20강)",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_",
+    "count": 20,
     "episodes": [
       {
         "ep": 1,
-        "title": "1강 - 죄로 말미암아 잃어버린 생명과 구원에 이르는 회개",
-        "passage": "로마서 3:9~22 (도르트 신조 첫째 교리 1~5항)",
-        "url": "https://www.youtube.com/watch?v=v6HTE1bwpXY",
-        "videoId": "v6HTE1bwpXY",
-        "fullTitle": "주일 오전예배(20180812) / 죄로 말미암아 잃어버린 생명과 구원에 이르는 회개 / 로마서 3장 9~22절 / 열방교회 박훈 목사 설교 / 도르트신조 - 서론 / 첫째 교리 1~5항"
+        "title": "1강 - 도르트 신조 강해 1",
+        "passage": "도르트 신조 1강",
+        "url": "https://www.youtube.com/watch?v=LR-KciQOJlo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=1",
+        "videoId": "LR-KciQOJlo",
+        "fullTitle": "도르트 신조 강해 1 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 2,
-        "title": "2강 - 복음의 선포와 하나님의 선택",
-        "passage": "에베소서 1:3~7 (도르트 신조 첫째 교리 6~7항)",
-        "url": "https://www.youtube.com/watch?v=1fArDpVUkBw",
-        "videoId": "1fArDpVUkBw",
-        "fullTitle": "주일 오전예배(20180819) / 복음의 선포와 하나님의 선택 / 에베소서 1장 3~7절 / 도르트 신조 - 첫째 교리 6~7항 / 열방교회 박훈 목사 설교"
+        "title": "2강 - 도르트 신조 강해 2",
+        "passage": "도르트 신조 2강",
+        "url": "https://www.youtube.com/watch?v=UoXkuhjBduY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=2",
+        "videoId": "UoXkuhjBduY",
+        "fullTitle": "도르트 신조 강해 2 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 3,
-        "title": "3강 - 하나님께 속한 자",
-        "passage": "로마서 9:10~13 (도르트 신조 첫째 교리 8항)",
-        "url": "https://www.youtube.com/watch?v=EaJXdAXVtJI",
-        "videoId": "EaJXdAXVtJI",
-        "fullTitle": "주일 오전예배(20180826) / 하나님께 속한 자 / 로마서 9장 10~13 / 도르트 신조 - 첫째 교리 8항 / 열방교회 박훈 목사 설교"
+        "title": "3강 - 도르트 신조 강해 3",
+        "passage": "도르트 신조 3강",
+        "url": "https://www.youtube.com/watch?v=BPcVts5UkGA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=3",
+        "videoId": "BPcVts5UkGA",
+        "fullTitle": "도르트 신조 강해 3 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 4,
-        "title": "4강 - 구원 - 하나님의 은혜의 일하심!",
-        "passage": "디모데후서 2:7~10 (도르트 신조 첫째 교리 15~16항)",
-        "url": "https://www.youtube.com/watch?v=-ISXo8-P16A",
-        "videoId": "-ISXo8-P16A",
-        "fullTitle": "주일 오전예배(20180909) / 구원 - 하나님의 은혜의 일하심! / 디모데후서 2장 7~10절 / 도르트 신조 - 첫째교리 15~16항 / 열방교회 박훈 목사 설교"
+        "title": "4강 - 도르트 신조 강해 4",
+        "passage": "도르트 신조 4강",
+        "url": "https://www.youtube.com/watch?v=nDdIRmwDWOA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=4",
+        "videoId": "nDdIRmwDWOA",
+        "fullTitle": "도르트 신조 강해 4 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 5,
-        "title": "5강 - 택하심을 받은 자의 유익과 위로!",
-        "passage": "사도행전 16:30~32 (도르트 신조 첫째 교리 17항)",
-        "url": "https://www.youtube.com/watch?v=RSecL0w-bSI",
-        "videoId": "RSecL0w-bSI",
-        "fullTitle": "주일 오전예배(20180916) / 택하심을 받은 자의 유익과 위로! / 사도행전 16장 30~32절 / 도르트 신조 - 첫째 교리 17항 / 열방교회 박훈 목사 설교"
+        "title": "5강 - 도르트 신조 강해 5",
+        "passage": "도르트 신조 5강",
+        "url": "https://www.youtube.com/watch?v=CAPcXahZSR8&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=5",
+        "videoId": "CAPcXahZSR8",
+        "fullTitle": "도르트 신조 강해 5 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 6,
-        "title": "6강 - 그리스도의 죽음과 구속, 그 가치와 효력",
-        "passage": "히브리서 3:19~26 (도르트 신조 둘째 교리 1~2항)",
-        "url": "https://www.youtube.com/watch?v=2KCTz9Jzf-s",
-        "videoId": "2KCTz9Jzf-s",
-        "fullTitle": "주일 오전예배(20180923) / 그리스도의 죽음과 구속, 그 가치와 효력 / 히브리서 3장 19~26 / 도르트 신조 - 둘째 교리 1~2항/ 열방교회 박훈 목사 설교"
+        "title": "6강 - 도르트 신조 강해 6",
+        "passage": "도르트 신조 6강",
+        "url": "https://www.youtube.com/watch?v=s4JIpl2SSUk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=6",
+        "videoId": "s4JIpl2SSUk",
+        "fullTitle": "도르트 신조 강해 6 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 7,
-        "title": "7강 - 십자가 대속의 죽음의 온전한 성취",
-        "passage": "요한복음 21:4~9 (도르트 신조 둘째 교리 3~5항)",
-        "url": "https://www.youtube.com/watch?v=ErE5EZmmMeA",
-        "videoId": "ErE5EZmmMeA",
-        "fullTitle": "주일 오전예배(20180930) / 십자가 대속의 죽음의 온전한 성취 / 요한복음 21장 4~9절 / 도르트 신조 - 둘째 교리 3~5항 / 열방교회 박훈 목사 설교"
+        "title": "7강 - 도르트 신조 강해 7",
+        "passage": "도르트 신조 7강",
+        "url": "https://www.youtube.com/watch?v=V-B93zRak-Y&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=7",
+        "videoId": "V-B93zRak-Y",
+        "fullTitle": "도르트 신조 강해 7 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 8,
-        "title": "8강 - 영생을 얻게 하는 '복음'",
-        "passage": "요한복음 5:39~40 (도르트 신조 둘째 교리 6~7항)",
-        "url": "https://www.youtube.com/watch?v=mN-JWW6pRK4",
-        "videoId": "mN-JWW6pRK4",
-        "fullTitle": "주일 오전예배(20181007) / 영생을 얻게 하는 '복음' / 요한복음 5장 39~40절 / 도르트신조 - 둘째 교리 6~7항 / 열방교회 박훈 목사 설교"
+        "title": "8강 - 도르트 신조 강해 8",
+        "passage": "도르트 신조 8강",
+        "url": "https://www.youtube.com/watch?v=pGo-c35_7tw&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=8",
+        "videoId": "pGo-c35_7tw",
+        "fullTitle": "도르트 신조 강해 8 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 9,
-        "title": "9강 - 참된 신앙의 표징과 그리스도의 피",
-        "passage": "요한복음 6:35~40 (도르트 신조 둘째 교리 8~9항)",
-        "url": "https://www.youtube.com/watch?v=F0XoUn8xoa8",
-        "videoId": "F0XoUn8xoa8",
-        "fullTitle": "주일 오전예배(20181014) / 참된 신앙의 표징과 그리스도의 피 / 요한복음 6장 35~40절 / 도르트 신조 - 둘째 교리 8~9항 / 열방교회 박훈목사 설교"
+        "title": "9강 - 도르트 신조 강해 9",
+        "passage": "도르트 신조 9강",
+        "url": "https://www.youtube.com/watch?v=flXpX4d3AVI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=9",
+        "videoId": "flXpX4d3AVI",
+        "fullTitle": "도르트 신조 강해 9 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 10,
-        "title": "10강 - 인간의 전적 부패와 거듭남의 필요성",
-        "passage": "에스겔 36:24~28, 37절 (도르트 신조 셋째,넷째 교리 1~5항)",
-        "url": "https://www.youtube.com/watch?v=l1NqtHpzkQ8",
-        "videoId": "l1NqtHpzkQ8",
-        "fullTitle": "주일 오전예배(20181021) / 인간의 전적 부패와 거듭남의 필요성 / 에스겔 36장 24~28,37절 / 도르트 신조 - 셋째,넷째 교리 1~5항 / 열방교회 박훈 목사"
+        "title": "10강 - 도르트 신조 강해 10",
+        "passage": "도르트 신조 10강",
+        "url": "https://www.youtube.com/watch?v=7E9otUayQKs&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=10",
+        "videoId": "7E9otUayQKs",
+        "fullTitle": "도르트 신조 강해 10 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 11,
-        "title": "11강 - 죄의 어둠 속에 비추인 빛과 하나님의 은혜",
-        "passage": "마가복음 7:1~13 (도르트 신조 셋째,넷째 교리 6항)",
-        "url": "https://www.youtube.com/watch?v=0SxlTkS906w",
-        "videoId": "0SxlTkS906w",
-        "fullTitle": "주일 오전예배(20181028) / 죄의 어둠 속에 비추인 빛과 하나님의 은혜 / 마가복음 7장 1~13절 / 도르트 신조 - 셋째,넷째 교리 6항 / 열방교회 박훈 목사 설교"
+        "title": "11강 - 도르트 신조 강해 11",
+        "passage": "도르트 신조 11강",
+        "url": "https://www.youtube.com/watch?v=8lpRGHEiH0k&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=11",
+        "videoId": "8lpRGHEiH0k",
+        "fullTitle": "도르트 신조 강해 11 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 12,
-        "title": "12강 - 중생의 은혜",
-        "passage": "고린도전서 6:15~18 (도르트 신조 셋째,넷째 교리 11~12항)",
-        "url": "https://www.youtube.com/watch?v=Zj_57puRq5o",
-        "videoId": "Zj_57puRq5o",
-        "fullTitle": "주일 오전예배(20181111) / 중생의 은혜 / 고린도전서 6장 15~18절 / 도르트 신조 셋째,넷째 교리 11~12항 / 열방교회 박훈 목사 설교"
+        "title": "12강 - 도르트 신조 강해 12",
+        "passage": "도르트 신조 12강",
+        "url": "https://www.youtube.com/watch?v=aM7EX-KWsao&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=12",
+        "videoId": "aM7EX-KWsao",
+        "fullTitle": "도르트 신조 강해 12 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 13,
-        "title": "13강 - 하나님의 은혜와 구원",
-        "passage": "에베소서 2:1~10 (도르트 신조 셋째,넷째 교리 13~15항)",
-        "url": "https://www.youtube.com/watch?v=SX-P4h3XHA8",
-        "videoId": "SX-P4h3XHA8",
-        "fullTitle": "주일 오전예배(20181118) / 하나님의 은혜와 구원 / 에베소서 2장 1~10절 / 도르트 신조 셋째,넷째 교리 13~15항 / 열방교회 박훈 목사 설교"
+        "title": "13강 - 도르트 신조 강해 13",
+        "passage": "도르트 신조 13강",
+        "url": "https://www.youtube.com/watch?v=DJ2NBOQwReo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=13",
+        "videoId": "DJ2NBOQwReo",
+        "fullTitle": "도르트 신조 강해 13 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 14,
-        "title": "14강 - 성도의 연합과 교제 속에 일하시는 하나님",
-        "passage": "사도행전 2:42~47 (도르트 신조 셋째,넷째 교리 16~17항)",
-        "url": "https://www.youtube.com/watch?v=7XFkbnBwM3M",
-        "videoId": "7XFkbnBwM3M",
-        "fullTitle": "주일 오전예배(20181125) / 성도의 연합과 교제 속에 일하시는 하나님 / 사도행전 2장 42~47절 / 도르트 신조 셋째,넷째 교리 16~17항 / 열방교회 박훈 목사 설교"
+        "title": "14강 - 도르트 신조 강해 14",
+        "passage": "도르트 신조 14강",
+        "url": "https://www.youtube.com/watch?v=QxYuygR3qGY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=14",
+        "videoId": "QxYuygR3qGY",
+        "fullTitle": "도르트 신조 강해 14 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 15,
-        "title": "15강 - 믿음의 확신과 신자의 견인",
-        "passage": "빌립보서 2:12~18 (도르트 신조 다섯째 교리 1~5항)",
-        "url": "https://www.youtube.com/watch?v=HPwCH_r86us",
-        "videoId": "HPwCH_r86us",
-        "fullTitle": "주일 오전예배(20181202) / 믿음의 확신과 신자의 견인 / 빌립보서 2장 12~18절 / 도르트 신조 - 다섯째 교리 1~5항 / 열방교회 박훈 목사 설교"
+        "title": "15강 - 도르트 신조 강해 15",
+        "passage": "도르트 신조 15강",
+        "url": "https://www.youtube.com/watch?v=MNTLklPQ7dk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=15",
+        "videoId": "MNTLklPQ7dk",
+        "fullTitle": "도르트 신조 강해 15 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 16,
-        "title": "16강 - 하나님의 보호하심",
-        "passage": "스바냐 3:9~13 (도르트 신조 다섯째 교리 6~8항)",
-        "url": "https://www.youtube.com/watch?v=92d7q9TuODg",
-        "videoId": "92d7q9TuODg",
-        "fullTitle": "주일 오전예배(20181209) / '하나님의 보호하심' / 스바냐 3장 9~13절 / 도르트 신조 - 다섯째 교리 6~8항 / 열방교회 박훈 목사 설교"
+        "title": "16강 - 도르트 신조 강해 16",
+        "passage": "도르트 신조 16강",
+        "url": "https://www.youtube.com/watch?v=dLP2rRkmswI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=16",
+        "videoId": "dLP2rRkmswI",
+        "fullTitle": "도르트 신조 강해 16 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       },
       {
         "ep": 17,
-        "title": "17강 - 확신, 경건의 동기",
-        "passage": "요한일서 3:1~10 (도르트 신조 다섯째 교리 9~15항)",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0",
-        "videoId": "Go4OwdYguN0",
-        "fullTitle": "주일 오전예배(20181216) / 확신, 경건의 동기 / 요한일서 3장 1~10절 / 도르트 신조 다섯째 교리 9~15항 / 열방교회 박훈 목사 설교"
+        "title": "17강 - 도르트 신조 강해 17",
+        "passage": "도르트 신조 17강",
+        "url": "https://www.youtube.com/watch?v=3GP7lzk7zCA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=17",
+        "videoId": "3GP7lzk7zCA",
+        "fullTitle": "도르트 신조 강해 17 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 18,
+        "title": "18강 - 도르트 신조 강해 18",
+        "passage": "도르트 신조 18강",
+        "url": "https://www.youtube.com/watch?v=VTmWq-3B7CQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=18",
+        "videoId": "VTmWq-3B7CQ",
+        "fullTitle": "도르트 신조 강해 18 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 19,
+        "title": "19강 - 도르트 신조 강해 19",
+        "passage": "도르트 신조 19강",
+        "url": "https://www.youtube.com/watch?v=LXcWo_FSzgQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=19",
+        "videoId": "LXcWo_FSzgQ",
+        "fullTitle": "도르트 신조 강해 19 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
+      },
+      {
+        "ep": 20,
+        "title": "20강 - 도르트 신조 강해 20",
+        "passage": "도르트 신조 20강",
+        "url": "https://www.youtube.com/watch?v=FS6o6LVYzJA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=20",
+        "videoId": "FS6o6LVYzJA",
+        "fullTitle": "도르트 신조 강해 20 / 불로열방교회 김진수 목사",
+        "source": "불로열방교회"
       }
     ]
   },

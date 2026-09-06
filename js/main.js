@@ -121,7 +121,7 @@ const ARCHIVE_FOLDERS = [
   { key: 'john', title: '요한복음 강해', count: '20강', icon: '📁', bgClass: 'bg-nt', thumb: 'images/john_gospel.jpg' },
   { key: 'romans', title: '로마서 강해 (1-11장)', count: '31강', icon: '📁', bgClass: 'bg-nt' },
   { key: 'dort', title: '도르트 신조', count: '19편', icon: '📁', bgClass: 'bg-doctrine' },
-  { key: 'dort_review', title: '다시보는 도르트 신조', count: '17편', icon: '📁', bgClass: 'bg-doctrine' },
+  { key: 'dort_review', title: '다시보는 도르트 신조', count: '20편', icon: '📁', bgClass: 'bg-doctrine' },
   { key: 'pilgrim', title: '천로역정 완주 강해', count: '52강', icon: '📁', bgClass: 'bg-special', thumb: 'images/pilgrims_progress.jpg' },
   { key: 'commandments', title: '십계명 강해', count: '10편', icon: '📁', bgClass: 'bg-doctrine' },
   { key: 'exodus', title: '출애굽기 강해', count: '22편', icon: '📁', bgClass: 'bg-ot' },
