@@ -1000,7 +1000,7 @@ function handleDeleteSiteFolder(e, folderKey) {
 }
 
 // 3. GitHub 즉시 배포 (사이트 모드에서 원클릭)
-const DEFAULT_GH_TOKEN = 'ghp_tEitadzTJxjyvvIMyGmXfrc8qAI5o1RFIisB';
+const DEFAULT_GH_TOKEN = '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';
 const DEFAULT_GH_REPO = 'kpuritan/allnationschurch';
 const DEFAULT_GH_BRANCH = 'main';
 
