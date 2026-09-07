@@ -400,11 +400,11 @@
     
     <!-- 탭 네비게이션 -->
     <div class="admin-tabs">
-      <button class="admin-tab-btn active" onclick="switchAdminTab('folders')">📂 1. 강해 폴더 관리</button>
-      <button class="admin-tab-btn" onclick="switchAdminTab('lectures')">🎬 2. 설교 영상 및 자료 등록</button>
-      <button class="admin-tab-btn" onclick="switchAdminTab('posts')">📝 3. 교회 소식 &amp; PDF 등록</button>
-      <button class="admin-tab-btn" onclick="switchAdminTab('github')">🐙 4. GitHub 연동 &amp; 자동 배포</button>
-      <button class="admin-tab-btn" onclick="switchAdminTab('backup')">💾 5. 백업 &amp; 복원</button>
+      <button class="admin-tab-btn active" onclick="switchAdminTab('folders', event)">📂 1. 강해 폴더 관리</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('lectures', event)">🎬 2. 설교 영상 및 자료 등록</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('posts', event)">📝 3. 교회 소식 &amp; PDF 등록</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('github', event)">🐙 4. GitHub 연동 &amp; 자동 배포</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab('backup', event)">💾 5. 백업 &amp; 복원</button>
     </div>
 
     <!-- 탭 1: 강해 폴더 관리 -->
@@ -748,11 +748,12 @@
     }
 
     // 탭 전환
-    function switchAdminTab(tabName) {
+    function switchAdminTab(tabName, ev) {
       document.querySelectorAll('.admin-tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.admin-panel').forEach(panel => panel.classList.remove('active'));
 
-      event.target.classList.add('active');
+      const btn = (ev && ev.currentTarget) || document.querySelector(`[onclick*="'${tabName}'"]`);
+      if (btn) btn.classList.add('active');
       const targetPanel = document.getElementById('tab-' + tabName);
       if (targetPanel) targetPanel.classList.add('active');
     }
@@ -1051,9 +1052,8 @@
       renderPostsTable();
     }
 
-    const DEFAULT_GH_TOKEN = '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';
-    const DEFAULT_GH_REPO = 'kpuritan/allnationschurch';
-    const DEFAULT_GH_BRANCH = 'main';
+    // main.js에서 이미 정의된 DEFAULT_GH_TOKEN, DEFAULT_GH_REPO, DEFAULT_GH_BRANCH 사용
+    // (중복 선언 제거 - SyntaxError 방지)
 
     // 5. GitHub API 연동 로직
     function loadGitHubSettings() {
