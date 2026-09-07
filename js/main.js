@@ -634,9 +634,7 @@ const SITE_ADMIN_PIN = '7777';
 
 function openAdminLoginModal() {
   if (isSiteAdminLoggedIn()) {
-    if (confirm('현재 관리자 모드로 접속 중입니다. 관리자 패널(대시보드)로 이동하시겠습니까?')) {
-      window.location.href = 'admin.html';
-    }
+    window.location.href = 'admin.html';
     return;
   }
   const modal = document.getElementById('modal-admin-login');

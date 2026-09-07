@@ -366,7 +366,7 @@
 <body>
 
   <!-- 1. 관리자 PIN 로그인 모달 -->
-  <div id="admin-lock-screen">
+  <div id="admin-lock-screen" style="display:none; position:fixed; inset:0; background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%); align-items:center; justify-content:center; z-index:9999; padding:1rem;">
     <div class="lock-box">
       <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">✝️</div>
       <h2 class="lock-title">불로 열방교회 관리자 모드</h2>
@@ -719,11 +719,11 @@
       if (isAuth) {
         sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
         localStorage.setItem('allnations_admin_auth', 'true');
-        lockScreen.classList.remove('visible');
+        lockScreen.style.setProperty('display', 'none', 'important');
         loadAdminData();
         loadGitHubSettings();
       } else {
-        lockScreen.classList.add('visible');
+        lockScreen.style.setProperty('display', 'flex', 'important');
       }
     }
 
@@ -733,7 +733,7 @@
       if (inputPin === defaultPin) {
         sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
         localStorage.setItem('allnations_admin_auth', 'true');
-        document.getElementById('admin-lock-screen').classList.remove('visible');
+        document.getElementById('admin-lock-screen').style.setProperty('display', 'none', 'important');
         loadAdminData();
         loadGitHubSettings();
       } else {
