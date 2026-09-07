@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * 📑 탭/페이지 전환형 네비게이션 시스템 (SPA Navigation)
  * ==========================================================
  */
-function navigateToPage(pageId, subFolderKey) {
+function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
   // 1. 모든 페이지 뷰 숨기기
   const pages = document.querySelectorAll('.page-view');
   pages.forEach(p => {
@@ -91,17 +91,30 @@ function navigateToPage(pageId, subFolderKey) {
     gnbMenu.classList.remove('open');
   }
 
-  // 5. 만약 특정 말씀 강해 폴더가 지정된 경우 폴더 선택
-  if (pageId === 'sermons' && subFolderKey) {
-    if (subFolderKey === 'news') {
-      const newsSection = document.getElementById('sermons-news');
-      if (newsSection) newsSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      selectArchiveFolder(subFolderKey);
+  // 5. 브라우저 히스토리 상태 push (뒤로가기/앞으로가기 지원)
+  if (!isFromHistory) {
+    const newHash = '#' + pageId + (subFolderKey ? '/' + subFolderKey : '');
+    if (window.location.hash !== newHash) {
+      history.pushState({ pageId, subFolderKey }, '', newHash);
     }
   }
 
-  // 6. 상단으로 부드럽게 스크롤
+  // 6. 만약 특정 말씀 강해 폴더가 지정된 경우 폴더 선택
+  if (pageId === 'sermons') {
+    if (subFolderKey) {
+      if (subFolderKey === 'news') {
+        const newsSection = document.getElementById('sermons-news');
+        if (newsSection) newsSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        selectArchiveFolder(subFolderKey, isFromHistory);
+      }
+    }
+  } else {
+    // 말씀 강해 외의 탭으로 이동 시 상단 플레이어 정리
+    closeArchivePlayer(true);
+  }
+
+  // 7. 상단으로 부드럽게 스크롤
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -188,11 +201,13 @@ function updateSiteAdminUI() {
 }
 
 async function initArchiveSystem() {
-  closeArchivePlayer();
+  closeArchivePlayer(true);
   await loadArchiveData();
   activeFoldersList = getEffectiveFolders();
   renderArchiveFolderSidebar();
-  renderArchiveFolderContent(currentFolderKey, '');
+  
+  // URL 해시 기반 라우팅 (새로고침 또는 북마크/뒤로가기 초기 복원)
+  handleInitialRoute();
 
   const searchInput = document.getElementById('archive-search-input');
   if (searchInput) {
@@ -301,11 +316,19 @@ function saveEffectiveData() {
   localStorage.setItem('ALLNATIONS_ADMIN_DATA_V1', JSON.stringify(payload));
 }
 
-async function selectArchiveFolder(folderKey) {
+async function selectArchiveFolder(folderKey, isFromHistory = false) {
   currentFolderKey = folderKey;
   
+  // 브라우저 히스토리 상태 push
+  if (!isFromHistory) {
+    const targetHash = `#sermons/${folderKey}`;
+    if (window.location.hash !== targetHash) {
+      history.pushState({ pageId: 'sermons', subFolderKey: folderKey }, '', targetHash);
+    }
+  }
+
   // 강해 카테고리 탭 전환 시 상단 TV 플레이어를 닫고 깨끗한 목록 상태로 초기화
-  closeArchivePlayer();
+  closeArchivePlayer(true);
 
   document.querySelectorAll('.archive-folder-item, .sermon-tab-item').forEach(el => {
     if (el.getAttribute('data-fkey') === folderKey) {
@@ -453,7 +476,7 @@ function extractYouTubeId(url) {
   return match ? match[1] : '';
 }
 
-function playArchiveLecture(folderKey, epNumber) {
+function playArchiveLecture(folderKey, epNumber, isFromHistory = false) {
   let item = null;
   let seriesTitle = '';
 
@@ -486,6 +509,14 @@ function playArchiveLecture(folderKey, epNumber) {
   if (!item) {
     console.warn('Lecture not found:', folderKey, epNumber);
     return;
+  }
+
+  // 브라우저 히스토리 상태 push
+  if (!isFromHistory) {
+    const targetHash = `#sermons/${folderKey}/${encodeURIComponent(epNumber)}`;
+    if (window.location.hash !== targetHash) {
+      history.pushState({ pageId: 'sermons', subFolderKey: folderKey, ep: epNumber }, '', targetHash);
+    }
   }
 
   const playerArea = document.getElementById('archive-top-player');
@@ -565,7 +596,7 @@ function extractStartTime(url, item) {
   return 0;
 }
 
-function closeArchivePlayer() {
+function closeArchivePlayer(isFromHistory = false) {
   const playerArea = document.getElementById('archive-top-player');
   const playerWrapper = document.getElementById('archive-player-wrapper') || document.querySelector('#archive-top-player .player-wrapper');
   if (playerWrapper) {
@@ -573,6 +604,16 @@ function closeArchivePlayer() {
   }
   if (playerArea) {
     playerArea.style.display = 'none';
+  }
+
+  // 닫기 버튼 직접 클릭 시 URL 해시 정리 (단, 히스토리 되돌리기 중이 아닐 때)
+  if (!isFromHistory) {
+    const rawHash = window.location.hash.replace(/^#/, '');
+    const parts = rawHash.split('/');
+    if (parts[0] === 'sermons' && parts.length > 2) {
+      const folder = parts[1] || currentFolderKey || 'ot';
+      history.pushState({ pageId: 'sermons', subFolderKey: folder }, '', `#sermons/${folder}`);
+    }
   }
 }
 
@@ -1124,6 +1165,73 @@ function initBgmOnFirstInteraction() {
     ytBgmPlayer.setVolume(50);
   }
 }
+
+/**
+ * ==========================================================
+ * 🔄 SPA 브라우저 뒤로가기/앞으로가기 히스토리 라우터 (Popstate Router)
+ * ==========================================================
+ */
+function handleInitialRoute() {
+  const rawHash = window.location.hash.replace(/^#/, '');
+  if (!rawHash || rawHash === 'home') {
+    history.replaceState({ pageId: 'home' }, '', '#home');
+    navigateToPage('home', null, true);
+    return;
+  }
+
+  const parts = rawHash.split('/');
+  const pageId = parts[0] || 'home';
+  const subKey = parts[1] || null;
+  const epParam = parts[2] ? decodeURIComponent(parts[2]) : null;
+
+  history.replaceState({ pageId, subFolderKey: subKey, ep: epParam }, '', '#' + rawHash);
+  navigateToPage(pageId, subKey, true);
+
+  if (pageId === 'sermons' && subKey) {
+    if (epParam) {
+      setTimeout(() => {
+        playArchiveLecture(subKey, epParam, true);
+      }, 300);
+    }
+  }
+}
+
+// 브라우저 뒤로가기(←) 및 앞으로가기(→) 이벤트 처리
+window.addEventListener('popstate', (event) => {
+  // 1. 활성화된 팝업 모달이 열려있다면 모달을 먼저 닫아줌
+  const openModals = document.querySelectorAll('.site-modal-overlay.active');
+  if (openModals.length > 0) {
+    openModals.forEach(m => m.classList.remove('active'));
+    return;
+  }
+
+  // 2. URL 해시 분석하여 해당 페이지와 강해 폴더로 부드럽게 복원
+  const rawHash = window.location.hash.replace(/^#/, '');
+  if (!rawHash || rawHash === 'home') {
+    closeArchivePlayer(true);
+    navigateToPage('home', null, true);
+    return;
+  }
+
+  const parts = rawHash.split('/');
+  const pageId = parts[0] || 'home';
+  const subKey = parts[1] || null;
+  const epParam = parts[2] ? decodeURIComponent(parts[2]) : null;
+
+  navigateToPage(pageId, subKey, true);
+
+  if (pageId === 'sermons' && subKey) {
+    selectArchiveFolder(subKey, true);
+    if (epParam) {
+      playArchiveLecture(subKey, epParam, true);
+    } else {
+      closeArchivePlayer(true);
+    }
+  } else {
+    closeArchivePlayer(true);
+  }
+});
+
 
 
 
