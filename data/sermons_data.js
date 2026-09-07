@@ -1,4 +1,3 @@
-// sermons_data.js - Preloaded archive sermons data
 window.INITIAL_SERMONS_ARCHIVE = {
   "commandments": {
     "id": "commandments",
@@ -316,8 +315,8 @@ window.INITIAL_SERMONS_ARCHIVE = {
         "ep": 5,
         "title": "5강 - 하나님을 대적하는 바벨사상",
         "passage": "창세기 11장 1-9절",
-        "url": "https://www.youtube.com/watch?v=CFjhlp4tQ2w",
-        "videoId": "CFjhlp4tQ2w",
+        "url": "https://www.youtube.com/watch?v=96jhMgmTAxQ",
+        "videoId": "96jhMgmTAxQ",
         "fullTitle": "창세기 11장 1-9절 / \"하나님을 대적하는 바벨사상\" / 주일 오전예배(20171231) / 열방교회 박훈 목사 설교"
       },
       {
@@ -340,8 +339,8 @@ window.INITIAL_SERMONS_ARCHIVE = {
         "ep": 8,
         "title": "8강 - 인본주의와 하나님의 길로 행하는 삶!",
         "passage": "창세기 15장 1 ~6절",
-        "url": "https://www.youtube.com/watch?v=CFjhlp4tQ2w",
-        "videoId": "CFjhlp4tQ2w",
+        "url": "https://www.youtube.com/watch?v=V3h81dpubCc",
+        "videoId": "V3h81dpubCc",
         "fullTitle": "창세기 15장 1 ~6절 / \"인본주의와 하나님의 길로 행하는 삶!\" / 주일 오전예배 설교(20180114) / 열방교회 박훈 목사 설교"
       },
       {
