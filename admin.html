@@ -28,11 +28,15 @@
       position: fixed;
       inset: 0;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       z-index: 9999;
       padding: 1rem;
+    }
+
+    #admin-lock-screen.visible {
+      display: flex;
     }
 
     .lock-box {
@@ -715,11 +719,11 @@
       if (isAuth) {
         sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
         localStorage.setItem('allnations_admin_auth', 'true');
-        lockScreen.style.display = 'none';
+        lockScreen.classList.remove('visible');
         loadAdminData();
         loadGitHubSettings();
       } else {
-        lockScreen.style.display = 'flex';
+        lockScreen.classList.add('visible');
       }
     }
 
@@ -729,7 +733,7 @@
       if (inputPin === defaultPin) {
         sessionStorage.setItem('ALLNATIONS_ADMIN_AUTH', 'true');
         localStorage.setItem('allnations_admin_auth', 'true');
-        document.getElementById('admin-lock-screen').style.display = 'none';
+        document.getElementById('admin-lock-screen').classList.remove('visible');
         loadAdminData();
         loadGitHubSettings();
       } else {
