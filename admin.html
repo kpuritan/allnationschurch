@@ -278,6 +278,22 @@
       color: var(--admin-primary);
     }
 
+    .btn-sm-edit {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      margin-right: 4px;
+      transition: background 0.2s;
+    }
+
+    .btn-sm-edit:hover {
+      background: #0369a1;
+    }
+
     .btn-sm-del {
       background: #ef4444;
       color: #ffffff;
@@ -489,6 +505,13 @@
       </div>
 
       <form id="form-create-lecture" onsubmit="handleCreateLecture(event)" style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--admin-border); margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; border-bottom: 1px solid var(--admin-border); padding-bottom: 0.6rem;">
+          <h4 id="lecture-form-mode-title" style="margin: 0; font-size: 1.05rem; font-weight: 800; color: var(--admin-primary);">
+            ➕ 새로운 설교 영상 및 자료 등록
+          </h4>
+          <span id="lecture-edit-badge" style="display: none; background: #0284c7; color: #fff; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: 700;">수정 모드</span>
+        </div>
+        <input type="hidden" id="lec-editing-ep" value="" />
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">회차 번호 (강의 번호)</label>
@@ -530,7 +553,10 @@
           </div>
         </div>
 
-        <button type="submit" class="btn-submit">➕ 설교 영상 및 자료 등록하기</button>
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <button type="submit" id="btn-submit-lecture" class="btn-submit">➕ 설교 영상 및 자료 등록하기</button>
+          <button type="button" id="btn-cancel-edit-lecture" onclick="cancelEditLecture()" class="btn-submit" style="background: #64748b; display: none;">수정 취소 ✕</button>
+        </div>
       </form>
 
       <h4 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.8rem;" id="current-folder-lectures-title">
@@ -763,23 +789,37 @@
     let adminArchive = {};
 
     async function loadAdminData() {
+      // 1. 오프라인/로컬 파일 fallback (전체 300+ 설교 데이터 보존)
+      if (window.INITIAL_SERMONS_ARCHIVE && Object.keys(adminArchive).length === 0) {
+        adminArchive = JSON.parse(JSON.stringify(window.INITIAL_SERMONS_ARCHIVE));
+      }
+
+      // 2. data/sermons_archive.json 조회 (웹 서버 환경)
       try {
         const res = await fetch('data/sermons_archive.json?v=' + Date.now());
         if (res.ok) {
           const fetched = await res.json();
-          adminArchive = fetched;
+          adminArchive = { ...(adminArchive || {}), ...fetched };
         }
       } catch (e) {
-        console.error('sermons_archive load error', e);
+        console.warn('sermons_archive fetch skipped or local disk mode', e);
       }
 
+      // 3. 브라우저 localStorage 변경사항 통합
       const saved = localStorage.getItem(ADMIN_STORAGE_KEY);
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
-          adminFolders = parsed.folders || ARCHIVE_FOLDERS;
+          if (parsed.folders && parsed.folders.length > 0) {
+            adminFolders = parsed.folders;
+          } else {
+            adminFolders = [...ARCHIVE_FOLDERS];
+          }
           if (parsed.archive) {
-            adminArchive = { ...adminArchive, ...parsed.archive };
+            adminArchive = adminArchive || {};
+            for (const k of Object.keys(parsed.archive)) {
+              adminArchive[k] = parsed.archive[k];
+            }
           }
         } catch (e) {
           console.error(e);
@@ -829,9 +869,14 @@
       const select = document.getElementById('lecture-target-folder');
       if (!select) return;
 
+      const currentVal = select.value;
       select.innerHTML = adminFolders.map(f => `
         <option value="${f.key}">${f.icon || '📁'} ${f.title} (${(adminArchive[f.key]?.episodes || []).length}편)</option>
       `).join('');
+
+      if (currentVal && adminFolders.some(f => f.key === currentVal)) {
+        select.value = currentVal;
+      }
     }
 
     // 2. 새 폴더 생성
@@ -868,7 +913,8 @@
       };
 
       saveAdminData();
-      loadAdminData();
+      renderFoldersTable();
+      populateFolderSelect();
       document.getElementById('form-create-folder').reset();
       alert(`🎉 '${title}' 강해 폴더가 성공적으로 생성되었습니다! 상단의 [GitHub 영구 저장] 버튼을 누르면 실서버에 즉시 배포됩니다.`);
     }
@@ -878,11 +924,14 @@
       adminFolders = adminFolders.filter(f => f.key !== fKey);
       delete adminArchive[fKey];
       saveAdminData();
-      loadAdminData();
+      renderFoldersTable();
+      populateFolderSelect();
+      renderLecturesTable();
     }
 
-    // 3. 설교 영상 등록
+    // 3. 설교 영상 등록 및 수정
     function handleSelectFolderForLectures() {
+      cancelEditLecture();
       renderLecturesTable();
     }
 
@@ -903,7 +952,7 @@
       }
 
       tbody.innerHTML = episodes.map(ep => {
-        const startSec = ep.startTime || extractStartTime(ep.url, ep);
+        const startSec = ep.startTime !== undefined && ep.startTime !== null ? ep.startTime : extractStartTime(ep.url, ep);
         const timeDisplay = startSec > 0 ? `<span style="background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:4px; font-weight:700; font-size:0.85rem;">⏱️ ${formatSecondsToTime(startSec)}</span>` : '<span style="color:#94a3b8;">0:00</span>';
 
         return `
@@ -915,6 +964,7 @@
             <td><a href="${ep.url || '#'}" target="_blank" style="color:#3b82f6;">${ep.url ? '영상 링크 확인 ↗' : '검색 연동'}</a></td>
             <td>${ep.pdfUrl ? `<a href="${ep.pdfUrl}" target="_blank" style="color:#10b981; font-weight:700;">📄 PDF 교재</a>` : '-'}</td>
             <td>
+              <button type="button" class="btn-sm-edit" onclick="startEditLecture('${fKey}', ${ep.ep})">수정 ✏️</button>
               <button type="button" class="btn-sm-del" onclick="deleteLecture('${fKey}', ${ep.ep})">삭제 ✕</button>
             </td>
           </tr>
@@ -922,9 +972,62 @@
       }).join('');
     }
 
+    function startEditLecture(fKey, epNum) {
+      if (!adminArchive[fKey]) return;
+      const episodes = adminArchive[fKey].episodes || [];
+      const num = parseInt(epNum, 10);
+      const item = episodes.find(x => x.ep === epNum || x.ep === num || String(x.ep) === String(epNum));
+      if (!item) {
+        alert('수정할 설교 정보를 찾을 수 없습니다.');
+        return;
+      }
+
+      // 폼에 기존 정보 채우기
+      document.getElementById('lec-editing-ep').value = item.ep;
+      document.getElementById('lec-ep').value = item.ep;
+      document.getElementById('lec-title').value = item.title || '';
+      document.getElementById('lec-passage').value = item.passage || '';
+      document.getElementById('lec-date').value = item.date || '';
+      document.getElementById('lec-url').value = item.url || '';
+      document.getElementById('lec-pdf').value = item.pdfUrl || '';
+
+      const startSec = item.startTime !== undefined && item.startTime !== null ? item.startTime : extractStartTime(item.url, item);
+      document.getElementById('lec-starttime').value = startSec > 0 ? formatSecondsToTime(startSec) : '';
+
+      // 폼 헤더 및 버튼 텍스트 변경
+      const modeTitle = document.getElementById('lecture-form-mode-title');
+      if (modeTitle) modeTitle.textContent = `✏️ [${item.ep}강] '${item.title}' 설교 수정 중`;
+      const editBadge = document.getElementById('lecture-edit-badge');
+      if (editBadge) editBadge.style.display = 'inline-block';
+      const submitBtn = document.getElementById('btn-submit-lecture');
+      if (submitBtn) submitBtn.textContent = '💾 수정 완료 및 저장하기';
+      const cancelBtn = document.getElementById('btn-cancel-edit-lecture');
+      if (cancelBtn) cancelBtn.style.display = 'inline-block';
+
+      // 폼으로 부드럽게 스크롤 이동
+      document.getElementById('form-create-lecture').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function cancelEditLecture() {
+      const editInput = document.getElementById('lec-editing-ep');
+      if (editInput) editInput.value = '';
+      const form = document.getElementById('form-create-lecture');
+      if (form) form.reset();
+
+      const modeTitle = document.getElementById('lecture-form-mode-title');
+      if (modeTitle) modeTitle.textContent = '➕ 새로운 설교 영상 및 자료 등록';
+      const editBadge = document.getElementById('lecture-edit-badge');
+      if (editBadge) editBadge.style.display = 'none';
+      const submitBtn = document.getElementById('btn-submit-lecture');
+      if (submitBtn) submitBtn.textContent = '➕ 설교 영상 및 자료 등록하기';
+      const cancelBtn = document.getElementById('btn-cancel-edit-lecture');
+      if (cancelBtn) cancelBtn.style.display = 'none';
+    }
+
     function handleCreateLecture(e) {
       e.preventDefault();
       const fKey = document.getElementById('lecture-target-folder').value;
+      const editingEpVal = document.getElementById('lec-editing-ep').value;
       const ep = parseInt(document.getElementById('lec-ep').value, 10);
       const title = document.getElementById('lec-title').value.trim();
       const passage = document.getElementById('lec-passage').value.trim();
@@ -947,8 +1050,6 @@
       }
 
       const episodes = adminArchive[fKey].episodes || [];
-      const existingIdx = episodes.findIndex(x => x.ep === ep);
-
       const newEp = {
         ep: ep,
         title: title,
@@ -960,13 +1061,28 @@
         pdfUrl: pdf
       };
 
-      if (existingIdx >= 0) {
-        episodes[existingIdx] = newEp;
+      if (editingEpVal !== '') {
+        // 기존 회차 수정 모드
+        const origNum = parseInt(editingEpVal, 10);
+        const origIdx = episodes.findIndex(x => x.ep === editingEpVal || x.ep === origNum || String(x.ep) === String(editingEpVal));
+        if (origIdx !== -1) {
+          episodes[origIdx] = newEp;
+        } else {
+          episodes.push(newEp);
+        }
       } else {
-        episodes.push(newEp);
-        episodes.sort((a,b) => a.ep - b.ep);
+        // 신규 등록 모드 (중복 번호 확인)
+        const existingIdx = episodes.findIndex(x => x.ep === ep);
+        if (existingIdx >= 0) {
+          if (!confirm(`${ep}강이 이미 존재합니다. 기존 설교를 덮어쓰시겠습니까?`)) return;
+          episodes[existingIdx] = newEp;
+        } else {
+          episodes.push(newEp);
+        }
       }
 
+      // 회차 번호 순 정렬
+      episodes.sort((a, b) => (parseInt(a.ep) || 0) - (parseInt(b.ep) || 0));
       adminArchive[fKey].episodes = episodes;
 
       // 폴더 count 업데이트
@@ -976,14 +1092,14 @@
       saveAdminData();
       renderLecturesTable();
       populateFolderSelect();
-      document.getElementById('form-create-lecture').reset();
-      alert(`🎉 ${ep}강 '${title}' 설교가 성공적으로 등록되었습니다!\n시작 시간: ${startSec > 0 ? formatSecondsToTime(startSec) + ` (${startSec}초)` : '처음부터'}\n상단의 [GitHub 영구 저장]을 누르면 실서버에 바로 반영됩니다.`);
+      cancelEditLecture();
+      alert(`🎉 [${ep}강] '${title}' 설교가 안전하게 저장되었습니다!\n시작 시간: ${startSec > 0 ? formatSecondsToTime(startSec) + ` (${startSec}초)` : '처음부터'}\n(우측 상단의 [🚀 GitHub 영구 저장]을 누르면 실서버에 바로 배포됩니다)`);
     }
 
     function deleteLecture(fKey, epNum) {
       if (!confirm(`${epNum}강 설교를 삭제하시겠습니까?`)) return;
       if (adminArchive[fKey]) {
-        adminArchive[fKey].episodes = (adminArchive[fKey].episodes || []).filter(x => x.ep !== epNum);
+        adminArchive[fKey].episodes = (adminArchive[fKey].episodes || []).filter(x => x.ep !== epNum && String(x.ep) !== String(epNum));
         const folderObj = adminFolders.find(f => f.key === fKey);
         if (folderObj) folderObj.count = `${adminArchive[fKey].episodes.length}편`;
       }
@@ -1052,28 +1168,36 @@
       renderPostsTable();
     }
 
-    // main.js에서 이미 정의된 DEFAULT_GH_TOKEN, DEFAULT_GH_REPO, DEFAULT_GH_BRANCH 사용
-    // (중복 선언 제거 - SyntaxError 방지)
-
     // 5. GitHub API 연동 로직
-    function loadGitHubSettings() {
-      const saved = localStorage.getItem(GH_SETTINGS_KEY);
-      let cfg = { repo: DEFAULT_GH_REPO, branch: DEFAULT_GH_BRANCH, token: DEFAULT_GH_TOKEN };
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          cfg = { ...cfg, ...parsed };
-        } catch (e) {
-          console.error(e);
+    function getAdminGitHubConfig() {
+      const savedV1 = localStorage.getItem('ALLNATIONS_GH_SETTINGS_V1');
+      const savedV0 = localStorage.getItem(GH_SETTINGS_KEY);
+      let cfg = { repo: DEFAULT_GH_REPO, branch: DEFAULT_GH_BRANCH, token: '' };
+      try {
+        if (savedV1) {
+          cfg = { ...cfg, ...JSON.parse(savedV1) };
+        } else if (savedV0) {
+          cfg = { ...cfg, ...JSON.parse(savedV0) };
         }
+      } catch (e) {
+        console.error(e);
       }
-      
+      return cfg;
+    }
+
+    function saveAdminGitHubConfig(cfg) {
+      localStorage.setItem('ALLNATIONS_GH_SETTINGS_V1', JSON.stringify(cfg));
+      localStorage.setItem(GH_SETTINGS_KEY, JSON.stringify(cfg));
+    }
+
+    function loadGitHubSettings() {
+      const cfg = getAdminGitHubConfig();
       if (document.getElementById('gh-repo')) document.getElementById('gh-repo').value = cfg.repo || DEFAULT_GH_REPO;
       if (document.getElementById('gh-branch')) document.getElementById('gh-branch').value = cfg.branch || DEFAULT_GH_BRANCH;
-      if (document.getElementById('gh-token')) document.getElementById('gh-token').value = cfg.token || DEFAULT_GH_TOKEN;
+      if (document.getElementById('gh-token')) document.getElementById('gh-token').value = cfg.token || '';
       
       if (cfg.token) {
-        updateGhStatusBox(true, `GitHub 저장소(${cfg.repo})와 자동 연동되었습니다.`);
+        updateGhStatusBox(true, `GitHub 저장소(${cfg.repo})와 자동 연동 준비 완료.`);
       }
     }
 
@@ -1081,11 +1205,11 @@
       e.preventDefault();
       const repo = document.getElementById('gh-repo').value.trim() || DEFAULT_GH_REPO;
       const branch = document.getElementById('gh-branch').value.trim() || DEFAULT_GH_BRANCH;
-      const token = document.getElementById('gh-token').value.trim() || DEFAULT_GH_TOKEN;
+      const token = document.getElementById('gh-token').value.trim();
 
       const cfg = { repo, branch, token };
-      localStorage.setItem(GH_SETTINGS_KEY, JSON.stringify(cfg));
-      updateGhStatusBox(!!token, token ? 'GitHub 설정이 저장되었습니다.' : '토큰을 입력해 주세요.');
+      saveAdminGitHubConfig(cfg);
+      updateGhStatusBox(!!token, token ? 'GitHub 설정이 브라우저에 안전하게 저장되었습니다.' : '토큰을 입력해 주세요.');
       alert('🎉 GitHub 설정이 성공적으로 저장되었습니다!');
     }
 
@@ -1113,10 +1237,9 @@
     }
 
     async function testGitHubConnection() {
-      const saved = localStorage.getItem(GH_SETTINGS_KEY);
-      const cfg = saved ? JSON.parse(saved) : null;
-      const token = (cfg && cfg.token) || document.getElementById('gh-token')?.value.trim() || DEFAULT_GH_TOKEN;
-      const repo = (cfg && cfg.repo) || document.getElementById('gh-repo')?.value.trim() || DEFAULT_GH_REPO;
+      const cfg = getAdminGitHubConfig();
+      const token = document.getElementById('gh-token')?.value.trim() || cfg.token;
+      const repo = document.getElementById('gh-repo')?.value.trim() || cfg.repo || DEFAULT_GH_REPO;
 
       if (!token) {
         alert('GitHub 토큰을 입력하고 [저장하기]를 먼저 눌러주세요.');
@@ -1180,22 +1303,31 @@
 
       if (!putRes.ok) {
         const err = await putRes.json();
-        throw new Error(`${path} 커밋 실패: ${err.message || putRes.statusText}`);
+        const errorObj = new Error(err.message || putRes.statusText);
+        errorObj.status = putRes.status;
+        throw errorObj;
       }
       return await putRes.json();
     }
 
     async function syncAllToGitHub() {
-      const saved = localStorage.getItem(GH_SETTINGS_KEY);
-      const cfg = saved ? JSON.parse(saved) : null;
-      const token = (cfg && cfg.token) || document.getElementById('gh-token')?.value.trim() || DEFAULT_GH_TOKEN;
-      const repo = (cfg && cfg.repo) || document.getElementById('gh-repo')?.value.trim() || DEFAULT_GH_REPO;
-      const branch = (cfg && cfg.branch) || document.getElementById('gh-branch')?.value.trim() || DEFAULT_GH_BRANCH;
+      let cfg = getAdminGitHubConfig();
+      let token = cfg.token || document.getElementById('gh-token')?.value.trim();
+      const repo = cfg.repo || document.getElementById('gh-repo')?.value.trim() || DEFAULT_GH_REPO;
+      const branch = cfg.branch || document.getElementById('gh-branch')?.value.trim() || DEFAULT_GH_BRANCH;
 
       if (!token) {
-        alert('GitHub 토큰이 등록되어 있지 않습니다. [4. GitHub 연동] 탭에서 토큰을 먼저 입력해 주세요.');
-        switchAdminTab('github');
-        return;
+        const inputToken = prompt(
+          "🔑 GitHub 개인 액세스 토큰(PAT)이 필요합니다.\n\nGitHub에서 발급받은 토큰(ghp_...)을 입력해 주세요:\n(입력하시면 브라우저에 저장되어 다음부터는 1-클릭으로 바로 배포됩니다)\n\n※ 로컬 컴퓨터에서는 폴더 안의 '동기화_배포하기.bat' 파일을 더블 클릭하셔도 즉시 배포됩니다."
+        );
+        if (!inputToken || !inputToken.trim()) {
+          switchAdminTab('github');
+          return;
+        }
+        token = inputToken.trim();
+        cfg.token = token;
+        saveAdminGitHubConfig(cfg);
+        if (document.getElementById('gh-token')) document.getElementById('gh-token').value = token;
       }
 
       const btn = document.getElementById('btn-header-sync');
@@ -1226,7 +1358,18 @@
 
         alert('🎉 GitHub 저장소에 성공적으로 영구 저장(Commit)되었습니다!\n약 1~2분 뒤 GitHub Pages를 통해 전세계 모든 기기에 자동 배포가 완료됩니다.');
       } catch (err) {
-        alert('GitHub 배포 중 오류 발생: ' + err.message);
+        if (err.status === 401 || (err.message && err.message.toLowerCase().includes('bad credentials'))) {
+          const retryToken = prompt(
+            "❌ GitHub 토큰 인증 실패 (401 Unauthorized)\n\n토큰이 만료되었거나 권한(repo)이 부족합니다.\n새로운 GitHub 토큰(ghp_...)을 입력해 주시면 즉시 다시 시도합니다:\n\n※ 또는 로컬 폴더의 '동기화_배포하기.bat'을 실행하셔도 배포됩니다."
+          );
+          if (retryToken && retryToken.trim()) {
+            cfg.token = retryToken.trim();
+            saveAdminGitHubConfig(cfg);
+            if (document.getElementById('gh-token')) document.getElementById('gh-token').value = retryToken.trim();
+            return syncAllToGitHub();
+          }
+        }
+        alert('GitHub 배포 중 오류 발생: ' + err.message + "\n\n💡 팁: 로컬 폴더의 '동기화_배포하기.bat' 파일을 실행하시면 토큰 없이도 간편하게 깃허브로 배포할 수 있습니다.");
       } finally {
         if (btn) {
           btn.disabled = false;

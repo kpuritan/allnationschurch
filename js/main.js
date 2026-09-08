@@ -157,9 +157,7 @@ function getEffectiveFolders() {
     try {
       const parsed = JSON.parse(saved);
       if (parsed.folders && parsed.folders.length > 0) {
-        const defaultKeys = new Set(ARCHIVE_FOLDERS.map(f => f.key));
-        const customFolders = parsed.folders.filter(f => !defaultKeys.has(f.key));
-        return [...ARCHIVE_FOLDERS, ...customFolders];
+        return parsed.folders;
       }
     } catch (e) {
       console.error(e);
@@ -285,11 +283,8 @@ async function loadArchiveData() {
       const parsed = JSON.parse(saved);
       if (parsed.archive) {
         archiveDataCache = archiveDataCache || {};
-        const defaultKeys = new Set(ARCHIVE_FOLDERS.map(f => f.key));
         for (const k of Object.keys(parsed.archive)) {
-          if (!defaultKeys.has(k)) {
-            archiveDataCache[k] = parsed.archive[k];
-          }
+          archiveDataCache[k] = parsed.archive[k];
         }
       }
     } catch (e) {
@@ -998,9 +993,29 @@ function handleDeleteSiteFolder(e, folderKey) {
 }
 
 // 3. GitHub 즉시 배포 (사이트 모드에서 원클릭)
-const DEFAULT_GH_TOKEN = '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';
 const DEFAULT_GH_REPO = 'kpuritan/allnationschurch';
 const DEFAULT_GH_BRANCH = 'main';
+
+function getStoredGitHubConfig() {
+  const savedV1 = localStorage.getItem('ALLNATIONS_GH_SETTINGS_V1');
+  const savedV0 = localStorage.getItem('ALLNATIONS_GH_SETTINGS');
+  let cfg = { repo: DEFAULT_GH_REPO, branch: DEFAULT_GH_BRANCH, token: '' };
+  try {
+    if (savedV1) {
+      cfg = { ...cfg, ...JSON.parse(savedV1) };
+    } else if (savedV0) {
+      cfg = { ...cfg, ...JSON.parse(savedV0) };
+    }
+  } catch (e) {
+    console.error(e);
+  }
+  return cfg;
+}
+
+function saveStoredGitHubConfig(cfg) {
+  localStorage.setItem('ALLNATIONS_GH_SETTINGS_V1', JSON.stringify(cfg));
+  localStorage.setItem('ALLNATIONS_GH_SETTINGS', JSON.stringify(cfg));
+}
 
 function utf8ToB64(str) {
   return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => String.fromCharCode('0x' + p1)));
@@ -1009,18 +1024,30 @@ function utf8ToB64(str) {
 async function syncSiteChangesToGitHub() {
   const btn = document.getElementById('btn-site-sync');
   const origText = btn ? btn.innerHTML : '';
+
+  let cfg = getStoredGitHubConfig();
+  let token = cfg.token;
+  let repo = cfg.repo || DEFAULT_GH_REPO;
+  let branch = cfg.branch || DEFAULT_GH_BRANCH;
+
+  if (!token) {
+    const inputToken = prompt(
+      "🔑 GitHub 개인 액세스 토큰(PAT)이 필요합니다.\n\nGitHub에서 발급받은 토큰(ghp_...)을 입력해 주세요:\n(입력하시면 브라우저에 저장되어 다음부터는 1-클릭으로 바로 배포됩니다)\n\n※ 로컬 컴퓨터에서는 폴더 안의 '동기화_배포하기.bat' 파일을 더블 클릭하셔도 즉시 배포됩니다."
+    );
+    if (!inputToken || !inputToken.trim()) {
+      return;
+    }
+    token = inputToken.trim();
+    cfg.token = token;
+    saveStoredGitHubConfig(cfg);
+  }
+
   if (btn) {
     btn.disabled = true;
     btn.innerHTML = '⏳ 깃허브 배포 중...';
   }
 
   try {
-    const savedGh = localStorage.getItem('ALLNATIONS_GH_SETTINGS_V1');
-    const cfg = savedGh ? JSON.parse(savedGh) : null;
-    const token = (cfg && cfg.token) || DEFAULT_GH_TOKEN;
-    const repo = (cfg && cfg.repo) || DEFAULT_GH_REPO;
-    const branch = (cfg && cfg.branch) || DEFAULT_GH_BRANCH;
-
     let currentSha = null;
     const path = 'data/sermons_archive.json';
 
@@ -1058,12 +1085,22 @@ async function syncSiteChangesToGitHub() {
 
     if (!putRes.ok) {
       const err = await putRes.json();
+      if (putRes.status === 401 || (err.message && err.message.toLowerCase().includes('bad credentials'))) {
+        const retryToken = prompt(
+          "❌ GitHub 토큰 인증 실패 (401 Unauthorized)\n\n토큰이 만료되었거나 권한(repo)이 부족합니다.\n새로운 GitHub 토큰(ghp_...)을 입력해 주시면 즉시 다시 시도합니다:\n\n※ 또는 로컬 폴더의 '동기화_배포하기.bat'을 실행하셔도 배포됩니다."
+        );
+        if (retryToken && retryToken.trim()) {
+          cfg.token = retryToken.trim();
+          saveStoredGitHubConfig(cfg);
+          return syncSiteChangesToGitHub();
+        }
+      }
       throw new Error(err.message || putRes.statusText);
     }
 
     alert('🎉 GitHub 저장소에 성공적으로 영구 저장(Commit)되었습니다!\n약 1~2분 뒤 전세계 모든 기기에 자동 배포가 완료됩니다.');
   } catch (err) {
-    alert('GitHub 배포 실패: ' + err.message);
+    alert('GitHub 배포 실패: ' + err.message + "\n\n💡 팁: 로컬 폴더의 '동기화_배포하기.bat' 파일을 실행하시면 토큰 없이도 간편하게 깃허브로 배포할 수 있습니다.");
   } finally {
     if (btn) {
       btn.disabled = false;

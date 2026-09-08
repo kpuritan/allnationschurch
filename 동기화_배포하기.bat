@@ -1,5 +1,6 @@
 @echo off
 chcp 65001 > nul
+set "PATH=%PATH%;C:\Program Files\Git\cmd;C:\Program Files\Git\bin;C:\Program Files (x86)\Git\cmd"
 title 불로 열방교회 홈페이지 깃허브 자동 배포기
 cls
 echo ========================================================
