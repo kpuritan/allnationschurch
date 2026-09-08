@@ -1104,25 +1104,33 @@
         "ep": 1,
         "title": "2022년 7월 24일 주일예배 (창세기 개관설교)",
         "passage": "창세기",
-        "url": "https://www.youtube.com/watch?v=kKrE0AOYMuM"
+        "url": "https://www.youtube.com/watch?v=kKrE0AOYMuM&t=2680s",
+        "startTime": 2680,
+        "pdfUrl": null
       },
       {
         "ep": 2,
         "title": "2022년 7월 31일 주일예배 (출애굽기 개관설교)",
         "passage": "출애굽기",
-        "url": "https://www.youtube.com/watch?v=TElQnNzu980"
+        "url": "https://www.youtube.com/watch?v=TElQnNzu980&t=2212s",
+        "startTime": 2212,
+        "pdfUrl": null
       },
       {
         "ep": 3,
         "title": "2022년 8월 7일 주일예배 (레위기 개관설교)",
         "passage": "레위기",
-        "url": "https://www.youtube.com/watch?v=_2JK345r2rc"
+        "url": "https://www.youtube.com/watch?v=_2JK345r2rc&t=2317s",
+        "startTime": 2317,
+        "pdfUrl": null
       },
       {
         "ep": 4,
         "title": "2022년 8월 14일 주일예배 (민수기 개관설교)",
         "passage": "민수기",
-        "url": "https://www.youtube.com/watch?v=rjpOctFPNQk"
+        "url": "https://www.youtube.com/watch?v=rjpOctFPNQk&t=2070s",
+        "startTime": 2070,
+        "pdfUrl": null
       },
       {
         "ep": 5,
