@@ -467,8 +467,16 @@ function renderArchiveFolderContent(folderKey, query) {
 
 function extractYouTubeId(url) {
   if (!url) return '';
-  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-  return match ? match[1] : '';
+  // youtu.be 단축 링크
+  let m = url.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  // youtube.com/embed/ 또는 /v/ 형식
+  m = url.match(/youtube\.com\/(?:embed|v)\/([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  // youtube.com/watch?v=... (t= 파라미터 포함 어떤 순서든 처리)
+  m = url.match(/[?&]v=([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  return '';
 }
 
 function playArchiveLecture(folderKey, epNumber, isFromHistory = false) {
