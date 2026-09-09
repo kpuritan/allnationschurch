@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 말씀 강해 아카이브 시스템 초기화
   initArchiveSystem();
 
+  // 신앙고백서 학습 시스템 초기화
+  initConfessionsView();
+
   // 관리자 인증 상태 반영 및 UI 업데이트
   updateSiteAdminUI();
   
@@ -63,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
  * ==========================================================
  */
 function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
+  // 레거시 ministry 링크 호환
+  if (pageId === 'ministry') pageId = 'confessions';
+
   // 1. 모든 페이지 뷰 숨기기
   const pages = document.querySelectorAll('.page-view');
   pages.forEach(p => {
@@ -99,7 +105,7 @@ function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
     }
   }
 
-  // 6. 만약 특정 말씀 강해 폴더가 지정된 경우 폴더 선택
+  // 6. 각 페이지별 서브 탭 / 폴더 핸들링
   if (pageId === 'sermons') {
     if (subFolderKey) {
       if (subFolderKey === 'news') {
@@ -108,6 +114,18 @@ function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
       } else {
         selectArchiveFolder(subFolderKey, isFromHistory);
       }
+    }
+  } else if (pageId === 'about') {
+    closeArchivePlayer(true);
+    if (subFolderKey) {
+      switchAboutSubtab(subFolderKey);
+    } else {
+      switchAboutSubtab('church');
+    }
+  } else if (pageId === 'confessions') {
+    closeArchivePlayer(true);
+    if (subFolderKey) {
+      switchConfessionDoc(subFolderKey);
     }
   } else {
     // 말씀 강해 외의 탭으로 이동 시 상단 플레이어 정리
@@ -157,9 +175,7 @@ function getEffectiveFolders() {
     try {
       const parsed = JSON.parse(saved);
       if (parsed.folders && parsed.folders.length > 0) {
-        const defaultKeys = new Set(ARCHIVE_FOLDERS.map(f => f.key));
-        const customFolders = parsed.folders.filter(f => !defaultKeys.has(f.key));
-        return [...ARCHIVE_FOLDERS, ...customFolders];
+        return parsed.folders;
       }
     } catch (e) {
       console.error(e);
@@ -285,11 +301,8 @@ async function loadArchiveData() {
       const parsed = JSON.parse(saved);
       if (parsed.archive) {
         archiveDataCache = archiveDataCache || {};
-        const defaultKeys = new Set(ARCHIVE_FOLDERS.map(f => f.key));
         for (const k of Object.keys(parsed.archive)) {
-          if (!defaultKeys.has(k)) {
-            archiveDataCache[k] = parsed.archive[k];
-          }
+          archiveDataCache[k] = parsed.archive[k];
         }
       }
     } catch (e) {
@@ -422,11 +435,11 @@ function renderArchiveFolderContent(folderKey, query) {
     let thumbHtml = '';
     if (item.thumb) {
       thumbHtml = `<img src="${item.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
+    } else if (folderMeta.thumb) {
+      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
     } else if (videoId) {
       // 실제 유튜브 고화질 썸네일 자동 연동
       thumbHtml = `<img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/mqdefault.jpg'">`;
-    } else if (folderMeta.thumb) {
-      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
     } else {
       thumbHtml = `
         <div class="sermon-card-placeholder card-thumb-placeholder ${folderMeta.bgClass || 'bg-ot'}">
@@ -472,8 +485,16 @@ function renderArchiveFolderContent(folderKey, query) {
 
 function extractYouTubeId(url) {
   if (!url) return '';
-  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-  return match ? match[1] : '';
+  // youtu.be 단축 링크
+  let m = url.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  // youtube.com/embed/ 또는 /v/ 형식
+  m = url.match(/youtube\.com\/(?:embed|v)\/([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  // youtube.com/watch?v=... (t= 파라미터 포함 어떤 순서든 처리)
+  m = url.match(/[?&]v=([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  return '';
 }
 
 function playArchiveLecture(folderKey, epNumber, isFromHistory = false) {
@@ -871,7 +892,14 @@ function handleSaveSiteLecture(e) {
     }
   }
 
+  const origNum = parseInt(origEp);
+  const idx = (mode === 'add')
+    ? epList.findIndex(x => x.ep === ep || String(x.ep) === String(ep))
+    : epList.findIndex(x => x.ep === origEp || x.ep === origNum || String(x.ep) === String(origEp));
+
+  const existing = (idx !== -1) ? epList[idx] : {};
   const newItem = {
+    ...existing,
     ep: ep,
     title: title,
     passage: passage,
@@ -882,7 +910,6 @@ function handleSaveSiteLecture(e) {
 
   if (mode === 'add') {
     // 중복 체크
-    const idx = epList.findIndex(x => x.ep === ep || String(x.ep) === String(ep));
     if (idx !== -1) {
       if (!confirm(`${ep}강이 이미 존재합니다. 덮어쓰시겠습니까?`)) return;
       epList[idx] = newItem;
@@ -891,8 +918,6 @@ function handleSaveSiteLecture(e) {
     }
   } else {
     // edit 모드
-    const origNum = parseInt(origEp);
-    const idx = epList.findIndex(x => x.ep === origEp || x.ep === origNum || String(x.ep) === String(origEp));
     if (idx !== -1) {
       epList[idx] = newItem;
     } else {
@@ -998,9 +1023,29 @@ function handleDeleteSiteFolder(e, folderKey) {
 }
 
 // 3. GitHub 즉시 배포 (사이트 모드에서 원클릭)
-const DEFAULT_GH_TOKEN = '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';
 const DEFAULT_GH_REPO = 'kpuritan/allnationschurch';
 const DEFAULT_GH_BRANCH = 'main';
+
+function getStoredGitHubConfig() {
+  const savedV1 = localStorage.getItem('ALLNATIONS_GH_SETTINGS_V1');
+  const savedV0 = localStorage.getItem('ALLNATIONS_GH_SETTINGS');
+  let cfg = { repo: DEFAULT_GH_REPO, branch: DEFAULT_GH_BRANCH, token: '' };
+  try {
+    if (savedV1) {
+      cfg = { ...cfg, ...JSON.parse(savedV1) };
+    } else if (savedV0) {
+      cfg = { ...cfg, ...JSON.parse(savedV0) };
+    }
+  } catch (e) {
+    console.error(e);
+  }
+  return cfg;
+}
+
+function saveStoredGitHubConfig(cfg) {
+  localStorage.setItem('ALLNATIONS_GH_SETTINGS_V1', JSON.stringify(cfg));
+  localStorage.setItem('ALLNATIONS_GH_SETTINGS', JSON.stringify(cfg));
+}
 
 function utf8ToB64(str) {
   return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => String.fromCharCode('0x' + p1)));
@@ -1009,18 +1054,30 @@ function utf8ToB64(str) {
 async function syncSiteChangesToGitHub() {
   const btn = document.getElementById('btn-site-sync');
   const origText = btn ? btn.innerHTML : '';
+
+  let cfg = getStoredGitHubConfig();
+  let token = cfg.token;
+  let repo = cfg.repo || DEFAULT_GH_REPO;
+  let branch = cfg.branch || DEFAULT_GH_BRANCH;
+
+  if (!token) {
+    const inputToken = prompt(
+      "🔑 GitHub 개인 액세스 토큰(PAT)이 필요합니다.\n\nGitHub에서 발급받은 토큰(ghp_...)을 입력해 주세요:\n(입력하시면 브라우저에 저장되어 다음부터는 1-클릭으로 바로 배포됩니다)\n\n※ 로컬 컴퓨터에서는 폴더 안의 '동기화_배포하기.bat' 파일을 더블 클릭하셔도 즉시 배포됩니다."
+    );
+    if (!inputToken || !inputToken.trim()) {
+      return;
+    }
+    token = inputToken.trim();
+    cfg.token = token;
+    saveStoredGitHubConfig(cfg);
+  }
+
   if (btn) {
     btn.disabled = true;
     btn.innerHTML = '⏳ 깃허브 배포 중...';
   }
 
   try {
-    const savedGh = localStorage.getItem('ALLNATIONS_GH_SETTINGS_V1');
-    const cfg = savedGh ? JSON.parse(savedGh) : null;
-    const token = (cfg && cfg.token) || DEFAULT_GH_TOKEN;
-    const repo = (cfg && cfg.repo) || DEFAULT_GH_REPO;
-    const branch = (cfg && cfg.branch) || DEFAULT_GH_BRANCH;
-
     let currentSha = null;
     const path = 'data/sermons_archive.json';
 
@@ -1058,12 +1115,22 @@ async function syncSiteChangesToGitHub() {
 
     if (!putRes.ok) {
       const err = await putRes.json();
+      if (putRes.status === 401 || (err.message && err.message.toLowerCase().includes('bad credentials'))) {
+        const retryToken = prompt(
+          "❌ GitHub 토큰 인증 실패 (401 Unauthorized)\n\n토큰이 만료되었거나 권한(repo)이 부족합니다.\n새로운 GitHub 토큰(ghp_...)을 입력해 주시면 즉시 다시 시도합니다:\n\n※ 또는 로컬 폴더의 '동기화_배포하기.bat'을 실행하셔도 배포됩니다."
+        );
+        if (retryToken && retryToken.trim()) {
+          cfg.token = retryToken.trim();
+          saveStoredGitHubConfig(cfg);
+          return syncSiteChangesToGitHub();
+        }
+      }
       throw new Error(err.message || putRes.statusText);
     }
 
     alert('🎉 GitHub 저장소에 성공적으로 영구 저장(Commit)되었습니다!\n약 1~2분 뒤 전세계 모든 기기에 자동 배포가 완료됩니다.');
   } catch (err) {
-    alert('GitHub 배포 실패: ' + err.message);
+    alert('GitHub 배포 실패: ' + err.message + "\n\n💡 팁: 로컬 폴더의 '동기화_배포하기.bat' 파일을 실행하시면 토큰 없이도 간편하게 깃허브로 배포할 수 있습니다.");
   } finally {
     if (btn) {
       btn.disabled = false;
@@ -1229,6 +1296,257 @@ window.addEventListener('popstate', (event) => {
     closeArchivePlayer(true);
   }
 });
+
+/**
+ * ==========================================================
+ * 🏛️ 교회 소개 / 담임 목사 서브탭 전환
+ * ==========================================================
+ */
+function switchAboutSubtab(subTabId) {
+  const churchBtn = document.getElementById('btn-about-church');
+  const pastorBtn = document.getElementById('btn-about-pastor');
+  const churchView = document.getElementById('about-subview-church');
+  const pastorView = document.getElementById('about-subview-pastor');
+
+  if (subTabId === 'pastor') {
+    if (churchBtn) churchBtn.classList.remove('active');
+    if (pastorBtn) pastorBtn.classList.add('active');
+    if (churchView) churchView.style.display = 'none';
+    if (pastorView) {
+      pastorView.style.display = 'block';
+      pastorView.classList.add('active');
+    }
+  } else {
+    if (pastorBtn) pastorBtn.classList.remove('active');
+    if (churchBtn) churchBtn.classList.add('active');
+    if (pastorView) pastorView.style.display = 'none';
+    if (churchView) {
+      churchView.style.display = 'block';
+      churchView.classList.add('active');
+    }
+  }
+}
+
+/**
+ * ==========================================================
+ * 📜 5대 개혁주의 신앙고백서 마인드맵 & 인터랙티브 학습 시스템
+ * ==========================================================
+ */
+let currentConfessionDocKey = 'shorter';
+let currentConfessionTagFilter = 'all';
+let currentConfessionSearchQuery = '';
+
+function initConfessionsView() {
+  switchConfessionDoc('shorter');
+}
+
+function switchConfessionDoc(docKey) {
+  if (!window.REFORMED_CONFESSIONS_DATA) return;
+  const data = window.REFORMED_CONFESSIONS_DATA[docKey] || window.REFORMED_CONFESSIONS_DATA['shorter'];
+  currentConfessionDocKey = docKey;
+  currentConfessionTagFilter = 'all';
+  currentConfessionSearchQuery = '';
+
+  // 탭 버튼 활성화
+  document.querySelectorAll('.conf-tab-btn').forEach(btn => btn.classList.remove('active'));
+  const activeTab = document.getElementById(`tab-conf-${docKey}`);
+  if (activeTab) activeTab.classList.add('active');
+
+  // 요약 배너 업데이트
+  const badgeEl = document.getElementById('conf-banner-badge');
+  const titleEl = document.getElementById('conf-banner-title');
+  const descEl = document.getElementById('conf-banner-desc');
+  if (badgeEl) badgeEl.textContent = data.engTitle || '';
+  if (titleEl) titleEl.textContent = data.title;
+  if (descEl) descEl.textContent = data.summary;
+
+  // 검색 인풋 초기화
+  const searchInput = document.getElementById('conf-search-input');
+  if (searchInput) searchInput.value = '';
+
+  // 마인드맵 노드 렌더링
+  renderConfessionMindmap(data);
+
+  // 문항 목록 렌더링
+  renderConfessionItems(data);
+}
+
+function renderConfessionMindmap(data) {
+  const treeEl = document.getElementById('conf-mindmap-tree');
+  if (!treeEl) return;
+
+  const allChip = `
+    <button type="button" class="mindmap-node-chip ${currentConfessionTagFilter === 'all' ? 'active' : ''}" onclick="filterConfessionsByTag('all')">
+      <span>🌐</span> 전체 보기 <span class="mindmap-node-range">${data.count || ''}</span>
+    </button>
+  `;
+
+  const nodes = data.mindmapNodes || [];
+  const nodesHtml = nodes.map(node => {
+    const isActive = currentConfessionTagFilter === node.tag;
+    return `
+      <button type="button" class="mindmap-node-chip ${isActive ? 'active' : ''}" onclick="filterConfessionsByTag('${node.tag}')">
+        <span>📌</span> ${node.label} <span class="mindmap-node-range">${node.range}</span>
+      </button>
+    `;
+  }).join('');
+
+  treeEl.innerHTML = allChip + nodesHtml;
+}
+
+function filterConfessionsByTag(tag) {
+  currentConfessionTagFilter = tag;
+  if (!window.REFORMED_CONFESSIONS_DATA) return;
+  const data = window.REFORMED_CONFESSIONS_DATA[currentConfessionDocKey];
+  renderConfessionMindmap(data);
+  renderConfessionItems(data);
+}
+
+function handleConfessionSearch(query) {
+  currentConfessionSearchQuery = (query || '').trim().toLowerCase();
+  if (!window.REFORMED_CONFESSIONS_DATA) return;
+  const data = window.REFORMED_CONFESSIONS_DATA[currentConfessionDocKey];
+  renderConfessionItems(data);
+}
+
+function clearConfessionSearch() {
+  const input = document.getElementById('conf-search-input');
+  if (input) input.value = '';
+  handleConfessionSearch('');
+}
+
+function renderConfessionItems(data) {
+  const container = document.getElementById('conf-items-grid');
+  const countEl = document.getElementById('conf-items-count');
+  const headingEl = document.getElementById('conf-list-heading');
+  if (!container || !data) return;
+
+  let list = data.items || [];
+
+  // 1. 태그 필터
+  if (currentConfessionTagFilter !== 'all') {
+    list = list.filter(item => item.category === currentConfessionTagFilter || (item.tag && item.tag.includes(currentConfessionTagFilter)));
+  }
+
+  // 2. 검색어 필터
+  if (currentConfessionSearchQuery) {
+    list = list.filter(item => {
+      const numStr = String(item.num || '') + '문 ' + String(item.num || '') + '장 ' + (item.chapter || '') + ' ' + (item.code || '');
+      const qStr = item.q || item.title || '';
+      const aStr = item.a || '';
+      const scriptStr = item.scriptures || '';
+      const commStr = item.commentary || '';
+      const allText = (numStr + ' ' + qStr + ' ' + aStr + ' ' + scriptStr + ' ' + commStr).toLowerCase();
+      return allText.includes(currentConfessionSearchQuery);
+    });
+  }
+
+  if (countEl) countEl.textContent = `총 ${list.length}개 문항`;
+  if (headingEl) {
+    headingEl.textContent = currentConfessionTagFilter === 'all' ? `${data.title} 문항 목록` : `[${currentConfessionTagFilter}] 문항 목록`;
+  }
+
+  if (list.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 3rem 1rem; background: #fff; border-radius: 12px; border: 1px solid var(--border-color);">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 10px;">🔍</span>
+        <h4 style="color: var(--primary); font-size: 1.15rem; margin-bottom: 6px;">일치하는 문항이 없습니다</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">다른 검색어를 입력하시거나 상단의 [🌐 전체 보기] 노드를 클릭해 보세요.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = list.map(item => {
+    const isTulip = item.code !== undefined;
+    const badgeText = isTulip ? `TULIP [${item.code}]` : (item.chapter ? `${item.chapter}` : `제 ${item.num}문`);
+    const badgeClass = isTulip ? 'conf-q-badge badge-tulip' : 'conf-q-badge';
+    const questionText = item.q || item.title;
+
+    const scriptureHtml = item.scriptures ? `
+      <div class="conf-scripture-box">
+        <div class="conf-section-label"><span>📖</span> 관련 성경 구절 (Scripture Proofs)</div>
+        <div class="conf-scripture-content">${item.scriptures}</div>
+      </div>
+    ` : '';
+
+    const commentaryHtml = item.commentary ? `
+      <div class="conf-commentary-box">
+        <div class="conf-commentary-label"><span>💡</span> 개혁주의 &amp; 청교도 핵심 해설</div>
+        <div class="conf-commentary-text">${item.commentary}</div>
+      </div>
+    ` : '';
+
+    return `
+      <div class="conf-card" id="conf-item-${item.num || item.code}">
+        <div class="conf-card-header">
+          <span class="${badgeClass}">${badgeText}</span>
+          <h4 class="conf-q-text">${questionText}</h4>
+        </div>
+        <div class="conf-card-body">
+          <div class="conf-a-box">
+            <span class="conf-a-label">신앙고백 및 정통 답변</span>
+            <p class="conf-a-text">${item.a}</p>
+          </div>
+          ${scriptureHtml}
+          ${commentaryHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+/**
+ * ==========================================================
+ * 📍 오시는 길 - 교회 주소 복사 기능
+ * ==========================================================
+ */
+function copyChurchAddress() {
+  const addressText = "인천광역시 서구 불로동 793-1";
+  const btn = document.getElementById('btn-copy-addr');
+  
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(addressText).then(() => {
+      showCopyFeedback(btn, addressText);
+    }).catch(() => {
+      fallbackCopyText(addressText, btn);
+    });
+  } else {
+    fallbackCopyText(addressText, btn);
+  }
+}
+
+function fallbackCopyText(text, btn) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.opacity = "0";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    showCopyFeedback(btn, text);
+  } catch (err) {
+    prompt('교회 주소를 복사하세요:', text);
+  }
+  document.body.removeChild(textArea);
+}
+
+function showCopyFeedback(btn, addressText) {
+  if (btn) {
+    const origHtml = btn.innerHTML;
+    btn.innerHTML = '<span>✅</span> 주소 복사 완료!';
+    btn.style.background = '#10b981';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.innerHTML = origHtml;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 2500);
+  }
+  alert(`📋 불로 열방교회 주소가 복사되었습니다:\n${addressText}\n\n(내비게이션이나 지도 앱 검색창에 붙여넣기 하세요)`);
+}
 
 
 
