@@ -1066,7 +1066,7 @@
         const origNum = parseInt(editingEpVal, 10);
         const origIdx = episodes.findIndex(x => x.ep === editingEpVal || x.ep === origNum || String(x.ep) === String(editingEpVal));
         if (origIdx !== -1) {
-          episodes[origIdx] = newEp;
+          episodes[origIdx] = { ...episodes[origIdx], ...newEp };
         } else {
           episodes.push(newEp);
         }
@@ -1075,7 +1075,7 @@
         const existingIdx = episodes.findIndex(x => x.ep === ep);
         if (existingIdx >= 0) {
           if (!confirm(`${ep}강이 이미 존재합니다. 기존 설교를 덮어쓰시겠습니까?`)) return;
-          episodes[existingIdx] = newEp;
+          episodes[existingIdx] = { ...episodes[existingIdx], ...newEp };
         } else {
           episodes.push(newEp);
         }

@@ -409,9 +409,10 @@
         "ep": 2,
         "title": "2강 - 최초로 메시아를 만난 사람들",
         "passage": "요한복음 1:35~50",
-        "url": "https://www.youtube.com/watch?v=mmz2QXk2Vsk&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=2&t=3065s",
+        "videoId": "mmz2QXk2Vsk",
         "startTime": 3065,
-        "pdfUrl": null
+        "url": "https://www.youtube.com/watch?v=mmz2QXk2Vsk&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=2&t=3065s",
+        "thumb": "images/john_gospel_ep2.jpg"
       },
       {
         "ep": 3,

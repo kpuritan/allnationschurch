@@ -417,11 +417,11 @@ function renderArchiveFolderContent(folderKey, query) {
     let thumbHtml = '';
     if (item.thumb) {
       thumbHtml = `<img src="${item.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
+    } else if (folderMeta.thumb) {
+      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
     } else if (videoId) {
       // 실제 유튜브 고화질 썸네일 자동 연동
       thumbHtml = `<img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/mqdefault.jpg'">`;
-    } else if (folderMeta.thumb) {
-      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
     } else {
       thumbHtml = `
         <div class="sermon-card-placeholder card-thumb-placeholder ${folderMeta.bgClass || 'bg-ot'}">
@@ -874,7 +874,14 @@ function handleSaveSiteLecture(e) {
     }
   }
 
+  const origNum = parseInt(origEp);
+  const idx = (mode === 'add')
+    ? epList.findIndex(x => x.ep === ep || String(x.ep) === String(ep))
+    : epList.findIndex(x => x.ep === origEp || x.ep === origNum || String(x.ep) === String(origEp));
+
+  const existing = (idx !== -1) ? epList[idx] : {};
   const newItem = {
+    ...existing,
     ep: ep,
     title: title,
     passage: passage,
@@ -885,7 +892,6 @@ function handleSaveSiteLecture(e) {
 
   if (mode === 'add') {
     // 중복 체크
-    const idx = epList.findIndex(x => x.ep === ep || String(x.ep) === String(ep));
     if (idx !== -1) {
       if (!confirm(`${ep}강이 이미 존재합니다. 덮어쓰시겠습니까?`)) return;
       epList[idx] = newItem;
@@ -894,8 +900,6 @@ function handleSaveSiteLecture(e) {
     }
   } else {
     // edit 모드
-    const origNum = parseInt(origEp);
-    const idx = epList.findIndex(x => x.ep === origEp || x.ep === origNum || String(x.ep) === String(origEp));
     if (idx !== -1) {
       epList[idx] = newItem;
     } else {
