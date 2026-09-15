@@ -52,7 +52,7 @@
         <span>📍 불로 열방교회에 오신 것을 환영합니다</span>
       </div>
       <div style="display: flex; align-items: center; gap: 15px;">
-        <span>주일예배: 오전 11:00</span>
+        <span>주일 대예배: 주일 오전 11:00</span>
         <button type="button" id="btn-open-admin-login" onclick="openAdminLoginModal()" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
           <span>🔐</span> 관리자 로그인
         </button>
@@ -80,20 +80,39 @@
         <div class="gnb-item">
           <a href="#about" class="gnb-link" onclick="navigateToPage('about'); return false;">교회소개 ▾</a>
           <div class="gnb-dropdown">
-            <a href="#about" class="gnb-sublink" onclick="navigateToPage('about', 'church'); return false;">🏛️ 교회 소개</a>
-            <a href="#about" class="gnb-sublink" onclick="navigateToPage('about', 'pastor'); return false;">👤 담임 목사</a>
+            <a href="#about" class="gnb-sublink" onclick="navigateToPage('about', 'church'); return false;">🏛️ 교회 소개 &amp; 3대 비전</a>
+            <a href="#about" class="gnb-sublink" onclick="navigateToPage('about', 'pastor'); return false;">👤 담임 목사 &amp; 목회철학</a>
+            <a href="#about" class="gnb-sublink" onclick="navigateToPage('about', 'news'); return false;">📢 교회 소식 &amp; 주보</a>
           </div>
         </div>
 
         <div class="gnb-item">
           <a href="#sermons" class="gnb-link" onclick="navigateToPage('sermons'); return false;">말씀 강해 ▾</a>
-          <div class="gnb-dropdown">
-            <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'romans'); return false;">로마서 강해 (1-11장)</a>
-            <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'john'); return false;">요한복음 강해</a>
-            <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'ot'); return false;">구약성경 권별설교</a>
-            <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'dort'); return false;">도르트 신조</a>
-            <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'pilgrim'); return false;">천로역정 완주 강해</a>
-            <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'news'); return false;">교회 소식</a>
+          <div class="gnb-dropdown gnb-dropdown-wide">
+            <div class="gnb-dropdown-grid">
+              <div class="gnb-grid-col">
+                <span class="gnb-col-title">구약 &amp; 신약 강해</span>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'ot'); return false;">📁 구약성경 권별설교</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'genesis_classic'); return false;">📁 창세기 강해 (13편)</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'genesis'); return false;">📁 창세기 설교 (15편)</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'exodus'); return false;">📁 출애굽기 강해</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'mark'); return false;">📁 마가복음 강해</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'luke'); return false;">📁 누가복음 강해</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'john'); return false;">📁 요한복음 강해</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'acts'); return false;">📁 사도행전 강해</a>
+              </div>
+              <div class="gnb-grid-col">
+                <span class="gnb-col-title">서신서 · 교리 · 특별강해</span>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'romans'); return false;">📁 로마서 강해 (1-11장)</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'hebrews'); return false;">📁 히브리서 강해</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'commandments'); return false;">📁 십계명 강해</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'dort'); return false;">📁 도르트 신조</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'dort_review'); return false;">📁 다시보는 도르트 신조</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'pilgrim'); return false;">📁 천로역정 완주 강해</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'puritan'); return false;">📖 청교도 설교</a>
+                <a href="#sermons" class="gnb-sublink" onclick="navigateToPage('sermons', 'meditation'); return false;">✍️ 짧은 묵상 글</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -212,27 +231,30 @@
             </div>
 
             <div class="about-vision-card">
-              <h3 class="vision-title">열방교회 목회 3대 비전</h3>
+              <h3 class="vision-title">불로 열방교회 목회 3대 비전</h3>
+              <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                종교개혁의 5대 강령(5 Solas)과 역사적 청교도 개혁신앙 위에 굳게 서서 하나님 중심, 성경 중심, 은혜 중심의 공동체를 세워갑니다.
+              </p>
               <ul class="vision-list">
                 <li>
                   <span class="vision-list-num">1</span>
                   <div>
-                    <strong>예배의 감격과 회복</strong><br>
-                    하나님 중심의 신령과 진정으로 드리는 살아있는 예배 공동체를 지향합니다.
+                    <strong>오직 성경과 개혁신앙에 기초한 바른 예배 (Reformed Worship)</strong><br>
+                    하나님의 절대 주권 앞에 온 교회가 무릎 꿇고, 성경 66권과 역사적 개혁신앙(웨스트민스터·도르트·하이델베르크 표준문서)에 입각하여 신령과 진정으로 삼위일체 하나님만을 영화롭게 하는 참된 예배의 회복을 지향합니다.
                   </div>
                 </li>
                 <li>
                   <span class="vision-list-num">2</span>
                   <div>
-                    <strong>말씀 중심의 양육과 훈련</strong><br>
-                    성경 66권 강해와 역사적 신앙고백서 교육을 통해 성숙한 그리스도의 제자로 자라납니다.
+                    <strong>청교도적 경건과 제자 양육 (Puritan Piety &amp; Discipleship)</strong><br>
+                    구원의 감격과 죄에 대한 깊은 애통, 심령의 성화와 거룩한 순종을 이루어내는 청교도적 영성을 추구합니다. 철저한 성경 강해와 교리 교육을 통해 세상 풍조에 흔들리지 않는 성숙한 그리스도의 제자로 양육합니다.
                   </div>
                 </li>
                 <li>
                   <span class="vision-list-num">3</span>
                   <div>
-                    <strong>이웃과 열방을 향한 사랑과 선교</strong><br>
-                    예수 그리스도의 십자가 복음을 땅 끝까지 전파하며 그리스도의 사랑을 온전히 실천합니다.
+                    <strong>십자가 복음 전파와 열방을 향한 영혼 구원 (Gospel Mission &amp; Evangelism)</strong><br>
+                    목마른 영혼을 향해 사마리아 수가성 우물가로 찾아가신 주님의 심장과, 찰스 스펄전의 뜨거운 구령의 열정을 품고 지역사회와 온 열방 끝까지 오직 예수 그리스도의 피 묻은 십자가 복음을 담대히 선포합니다.
                   </div>
                 </li>
               </ul>
@@ -246,15 +268,15 @@
             <span class="section-tag">Senior Pastor</span>
             <h2 class="section-title">박훈 담임목사 소개 &amp; 목회철학</h2>
             <p class="section-desc">
-              오직 성경과 십자가 복음으로 영혼을 구원하고 그리스도의 온전한 제자로 세우는 목회
+              "주께서 사마리아 우물가에서 목마른 여인에게 생수를 주셨듯, 오직 십자가 복음으로 영혼을 살리는 목회"
             </p>
           </div>
 
           <div class="pastor-intro-card">
             <div class="pastor-profile-col">
               <div class="pastor-avatar-box">
-                <div class="pastor-avatar-circle">
-                  <span>✝️</span>
+                <div class="pastor-photo-wrap" style="width: 170px; height: 170px; margin: 0 auto 1.2rem auto; border-radius: 50%; overflow: hidden; border: 4px solid var(--accent-gold); box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);">
+                  <img src="images/pastor_park_hoon.jpg" alt="박훈 담임목사" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;" />
                 </div>
                 <h3 class="pastor-name">박훈 담임목사</h3>
                 <span class="pastor-title-badge">대한예수교장로회(백석)</span>
@@ -264,34 +286,36 @@
                 <ul>
                   <li>총신대학교 / 백석대학교 신학 연구</li>
                   <li>대한예수교장로회(백석) 목사 안수</li>
-                  <li>개혁주의 청교도 신학 및 강해설교 연구</li>
+                  <li>개혁주의 청교도 신학 및 성경 66권 강해설교 연구</li>
                   <li>현) 불로 열방교회 담임목사</li>
                 </ul>
               </div>
             </div>
 
             <div class="pastor-content-col">
-              <div class="pastor-philosophy-box">
-                <span class="philosophy-tag">Pastoral Philosophy</span>
-                <h3 class="philosophy-title">
-                  "오직 하나님의 영광을 위하여,<br>
-                  성경 66권 말씀과 십자가의 복음으로 영혼을 살립니다"
+              <div class="pastor-philosophy-box" style="background: #f8fafc; border-left: 4px solid var(--accent-gold); padding: 1.8rem; border-radius: 8px; margin-bottom: 1.8rem;">
+                <span class="philosophy-tag" style="color: var(--accent-gold); font-weight: 800; font-size: 0.85rem; letter-spacing: 1px;">PASTORAL PHILOSOPHY</span>
+                <h3 class="philosophy-title" style="font-size: 1.35rem; font-weight: 800; color: var(--primary-dark); margin: 0.6rem 0 1rem 0; line-height: 1.5;">
+                  "내가 주는 물을 마시는 자는 영원히 목마르지 아니하리니<br>
+                  내가 주는 물은 그 속에서 영생하도록 솟아나는 샘물이 되리라" (요한복음 4장 14절)
                 </h3>
-                <p class="philosophy-text">
-                  불로 열방교회 박훈 목사는 인본주의와 실용주의가 만연한 이 시대 속에서, 변치 않는 하나님의 절대 무오한 말씀과 종교개혁자들의 바른 교리 위에 성도들을 세우는 것을 가장 고귀한 목회적 사명으로 삼고 있습니다.
+                <p class="philosophy-text" style="color: #334155; line-height: 1.8; font-size: 0.98rem;">
+                  예수님께서는 한낮의 뜨거운 태양 아래 지치고 상처 입은 사마리아 여인을 만나기 위해 수가성 우물가로 친히 찾아가셨습니다. 그 누구도 주목하지 않던 메마른 심령의 가장 깊은 갈증을 아시고, 세상의 헛된 물이 아닌 <strong>'영원토록 솟아나는 생명수'</strong>를 친히 부어주셨습니다.<br><br>
+                  '설교자의 황태자'라 불린 찰스 H. 스펄전(Charles H. Spurgeon) 목사는 <em>"나는 십자가 복음 외에는 아무것도 모르는 사람처럼 설교할 것이며, 오직 그리스도만이 피 흘려 죄인을 살리신다"</em>고 목놓아 외쳤습니다. 오늘날 인본주의와 가벼운 번영신학이 넘쳐나는 시대 속에서, 목회는 사람의 기교나 프로그램이 아니라 <strong>십자가에서 흘러나오는 보혈의 은혜와 무오한 성경 말씀으로 영혼의 근원적 갈증을 씻어내는 일</strong>이어야 합니다.<br><br>
+                  불로 열방교회는 한 영혼이 살아계신 구주 예수 그리스도를 인격적으로 만나 참된 회심과 영적 해갈을 얻고, 삼위일체 하나님을 온 마음으로 즐거워하는 예배자로 우뚝 서도록 전심을 다해 섬기겠습니다.
                 </p>
               </div>
 
               <div class="pastor-greeting-card">
-                <h4>✉️ 담임목사 목회 서신 &amp; 인사말</h4>
-                <p>
+                <h4>✉️ 담임목사 목회 서신 &amp; 성도님들께 드리는 글</h4>
+                <p style="color: #334155; line-height: 1.8; font-size: 0.96rem;">
                   사랑하는 성도 여러분, 그리고 불로 열방교회 홈페이지를 찾아주신 모든 분들을 주님의 이름으로 진심으로 환영하고 축복합니다.<br><br>
-                  인생의 참된 만족과 영원한 소망은 오직 우리를 위해 십자가에서 피 흘리신 예수 그리스도 안에만 있습니다. 우리 열방교회는 성도 한 영혼 한 영혼이 성경을 바르게 배우고, 믿음의 선조들이 남겨준 신앙고백서를 통해 확고한 진리의 터 위에 굳게 서도록 돕습니다.<br><br>
-                  말씀의 생수가 흐르고, 기도의 불이 타오르며, 그리스도의 참된 사랑이 넘치는 우리 불로 열방교회에서 영원한 생명의 은혜를 함께 누리시기를 기도합니다.
+                  인생의 거친 광야 길에서 참된 안식과 영원한 소망은 오직 우리를 위해 십자가에서 모든 물과 피를 쏟으신 예수 그리스도 안에만 있습니다. 우리 열방교회는 성도 한 영혼 한 영혼이 성경 66권 강해를 통해 하나님의 전체 경륜을 바르게 배우고, 믿음의 선조들이 피 흘려 지켜낸 역사적 개혁교리(웨스트민스터·도르트·하이델베르크)의 반석 위에 굳게 서도록 돕습니다.<br><br>
+                  수가성 여인의 물동이를 내려놓게 하신 생명수의 은혜가, 지금 메마른 여러분의 영혼과 가정 위에 충만히 임하시기를 간절히 기도합니다.
                 </p>
-                <div class="pastor-sign">
-                  <span>불로 열방교회 담임목사</span>
-                  <strong>박 훈 목사 드림</strong>
+                <div class="pastor-sign" style="margin-top: 1.2rem; text-align: right;">
+                  <span style="color: #64748b; font-size: 0.9rem;">불로 열방교회 담임목사</span>
+                  <strong style="color: var(--primary-dark); font-size: 1.1rem; margin-left: 6px;">박 훈 목사 드림</strong>
                 </div>
               </div>
             </div>
@@ -471,22 +495,7 @@
               <tbody>
                 <tr>
                   <td><strong>주일 대예배</strong></td>
-                  <td style="color: var(--accent-gold); font-weight: 700;">주일 오전 11:00</td>
-                  <td>본당 대예배실</td>
-                </tr>
-                <tr>
-                  <td><strong>주일 오후 성경공부</strong></td>
-                  <td>주일 오후 01:30</td>
-                  <td>교육관 / 소예배실</td>
-                </tr>
-                <tr>
-                  <td><strong>수요 기도회</strong></td>
-                  <td>수요일 저녁 07:30</td>
-                  <td>본당 대예배실</td>
-                </tr>
-                <tr>
-                  <td><strong>새벽 기도회</strong></td>
-                  <td>화~토 오전 05:30</td>
+                  <td style="color: var(--accent-gold); font-weight: 800; font-size: 1.05rem;">주일 오전 11:00</td>
                   <td>본당 대예배실</td>
                 </tr>
               </tbody>
@@ -574,28 +583,19 @@
               <div class="transit-item">
                 <div class="transit-icon transit-car">🚗</div>
                 <div class="transit-text">
-                  <h4>자가용 / 내비게이션 이용 시</h4>
+                  <h4>자가용 이용 시</h4>
                   <p>
-                    T맵, 카카오내비, 네이버지도 등에서 <strong>'불로동 793-1'</strong> 또는 <strong>'불로열방교회'</strong>로 검색하시면 정문까지 편리하게 안내받으실 수 있습니다.
+                    네비게이션에 <strong>'인천 서구 불로동 793-1'</strong> 또는 <strong>'불로열방교회'</strong> 입력<br>
+                    (교회 건물 내 및 주변 무료 주차 가능)
                   </p>
                 </div>
               </div>
-
-              <div class="transit-item">
-                <div class="transit-icon transit-parking">🅿️</div>
-                <div class="transit-text">
-                  <h4>주차 시설 안내</h4>
-                  <p>교회 방문 성도 및 새가족을 위한 전용 주차 공간이 완비되어 있습니다.</p>
-                </div>
+              <div class="loc-contact-notice" style="margin-top: 1.2rem; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.2rem;">
+                <strong style="color: var(--primary); font-size: 0.95rem;">🤝 새가족 방문 및 신앙 상담</strong>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; line-height: 1.6;">
+                  교회에 처음 방문하시거나 신앙 상담을 원하시는 분은 예배 전후로 목회자 및 안내위원에게 말씀해 주시면 정성껏 안내해 드립니다.
+                </p>
               </div>
-            </div>
-
-            <!-- 새가족 상담 안내 -->
-            <div class="loc-contact-notice">
-              <strong style="color: var(--primary); font-size: 0.95rem;">🤝 새가족 방문 및 신앙 상담</strong>
-              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">
-                교회에 처음 방문하시거나 신앙 상담을 원하시는 분은 예배 전후로 목회자 및 안내위원에게 말씀해 주시면 정성껏 안내해 드립니다.
-              </p>
             </div>
           </div>
 
@@ -612,18 +612,15 @@
               <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.4rem; font-weight: 800;">
                 실시간 지도 앱 길찾기 바로가기
               </h4>
-              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">
                 아래 원하시는 지도 서비스를 클릭하시면 실시간 교통 정보와 최적 경로를 바로 확인하실 수 있습니다.
               </p>
               <div class="map-buttons-group">
-                <a href="https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20%EC%84%9C%EA%B5%AC%20%EB%B6%88%EB%A1%9C%EB%8F%99%20793-1" target="_blank" rel="noopener noreferrer" class="btn btn-naver-map">
+                <a href="https://map.naver.com/v5/search/%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%84%9C%EA%B5%AC%20%EB%B6%88%EB%A1%9C%EB%8F%99%20793-1" target="_blank" rel="noopener noreferrer" class="btn btn-naver-map" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 8px; font-weight: 800; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(3, 199, 90, 0.25);">
                   <span>🟢</span> 네이버 지도 길찾기
                 </a>
-                <a href="https://map.kakao.com/?q=%EC%9D%B8%EC%B2%9C+%EC%84%9C%EA%B5%AC+%EB%B6%88%EB%A1%9C%EB%8F%99+793-1" target="_blank" rel="noopener noreferrer" class="btn btn-kakao-map">
+                <a href="https://map.kakao.com/?q=%EC%9D%B8%EC%B2%9C+%EC%84%9C%EA%B5%AC+%EB%B6%88%EB%A1%9C%EB%8F%99+793-1" target="_blank" rel="noopener noreferrer" class="btn btn-kakao-map" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 8px; font-weight: 800; font-size: 0.95rem; background: #fee500; color: #191919; box-shadow: 0 4px 12px rgba(254, 229, 0, 0.3);">
                   <span>🟡</span> 카카오맵 길찾기
-                </a>
-                <a href="https://tmap.life/search?q=%EC%9D%B8%EC%B2%9C%20%EC%84%9C%EA%B5%AC%20%EB%B6%88%EB%A1%9C%EB%8F%99%20793-1" target="_blank" rel="noopener noreferrer" class="btn btn-tmap">
-                  <span>🔵</span> TMAP 길찾기
                 </a>
               </div>
             </div>
@@ -652,8 +649,8 @@
       <div class="footer-col-links">
         <h4>바로가기</h4>
         <ul>
-          <li><a href="#about" onclick="navigateToPage('about', 'church'); return false;">🏛️ 교회 소개</a></li>
-          <li><a href="#about" onclick="navigateToPage('about', 'pastor'); return false;">👤 담임 목사</a></li>
+          <li><a href="#about" onclick="navigateToPage('about', 'church'); return false;">🏛️ 교회 소개 &amp; 비전</a></li>
+          <li><a href="#about" onclick="navigateToPage('about', 'pastor'); return false;">👤 담임 목사 &amp; 목회철학</a></li>
           <li><a href="#sermons" onclick="navigateToPage('sermons'); return false;">📖 말씀 강해 아카이브</a></li>
           <li><a href="#confessions" onclick="navigateToPage('confessions'); return false;">📜 5대 신앙고백서</a></li>
           <li><a href="#worship" onclick="navigateToPage('worship'); return false;">⏰ 예배 시간 &amp; 헌금</a></li>
@@ -663,10 +660,9 @@
 
       <div class="footer-col-contact">
         <h4>교회 위치 및 안내</h4>
-        <p><strong>주소:</strong> 인천광역시 서구 불로동 793-1 (검단신도시 인근)</p>
-        <p><strong>담임목사:</strong> 박훈 목사</p>
-        <p><strong>주일 대예배:</strong> 주일 오전 11:00</p>
-        <p><strong>수요 기도회:</strong> 수요일 저녁 07:30</p>
+        <p class="footer-contact-item"><strong>주소:</strong> 인천광역시 서구 불로동 793-1 (검단신도시 인근)</p>
+        <p class="footer-contact-item"><strong>담임목사:</strong> 박훈 목사</p>
+        <p class="footer-contact-item"><strong>주일 대예배:</strong> 주일 오전 11:00</p>
       </div>
     </div>
     <div class="footer-bottom">

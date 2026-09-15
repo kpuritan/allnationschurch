@@ -3572,5 +3572,25 @@ window.INITIAL_SERMONS_ARCHIVE = {
         "source": "불로열방교회"
       }
     ]
+  },
+  "puritan": {
+    "id": "puritan",
+    "title": "청교도 설교",
+    "subtitle": "역사적 개혁주의 청교도 신앙과 거룩한 영적 설교",
+    "speaker": "박훈 담임목사",
+    "category": "청교도 신학",
+    "desc": "믿음의 선조 청교도들이 전한 깊이 있는 회심, 성화, 그리스도의 영광을 바르게 배우고 묵상하는 강해 설교 모음입니다.",
+    "count": 0,
+    "episodes": []
+  },
+  "meditation": {
+    "id": "meditation",
+    "title": "짧은 묵상 글",
+    "subtitle": "말씀과 함께하는 은혜의 일상 영적 묵상",
+    "speaker": "박훈 담임목사",
+    "category": "영적 묵상",
+    "desc": "성경 말씀과 일상 속에서 만나는 하나님의 은혜와 진리를 나누는 따뜻하고 깊이 있는 짧은 묵상 모음입니다.",
+    "count": 0,
+    "episodes": []
   }
 };
