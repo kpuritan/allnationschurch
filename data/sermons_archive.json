@@ -1512,183 +1512,223 @@
     "episodes": [
       {
         "ep": 1,
-        "title": "1강 - 도르트 신조 강해 1",
-        "passage": "도르트 신조 1강",
-        "url": "https://www.youtube.com/watch?v=LR-KciQOJlo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=1",
+        "title": "1강 - 누구든지 주의 이름을 부르는 자는",
+        "passage": "로마서 10장 13~15절",
+        "url": "https://www.youtube.com/watch?v=LR-KciQOJlo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=1&t=2842s",
         "videoId": "LR-KciQOJlo",
         "fullTitle": "도르트 신조 강해 1 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2842,
+        "pdfUrl": null
       },
       {
         "ep": 2,
-        "title": "2강 - 도르트 신조 강해 2",
-        "passage": "도르트 신조 2강",
-        "url": "https://www.youtube.com/watch?v=UoXkuhjBduY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=2",
+        "title": "2강 - 구원의 사슬고리",
+        "passage": "로마서 8장 28~30절",
+        "url": "https://www.youtube.com/watch?v=UoXkuhjBduY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=2&t=2945s",
         "videoId": "UoXkuhjBduY",
         "fullTitle": "도르트 신조 강해 2 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2945,
+        "pdfUrl": null
       },
       {
         "ep": 3,
-        "title": "3강 - 도르트 신조 강해 3",
-        "passage": "도르트 신조 3강",
-        "url": "https://www.youtube.com/watch?v=BPcVts5UkGA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=3",
+        "title": "3강 - 하나님의 기쁘신 뜻에 기초한 선택",
+        "passage": "에베소서 1장 4~6절",
+        "url": "https://www.youtube.com/watch?v=BPcVts5UkGA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=3&t=2885s",
         "videoId": "BPcVts5UkGA",
         "fullTitle": "도르트 신조 강해 3 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2885,
+        "pdfUrl": null
       },
       {
         "ep": 4,
-        "title": "4강 - 도르트 신조 강해 4",
-        "passage": "도르트 신조 4강",
-        "url": "https://www.youtube.com/watch?v=nDdIRmwDWOA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=4",
+        "title": "4강 - 선택의 확신",
+        "passage": "베드로후서 1장 10~11절",
+        "url": "https://www.youtube.com/watch?v=nDdIRmwDWOA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=4&t=2808s",
         "videoId": "nDdIRmwDWOA",
         "fullTitle": "도르트 신조 강해 4 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2808,
+        "pdfUrl": null
       },
       {
         "ep": 5,
-        "title": "5강 - 도르트 신조 강해 5",
-        "passage": "도르트 신조 5강",
-        "url": "https://www.youtube.com/watch?v=CAPcXahZSR8&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=5",
+        "title": "5강 - 유기의 작정",
+        "passage": "베드로전서 2장 7~10절",
+        "url": "https://www.youtube.com/watch?v=CAPcXahZSR8&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=5&t=2834s",
         "videoId": "CAPcXahZSR8",
         "fullTitle": "도르트 신조 강해 5 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2834,
+        "pdfUrl": null
       },
       {
         "ep": 6,
-        "title": "6강 - 도르트 신조 강해 6",
-        "passage": "도르트 신조 6강",
-        "url": "https://www.youtube.com/watch?v=s4JIpl2SSUk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=6",
+        "title": "6강 -  영아의 구원",
+        "passage": "고린도전서 7장 14절",
+        "url": "https://www.youtube.com/watch?v=s4JIpl2SSUk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=6&t=2964s",
         "videoId": "s4JIpl2SSUk",
         "fullTitle": "도르트 신조 강해 6 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2964,
+        "pdfUrl": null
       },
       {
         "ep": 7,
-        "title": "7강 - 도르트 신조 강해 7",
-        "passage": "도르트 신조 7강",
-        "url": "https://www.youtube.com/watch?v=V-B93zRak-Y&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=7",
+        "title": "7강 - 그리스도께서 이루신 만족",
+        "passage": "갈라디아서 4장 4~5절",
+        "url": "https://www.youtube.com/watch?v=V-B93zRak-Y&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=7&t=2975s",
         "videoId": "V-B93zRak-Y",
         "fullTitle": "도르트 신조 강해 7 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2975,
+        "pdfUrl": null
       },
       {
         "ep": 8,
-        "title": "8강 - 도르트 신조 강해 8",
-        "passage": "도르트 신조 8강",
-        "url": "https://www.youtube.com/watch?v=pGo-c35_7tw&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=8",
+        "title": "8강 - 누구든지 오라",
+        "passage": "사도행전 17장 29~31절",
+        "url": "https://www.youtube.com/watch?v=pGo-c35_7tw&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=8&t=2780s",
         "videoId": "pGo-c35_7tw",
         "fullTitle": "도르트 신조 강해 8 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2780,
+        "pdfUrl": null
       },
       {
         "ep": 9,
-        "title": "9강 - 도르트 신조 강해 9",
-        "passage": "도르트 신조 9강",
-        "url": "https://www.youtube.com/watch?v=flXpX4d3AVI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=9",
+        "title": "9강 -  믿지 않는 이유",
+        "passage": "요한복음 3장 16~21절",
+        "url": "https://www.youtube.com/watch?v=flXpX4d3AVI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=9&t=3502s",
         "videoId": "flXpX4d3AVI",
         "fullTitle": "도르트 신조 강해 9 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3502,
+        "pdfUrl": null
       },
       {
         "ep": 10,
-        "title": "10강 - 도르트 신조 강해 10",
-        "passage": "도르트 신조 10강",
-        "url": "https://www.youtube.com/watch?v=7E9otUayQKs&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=10",
+        "title": "10강 - 믿음의 표징과 보증",
+        "passage": "요한복음 6장 35~40절",
+        "url": "https://www.youtube.com/watch?v=7E9otUayQKs&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=10&t=2898s",
         "videoId": "7E9otUayQKs",
         "fullTitle": "도르트 신조 강해 10 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2898,
+        "pdfUrl": null
       },
       {
         "ep": 11,
-        "title": "11강 - 도르트 신조 강해 11",
-        "passage": "도르트 신조 11강",
-        "url": "https://www.youtube.com/watch?v=8lpRGHEiH0k&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=11",
+        "title": "11강 -  사람이 거듭나지 아니하면",
+        "passage": "요한복음 3장 1~15절",
+        "url": "https://www.youtube.com/watch?v=8lpRGHEiH0k&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=11&t=3079s",
         "videoId": "8lpRGHEiH0k",
         "fullTitle": "도르트 신조 강해 11 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3079,
+        "pdfUrl": null
       },
       {
         "ep": 12,
-        "title": "12강 - 도르트 신조 강해 12",
-        "passage": "도르트 신조 12강",
-        "url": "https://www.youtube.com/watch?v=aM7EX-KWsao&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=12",
+        "title": "12강 - 율법의 무능함과 복음의 필요",
+        "passage": "디모데전서 1장 15절  율법의 무능함과 복음의 필요",
+        "url": "https://www.youtube.com/watch?v=aM7EX-KWsao&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=12&t=3342s",
         "videoId": "aM7EX-KWsao",
         "fullTitle": "도르트 신조 강해 12 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3342,
+        "pdfUrl": null
       },
       {
         "ep": 13,
-        "title": "13강 - 도르트 신조 강해 13",
-        "passage": "도르트 신조 13강",
-        "url": "https://www.youtube.com/watch?v=DJ2NBOQwReo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=13",
+        "title": "13강 - 유효한 부르심",
+        "passage": "마태복음 13장 1~9절  유효한 부르심",
+        "url": "https://www.youtube.com/watch?v=DJ2NBOQwReo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=13&t=3062s",
         "videoId": "DJ2NBOQwReo",
         "fullTitle": "도르트 신조 강해 13 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3062,
+        "pdfUrl": null
       },
       {
         "ep": 14,
-        "title": "14강 - 도르트 신조 강해 14",
-        "passage": "도르트 신조 14강",
-        "url": "https://www.youtube.com/watch?v=QxYuygR3qGY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=14",
+        "title": "14강 -  중생의 씻음과 성령의 새롭게 하심",
+        "passage": "디도서 3장 3~8절  중생의 씻음과 성령의 새롭게 하심",
+        "url": "https://www.youtube.com/watch?v=QxYuygR3qGY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=14&t=2885s",
         "videoId": "QxYuygR3qGY",
         "fullTitle": "도르트 신조 강해 14 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2885,
+        "pdfUrl": null
       },
       {
         "ep": 15,
-        "title": "15강 - 도르트 신조 강해 15",
-        "passage": "도르트 신조 15강",
-        "url": "https://www.youtube.com/watch?v=MNTLklPQ7dk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=15",
+        "title": "15강 -  능력으로 역사하시는 하나님",
+        "passage": "에베소서 3장 20~21절",
+        "url": "https://www.youtube.com/watch?v=MNTLklPQ7dk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=15&t=2997s",
         "videoId": "MNTLklPQ7dk",
         "fullTitle": "도르트 신조 강해 15 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2997,
+        "pdfUrl": null
       },
       {
         "ep": 16,
-        "title": "16강 - 도르트 신조 강해 16",
-        "passage": "도르트 신조 16강",
-        "url": "https://www.youtube.com/watch?v=dLP2rRkmswI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=16",
+        "title": "16강 - 말씀으로 믿음을 일으키시는 하나님",
+        "passage": "사도행전 16장 11~15절",
+        "url": "https://www.youtube.com/watch?v=dLP2rRkmswI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=16&t=3198s",
         "videoId": "dLP2rRkmswI",
         "fullTitle": "도르트 신조 강해 16 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3198,
+        "pdfUrl": null
       },
       {
         "ep": 17,
-        "title": "17강 - 도르트 신조 강해 17",
-        "passage": "도르트 신조 17강",
-        "url": "https://www.youtube.com/watch?v=3GP7lzk7zCA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=17",
+        "title": "17강 - 자기 백성을 지키시는 하나님",
+        "passage": "빌립보서 1장 3~6절",
+        "url": "https://www.youtube.com/watch?v=3GP7lzk7zCA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=17&t=3244s",
         "videoId": "3GP7lzk7zCA",
         "fullTitle": "도르트 신조 강해 17 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3244,
+        "pdfUrl": null
       },
       {
         "ep": 18,
-        "title": "18강 - 도르트 신조 강해 18",
-        "passage": "도르트 신조 18강",
-        "url": "https://www.youtube.com/watch?v=VTmWq-3B7CQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=18",
+        "title": "18강 -  하나님의 보호하심",
+        "passage": "스바냐 3장 9~13절",
+        "url": "https://www.youtube.com/watch?v=VTmWq-3B7CQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=18&t=3266s",
         "videoId": "VTmWq-3B7CQ",
         "fullTitle": "도르트 신조 강해 18 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3266,
+        "pdfUrl": null
       },
       {
         "ep": 19,
-        "title": "19강 - 도르트 신조 강해 19",
-        "passage": "도르트 신조 19강",
-        "url": "https://www.youtube.com/watch?v=LXcWo_FSzgQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=19",
+        "title": "19강 - 구원의 충만한 확신",
+        "passage": "디모데후서 1장 12절",
+        "url": "https://www.youtube.com/watch?v=LXcWo_FSzgQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=19&t=3372s",
         "videoId": "LXcWo_FSzgQ",
         "fullTitle": "도르트 신조 강해 19 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3372,
+        "pdfUrl": null
       },
       {
         "ep": 20,
-        "title": "20강 - 도르트 신조 강해 20",
-        "passage": "도르트 신조 20강",
-        "url": "https://www.youtube.com/watch?v=FS6o6LVYzJA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=20",
+        "title": "20강 - 확신, 경건의 동기",
+        "passage": "디도서 2장 11~14절",
+        "url": "https://www.youtube.com/watch?v=FS6o6LVYzJA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=20&t=2947s",
         "videoId": "FS6o6LVYzJA",
         "fullTitle": "도르트 신조 강해 20 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2947,
+        "pdfUrl": null
       }
     ]
   },
