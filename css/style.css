@@ -1255,7 +1255,7 @@ img {
     max-height: calc(100vh - 70px);
     overflow-y: auto;
     padding: 1.2rem 1.4rem;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     transform: translateY(-150%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     gap: 0.4rem;
@@ -1264,6 +1264,79 @@ img {
   }
   .gnb-menu.open {
     transform: translateY(0);
+  }
+  .gnb-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(15, 28, 48, 0.15);
+  }
+  .gnb-mobile-badge {
+    display: inline-block;
+    background: rgba(197, 155, 39, 0.25);
+    color: #f7d274;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+  .gnb-mobile-title {
+    font-size: 1.25rem;
+    font-weight: 850;
+    color: #ffffff;
+    margin-bottom: 2px;
+    letter-spacing: -0.3px;
+  }
+  .gnb-mobile-desc {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    line-height: 1.4;
+  }
+  .gnb-mobile-close-btn {
+    background: rgba(255, 255, 255, 0.18);
+    border: none;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .gnb-mobile-quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 10px 0 6px 0;
+    padding-top: 10px;
+    border-top: 1px dashed #cbd5e1;
+  }
+  .btn-mobile-quick-action {
+    background: #f1f5f9;
+    color: var(--primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+  }
+  .btn-mobile-quick-action:active {
+    background: var(--accent-gold);
+    color: #0f172a;
   }
   .quick-nav-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1277,7 +1350,77 @@ img {
   }
 }
 
+/* ==========================================================
+   📱 모바일 앱 전용 하단 고정 탭 바 (App Bottom Bar)
+   ========================================================== */
+.mobile-app-bottom-bar {
+  display: none;
+}
+.gnb-mobile-header {
+  display: none;
+}
+.gnb-mobile-quick-actions {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  body {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-app-bottom-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(60px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: rgba(15, 28, 48, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(197, 155, 39, 0.35);
+    z-index: 9999;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .mobile-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    gap: 3px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+
+  .mobile-tab-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-tab-item.active {
+    color: #f7d274;
+  }
+
+  .mobile-tab-item.active .mobile-tab-icon {
+    transform: translateY(-2px) scale(1.15);
+  }
+
+  .mobile-tab-item:active {
+    transform: scale(0.92);
+  }
+
   .header-main {
     height: 64px;
     padding: 0 1rem;
@@ -1301,7 +1444,7 @@ img {
   }
   .gnb-menu {
     top: 64px;
-    max-height: calc(100vh - 64px);
+    max-height: calc(100vh - 64px - 60px);
   }
   .gnb-menu.open {
     transform: translateY(0);
@@ -3016,11 +3159,13 @@ body.admin-logged-in {
   color: #ffffff;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .bgm-player-widget {
-    bottom: 16px;
-    right: 16px;
-    max-width: 300px;
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    right: 12px;
+    max-width: 280px;
+    padding: 6px 12px 6px 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
 }
 

@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header-main');
   const hamburgerBtn = document.querySelector('.hamburger-btn');
   const gnbMenu = document.querySelector('.gnb-menu');
-  const gnbItems = document.querySelectorAll('.gnb-item');
-  const navLinks = document.querySelectorAll('.gnb-link, .gnb-sublink, .btn-naver-gnb');
+  const navLinks = document.querySelectorAll('.gnb-link, .gnb-sublink, .btn-naver-gnb, .btn-mobile-quick-action');
 
   // 스크롤 시 헤더 그림자 효과
   window.addEventListener('scroll', () => {
@@ -20,19 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 모바일 메뉴 토글
   if (hamburgerBtn && gnbMenu) {
-    hamburgerBtn.addEventListener('click', () => {
-      gnbMenu.classList.toggle('open');
-      const isOpen = gnbMenu.classList.contains('open');
-      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
     });
 
     // 링크 클릭 시 모바일 메뉴 닫기
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          gnbMenu.classList.remove('open');
-        }
+        toggleMobileMenu(false);
       });
+    });
+
+    // 메뉴 바깥 터치 시 닫기
+    document.addEventListener('click', (e) => {
+      if (gnbMenu.classList.contains('open') && !gnbMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        toggleMobileMenu(false);
+      }
     });
   }
 
@@ -48,17 +51,55 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 말씀 강해 아카이브 시스템 초기화
-  initArchiveSystem();
+  initSermonsArchive();
 
-  // 신앙고백서 학습 시스템 초기화
-  initConfessionsView();
+  // 5대 신앙고백서 탭 초기화
+  initConfessionTabs();
 
-  // 관리자 인증 상태 반영 및 UI 업데이트
-  updateSiteAdminUI();
-  
-  // BGM 최초 클릭 자동재생 리스너 (브라우저 오디오 정책)
-  document.addEventListener('click', initBgmOnFirstInteraction, { once: true });
+  // BGM 플레이어 초기화 시도
+  initBgmPlayer();
 });
+
+/**
+ * 📱 모바일 드로어 메뉴 열기/닫기 토글
+ */
+function toggleMobileMenu(forceOpen) {
+  const gnbMenu = document.querySelector('.gnb-menu');
+  const hamburgerBtn = document.querySelector('.hamburger-btn');
+  if (!gnbMenu) return;
+
+  if (typeof forceOpen === 'boolean') {
+    if (forceOpen) gnbMenu.classList.add('open');
+    else gnbMenu.classList.remove('open');
+  } else {
+    gnbMenu.classList.toggle('open');
+  }
+
+  if (hamburgerBtn) {
+    hamburgerBtn.setAttribute('aria-expanded', gnbMenu.classList.contains('open'));
+  }
+}
+
+/**
+ * 📱 모바일 하단 네비게이션 활성 탭 동기화
+ */
+function updateMobileBottomNav(pageId, subFolderKey) {
+  const tabs = document.querySelectorAll('.mobile-tab-item');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    const dataPage = tab.getAttribute('data-page');
+    if (subFolderKey === 'puritan' && dataPage === 'puritan') {
+      tab.classList.add('active');
+    } else if (subFolderKey === 'meditation' && dataPage === 'meditation') {
+      tab.classList.add('active');
+    } else if (dataPage === pageId && !['puritan', 'meditation'].includes(subFolderKey)) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+}
 
 /**
  * ==========================================================
@@ -91,11 +132,9 @@ function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
     }
   });
 
-  // 4. 모바일 메뉴 닫기
-  const gnbMenu = document.querySelector('.gnb-menu');
-  if (gnbMenu && gnbMenu.classList.contains('open')) {
-    gnbMenu.classList.remove('open');
-  }
+  // 4. 모바일 하단 탭 및 드로어 동기화
+  updateMobileBottomNav(pageId, subFolderKey);
+  toggleMobileMenu(false);
 
   // 5. 브라우저 히스토리 상태 push (뒤로가기/앞으로가기 지원)
   if (!isFromHistory) {
@@ -1308,29 +1347,63 @@ async function syncSiteChangesToGitHub() {
 let ytBgmPlayer = null;
 let isBgmPlaying = false;
 let isBgmMuted = false;
+let bgmHasStarted = false;
 const BGM_VIDEO_ID = 'uJ0X0uV5RNE';
 
-function onYouTubeIframeAPIReady() {
-  ytBgmPlayer = new YT.Player('yt-bgm-player', {
-    videoId: BGM_VIDEO_ID,
-    playerVars: {
-      autoplay: 0,
-      loop: 1,
-      playlist: BGM_VIDEO_ID,
-      controls: 0,
-      disablekb: 1,
-      modestbranding: 1,
-      rel: 0
-    },
-    events: {
-      onReady: onBgmPlayerReady,
-      onStateChange: onBgmPlayerStateChange
-    }
-  });
+function initBgmPlayer() {
+  if (ytBgmPlayer && ytBgmPlayer.playVideo) return;
+  if (!window.YT || !window.YT.Player) {
+    return;
+  }
+  try {
+    ytBgmPlayer = new YT.Player('yt-bgm-player', {
+      height: '180',
+      width: '320',
+      videoId: BGM_VIDEO_ID,
+      playerVars: {
+        autoplay: 1,
+        loop: 1,
+        playlist: BGM_VIDEO_ID,
+        controls: 0,
+        disablekb: 1,
+        modestbranding: 1,
+        rel: 0,
+        playsinline: 1,
+        enablejsapi: 1
+      },
+      events: {
+        onReady: onBgmPlayerReady,
+        onStateChange: onBgmPlayerStateChange,
+        onError: onBgmPlayerError
+      }
+    });
+  } catch (e) {
+    console.log('BGM Player Init Deferred:', e);
+  }
 }
 
+// YouTube IFrame API Ready 글로벌 콜백
+window.onYouTubeIframeAPIReady = function() {
+  initBgmPlayer();
+};
+
 function onBgmPlayerReady(event) {
-  event.target.setVolume(50);
+  try {
+    event.target.setVolume(50);
+    // 모바일/브라우저 정책상 오디오 자동재생 허용 시 즉시 재생 시도
+    const p = event.target.playVideo();
+    if (p && typeof p.catch === 'function') {
+      p.catch(() => {
+        // 자동재생 차단 시 사용자 첫 인터랙션 대기
+      });
+    }
+  } catch (err) {
+    console.log('Autoplay waiting for touch/click');
+  }
+}
+
+function onBgmPlayerError(event) {
+  console.log('BGM Player Event Code:', event.data);
 }
 
 function onBgmPlayerStateChange(event) {
@@ -1339,6 +1412,7 @@ function onBgmPlayerStateChange(event) {
 
   if (event.data === YT.PlayerState.PLAYING) {
     isBgmPlaying = true;
+    bgmHasStarted = true;
     if (disc) disc.classList.add('spinning');
     if (toggleBtn) toggleBtn.textContent = '⏸';
   } else {
@@ -1349,11 +1423,27 @@ function onBgmPlayerStateChange(event) {
 }
 
 function toggleBgmPlay() {
-  if (!ytBgmPlayer || !ytBgmPlayer.playVideo) return;
+  if (!ytBgmPlayer) {
+    initBgmPlayer();
+  }
+  if (!ytBgmPlayer || !ytBgmPlayer.playVideo) {
+    setTimeout(() => {
+      if (ytBgmPlayer && ytBgmPlayer.playVideo) toggleBgmPlay();
+    }, 300);
+    return;
+  }
+
   if (isBgmPlaying) {
     ytBgmPlayer.pauseVideo();
   } else {
-    ytBgmPlayer.playVideo();
+    try {
+      ytBgmPlayer.unMute();
+      ytBgmPlayer.setVolume(50);
+      ytBgmPlayer.playVideo();
+      bgmHasStarted = true;
+    } catch (e) {
+      console.log('BGM Play Error:', e);
+    }
   }
 }
 
@@ -1384,12 +1474,27 @@ function toggleBgmWidget() {
   }
 }
 
-function initBgmOnFirstInteraction() {
-  // 사용자가 페이지를 처음 클릭할 때 볼륨 세팅 및 필요 시 부드럽게 초기화
-  if (ytBgmPlayer && ytBgmPlayer.setVolume) {
-    ytBgmPlayer.setVolume(50);
+function startBgmOnUserGesture() {
+  if (bgmHasStarted || isBgmPlaying) return;
+  if (!ytBgmPlayer) {
+    initBgmPlayer();
+  }
+  if (ytBgmPlayer && ytBgmPlayer.playVideo) {
+    try {
+      ytBgmPlayer.unMute();
+      ytBgmPlayer.setVolume(50);
+      ytBgmPlayer.playVideo();
+      bgmHasStarted = true;
+    } catch (e) {}
   }
 }
+
+// 스마트폰 터치/화면 클릭 시 부드럽게 배경 찬양 자동 재생 시작
+['click', 'touchstart', 'scroll'].forEach(evt => {
+  window.addEventListener(evt, function bgmAutoTrigger() {
+    startBgmOnUserGesture();
+  }, { once: true, passive: true, capture: true });
+});
 
 /**
  * ==========================================================
