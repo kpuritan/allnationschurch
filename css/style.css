@@ -205,6 +205,18 @@ img {
   box-shadow: 0 4px 12px rgba(25, 42, 69, 0.2);
 }
 
+.logo-denom-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s ease;
+}
+
+.logo-group:hover .logo-denom-img {
+  transform: scale(1.06);
+}
+
 .logo-text-box {
   display: flex;
   flex-direction: column;
