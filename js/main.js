@@ -160,11 +160,12 @@ const ARCHIVE_FOLDERS = [
   { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '📁', bgClass: 'bg-ot' },
   { key: 'luke', title: '누가복음 강해', count: '67강', icon: '📁', bgClass: 'bg-nt' },
   { key: 'mark', title: '마가복음 강해', count: '44강', icon: '📁', bgClass: 'bg-nt' },
-  { key: 'puritan', title: '청교도 설교', count: '0편', icon: '📖', bgClass: 'bg-special' },
-  { key: 'meditation', title: '짧은 묵상 글', count: '0편', icon: '✍️', bgClass: 'bg-special' }
+  { key: 'puritan', title: '청교도 설교 (저자별)', count: '16편', icon: '📖', bgClass: 'bg-special' },
+  { key: 'meditation', title: '짧은 묵상 글', count: '5편', icon: '✍️', bgClass: 'bg-special' }
 ];
 
 let currentFolderKey = 'ot';
+let currentPuritanAuthor = 'all';
 let archiveDataCache = null;
 let pilgrimDataCache = null;
 let activeFoldersList = ARCHIVE_FOLDERS;
@@ -375,6 +376,13 @@ async function selectArchiveFolder(folderKey, isFromHistory = false) {
   renderArchiveFolderContent(folderKey, '');
 }
 
+function selectPuritanAuthor(authorId) {
+  currentPuritanAuthor = authorId;
+  const searchInput = document.getElementById('archive-search-input');
+  const q = searchInput ? searchInput.value.trim() : '';
+  renderArchiveFolderContent('puritan', q);
+}
+
 function renderArchiveFolderContent(folderKey, query) {
   const titleEl = document.getElementById('archive-current-title');
   const countEl = document.getElementById('archive-item-count');
@@ -405,11 +413,41 @@ function renderArchiveFolderContent(folderKey, query) {
     seriesTitle = s.title;
   }
 
+  // 청교도 설교 - 저자별 필터링
+  let authorFilterHtml = '';
+  if (folderKey === 'puritan') {
+    const authors = [
+      { id: 'all', name: '전체 저자' },
+      { id: '찰스 스펄전', name: '찰스 스펄전' },
+      { id: '존 번연', name: '존 번연' },
+      { id: '토마스 왓슨', name: '토마스 왓슨' },
+      { id: '존 오웬', name: '존 오웬' },
+      { id: '리처드 백스터', name: '리처드 백스터' },
+      { id: '조나단 에드워즈', name: '조나단 에드워즈' }
+    ];
+
+    authorFilterHtml = `
+      <div class="puritan-author-filter-bar" style="grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.2rem; padding: 12px 16px; background: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: var(--shadow-sm); align-items: center;">
+        <span style="font-size: 0.88rem; font-weight: 800; color: var(--accent-gold); margin-right: 6px;">👤 청교도 저자별 선택:</span>
+        ${authors.map(a => `
+          <button type="button" class="btn-author-tag ${currentPuritanAuthor === a.id ? 'active' : ''}" onclick="selectPuritanAuthor('${a.id}')">
+            ${a.id === 'all' ? '🌐 ' : '👤 '}${a.name}
+          </button>
+        `).join('')}
+      </div>
+    `;
+
+    if (currentPuritanAuthor !== 'all') {
+      episodes = episodes.filter(ep => ep.author === currentPuritanAuthor);
+    }
+  }
+
   // 검색어 필터링
   if (query) {
     const q = query.toLowerCase();
     episodes = episodes.filter(ep => 
       ep.title.toLowerCase().includes(q) ||
+      (ep.author && ep.author.toLowerCase().includes(q)) ||
       (ep.passage && ep.passage.toLowerCase().includes(q)) ||
       (ep.ep + '강').includes(q) ||
       (ep.ep + '편').includes(q) ||
@@ -417,7 +455,13 @@ function renderArchiveFolderContent(folderKey, query) {
     );
   }
 
-  if (titleEl) titleEl.textContent = folderMeta.title;
+  if (titleEl) {
+    if (folderKey === 'puritan' && currentPuritanAuthor !== 'all') {
+      titleEl.textContent = `청교도 설교 [${currentPuritanAuthor}]`;
+    } else {
+      titleEl.textContent = folderMeta.title;
+    }
+  }
   if (countEl) countEl.textContent = `총 ${episodes.length}개 말씀 영상`;
 
   // 관리자 모드 시 [➕ 현재 폴더에 설교 등록] 버튼 바 생성
@@ -436,17 +480,17 @@ function renderArchiveFolderContent(folderKey, query) {
   }
 
   if (episodes.length === 0) {
-    gridEl.innerHTML = adminAddBarHtml + `
+    gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + `
       <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted);">
         <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">등록된 설교 영상이 없습니다.</p>
-        <p style="font-size: 0.9rem; margin-top: 6px;">검색어를 확인하시거나 다른 강해 카테고리를 선택해 보세요.</p>
+        <p style="font-size: 0.9rem; margin-top: 6px;">선택하신 저자 또는 검색어를 확인해 보세요.</p>
       </div>
     `;
     return;
   }
 
   // 카드 그리드 렌더링
-  gridEl.innerHTML = adminAddBarHtml + episodes.map((item, idx) => {
+  gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + episodes.map((item, idx) => {
     let videoId = extractYouTubeId(item.url);
     if (!videoId && folderMeta.playlistUrl) {
       videoId = extractYouTubeId(folderMeta.playlistUrl);
@@ -470,6 +514,7 @@ function renderArchiveFolderContent(folderKey, query) {
     }
 
     const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.75rem; padding:3px 8px; border-radius:4px; font-weight:700; white-space:nowrap;">📄 교재</span>` : '';
+    const authorBadge = item.author ? `<span style="background: rgba(197, 155, 39, 0.15); color: #b45309; font-weight: 800; font-size: 0.76rem; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">👤 ${item.author}</span>` : '';
 
     // 관리자 수정/삭제 버튼
     const epSafeParam = encodeURIComponent(String(item.ep));
@@ -480,22 +525,28 @@ function renderArchiveFolderContent(folderKey, query) {
       </div>
     ` : '';
 
+    const speakerDisplay = item.author ? `👤 ${item.author}` : (folderKey === 'meditation' ? '✍️ 묵상' : '👤 박훈 담임목사');
+    const epBadgeDisplay = folderKey === 'meditation' ? `${item.ep}편` : (item.author ? `${item.ep}강` : `${item.ep}강`);
+
     return `
       <div class="sermon-card-item video-thumb-card" onclick="playArchiveLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">
         ${adminActionsHtml}
         <div class="sermon-card-thumb-wrap card-thumb-wrap">
           ${thumbHtml}
           <div class="sermon-play-badge play-btn-circle">▶</div>
-          <span class="sermon-thumb-ep-badge">${item.ep}강</span>
+          <span class="sermon-thumb-ep-badge">${epBadgeDisplay}</span>
         </div>
         <div class="sermon-card-body card-body">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 0.8rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 0.6rem;">
             <h4 class="sermon-card-title card-title" title="${item.title}">${item.title}</h4>
-            ${pdfBadge}
+            <div style="display: flex; gap: 4px; align-items: center;">
+              ${authorBadge}
+              ${pdfBadge}
+            </div>
           </div>
           <div class="sermon-card-meta card-meta-row">
-            <span class="sermon-card-speaker card-author">👤 박훈 담임목사</span>
-            <span class="sermon-card-passage card-passage">📖 ${item.passage || (item.ep + '강')}</span>
+            <span class="sermon-card-speaker card-author">${speakerDisplay}</span>
+            <span class="sermon-card-passage card-passage">📖 ${item.passage || epBadgeDisplay}</span>
           </div>
         </div>
       </div>
