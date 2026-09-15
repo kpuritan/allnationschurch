@@ -572,6 +572,13 @@ function playArchiveLecture(folderKey, epNumber, isFromHistory = false) {
   // 비디오 ID 추출
   let videoId = extractYouTubeId(item.url);
   
+  // 퍼가기 제한 영상(천로역정 1강)은 밖에서 클릭 시 즉시 새 창/앱으로 YouTube 바로 실행!
+  if ((folderKey === 'pilgrim' && (epNumber === 1 || epNumber === '1')) || videoId === 'Tno31YZ_0Lo') {
+    const ytDirectUrl = item.url || `https://www.youtube.com/watch?v=${videoId || 'Tno31YZ_0Lo'}`;
+    window.open(ytDirectUrl, '_blank', 'noopener,noreferrer');
+    return;
+  }
+
   // 만약 개별 videoId가 등록되지 않은 경우 불로열방교회 대표 영상 ID로 안전하게 폴백
   if (!videoId) {
     if (archiveDataCache && archiveDataCache[folderKey] && archiveDataCache[folderKey].playlistUrl) {
