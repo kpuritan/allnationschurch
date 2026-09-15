@@ -744,7 +744,7 @@
   </div>
 
   <!-- 관리자 스크립트 로직 -->
-  <script src="js/main.js?v=20260915_01"></script>
+  <script src="js/main.js?v=20260915_02"></script>
   <script>
     // 관리자 PIN 인증 로직
     const ADMIN_STORAGE_KEY = 'ALLNATIONS_ADMIN_DATA_V1';
@@ -840,6 +840,18 @@
         }
       } else {
         adminFolders = [...ARCHIVE_FOLDERS];
+      }
+
+      // 성경 본문(passage) 일괄 표준화 자동 적용
+      if (adminArchive) {
+        for (const k of Object.keys(adminArchive)) {
+          const cat = adminArchive[k];
+          if (cat && Array.isArray(cat.episodes)) {
+            cat.episodes.forEach(ep => {
+              if (ep.passage) ep.passage = formatScripturePassage(ep.passage);
+            });
+          }
+        }
       }
 
       renderFoldersTable();

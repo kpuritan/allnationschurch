@@ -310,6 +310,18 @@ async function loadArchiveData() {
     }
   }
 
+  // 전체 아카이브 내 성경 본문(passage) 실시간 자동 표준화 적용
+  if (archiveDataCache) {
+    for (const catKey of Object.keys(archiveDataCache)) {
+      const catObj = archiveDataCache[catKey];
+      if (catObj && Array.isArray(catObj.episodes)) {
+        catObj.episodes.forEach(ep => {
+          if (ep.passage) ep.passage = formatScripturePassage(ep.passage);
+        });
+      }
+    }
+  }
+
   if (!pilgrimDataCache) {
     try {
       const res = await fetch('data/pilgrim_progress.json?v=' + Date.now());
@@ -317,6 +329,11 @@ async function loadArchiveData() {
     } catch (e) {
       console.error('pilgrim_progress load error', e);
     }
+  }
+  if (pilgrimDataCache) {
+    pilgrimDataCache.forEach(p => {
+      if (p.passage) p.passage = formatScripturePassage(p.passage);
+    });
   }
 }
 
@@ -374,14 +391,17 @@ function renderArchiveFolderContent(folderKey, query) {
   if (folderKey === 'pilgrim') {
     episodes = (pilgrimDataCache || []).map(p => ({
       ep: p.ep,
-      title: `${p.ep}강 - ${p.title}`,
-      passage: p.passage,
+      title: p.title,
+      passage: formatScripturePassage(p.passage),
       url: p.url,
-      search: `불로열방교회 천로역정 ${p.ep}강 ${p.title}`
+      search: `불로열방교회 천로역정 ${p.title}`
     }));
   } else if (archiveDataCache && archiveDataCache[folderKey]) {
     const s = archiveDataCache[folderKey];
-    episodes = s.episodes || [];
+    episodes = (s.episodes || []).map(ep => ({
+      ...ep,
+      passage: formatScripturePassage(ep.passage)
+    }));
     seriesTitle = s.title;
   }
 
@@ -507,10 +527,10 @@ function playArchiveLecture(folderKey, epNumber, isFromHistory = false) {
     if (p) {
       item = {
         ep: p.ep,
-        title: `${p.ep}강 - ${p.title}`,
-        passage: p.passage,
+        title: p.title,
+        passage: formatScripturePassage(p.passage),
         url: p.url,
-        search: `불로열방교회 천로역정 ${p.ep}강 ${p.title}`
+        search: `불로열방교회 천로역정 ${p.title}`
       };
       seriesTitle = '천로역정 완주 강해';
     }
