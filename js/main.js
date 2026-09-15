@@ -153,6 +153,9 @@ function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
       } else {
         selectArchiveFolder(subFolderKey, isFromHistory);
       }
+    } else {
+      // 상단 "말씀 강해" 클릭 시 구약성경 개관설교('ot')를 명확하게 기본 선택
+      selectArchiveFolder('ot', isFromHistory);
     }
   } else if (pageId === 'about') {
     closeArchivePlayer(true);
@@ -289,7 +292,10 @@ function renderArchiveFolderSidebar() {
     </li>
   ` : '';
 
-  folderListEl.innerHTML = addFolderBtnHtml + activeFoldersList.map(f => {
+  // 말씀 강해 탭에는 성경 강해 시리즈만 표시 (청교도 설교와 짧은 묵상 글은 상단 독립 대메뉴)
+  const displayFolders = activeFoldersList.filter(f => f.key !== 'puritan' && f.key !== 'meditation');
+
+  folderListEl.innerHTML = addFolderBtnHtml + displayFolders.map(f => {
     let epCount = f.count || '0편';
     if (archiveDataCache && archiveDataCache[f.key] && archiveDataCache[f.key].episodes) {
       const count = archiveDataCache[f.key].episodes.length;
@@ -428,8 +434,28 @@ function renderArchiveFolderContent(folderKey, query) {
   const gridEl = document.getElementById('archive-video-grid');
   if (!gridEl) return;
 
-  const folders = getEffectiveFolders();
-  const folderMeta = folders.find(f => f.key === folderKey) || folders[0] || ARCHIVE_FOLDERS[0];
+  let folderMeta = null;
+  if (folderKey === 'puritan') {
+    folderMeta = {
+      key: 'puritan',
+      title: '청교도 명설교 아카이브 (저자별)',
+      count: '16편',
+      icon: '📖',
+      bgClass: 'bg-special'
+    };
+  } else if (folderKey === 'meditation') {
+    folderMeta = {
+      key: 'meditation',
+      title: '짧은 묵상 글 아카이브',
+      count: '5편',
+      icon: '✍️',
+      bgClass: 'bg-special'
+    };
+  } else {
+    const folders = getEffectiveFolders();
+    folderMeta = folders.find(f => f.key === folderKey) || folders[0] || ARCHIVE_FOLDERS[0];
+  }
+
   const isAdmin = isSiteAdminLoggedIn();
 
   let episodes = [];
@@ -452,7 +478,7 @@ function renderArchiveFolderContent(folderKey, query) {
     seriesTitle = s.title;
   }
 
-  // 청교도 설교 - 저자별 필터링
+  // 청교도 설교일 때만 저자별 필터 바 생성 (일반 말씀 강해일 때는 절대 생성 안 함)
   let authorFilterHtml = '';
   if (folderKey === 'puritan') {
     const authors = [
@@ -495,8 +521,14 @@ function renderArchiveFolderContent(folderKey, query) {
   }
 
   if (titleEl) {
-    if (folderKey === 'puritan' && currentPuritanAuthor !== 'all') {
-      titleEl.textContent = `청교도 설교 [${currentPuritanAuthor}]`;
+    if (folderKey === 'puritan') {
+      if (currentPuritanAuthor !== 'all') {
+        titleEl.textContent = `청교도 설교 [${currentPuritanAuthor}]`;
+      } else {
+        titleEl.textContent = `청교도 명설교 아카이브 (저자별)`;
+      }
+    } else if (folderKey === 'meditation') {
+      titleEl.textContent = `짧은 묵상 글 아카이브`;
     } else {
       titleEl.textContent = folderMeta.title;
     }
