@@ -160,8 +160,6 @@ const ARCHIVE_FOLDERS = [
   { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '📁', bgClass: 'bg-ot' },
   { key: 'luke', title: '누가복음 강해', count: '67강', icon: '📁', bgClass: 'bg-nt' },
   { key: 'mark', title: '마가복음 강해', count: '44강', icon: '📁', bgClass: 'bg-nt' },
-  { key: 'hebrews', title: '히브리서 강해', count: '15편', icon: '📁', bgClass: 'bg-nt' },
-  { key: 'acts', title: '사도행전 강해', count: '15편', icon: '📁', bgClass: 'bg-nt' },
   { key: 'puritan', title: '청교도 설교', count: '0편', icon: '📖', bgClass: 'bg-special' },
   { key: 'meditation', title: '짧은 묵상 글', count: '0편', icon: '✍️', bgClass: 'bg-special' }
 ];
