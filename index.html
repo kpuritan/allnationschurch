@@ -987,6 +987,35 @@
     </div>
   </div>
 
+  <!-- ================= 📖 청교도 설교 & 짧은 묵상 글 리더 모달 ================= -->
+  <div id="modal-article-reader" class="site-modal-overlay">
+    <div class="site-modal-box article-reader-box" style="max-width: 780px; width: 92%; max-height: 88vh; overflow-y: auto; border-radius: 16px; border: 1px solid rgba(197,155,39,0.3); padding: 0;">
+      <div class="site-modal-header article-reader-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 1.6rem 2rem; border-radius: 15px 15px 0 0; display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span id="article-reader-badge" style="background: rgba(197, 155, 39, 0.3); color: #f7d274; font-size: 0.8rem; font-weight: 800; padding: 3px 12px; border-radius: 20px;">📖 청교도 설교</span>
+            <span id="article-reader-author" style="font-size: 0.88rem; color: #cbd5e1; font-weight: 700;"></span>
+          </div>
+          <h3 id="article-reader-title" style="font-size: 1.45rem; font-weight: 850; color: #ffffff; margin-top: 4px; line-height: 1.4; word-break: keep-all;"></h3>
+          <div id="article-reader-passage" style="font-size: 0.92rem; color: #f1f5f9; font-weight: 600;"></div>
+        </div>
+        <button class="site-modal-close" onclick="closeArticleReaderModal()" style="color: #fff; font-size: 1.4rem; background: rgba(255,255,255,0.15); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer;">✕</button>
+      </div>
+      <div class="site-modal-body article-reader-body" style="padding: 2.2rem; background: #ffffff;">
+        <div id="article-reader-content" style="font-size: 1.05rem; line-height: 2.1; color: #1e293b; white-space: pre-line; word-break: keep-all; font-family: var(--font-body);">
+        </div>
+        <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <button type="button" onclick="copyArticleContent()" id="btn-copy-article" style="background: #f8fafc; color: var(--primary); border: 1px solid #cbd5e1; padding: 9px 18px; border-radius: 8px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem;">
+            📋 본문 복사하기
+          </button>
+          <button type="button" onclick="closeArticleReaderModal()" style="background: var(--primary); color: #ffffff; border: none; padding: 9px 24px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.9rem;">
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ================= 📁 새 폴더 추가 모달 (사이트 모드) ================= -->
   <div id="modal-folder-create" class="site-modal-overlay">
     <div class="site-modal-box" style="max-width: 450px;">

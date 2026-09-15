@@ -533,18 +533,22 @@ function renderArchiveFolderContent(folderKey, query) {
       titleEl.textContent = folderMeta.title;
     }
   }
-  if (countEl) countEl.textContent = `총 ${episodes.length}개 말씀 영상`;
+  const isArticleFolder = (folderKey === 'puritan' || folderKey === 'meditation');
+  if (countEl) {
+    countEl.textContent = isArticleFolder ? `총 ${episodes.length}편의 글` : `총 ${episodes.length}개 말씀 영상`;
+  }
 
-  // 관리자 모드 시 [➕ 현재 폴더에 설교 등록] 버튼 바 생성
+  // 관리자 모드 시 [➕ 현재 폴더에 설교/글 등록] 버튼 바 생성
   let adminAddBarHtml = '';
   if (isAdmin) {
+    const itemTypeName = isArticleFolder ? '글' : '설교 영상';
     adminAddBarHtml = `
       <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.9rem 1.4rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
         <span style="font-weight: 700; color: #0369a1; font-size: 0.92rem;">
-          ⚙️ '${folderMeta.title}' 시리즈에 새 설교를 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
+          ⚙️ '${folderMeta.title}' 시리즈에 새 ${itemTypeName}을 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
         </span>
         <button type="button" onclick="openLectureAddModal('${folderKey}')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none; padding: 7px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">
-          ➕ 새 설교 영상 등록
+          ➕ 새 ${itemTypeName} 등록
         </button>
       </div>
     `;
@@ -553,14 +557,47 @@ function renderArchiveFolderContent(folderKey, query) {
   if (episodes.length === 0) {
     gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + `
       <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted);">
-        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">등록된 설교 영상이 없습니다.</p>
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">${isArticleFolder ? '등록된 글이 없습니다.' : '등록된 설교 영상이 없습니다.'}</p>
         <p style="font-size: 0.9rem; margin-top: 6px;">선택하신 저자 또는 검색어를 확인해 보세요.</p>
       </div>
     `;
     return;
   }
 
-  // 카드 그리드 렌더링
+  // 📖 청교도 설교 & 짧은 묵상 글: 텍스트 아티클 리더 카드 렌더링 (동영상 X)
+  if (isArticleFolder) {
+    gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + episodes.map((item, idx) => {
+      const epSafeParam = encodeURIComponent(String(item.ep));
+      const authorDisplay = item.author ? `👤 ${item.author}` : (folderKey === 'meditation' ? '✍️ 묵상' : '👤 청교도 거장');
+      const snippet = item.desc || (item.content ? item.content.slice(0, 130) + '...' : '본문 말씀을 묵상하며 은혜를 나눕니다.');
+
+      // 관리자 수정/삭제 버튼
+      const adminActionsHtml = isAdmin ? `
+        <div class="card-admin-actions" onclick="event.stopPropagation()">
+          <button type="button" class="btn-card-edit" onclick="openLectureEditModal('${folderKey}', decodeURIComponent('${epSafeParam}'))">✏️ 수정</button>
+          <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">🗑️ 삭제</button>
+        </div>
+      ` : '';
+
+      return `
+        <div class="article-post-card" onclick="openTextArticleReader('${folderKey}', decodeURIComponent('${epSafeParam}'))">
+          ${adminActionsHtml}
+          <div class="article-card-top">
+            <span class="article-author-chip">${authorDisplay}</span>
+            <span class="article-passage-chip">📖 ${item.passage || ''}</span>
+          </div>
+          <h4 class="article-post-title">${item.title}</h4>
+          <p class="article-post-snippet">${snippet}</p>
+          <div class="article-post-footer">
+            <span class="article-post-read-link">📖 전문 읽기 &amp; 묵상하기 ➔</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+    return;
+  }
+
+  // 🎬 일반 성경 강해: 동영상 썸네일 카드 그리드 렌더링
   gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + episodes.map((item, idx) => {
     let videoId = extractYouTubeId(item.url);
     if (!videoId && folderMeta.playlistUrl) {
@@ -573,7 +610,6 @@ function renderArchiveFolderContent(folderKey, query) {
     } else if (folderMeta.thumb) {
       thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
     } else if (videoId) {
-      // 실제 유튜브 고화질 썸네일 자동 연동
       thumbHtml = `<img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/mqdefault.jpg'">`;
     } else {
       thumbHtml = `
@@ -587,7 +623,6 @@ function renderArchiveFolderContent(folderKey, query) {
     const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.75rem; padding:3px 8px; border-radius:4px; font-weight:700; white-space:nowrap;">📄 교재</span>` : '';
     const authorBadge = item.author ? `<span style="background: rgba(197, 155, 39, 0.15); color: #b45309; font-weight: 800; font-size: 0.76rem; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">👤 ${item.author}</span>` : '';
 
-    // 관리자 수정/삭제 버튼
     const epSafeParam = encodeURIComponent(String(item.ep));
     const adminActionsHtml = isAdmin ? `
       <div class="card-admin-actions" onclick="event.stopPropagation()">
@@ -623,6 +658,65 @@ function renderArchiveFolderContent(folderKey, query) {
       </div>
     `;
   }).join('');
+}
+
+/**
+ * 📖 청교도 설교 & 짧은 묵상 글 전문 읽기 모달 오픈
+ */
+function openTextArticleReader(folderKey, epNumber) {
+  let item = null;
+  if (archiveDataCache && archiveDataCache[folderKey] && archiveDataCache[folderKey].episodes) {
+    item = archiveDataCache[folderKey].episodes.find(x => String(x.ep) === String(epNumber) || x.ep == epNumber);
+  }
+  if (!item) return;
+
+  const modal = document.getElementById('modal-article-reader');
+  const badgeEl = document.getElementById('article-reader-badge');
+  const authorEl = document.getElementById('article-reader-author');
+  const titleEl = document.getElementById('article-reader-title');
+  const passageEl = document.getElementById('article-reader-passage');
+  const contentEl = document.getElementById('article-reader-content');
+
+  if (badgeEl) badgeEl.textContent = folderKey === 'puritan' ? '📜 청교도 명설교' : '✍️ 짧은 묵상 글';
+  if (authorEl) authorEl.textContent = item.author ? `저자: ${item.author}` : (folderKey === 'meditation' ? '불로 열방교회 묵상' : '');
+  if (titleEl) titleEl.textContent = item.title;
+  if (passageEl) passageEl.textContent = item.passage ? `📖 성경 본문: ${item.passage}` : '';
+  if (contentEl) contentEl.textContent = item.content || item.desc || '등록된 본문 내용이 없습니다.';
+
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeArticleReaderModal() {
+  const modal = document.getElementById('modal-article-reader');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function copyArticleContent() {
+  const title = document.getElementById('article-reader-title')?.textContent || '';
+  const passage = document.getElementById('article-reader-passage')?.textContent || '';
+  const content = document.getElementById('article-reader-content')?.textContent || '';
+  const fullText = `[불로 열방교회 - 은혜 나눔]\n${title}\n${passage}\n\n${content}\n\n출처: https://kpuritan.github.io/allnationschurch/`;
+
+  navigator.clipboard.writeText(fullText).then(() => {
+    const btn = document.getElementById('btn-copy-article');
+    if (btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '✅ 복사 완료!';
+      btn.style.background = '#22c55e';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 2000);
+    }
+  });
 }
 
 function extractYouTubeId(url) {

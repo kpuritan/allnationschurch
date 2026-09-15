@@ -4197,6 +4197,95 @@ body.admin-logged-in {
   }
 }
 
+/* ==========================================================
+   📖 청교도 설교 & 짧은 묵상 글 아티클 카드 스타일 (Reading Cards)
+   ========================================================== */
+.article-post-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  border-top: 4px solid var(--accent-gold);
+}
+
+.article-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(15, 28, 48, 0.12);
+  border-color: var(--accent-gold);
+}
+
+.article-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.article-author-chip {
+  background: rgba(197, 155, 39, 0.15);
+  color: #92400e;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.article-passage-chip {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.article-post-title {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  word-break: keep-all;
+}
+
+.article-post-snippet {
+  font-size: 0.94rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: keep-all;
+  flex-grow: 1;
+}
+
+.article-post-footer {
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.article-post-read-link {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.2s ease;
+}
+
+.article-post-card:hover .article-post-read-link {
+  color: #b45309;
+  transform: translateX(4px);
+}
+
 
 
 
