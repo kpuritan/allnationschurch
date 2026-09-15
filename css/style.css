@@ -1162,68 +1162,7 @@ img {
 
 /* ==========================================================
    Footer
-   ========================================================== */
-.footer {
-  background: var(--primary-dark);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 65px 1.5rem 35px;
-  font-size: 0.92rem;
-}
-
-.footer-main {
-  max-width: 1240px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3.5rem;
-  margin-bottom: 45px;
-}
-
-.footer-logo {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer-desc {
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  max-width: 480px;
-}
-
-.footer-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.2rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.footer-links a:hover {
-  color: var(--accent-gold);
-}
-
-.footer-bottom {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.85rem;
-}
+/* (Footer styles consolidated at the bottom of the file) */
 
 /* ==========================================================
    Keyframes & Responsive Breakpoints
@@ -3870,8 +3809,8 @@ body.admin-logged-in {
   max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1.6fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 0.85fr 2fr;
+  gap: 40px;
   word-break: keep-all;
 }
 
@@ -3965,16 +3904,17 @@ body.admin-logged-in {
 }
 
 .footer-col-contact p {
-  font-size: 0.88rem;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.8;
   color: #cbd5e1;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   word-break: keep-all;
+  white-space: nowrap;
 }
 
 .footer-contact-item {
   word-break: keep-all;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .footer-col-contact strong {
@@ -3982,15 +3922,24 @@ body.admin-logged-in {
 }
 
 .footer-bottom {
+  width: 100%;
   max-width: 1320px;
   margin: 3.5rem auto 0 auto;
-  padding-top: 1.8rem;
+  padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   text-align: center;
   font-size: 0.88rem;
   color: #94a3b8;
-  word-break: keep-all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   clear: both;
+}
+
+.footer-bottom p {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .home-folder-card {
@@ -4027,6 +3976,9 @@ body.admin-logged-in {
   .footer-container {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .footer-col-contact p {
+    white-space: normal;
   }
 }
 
