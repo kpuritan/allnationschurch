@@ -52,7 +52,7 @@
         <span>📍 불로 열방교회에 오신 것을 환영합니다</span>
       </div>
       <div style="display: flex; align-items: center; gap: 15px;">
-        <span>주일 대예배: 주일 오전 11:00</span>
+        <span>주일 대예배 11:00 | 수요기도회 19:30 | 금요기도회 21:00</span>
         <button type="button" id="btn-open-admin-login" onclick="openAdminLoginModal()" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
           <span>🔐</span> 관리자 로그인
         </button>
@@ -498,6 +498,16 @@
                   <td style="color: var(--accent-gold); font-weight: 800; font-size: 1.05rem;">주일 오전 11:00</td>
                   <td>본당 대예배실</td>
                 </tr>
+                <tr>
+                  <td><strong>수요 기도회</strong></td>
+                  <td style="color: var(--primary); font-weight: 700;">수요일 저녁 07:30</td>
+                  <td>본당 대예배실</td>
+                </tr>
+                <tr>
+                  <td><strong>금요 기도회</strong></td>
+                  <td style="color: var(--primary); font-weight: 700;">금요일 저녁 09:00</td>
+                  <td>본당 대예배실</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -512,15 +522,27 @@
                 정성 어린 헌금은 교회의 복음 전파와 하나님 나라 확장을 위해 소중하게 사용됩니다.
               </p>
               
-              <div class="offering-account-card">
-                <div class="account-bank">공식 헌금 계좌 (농협/국민은행 등)</div>
-                <div class="account-num">열방교회 공식 계좌</div>
-                <div class="account-holder">예금주: 불로 열방교회 (대한예수교장로회 백석)</div>
+              <div class="offering-account-card" style="background: linear-gradient(135deg, #192a45 0%, #243d63 100%); color: #fff; border-radius: 12px; padding: 1.5rem; margin-top: 1.2rem; box-shadow: 0 8px 24px rgba(25, 42, 69, 0.25);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 0.6rem;">
+                  <span style="font-size: 0.92rem; font-weight: 800; color: var(--accent-gold); letter-spacing: 0.5px;">🏦 신용협동조합 (신협)</span>
+                  <span style="font-size: 0.78rem; background: rgba(197, 155, 39, 0.25); color: #f7d274; padding: 2px 8px; border-radius: 4px; font-weight: 600;">공식 헌금 계좌</span>
+                </div>
+                <div style="font-size: 1.65rem; font-weight: 800; letter-spacing: 1.5px; color: #ffffff; margin-bottom: 0.8rem; font-family: monospace;">
+                  131-022-940678
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                  <div style="font-size: 0.98rem; color: #cbd5e1;">
+                    예금주: <strong style="color: #ffffff; font-size: 1.1rem; margin-left: 4px;">열방교회</strong>
+                  </div>
+                  <button type="button" onclick="copyOfferingAccount('131-022-940678')" id="btn-copy-account" style="background: var(--accent-gold); color: #0f172a; border: none; padding: 7px 16px; border-radius: 6px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: transform 0.2s; box-shadow: 0 2px 8px rgba(197, 155, 39, 0.4);">
+                    <span>📋</span> 계좌번호 복사
+                  </button>
+                </div>
               </div>
             </div>
 
             <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 1rem;">
-              * 헌금 시 성도 본인의 이름과 헌금 구분(예: 홍길동십일조, 홍길동감사)을 기재해 주시기 바랍니다.
+              * 헌금 시 성도 본인의 이름과 헌금 구분(예: 홍길동십일조, 홍길동감사, 홍길동선교)을 기재해 주시기 바랍니다.
             </p>
           </div>
         </div>
@@ -662,7 +684,8 @@
         <h4>교회 위치 및 안내</h4>
         <p class="footer-contact-item"><strong>주소:</strong> 인천광역시 서구 불로동 793-1 (검단신도시 인근)</p>
         <p class="footer-contact-item"><strong>담임목사:</strong> 박훈 목사</p>
-        <p class="footer-contact-item"><strong>주일 대예배:</strong> 주일 오전 11:00</p>
+        <p class="footer-contact-item"><strong>예배시간:</strong> 주일 11:00 / 수 19:30 / 금 21:00</p>
+        <p class="footer-contact-item"><strong>헌금계좌:</strong> 신협 131-022-940678 (열방교회)</p>
       </div>
     </div>
     <div class="footer-bottom">

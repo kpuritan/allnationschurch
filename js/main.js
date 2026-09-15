@@ -1659,6 +1659,59 @@ function showCopyFeedback(btn, addressText) {
   alert(`📋 불로 열방교회 주소가 복사되었습니다:\n${addressText}\n\n(내비게이션이나 지도 앱 검색창에 붙여넣기 하세요)`);
 }
 
+/**
+ * ==========================================================
+ * 🎁 온라인 헌금 - 계좌번호 복사 기능
+ * ==========================================================
+ */
+function copyOfferingAccount(accNum) {
+  const accountText = accNum || "131-022-940678";
+  const btn = document.getElementById('btn-copy-account');
+  
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(accountText).then(() => {
+      showAccountCopyFeedback(btn, accountText);
+    }).catch(() => {
+      fallbackAccountCopyText(accountText, btn);
+    });
+  } else {
+    fallbackAccountCopyText(accountText, btn);
+  }
+}
+
+function fallbackAccountCopyText(text, btn) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.opacity = "0";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    showAccountCopyFeedback(btn, text);
+  } catch (err) {
+    prompt('계좌번호를 복사하세요:', text);
+  }
+  document.body.removeChild(textArea);
+}
+
+function showAccountCopyFeedback(btn, accountText) {
+  if (btn) {
+    const origHtml = btn.innerHTML;
+    btn.innerHTML = '<span>✅</span> 복사 완료!';
+    btn.style.background = '#10b981';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.innerHTML = origHtml;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 2500);
+  }
+  alert(`📋 열방교회 헌금 계좌번호가 복사되었습니다:\n신협: ${accountText} (예금주: 열방교회)`);
+}
+
+
 
 
 
