@@ -11,70 +11,70 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "1강 - 제1, 2계명 - 너는 나 외에는 다른 신들을 네게 두지 말라",
-        "passage": "출애굽기 20:1~6",
+        "passage": "출애굽기 20장 1~6절",
         "url": "https://www.youtube.com/watch?v=tp8czyqbT8A",
         "rawTitle": "주일오전예배(201800603) / 출애굽기 20장 1 ~6절  / 십계명 1, 2 계명 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 2,
         "title": "2강 - 제3계명 - 네 하나님 여호와의 이름을 망령되게 부르지 말라",
-        "passage": "출애굽기 20:7",
+        "passage": "출애굽기 20장 7절",
         "url": "https://www.youtube.com/watch?v=mNbIiLOIaLU",
         "rawTitle": "주일 오전예배(20180610) / 출애굽기 20장 7절 / 십계명 3계명  / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 3,
         "title": "3강 - 제4계명 - 안식일을 기억하여 거룩하게 지키라",
-        "passage": "출애굽기 20:8~11",
+        "passage": "출애굽기 20장 8~11절",
         "url": "https://www.youtube.com/watch?v=J0o_81DDh44",
         "rawTitle": "주일 오전예배(20180617) / 출애굽기 20장 8~11 / 십계명 4계명 / 열방교회 박훈목사 설교"
       },
       {
         "ep": 4,
         "title": "4강 - 복, 안식, 십계명 (안식일의 참된 의미)",
-        "passage": "출애굽기 20:8~11",
+        "passage": "출애굽기 20장 8~11절",
         "url": "https://www.youtube.com/watch?v=RjIe4jWGUJ4",
         "rawTitle": "주일 오전예배(20180624) /  고기,안식일,십계명  /  출애굽기 20장 8~11 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 5,
         "title": "5강 - 제5계명 - 네 부모를 공경하라",
-        "passage": "출애굽기 20:12",
+        "passage": "출애굽기 20장 12절",
         "url": "https://www.youtube.com/watch?v=owfOpYsalfw",
         "rawTitle": "주일 오전예배(20180701) / 십계명 제 5계명  /  출애굽기 20장 12절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 6,
         "title": "6강 - 제6계명 - 살인하지 말라",
-        "passage": "출애굽기 20:13",
+        "passage": "출애굽기 20장 13절",
         "url": "https://www.youtube.com/watch?v=iGgvxU2BWJg",
         "rawTitle": "주일 오전예배20180708 / 십계명 제 6계명  /  출애굽기 20장 13절 / 열방교회 주일 오전예배 / 박훈 목사 설교"
       },
       {
         "ep": 7,
         "title": "7강 - 제7계명 - 간음하지 말라",
-        "passage": "출애굽기 20:14",
+        "passage": "출애굽기 20장 14절",
         "url": "https://www.youtube.com/watch?v=gaWUUZ-PLXE",
         "rawTitle": "주일 오전예배(20180715) / 십계명 제 7계명 /  출애굽기 20장 14절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 8,
         "title": "8강 - 제8계명 - 도둑질하지 말라",
-        "passage": "출애굽기 20:15",
+        "passage": "출애굽기 20장 15절",
         "url": "https://www.youtube.com/watch?v=iU9SZbRpjQU",
         "rawTitle": "주일 오전예배(20180722) /  십계명 제 8계명 /   출애굽기 20장 15절  / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 9,
         "title": "9강 - 제9계명 - 네 이웃에 대하여 거짓 증거하지 말라",
-        "passage": "출애굽기 20:16",
+        "passage": "출애굽기 20장 16절",
         "url": "https://www.youtube.com/watch?v=u-Zygzv3WPI",
         "rawTitle": "주일 오전예배(20180729) / 십계명 제 9계명 / 출애굽기 20장 16절 / 열방교회 박훈 목사 설교"
       },
       {
         "ep": 10,
         "title": "10강 - 제10계명 - 네 이웃의 집을 탐내지 말라",
-        "passage": "출애굽기 20:17",
+        "passage": "출애굽기 20장 17절",
         "url": "https://www.youtube.com/watch?v=CT7mN6eEIdI",
         "rawTitle": "주일 오전예배(20180805) / 십계명 제 10계명 / 출애굽기 20장 17절 / 열방교회 박훈 목사 설교"
       }
@@ -93,7 +93,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "1강 - 역사를 아는 일의 중요성!",
-        "passage": "출애굽기 1:1~14, 2:11~15",
+        "passage": "출애굽기 1장 1~14절, 출애굽기 2장 11~15절",
         "url": "https://www.youtube.com/watch?v=xmavqr5_Dcc",
         "videoId": "xmavqr5_Dcc",
         "fullTitle": "주일 오전예배(201803011) / 출애굽기 1장 1 - 14절, 2장 11 15절 / 역사를 아는 일의 중요성! / 열방교회 박훈 목사"
@@ -101,7 +101,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 2,
         "title": "2강 - 결단!",
-        "passage": "출애굽기 2:1~15",
+        "passage": "출애굽기 2장 1~15절",
         "url": "https://www.youtube.com/watch?v=PLVZwRkcfns",
         "videoId": "PLVZwRkcfns",
         "fullTitle": "주일 오전예배(20180318) / 출애굽기 2장 1~15절 / 결단! / 열방교회 박훈목사 설교"
@@ -109,7 +109,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 3,
         "title": "3강 - 모세! 예수 그리스도의 표상!",
-        "passage": "출애굽기 2:23~25",
+        "passage": "출애굽기 2장 23~25절",
         "url": "https://www.youtube.com/watch?v=xHK16SkQgE0",
         "videoId": "xHK16SkQgE0",
         "fullTitle": "주일 오전예배(20180325) / 출애굽기 2장 23 ~ 25절 / 모세! 예수 그리스도의 표상! / 열방교회 박훈 목사"
@@ -117,7 +117,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 4,
         "title": "4강 - 복음에 접근하는 자세!",
-        "passage": "출애굽기 3:1~12",
+        "passage": "출애굽기 3장 1~12절",
         "url": "https://www.youtube.com/watch?v=uzHIewUgDlA",
         "videoId": "uzHIewUgDlA",
         "fullTitle": "주일 오전예배(20180401) / 출애굽기 3장 1 ~12절 / \"복음에 접근하는 자세!\" / 열방교회 박훈 목사 설교"
@@ -125,7 +125,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 5,
         "title": "5강 - 내가 여호와 인 줄 알리라!",
-        "passage": "출애굽기 7:16~19",
+        "passage": "출애굽기 7장 16~19절",
         "url": "https://www.youtube.com/watch?v=vhlCGjGYRVU",
         "videoId": "vhlCGjGYRVU",
         "fullTitle": "주일 오전예배(20180408 ) / 출애굽기 7장 16 ~19절 / \"내가 여호와 인 줄 알리라!\" / 열방교회 박훈 목사 설교"
@@ -133,7 +133,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 6,
         "title": "6강 - 한 표징을 보이리니.",
-        "passage": "출애굽기 11:1~12:14",
+        "passage": "출애굽기 11장 1절~12장 14절",
         "url": "https://www.youtube.com/watch?v=LzcmoTrwaI0",
         "videoId": "LzcmoTrwaI0",
         "fullTitle": "주일 오전예배(20180415) / 출애굽기 11장 1절~ 12장 1~14 / 한 표징을 보이리니. / 열방교회 박훈 목사 설교"
@@ -141,7 +141,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 7,
         "title": "7강 - 구원의 목적!",
-        "passage": "출애굽기 13:1~10",
+        "passage": "출애굽기 13장 1~10절",
         "url": "https://www.youtube.com/watch?v=nVbB_0wjRKk",
         "videoId": "nVbB_0wjRKk",
         "fullTitle": "주일오전예배(20180422) / 출애굽기 13장 1 ~10절 / 구원의 목적! / 열방교회 박훈 목사 설교"
@@ -149,7 +149,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 8,
         "title": "8강 - 신자가 살아가는 방식!",
-        "passage": "출애굽기 13:17~22, 레위기 16:2",
+        "passage": "출애굽기 13장 17~22절, 레위기 16장 2절",
         "url": "https://www.youtube.com/watch?v=5xuVC-WHGCs",
         "videoId": "5xuVC-WHGCs",
         "fullTitle": "주일오전예배(20180429) / 출애굽기 13장 17절 ~ 22절, 레위기 16장 2절 / 신자가 살아가는 방식! / 열방교회 박훈 목사"
@@ -157,7 +157,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 9,
         "title": "9강 - 율법을 준행하나 아니하나 시험하리라!",
-        "passage": "출애굽기 16:1~12",
+        "passage": "출애굽기 16장 1~12절",
         "url": "https://www.youtube.com/watch?v=dU6tbQ_-Gts",
         "videoId": "dU6tbQ_-Gts",
         "fullTitle": "주일오전예배(20180506) / 출애굽기 16장 1~12절 / \"율법을 준행하나 아니하나 시험하리라!\" / 열방교회 박훈 목사"
@@ -165,7 +165,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 10,
         "title": "10강 - 주 너의 하나님을 시험하지 말라!!",
-        "passage": "출애굽기 17:1~7",
+        "passage": "출애굽기 17장 1~7절",
         "url": "https://www.youtube.com/watch?v=HuOMbb_4Lj4",
         "videoId": "HuOMbb_4Lj4",
         "fullTitle": "주일오전예배(201800513) / 출애굽기 17장 1 ~7절 / 주 너의 하나님을 시험하지 말라!! / 열방교회 박훈 목사"
@@ -173,7 +173,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 11,
         "title": "11강 - 전쟁의 한복판, 광야!",
-        "passage": "출애굽기 17:8~16",
+        "passage": "출애굽기 17장 8~16절",
         "url": "https://www.youtube.com/watch?v=ew7_lWKtUg8",
         "videoId": "ew7_lWKtUg8",
         "fullTitle": "주일오전예배(201800520) / 출애굽기 17장 8-16절 /전쟁의 한복판, 광야! / 열방교회 박훈 목사 설교"
@@ -181,7 +181,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 12,
         "title": "12강 - 언약을 맺으시는 하나님!",
-        "passage": "출애굽기 19:1~15",
+        "passage": "출애굽기 19장 1~15절",
         "url": "https://www.youtube.com/watch?v=kQOx6p8N_38",
         "videoId": "kQOx6p8N_38",
         "fullTitle": "주일오전예배(201800527) / 출애굽기 19장 1 ~15절 / 언약을 맺으시는 하나님! / 열방교회 박훈 목사 설교"
@@ -189,7 +189,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 13,
         "title": "13강 - 십계명 1, 2 계명 (다른 신을 두지 말며 우상을 만들지 말라)",
-        "passage": "출애굽기 20:1~6",
+        "passage": "출애굽기 20장 1~6절",
         "url": "https://www.youtube.com/watch?v=tp8czyqbT8A",
         "videoId": "tp8czyqbT8A",
         "fullTitle": "주일오전예배(201800603) / 출애굽기 20장 1 ~6절 / 십계명 1, 2 계명 / 열방교회 박훈 목사 설교"
@@ -197,7 +197,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 14,
         "title": "14강 - 십계명 3계명 (여호와의 이름을 망령되게 부르지 말라)",
-        "passage": "출애굽기 20:7",
+        "passage": "출애굽기 20장 7절",
         "url": "https://www.youtube.com/watch?v=mNbIiLOIaLU",
         "videoId": "mNbIiLOIaLU",
         "fullTitle": "주일 오전예배(20180610) / 출애굽기 20장 7절 / 십계명 3계명 / 열방교회 박훈 목사 설교"
@@ -205,7 +205,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 15,
         "title": "15강 - 십계명 4계명 (안식일을 기억하여 거룩하게 지키라)",
-        "passage": "출애굽기 20:8~11",
+        "passage": "출애굽기 20장 8~11절",
         "url": "https://www.youtube.com/watch?v=J0o_81DDh44",
         "videoId": "J0o_81DDh44",
         "fullTitle": "주일 오전예배(20180617) / 출애굽기 20장 8~11 / 십계명 4계명 / 열방교회 박훈목사 설교"
@@ -213,7 +213,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 16,
         "title": "16강 - 고기, 안식일, 십계명",
-        "passage": "출애굽기 20:8~11",
+        "passage": "출애굽기 20장 8~11절",
         "url": "https://www.youtube.com/watch?v=RjIe4jWGUJ4",
         "videoId": "RjIe4jWGUJ4",
         "fullTitle": "주일 오전예배(20180624) / 고기,안식일,십계명 / 출애굽기 20장 8~11 / 열방교회 박훈 목사 설교"
@@ -221,7 +221,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 17,
         "title": "17강 - 십계명 제5계명 (네 부모를 공경하라)",
-        "passage": "출애굽기 20:12",
+        "passage": "출애굽기 20장 12절",
         "url": "https://www.youtube.com/watch?v=owfOpYsalfw",
         "videoId": "owfOpYsalfw",
         "fullTitle": "주일 오전예배(20180701) / 십계명 제 5계명 / 출애굽기 20장 12절 / 열방교회 박훈 목사 설교"
@@ -229,7 +229,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 18,
         "title": "18강 - 십계명 제6계명 (살인하지 말라)",
-        "passage": "출애굽기 20:13",
+        "passage": "출애굽기 20장 13절",
         "url": "https://www.youtube.com/watch?v=iGgvxU2BWJg",
         "videoId": "iGgvxU2BWJg",
         "fullTitle": "주일 오전예배20180708 / 십계명 제 6계명 / 출애굽기 20장 13절 / 열방교회 주일오전예배 / 박훈 목사 설교"
@@ -237,7 +237,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 19,
         "title": "19강 - 십계명 제7계명 (간음하지 말라)",
-        "passage": "출애굽기 20:14",
+        "passage": "출애굽기 20장 14절",
         "url": "https://www.youtube.com/watch?v=gaWUUZ-PLXE",
         "videoId": "gaWUUZ-PLXE",
         "fullTitle": "주일 오전예배(20180715) / 십계명 제 7계명 / 출애굽기 20장 14절 / 열방교회 박훈 목사 설교"
@@ -245,7 +245,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 20,
         "title": "20강 - 십계명 제8계명 (도둑질하지 말라)",
-        "passage": "출애굽기 20:15",
+        "passage": "출애굽기 20장 15절",
         "url": "https://www.youtube.com/watch?v=iU9SZbRpjQU",
         "videoId": "iU9SZbRpjQU",
         "fullTitle": "주일 오전예배(20180722) / 십계명 제 8계명 / 출애굽기 20장 15절 / 열방교회 박훈 목사 설교"
@@ -253,7 +253,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 21,
         "title": "21강 - 십계명 제9계명 (네 이웃에 대하여 거짓 증거하지 말라)",
-        "passage": "출애굽기 20:16",
+        "passage": "출애굽기 20장 16절",
         "url": "https://www.youtube.com/watch?v=u-Zygzv3WPI",
         "videoId": "u-Zygzv3WPI",
         "fullTitle": "주일 오전예배(20180729) / 십계명 제 9계명 / 출애굽기 20장 16절 / 열방교회 박훈 목사 설교"
@@ -261,7 +261,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 22,
         "title": "22강 - 십계명 제10계명 (네 이웃의 집을 탐내지 말라)",
-        "passage": "출애굽기 20:17",
+        "passage": "출애굽기 20장 17절",
         "url": "https://www.youtube.com/watch?v=CT7mN6eEIdI",
         "videoId": "CT7mN6eEIdI",
         "fullTitle": "주일 오전예배(20180805) / 십계명 제 10계명 / 출애굽기 20장 17절 / 열방교회 박훈 목사 설교"
@@ -282,7 +282,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "1강 - 절대적인 분을. 절대적인 자리에!",
-        "passage": "창세기 1장 1절, 신명기 6장 4-9절",
+        "passage": "창세기 1장 1절, 신명기 6장 4~9절",
         "url": "https://www.youtube.com/watch?v=jvqaNuhhaRg",
         "videoId": "jvqaNuhhaRg",
         "fullTitle": "창세기 1장 1절, 신명기 6장 4-9절 / 절대적인 분을. 절대적인 자리에!/ 주일 오전예배(20171203) / 열방교회 박훈 목사 설교"
@@ -290,7 +290,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 2,
         "title": "2강 - 당신의 본분을 찾으라!",
-        "passage": "창세기 2장 4-17절, 창세기 3장 15절",
+        "passage": "창세기 2장 4~17절, 창세기 3장 15절",
         "url": "https://www.youtube.com/watch?v=hp2km19PQPM",
         "videoId": "hp2km19PQPM",
         "fullTitle": "창세기 2장 4-17절, 창세기 3장 15절 / 당신의 본분을 찾으라! / 주일 오전예배(20171210) / 열방교회 박훈 목사 설교"
@@ -298,7 +298,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 3,
         "title": "3강 - 하나님이 다가오실 때",
-        "passage": "창세기 4장 1-15절",
+        "passage": "창세기 4장 1~15절",
         "url": "https://www.youtube.com/watch?v=FpwUvMDk220",
         "videoId": "FpwUvMDk220",
         "fullTitle": "창세기 4장 1-15절 / “하나님이 다가오실 때” / 주일 오전예배(20171217) / 열방교회 박훈 목사 설교"
@@ -306,7 +306,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 4,
         "title": "4강 - 늦기 전에 타십시오!",
-        "passage": "창세기 6장 9-22절, 7장 17-24절",
+        "passage": "창세기 6장 9~22절, 창세기 7장 17~24절",
         "url": "https://www.youtube.com/watch?v=YiyY8hgafQo",
         "videoId": "YiyY8hgafQo",
         "fullTitle": "창세기 6장 9-22절, 7장 17-24절 / \"늦기 전에 타십시오!\" / 주일 오전예배(20171224) / 열방교회 박훈 목사 설교"
@@ -314,7 +314,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 5,
         "title": "5강 - 하나님을 대적하는 바벨사상",
-        "passage": "창세기 11장 1-9절",
+        "passage": "창세기 11장 1~9절",
         "url": "https://www.youtube.com/watch?v=96jhMgmTAxQ",
         "videoId": "96jhMgmTAxQ",
         "fullTitle": "창세기 11장 1-9절 / \"하나님을 대적하는 바벨사상\" / 주일 오전예배(20171231) / 열방교회 박훈 목사 설교"
@@ -322,7 +322,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 6,
         "title": "6강 - 완전한 부르심에 온전한 믿음으로!",
-        "passage": "창세기 12장 1-9절",
+        "passage": "창세기 12장 1~9절",
         "url": "https://www.youtube.com/watch?v=mwAsUuHVsto",
         "videoId": "mwAsUuHVsto",
         "fullTitle": "창세기 12장 1-9절 / \"완전한 부르심에 온전한 믿음으로!\" / 주일 오전예배(20180107 ) / 열방교회 박훈 목사 설교"
@@ -330,7 +330,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 7,
         "title": "7강 - 너는 내 앞에서 행하여 완전하라!",
-        "passage": "창세기 17장 1-8절",
+        "passage": "창세기 17장 1~8절",
         "url": "https://www.youtube.com/watch?v=ZdzHUR_0ve0",
         "videoId": "ZdzHUR_0ve0",
         "fullTitle": "창세기 17장 1-8절 / 너는 내 앞에서 행하여 완전하라! / 주일 오전예배(20180121) / 열방교회 박훈 목사 설교"
@@ -338,7 +338,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 8,
         "title": "8강 - 인본주의와 하나님의 길로 행하는 삶!",
-        "passage": "창세기 15장 1 ~6절",
+        "passage": "창세기 15장 1~6절",
         "url": "https://www.youtube.com/watch?v=V3h81dpubCc",
         "videoId": "V3h81dpubCc",
         "fullTitle": "창세기 15장 1 ~6절 / \"인본주의와 하나님의 길로 행하는 삶!\" / 주일 오전예배 설교(20180114) / 열방교회 박훈 목사 설교"
@@ -354,7 +354,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 10,
         "title": "10강 - 하늘에 속한 자 - 성령을 따라 행하라!",
-        "passage": "창세기 23장 1 ~20절",
+        "passage": "창세기 23장 1~20절",
         "url": "https://www.youtube.com/watch?v=mik_pibe8d8",
         "videoId": "mik_pibe8d8",
         "fullTitle": "창세기 23장 1 ~20절 / \"하늘에 속한 자 - 성령을 따라 행하라!\" / 주일 오전예배(20180204) / 열방교회 박훈 목사 설교"
@@ -362,7 +362,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 11,
         "title": "11강 - 하나님의 절대주권에 반응하는 합당한 자세!",
-        "passage": "창세기 27장 30 ~ 40절",
+        "passage": "창세기 27장 30~40절",
         "url": "https://www.youtube.com/watch?v=TIOcs9RuMFQ",
         "videoId": "TIOcs9RuMFQ",
         "fullTitle": "창세기 27장 30 ~ 40절 / \"하나님의 절대주권에 반응하는 합당한 자세!\" / 주일오전예배(2018.02.18) / 열방교회 박훈목사 설교"
@@ -370,7 +370,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 12,
         "title": "12강 - 벧엘로 돌아가라!",
-        "passage": "창세기 28장 10 ~ 22절, 창세기 35장 1~ 7절",
+        "passage": "창세기 28장 10~22절, 창세기 35장 1~7절",
         "url": "https://www.youtube.com/watch?v=QiH1sIprUUQ",
         "videoId": "QiH1sIprUUQ",
         "fullTitle": "창세기 28장 10 ~ 22절, 창세기 35장 1~ 7절 / 벧엘로 돌아가라! / 주일 오전예배(20180225) / 열방교회 박훈 목사 설교"
@@ -378,7 +378,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 13,
         "title": "13강 - 하나님이 저와 함께 계셔!",
-        "passage": "창세기 37장 1~ 11절, 사도행전 7장 9 ~10절",
+        "passage": "창세기 37장 1~11절, 사도행전 7장 9~10절",
         "url": "https://www.youtube.com/watch?v=ntQCyuEUj_M",
         "videoId": "ntQCyuEUj_M",
         "fullTitle": "창세기 37장 1~ 11절, 사도행전 7장 9 ~10절 / 하나님이 저와 함께 계셔! / 주일 오전예배(20180304) / 열방교회 박훈 목사 설교"
@@ -398,246 +398,165 @@ window.INITIAL_SERMONS_ARCHIVE = {
     "episodes": [
       {
         "ep": 1,
-        "title": "1강 - 말씀이 육신이 되어 우리 가운데 거하시매",
-        "passage": "요한복음 1:1~14",
-        "date": "2021.12.05",
-        "videoId": "eijEaUo4T9I",
-        "startTime": 1170,
-        "url": "https://www.youtube.com/watch?v=eijEaUo4T9I&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=1&t=1170s",
-        "fullTitle": "주일예배 (2021.12.05) / 요한복음 1:1~14 / 말씀이 육신이 되어 우리 가운데 거하시매 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "1강 - 요한복음의 주제와 목적",
+        "passage": "요한복음 20장 30~31절",
+        "url": "https://www.youtube.com/watch?v=eijEaUo4T9I&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=1&t=2905s",
+        "startTime": 2905,
+        "pdfUrl": null
       },
       {
         "ep": 2,
-        "title": "2강 - 세상 죄를 지고 가는 하나님의 어린 양",
-        "passage": "요한복음 1:15~34",
-        "date": "2021.12.12",
-        "videoId": "mmz2QXk2Vsk",
-        "startTime": 1440,
-        "url": "https://www.youtube.com/watch?v=mmz2QXk2Vsk&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=2&t=1440s",
-        "fullTitle": "주일예배 (2021.12.12) / 요한복음 1:15~34 / 세상 죄를 지고 가는 하나님의 어린 양 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "2강 - 최초로 메시아를 만난 사람들",
+        "passage": "요한복음 1장 35~50절",
+        "url": "https://www.youtube.com/watch?v=mmz2QXk2Vsk&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=2&t=2905s",
+        "startTime": 2905,
+        "pdfUrl": null
       },
       {
         "ep": 3,
-        "title": "3강 - 와서 보라 (첫 제자들을 부르심)",
-        "passage": "요한복음 1:35~51",
-        "date": "2021.12.19",
-        "videoId": "HeF6VKskJrs",
-        "startTime": 930,
-        "url": "https://www.youtube.com/watch?v=HeF6VKskJrs&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=3&t=930s",
-        "fullTitle": "주일예배 (2021.12.19) / 요한복음 1:35~51 / 와서 보라 (첫 제자들을 부르심) / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "3강 - 잔치가 시작되다",
+        "passage": "요한복음 2장 1~12절",
+        "url": "https://www.youtube.com/watch?v=HeF6VKskJrs&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=3&t=2599s",
+        "startTime": 2599,
+        "pdfUrl": null
       },
       {
         "ep": 4,
-        "title": "4강 - 가나 혼인 잔치의 첫 표적",
-        "passage": "요한복음 2:1~12",
-        "date": "2021.12.26",
-        "videoId": "JziveQxL2rU",
-        "startTime": 1620,
-        "url": "https://www.youtube.com/watch?v=JziveQxL2rU&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=4&t=1620s",
-        "fullTitle": "주일예배 (2021.12.26) / 요한복음 2:1~12 / 가나 혼인 잔치의 첫 표적 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "4강 - 성전을 헐라 사흘 만에 다시 세우리라",
+        "passage": "요한복음 2장 13~22절",
+        "url": "https://www.youtube.com/watch?v=JziveQxL2rU&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=4&t=3622s",
+        "startTime": 3622,
+        "pdfUrl": null
       },
       {
         "ep": 5,
-        "title": "5강 - 성전을 청결하게 하신 예수님",
-        "passage": "요한복음 2:13~25",
-        "date": "2022.01.02",
-        "videoId": "Yv9G9DAI5Q8",
-        "startTime": 1500,
-        "url": "https://www.youtube.com/watch?v=Yv9G9DAI5Q8&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=5&t=1500s",
-        "fullTitle": "주일예배 (2022.01.02) / 요한복음 2:13~25 / 성전을 청결하게 하신 예수님 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "5강 - 거듭나야 들어가는 하나님 나라",
+        "passage": "요한복음 2장 23절~3장 15절",
+        "url": "https://www.youtube.com/watch?v=Yv9G9DAI5Q8&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=5&t=3221s",
+        "startTime": 3221,
+        "pdfUrl": null
       },
       {
         "ep": 6,
-        "title": "6강 - 거듭나지 아니하면",
-        "passage": "요한복음 3:1~15",
-        "date": "2022.01.09",
-        "videoId": "nhAKUapCuyc",
-        "startTime": 1020,
-        "url": "https://www.youtube.com/watch?v=nhAKUapCuyc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=6&t=1020s",
-        "fullTitle": "주일예배 (2022.01.09) / 요한복음 3:1~15 / 거듭나지 아니하면 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "6강 - 영원히 목마르지 않게 하는 물",
+        "passage": "요한복음 4장 1~26절",
+        "url": "https://www.youtube.com/watch?v=nhAKUapCuyc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=6&t=3373s",
+        "startTime": 3373,
+        "pdfUrl": null
       },
       {
         "ep": 7,
-        "title": "7강 - 하나님이 세상을 이처럼 사랑하사",
-        "passage": "요한복음 3:16~21",
-        "date": "2022.01.16",
-        "videoId": "zW2xyp2tn4U",
-        "startTime": 1080,
-        "url": "https://www.youtube.com/watch?v=zW2xyp2tn4U&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=7&t=1080s",
-        "fullTitle": "주일예배 (2022.01.16) / 요한복음 3:16~21 / 하나님이 세상을 이처럼 사랑하사 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "7강 - 예수님이 말씀하시니",
+        "passage": "요한복음 4장 46~54절",
+        "url": "https://www.youtube.com/watch?v=zW2xyp2tn4U&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=7&t=3169s",
+        "startTime": 3169,
+        "pdfUrl": null
       },
       {
         "ep": 8,
-        "title": "8강 - 그는 흥하여야 하겠고 나는 쇠하여야 하리라",
-        "passage": "요한복음 3:22~36",
-        "date": "2022.01.23",
-        "videoId": "ADWh7_hzzGo",
-        "startTime": 1440,
-        "url": "https://www.youtube.com/watch?v=ADWh7_hzzGo&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=8&t=1440s",
-        "fullTitle": "주일예배 (2022.01.23) / 요한복음 3:22~36 / 그는 흥하여야 하겠고 나는 쇠하여야 하리라 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "8강 - 38년 된 병자를 고치신 예수님",
+        "passage": "요한복음 5장 1~15절",
+        "url": "https://www.youtube.com/watch?v=ADWh7_hzzGo&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=8&t=3231s",
+        "startTime": 3231,
+        "pdfUrl": null
       },
       {
         "ep": 9,
-        "title": "9강 - 영원히 목마르지 아니하는 생수",
-        "passage": "요한복음 4:1~14",
-        "date": "2022.01.30",
-        "videoId": "kjwR3bvBVcg",
-        "startTime": 1590,
-        "url": "https://www.youtube.com/watch?v=kjwR3bvBVcg&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=9&t=1590s",
-        "fullTitle": "주일예배 (2022.01.30) / 요한복음 4:1~14 / 영원히 목마르지 아니하는 생수 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "9강 - 생명이 떡이 되신 예수님",
+        "passage": "요한복음 6장 1~15절",
+        "url": "https://www.youtube.com/watch?v=kjwR3bvBVcg&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=9&t=3251s",
+        "startTime": 3251,
+        "pdfUrl": null
       },
       {
         "ep": 10,
-        "title": "10강 - 신령과 진정으로 예배할 때가 오나니",
-        "passage": "요한복음 4:15~26",
-        "date": "2022.02.06",
-        "videoId": "4dAif8_M1cc",
-        "startTime": 1380,
-        "url": "https://www.youtube.com/watch?v=4dAif8_M1cc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=10&t=1380s",
-        "fullTitle": "주일예배 (2022.02.06) / 요한복음 4:15~26 / 신령과 진정으로 예배할 때가 오나니 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "10강 - 그리스도의 판별기준",
+        "passage": "요한복음 7장 1~9절",
+        "url": "https://www.youtube.com/watch?v=4dAif8_M1cc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=10&t=3078s",
+        "startTime": 3078,
+        "pdfUrl": null
       },
       {
         "ep": 11,
-        "title": "11강 - 나의 양식은 나를 보내신 이의 뜻을 행하는 것",
-        "passage": "요한복음 4:27~42",
-        "date": "2022.02.13",
-        "videoId": "fQHl3nF12mA",
-        "startTime": 1410,
-        "url": "https://www.youtube.com/watch?v=fQHl3nF12mA&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=11&t=1410s",
-        "fullTitle": "주일예배 (2022.02.13) / 요한복음 4:27~42 / 나의 양식은 나를 보내신 이의 뜻을 행하는 것 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "11강 - 세상의 빛이 되신 예수님",
+        "passage": "요한복음 8장 12~20절",
+        "url": "https://www.youtube.com/watch?v=fQHl3nF12mA&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=11&t=3090s",
+        "startTime": 3090,
+        "pdfUrl": null
       },
       {
         "ep": 12,
-        "title": "12강 - 표적과 기사를 보지 못하면 믿지 아니하리라",
-        "passage": "요한복음 4:43~54",
-        "date": "2022.02.20",
-        "videoId": "F71MC_8-sYU",
-        "startTime": 1020,
-        "url": "https://www.youtube.com/watch?v=F71MC_8-sYU&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=12&t=1020s",
-        "fullTitle": "주일예배 (2022.02.20) / 요한복음 4:43~54 / 표적과 기사를 보지 못하면 믿지 아니하리라 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "12강 - 맹인의 눈을 뜨게 하신 예수 그리스도",
+        "passage": "요한복음 9장 1~12절",
+        "url": "https://www.youtube.com/watch?v=F71MC_8-sYU&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=12&t=3191s",
+        "startTime": 3191,
+        "pdfUrl": null
       },
       {
         "ep": 13,
-        "title": "13강 - 베데스다 못가의 삼십팔 년 된 병자",
-        "passage": "요한복음 5:1~9",
-        "date": "2022.02.27",
-        "videoId": "Xs0-p4RSF0M",
-        "startTime": 1440,
-        "url": "https://www.youtube.com/watch?v=Xs0-p4RSF0M&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=13&t=1440s",
-        "fullTitle": "주일예배 (2022.02.27) / 요한복음 5:1~9 / 베데스다 못가의 삼십팔 년 된 병자 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "13강 - 양의 문과 선한 목자 되시는 예수 그리스도",
+        "passage": "요한복음 10장 1~10절",
+        "url": "https://www.youtube.com/watch?v=Xs0-p4RSF0M&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=13&t=3115s",
+        "startTime": 3115,
+        "pdfUrl": null
       },
       {
         "ep": 14,
-        "title": "14강 - 안식일에 일하시는 하나님",
-        "passage": "요한복음 5:9~18",
-        "date": "2022.03.06",
-        "videoId": "1LIsG2EHBvg",
-        "startTime": 1320,
-        "url": "https://www.youtube.com/watch?v=1LIsG2EHBvg&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=14&t=1320s",
-        "fullTitle": "주일예배 (2022.03.06) / 요한복음 5:9~18 / 안식일에 일하시는 하나님 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "14강 - 부활이요 생명되신 예수 그리스도",
+        "passage": "요한복음 11장 28~44절",
+        "url": "https://www.youtube.com/watch?v=1LIsG2EHBvg&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=14&t=2775s",
+        "startTime": 2775,
+        "pdfUrl": null
       },
       {
         "ep": 15,
-        "title": "15강 - 아버지께서 죽은 자들을 살리심 같이",
-        "passage": "요한복음 5:19~29",
-        "date": "2022.03.13",
-        "videoId": "pMQd98x8Gus",
-        "startTime": 1440,
-        "url": "https://www.youtube.com/watch?v=pMQd98x8Gus&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=15&t=1440s",
-        "fullTitle": "주일예배 (2022.03.13) / 요한복음 5:19~29 / 아버지께서 죽은 자들을 살리심 같이 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "15강 - 인자가 영광을 얻을 때가 왔도다",
+        "passage": "요한복음 12장 27~33절",
+        "url": "https://www.youtube.com/watch?v=pMQd98x8Gus&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=15&t=3013s",
+        "startTime": 3013,
+        "pdfUrl": null
       },
       {
         "ep": 16,
-        "title": "16강 - 너희가 성경에서 영생을 얻는 줄 생각하고",
-        "passage": "요한복음 5:30~40",
-        "date": "2022.03.20",
-        "videoId": "lIFde-_ZQRc",
-        "startTime": 1290,
-        "url": "https://www.youtube.com/watch?v=lIFde-_ZQRc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=16&t=1290s",
-        "fullTitle": "주일예배 (2022.03.20) / 요한복음 5:30~40 / 너희가 성경에서 영생을 얻는 줄 생각하고 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "16강 - 길이요 진리요 생명이신 예수님",
+        "passage": "요한복음 14장 1~15절",
+        "url": "https://www.youtube.com/watch?v=lIFde-_ZQRc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=16&t=2773s",
+        "startTime": 2773,
+        "pdfUrl": null
       },
       {
         "ep": 17,
-        "title": "17강 - 모세를 믿었더라면 또 나를 믿었으리니",
-        "passage": "요한복음 5:41~47",
-        "date": "2022.03.27",
-        "videoId": "VB8bKSlffKc",
-        "startTime": 1530,
-        "url": "https://www.youtube.com/watch?v=VB8bKSlffKc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=17&t=1530s",
-        "fullTitle": "주일예배 (2022.03.27) / 요한복음 5:41~47 / 모세를 믿었더라면 또 나를 믿었으리니 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "17강 - 나의 안에 거하라",
+        "passage": "요한복음 15장 1~11절",
+        "url": "https://www.youtube.com/watch?v=VB8bKSlffKc&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=17&t=3248s",
+        "startTime": 3248,
+        "pdfUrl": null
       },
       {
         "ep": 18,
-        "title": "18강 - 오병이어의 표적",
-        "passage": "요한복음 6:1~15",
-        "date": "2022.04.03",
-        "videoId": "Ee0kjD-_cEo",
-        "startTime": 1440,
-        "url": "https://www.youtube.com/watch?v=Ee0kjD-_cEo&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=18&t=1440s",
-        "fullTitle": "주일예배 (2022.04.03) / 요한복음 6:1~15 / 오병이어의 표적 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "18강 - 내가 떠나가는 것이 유익이라",
+        "passage": "요한복음 16장 1~15절",
+        "url": "https://www.youtube.com/watch?v=Ee0kjD-_cEo&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=18&t=3253s",
+        "startTime": 3253,
+        "pdfUrl": null
       },
       {
         "ep": 19,
-        "title": "19강 - 내니 두려워하지 말라",
-        "passage": "요한복음 6:16~21",
-        "date": "2022.04.10",
-        "videoId": "_1d2I6Br2NM",
-        "startTime": 1440,
-        "url": "https://www.youtube.com/watch?v=_1d2I6Br2NM&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=19&t=1440s",
-        "fullTitle": "주일예배 (2022.04.10) / 요한복음 6:16~21 / 내니 두려워하지 말라 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "19강 - 아버지여 때가 이르렀습니다",
+        "passage": "요한복음 17장 1~8절",
+        "url": "https://www.youtube.com/watch?v=_1d2I6Br2NM&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=19&t=3158s",
+        "startTime": 3158,
+        "pdfUrl": null
       },
       {
         "ep": 20,
-        "title": "20강 - 하나님의 일은 하나님이 보내신 이를 믿는 것",
-        "passage": "요한복음 6:22~29",
-        "date": "2022.04.17",
-        "videoId": "SpQI3nwCuGQ",
-        "startTime": 1440,
-        "url": "https://www.youtube.com/watch?v=SpQI3nwCuGQ&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=20&t=1440s",
-        "fullTitle": "주일예배 (2022.04.17) / 요한복음 6:22~29 / 하나님의 일은 하나님이 보내신 이를 믿는 것 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회",
-        "thumb": "images/john_gospel.jpg"
+        "title": "20강 - 다 이루신 예수 그리스도",
+        "passage": "요한복음 19장 28~30절, 요한복음 20장 11~18절",
+        "url": "https://www.youtube.com/watch?v=SpQI3nwCuGQ&list=PLSaHerzUahU93xXTqdLKKGeqdyoW8dgRO&index=20&t=2940s",
+        "startTime": 2940,
+        "pdfUrl": null
       }
-    ],
-    "thumb": "images/john_gospel.jpg"
+    ]
   },
   "romans": {
     "id": "romans",
@@ -652,499 +571,499 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "2023년 4월 30일 주일예배 (로마서 강해 1 - 로마서 개요)",
-        "passage": "로마서 강해 1 - 로마서 개요",
+        "passage": "로마서 강해 1~로마서 개요",
         "url": "https://www.youtube.com/watch?v=P8ZBoURMrus"
       },
       {
         "ep": 2,
         "title": "2023년 5월 7일 주일예배 (로마서 강해 2 - 아들에 관한 복음)",
-        "passage": "로마서 강해 2 - 아들에 관한 복음",
+        "passage": "로마서 강해 2~아들에 관한 복음",
         "url": "https://www.youtube.com/watch?v=oiyKGL5EN0U"
       },
       {
         "ep": 3,
         "title": "2023년 5월 14일 주일예배 (로마서 강해 3 - 믿어 순종케 하시는 은혜)",
-        "passage": "로마서 강해 3 - 믿어 순종케 하시는 은혜",
+        "passage": "로마서 강해 3~믿어 순종케 하시는 은혜",
         "url": "https://www.youtube.com/watch?v=mz_3hpwy2qU"
       },
       {
         "ep": 4,
         "title": "2023년 5월 21일 주일예배 (로마서 강해 4 - 믿어 순종케 하시는 삶)",
-        "passage": "로마서 강해 4 - 믿어 순종케 하시는 삶",
+        "passage": "로마서 강해 4~믿어 순종케 하시는 삶",
         "url": "https://www.youtube.com/watch?v=C12DEk7Qu9I"
       },
       {
         "ep": 5,
         "title": "2023년 5월 28일 주일예배 (로마서 강해 5 - 불경건과 불의에 대한 하나님의 진노)",
-        "passage": "로마서 강해 5 - 불경건과 불의에 대한 하나님의 진노",
+        "passage": "로마서 강해 5~불경건과 불의에 대한 하나님의 진노",
         "url": "https://www.youtube.com/watch?v=u8TCHs1jFvg"
       },
       {
         "ep": 6,
         "title": "2023년 6월 4일 주일예배 (로마서 강해 6 - 하나님의 진노가 임하는 양상)",
-        "passage": "로마서 강해 6 - 하나님의 진노가 임하는 양상",
+        "passage": "로마서 강해 6~하나님의 진노가 임하는 양상",
         "url": "https://www.youtube.com/watch?v=HxyRGTSLfGE"
       },
       {
         "ep": 7,
         "title": "2023년 6월 11일 주일예배 (로마서 강해 7 - 너 판단하는 사람아)",
-        "passage": "로마서 강해 7 - 너 판단하는 사람아",
+        "passage": "로마서 강해 7~너 판단하는 사람아",
         "url": "https://www.youtube.com/watch?v=lRNv0KzaCF0"
       },
       {
         "ep": 8,
         "title": "2023년 6월 18일 주일예배 (로마서 강해 8 - 회개하고 복음을 믿으라)",
-        "passage": "로마서 강해 8 - 회개하고 복음을 믿으라",
+        "passage": "로마서 강해 8~회개하고 복음을 믿으라",
         "url": "https://www.youtube.com/watch?v=2rTXw1S7WuM"
       },
       {
         "ep": 9,
         "title": "2023년 6월 25일 주일예배 (로마서 강해 9 - 변하지 않는 대원칙)",
-        "passage": "로마서 강해 9 - 변하지 않는 대원칙",
+        "passage": "로마서 강해 9~변하지 않는 대원칙",
         "url": "https://www.youtube.com/watch?v=hnzsOvn3s-Q"
       },
       {
         "ep": 10,
         "title": "2023년 7월 2일 주일예배 (로마서 강해 10 - 율법이 있든 없든)",
-        "passage": "로마서 강해 10 - 율법이 있든 없든",
+        "passage": "로마서 강해 10~율법이 있든 없든",
         "url": "https://www.youtube.com/watch?v=rAD-vTQzg90"
       },
       {
         "ep": 11,
         "title": "2023년 7월 9일 주일예배 (로마서 강해 11 - 표면적 신자와 이면적 신자)",
-        "passage": "로마서 강해 11 - 표면적 신자와 이면적 신자",
+        "passage": "로마서 강해 11~표면적 신자와 이면적 신자",
         "url": "https://www.youtube.com/watch?v=H_KHAhQ8TS8"
       },
       {
         "ep": 12,
         "title": "2023년 7월 16일 주일예배 (로마서 강해 12 - 우리가 경계해야 할 반론들)",
-        "passage": "로마서 강해 12 - 우리가 경계해야 할 반론들",
+        "passage": "로마서 강해 12~우리가 경계해야 할 반론들",
         "url": "https://www.youtube.com/watch?v=BLeIdXagWC4"
       },
       {
         "ep": 13,
         "title": "2023년 7월 23일 주일예배 (로마서 강해 13 - 의인은 없나니 하나도 없으며)",
-        "passage": "로마서 강해 13 - 의인은 없나니 하나도 없으며",
+        "passage": "로마서 강해 13~의인은 없나니 하나도 없으며",
         "url": "https://www.youtube.com/watch?v=2GogaJgZ3zs"
       },
       {
         "ep": 14,
         "title": "2023년 7월 30일 주일예배 (로마서 강해 14 - 그러나 이제는)",
-        "passage": "로마서 강해 14 - 그러나 이제는",
+        "passage": "로마서 강해 14~그러나 이제는",
         "url": "https://www.youtube.com/watch?v=PcqoR-NtyoM"
       },
       {
         "ep": 15,
         "title": "2023년 8월 6일 주일예배 (로마서 강해 15 - 하나님이 세우신 화목제물)",
-        "passage": "로마서 강해 15 - 하나님이 세우신 화목제물",
+        "passage": "로마서 강해 15~하나님이 세우신 화목제물",
         "url": "https://www.youtube.com/watch?v=yZtyw4h2O_M"
       },
       {
         "ep": 16,
         "title": "2023년 8월 13일 주일예배 (로마서 강해 16 - 이신칭의 복음의 귀결)",
-        "passage": "로마서 강해 16 - 이신칭의 복음의 귀결",
+        "passage": "로마서 강해 16~이신칭의 복음의 귀결",
         "url": "https://www.youtube.com/watch?v=DEmq3akxTH8"
       },
       {
         "ep": 17,
         "title": "2023년 8월 20일 주일예배 (로마서 강해 17 - 아브라함과 다윗의 예)",
-        "passage": "로마서 강해 17 - 아브라함과 다윗의 예",
+        "passage": "로마서 강해 17~아브라함과 다윗의 예",
         "url": "https://www.youtube.com/watch?v=nymd-BCKrZM"
       },
       {
         "ep": 18,
         "title": "2023년 8월 27일 주일예배 (로마서 강해 18 - 할례를 앞선 믿음)",
-        "passage": "로마서 강해 18 - 할례를 앞선 믿음",
+        "passage": "로마서 강해 18~할례를 앞선 믿음",
         "url": "https://www.youtube.com/watch?v=jIK_2tShVH0"
       },
       {
         "ep": 19,
         "title": "2023년 9월 3일 주일예배 (로마서 강해 19 - 율법을 앞선 믿음)",
-        "passage": "로마서 강해 19 - 율법을 앞선 믿음",
+        "passage": "로마서 강해 19~율법을 앞선 믿음",
         "url": "https://www.youtube.com/watch?v=Ckzxlf2SvOg"
       },
       {
         "ep": 20,
         "title": "2023년 9월 10일 주일예배 (로마서 강해 20 - 믿음의 본질)",
-        "passage": "로마서 강해 20 - 믿음의 본질",
+        "passage": "로마서 강해 20~믿음의 본질",
         "url": "https://www.youtube.com/watch?v=pIm3D_T7eYY"
       },
       {
         "ep": 21,
         "title": "2023년 9월 17일 주일예배 (로마서 강해 21 - 구원 받는 믿음)",
-        "passage": "로마서 강해 21 - 구원 받는 믿음",
+        "passage": "로마서 강해 21~구원 받는 믿음",
         "url": "https://www.youtube.com/watch?v=1HTIC02FkkA"
       },
       {
         "ep": 22,
         "title": "2023년 9월 24일 주일예배 (로마서 강해 22 - 믿음의 결과)",
-        "passage": "로마서 강해 22 - 믿음의 결과",
+        "passage": "로마서 강해 22~믿음의 결과",
         "url": "https://www.youtube.com/watch?v=QJHSueryutk"
       },
       {
         "ep": 23,
         "title": "2023년 10월 1일 주일예배 (로마서 강해 23 - 환난  중에도 즐거워하는 성도)",
-        "passage": "로마서 강해 23 - 환난  중에도 즐거워하는 성도",
+        "passage": "로마서 강해 23~환난 중에도 즐거워하는 성도",
         "url": "https://www.youtube.com/watch?v=naeiB1iX1Ds"
       },
       {
         "ep": 24,
         "title": "2023년 10월 8일 주일예배 (로마서 강해 24 - 하나님의 사랑에 근거한 구원의 확신)",
-        "passage": "로마서 강해 24 - 하나님의 사랑에 근거한 구원의 확신",
+        "passage": "로마서 강해 24~하나님의 사랑에 근거한 구원의 확신",
         "url": "https://www.youtube.com/watch?v=QLCFpE6mDKI"
       },
       {
         "ep": 25,
         "title": "2023년 10월 15일 주일 예배 (로마서 강해 25 - 예외 없이 죄 짓고 죽는 삶)",
-        "passage": "로마서 강해 25 - 예외 없이 죄 짓고 죽는 삶",
+        "passage": "로마서 강해 25~예외 없이 죄 짓고 죽는 삶",
         "url": "https://www.youtube.com/watch?v=T88hos4K0cc"
       },
       {
         "ep": 26,
         "title": "2023년 10월 22일 주일예배 (로마서 강해 26 - 두 대표자의 다른 두 결과)",
-        "passage": "로마서 강해 26 - 두 대표자의 다른 두 결과",
+        "passage": "로마서 강해 26~두 대표자의 다른 두 결과",
         "url": "https://www.youtube.com/watch?v=k_DsMGLiPNY"
       },
       {
         "ep": 27,
         "title": "2023년 10월 29일 주일예배 (로마서 강해 27 - 죄의 왕 노릇과 은혜의 왕 노릇)",
-        "passage": "로마서 강해 27 - 죄의 왕 노릇과 은혜의 왕 노릇",
+        "passage": "로마서 강해 27~죄의 왕 노릇과 은혜의 왕 노릇",
         "url": "https://www.youtube.com/watch?v=rFyfqS9P2bs"
       },
       {
         "ep": 28,
         "title": "2023년 11월 5일 주일예배 (로마서 강해 28 - 그리스도와의 연합)",
-        "passage": "로마서 강해 28 - 그리스도와의 연합",
+        "passage": "로마서 강해 28~그리스도와의 연합",
         "url": "https://www.youtube.com/watch?v=WJybb6_gu2g"
       },
       {
         "ep": 29,
         "title": "2023년 11월 12일 주일예배 (로마서 강해 29 - 그리스도와의 연합의 목적)",
-        "passage": "로마서 강해 29 - 그리스도와의 연합의 목적",
+        "passage": "로마서 강해 29~그리스도와의 연합의 목적",
         "url": "https://www.youtube.com/watch?v=0Cc3HkrnW4U"
       },
       {
         "ep": 30,
         "title": "2023년 11월 19일 주일예배 (로마서 강해 30 - 여기라)",
-        "passage": "로마서 강해 30 - 여기라",
+        "passage": "로마서 강해 30~여기라",
         "url": "https://www.youtube.com/watch?v=YhPLU_uTrY0"
       },
       {
         "ep": 31,
         "title": "2023년 11월 26일 주일예배 (로마서 강해 31 - 드리라)",
-        "passage": "로마서 강해 31 - 드리라",
+        "passage": "로마서 강해 31~드리라",
         "url": "https://www.youtube.com/watch?v=DE5bFc3-5fw"
       },
       {
         "ep": 32,
         "title": "2023년 12월 3일 주일예배 (로마서 강해 32 - 새 생명의 원리)",
-        "passage": "로마서 강해 32 - 새 생명의 원리",
+        "passage": "로마서 강해 32~새 생명의 원리",
         "url": "https://www.youtube.com/watch?v=dPI3GWB_DFA"
       },
       {
         "ep": 33,
         "title": "2023년 12월 10일 주일예배 (로마서 강해 33 - 궁극적 결과에 기초한 권면)",
-        "passage": "로마서 강해 33 - 궁극적 결과에 기초한 권면",
+        "passage": "로마서 강해 33~궁극적 결과에 기초한 권면",
         "url": "https://www.youtube.com/watch?v=VeJ-ciZv-yI"
       },
       {
         "ep": 34,
         "title": "2023년 12월 17일 주일예배 (로마서 강해 34 - 그리스도인이 된다는 것)",
-        "passage": "로마서 강해 34 - 그리스도인이 된다는 것",
+        "passage": "로마서 강해 34~그리스도인이 된다는 것",
         "url": "https://www.youtube.com/watch?v=5EzDKQcaMJs"
       },
       {
         "ep": 35,
         "title": "2023년 12월 24일 주일예배 (로마서 강해 35 - 그러면 율법이 죄인가?)",
-        "passage": "로마서 강해 35 - 그러면 율법이 죄인가?",
+        "passage": "로마서 강해 35~그러면 율법이 죄인가?",
         "url": "https://www.youtube.com/watch?v=vDqb7dYPnrI"
       },
       {
         "ep": 36,
         "title": "2023년 12월 31일 주일예배 (로마서 강해 36 - 절망하는 자여! 예수께로 오라)",
-        "passage": "로마서 강해 36 - 절망하는 자여! 예수께로 오라",
+        "passage": "로마서 강해 36~절망하는 자여! 예수께로 오라",
         "url": "https://www.youtube.com/watch?v=MdJ8h5ArWBE"
       },
       {
         "ep": 37,
         "title": "2024년 1월 7일 주일예배 (로마서 강해 37 - 결코 정죄함이 없나니)",
-        "passage": "로마서 강해 37 - 결코 정죄함이 없나니",
+        "passage": "로마서 강해 37~결코 정죄함이 없나니",
         "url": "https://www.youtube.com/watch?v=Jt3I_5LrKF4"
       },
       {
         "ep": 38,
         "title": "2024년 1월 14일 주일예배 (로마서 강해 38 - 비그리스도인과 그리스도인)",
-        "passage": "로마서 강해 38 - 비그리스도인과 그리스도인",
+        "passage": "로마서 강해 38~비그리스도인과 그리스도인",
         "url": "https://www.youtube.com/watch?v=vP6Rt1UlEtM"
       },
       {
         "ep": 39,
         "title": "2024년 1월 21일 주일예배 (로마서 강해 39 - 겉사람과 속사람)",
-        "passage": "로마서 강해 39 - 겉사람과 속사람",
+        "passage": "로마서 강해 39~겉사람과 속사람",
         "url": "https://www.youtube.com/watch?v=Ubwqd3cAV58"
       },
       {
         "ep": 40,
         "title": "2024년 1월 28일 주일예배 (로마서 강해 40 - 몸을 죽이는 일)",
-        "passage": "로마서 강해 40 - 몸을 죽이는 일",
+        "passage": "로마서 강해 40~몸을 죽이는 일",
         "url": "https://www.youtube.com/watch?v=2dCjK1GJj7E"
       },
       {
         "ep": 41,
         "title": "2024년 2월 4일 주일예배 (로마서 강해 41 - 양자의 영)",
-        "passage": "로마서 강해 41 - 양자의 영",
+        "passage": "로마서 강해 41~양자의 영",
         "url": "https://www.youtube.com/watch?v=putag2tfsIE"
       },
       {
         "ep": 42,
         "title": "2024년 2월 11일 주일예배 (로마서 강해 42 - 신자의 고난)",
-        "passage": "로마서 강해 42 - 신자의 고난",
+        "passage": "로마서 강해 42~신자의 고난",
         "url": "https://www.youtube.com/watch?v=beJ7jVyml5k"
       },
       {
         "ep": 43,
         "title": "2024년 2월 18일 주일예배 (로마서 강해 43 - 피조물의 고대하는 것)",
-        "passage": "로마서 강해 43 - 피조물의 고대하는 것",
+        "passage": "로마서 강해 43~피조물의 고대하는 것",
         "url": "https://www.youtube.com/watch?v=wYY4_1nEaLM"
       },
       {
         "ep": 44,
         "title": "2024년 2월 25일 주일예배 (로마서 강해 44 - 성령의 탄식하는 중보기도)",
-        "passage": "로마서 강해 44 - 성령의 탄식하는 중보기도",
+        "passage": "로마서 강해 44~성령의 탄식하는 중보기도",
         "url": "https://www.youtube.com/watch?v=213K03jc8EA"
       },
       {
         "ep": 45,
         "title": "2024년 3월 3일 주일예배 (로마서 강해 45 - 하나님을 사랑하는 자들의 위안)",
-        "passage": "로마서 강해 45 - 하나님을 사랑하는 자들의 위안",
+        "passage": "로마서 강해 45~하나님을 사랑하는 자들의 위안",
         "url": "https://www.youtube.com/watch?v=AMKFYuW64hI"
       },
       {
         "ep": 46,
         "title": "2024년 3월 10일 주일예배 (로마서 강해 46 - 구원의 사슬고리)",
-        "passage": "로마서 강해 46 - 구원의 사슬고리",
+        "passage": "로마서 강해 46~구원의 사슬고리",
         "url": "https://www.youtube.com/watch?v=-AkMUr7wHOs"
       },
       {
         "ep": 47,
         "title": "2024년 3월 17일 주일예배 (로마서 강해 47 - 유효한 부르심)",
-        "passage": "로마서 강해 47 - 유효한 부르심",
+        "passage": "로마서 강해 47~유효한 부르심",
         "url": "https://www.youtube.com/watch?v=zZAY1xmKggk"
       },
       {
         "ep": 48,
         "title": "2024년 3월 24일 주일예배 (로마서 강해 48 - 하나님이 부르신 사람들 1)",
-        "passage": "로마서 강해 48 - 하나님이 부르신 사람들 1",
+        "passage": "로마서 강해 48~하나님이 부르신 사람들 1",
         "url": "https://www.youtube.com/watch?v=BRdI_L3e4pg"
       },
       {
         "ep": 49,
         "title": "2024년 3월 31일 주일예배 (로마서 강해 49 - 하나님이 부르신 사람들 2)",
-        "passage": "로마서 강해 49 - 하나님이 부르신 사람들 2",
+        "passage": "로마서 강해 49~하나님이 부르신 사람들 2",
         "url": "https://www.youtube.com/watch?v=w4cTJeQbW5A"
       },
       {
         "ep": 50,
         "title": "2024년 4월 7일 주일예배 (로마서 강해 50 - 하나님이 부르신 사람들 3)",
-        "passage": "로마서 강해 50 - 하나님이 부르신 사람들 3",
+        "passage": "로마서 강해 50~하나님이 부르신 사람들 3",
         "url": "https://www.youtube.com/watch?v=J7ZNFdLelEg"
       },
       {
         "ep": 51,
         "title": "2024년 4월 14일 주일예배 (로마서강해 51 - 하나님이 부르신 사람들 4)",
-        "passage": "로마서강해 51 - 하나님이 부르신 사람들 4",
+        "passage": "로마서 강해 51~하나님이 부르신 사람들 4",
         "url": "https://www.youtube.com/watch?v=MjYDYMLM-GI"
       },
       {
         "ep": 52,
         "title": "2024년 4월 21일 주일예배 (로마서 강해 52 - 하나님이 부르신 사람들 5)",
-        "passage": "로마서 강해 52 - 하나님이 부르신 사람들 5",
+        "passage": "로마서 강해 52~하나님이 부르신 사람들 5",
         "url": "https://www.youtube.com/watch?v=8QDRATUeWlg"
       },
       {
         "ep": 53,
         "title": "2024년 4월 28일 주일예배 (로마서 강해 53 - 하나님이 부르신 사람들 6)",
-        "passage": "로마서 강해 53 - 하나님이 부르신 사람들 6",
+        "passage": "로마서 강해 53~하나님이 부르신 사람들 6",
         "url": "https://www.youtube.com/watch?v=unfO29L05VQ"
       },
       {
         "ep": 54,
         "title": "2024년 5월 5일 주일예배 (로마서 강해 54 - 하나님이 부르신 사람들 7)",
-        "passage": "로마서 강해 54 - 하나님이 부르신 사람들 7",
+        "passage": "로마서 강해 54~하나님이 부르신 사람들 7",
         "url": "https://www.youtube.com/watch?v=g8X2lqXNyOI"
       },
       {
         "ep": 55,
         "title": "2024년 5월 12일 주일예배 (로마서 강해 55 - 하나님이 부르신 사람들 8)",
-        "passage": "로마서 강해 55 - 하나님이 부르신 사람들 8",
+        "passage": "로마서 강해 55~하나님이 부르신 사람들 8",
         "url": "https://www.youtube.com/watch?v=Bg96trh9r8c"
       },
       {
         "ep": 56,
         "title": "2024년 5월 19일 주일예배 (로마서 강해 56 - 하나님이 부르신 사람들 9)",
-        "passage": "로마서 강해 56 - 하나님이 부르신 사람들 9",
+        "passage": "로마서 강해 56~하나님이 부르신 사람들 9",
         "url": "https://www.youtube.com/watch?v=ETssmza64IM"
       },
       {
         "ep": 57,
         "title": "2024년 5월 26일 주일예배 (로마서 강해 57 - 하나님이 부르신 사람들 10)",
-        "passage": "로마서 강해 57 - 하나님이 부르신 사람들 10",
+        "passage": "로마서 강해 57~하나님이 부르신 사람들 10",
         "url": "https://www.youtube.com/watch?v=A3bKmCjwAQA"
       },
       {
         "ep": 58,
         "title": "2024년 6월 2일 주일예배 (로마서 강해 58 - 하나님이 부르신 사람들 11)",
-        "passage": "로마서 강해 58 - 하나님이 부르신 사람들 11",
+        "passage": "로마서 강해 58~하나님이 부르신 사람들 11",
         "url": "https://www.youtube.com/watch?v=6hAukMWD0bM"
       },
       {
         "ep": 59,
         "title": "2024년 6월 9일 주일예배 (로마서 강해 59 - 하나님이 부르신 사람들 12)",
-        "passage": "로마서 강해 59 - 하나님이 부르신 사람들 12",
+        "passage": "로마서 강해 59~하나님이 부르신 사람들 12",
         "url": "https://www.youtube.com/watch?v=foDXa0FPPwc"
       },
       {
         "ep": 60,
         "title": "2024년 6월 16일 주일예배 (로마서 강해 60 - 대답 할 수 없는 다섯 질문)",
-        "passage": "로마서 강해 60 - 대답 할 수 없는 다섯 질문",
+        "passage": "로마서 강해 60~대답 할 수 없는 다섯 질문",
         "url": "https://www.youtube.com/watch?v=j83E9YmWrXo"
       },
       {
         "ep": 61,
         "title": "2024년 6월 23일 주일예배 (로마서 강해 61 - 끊을 수 없는 하나님의 사랑)",
-        "passage": "로마서 강해 61 - 끊을 수 없는 하나님의 사랑",
+        "passage": "로마서 강해 61~끊을 수 없는 하나님의 사랑",
         "url": "https://www.youtube.com/watch?v=nSz0C-s_UTc"
       },
       {
         "ep": 62,
         "title": "2024년 6월 30일 주일예배 (로마서 강해 62 - 신자의 근심)",
-        "passage": "로마서 강해 62 - 신자의 근심",
+        "passage": "로마서 강해 62~신자의 근심",
         "url": "https://www.youtube.com/watch?v=zfiCYRdIoKQ"
       },
       {
         "ep": 63,
         "title": "2024년 7월 7일 주일예배 (로마서 강해 63 - 약속의 자녀들, 선택된 자녀들)",
-        "passage": "로마서 강해 63 - 약속의 자녀들, 선택된 자녀들",
+        "passage": "로마서 강해 63~약속의 자녀들, 로마서 선택된 자녀들",
         "url": "https://www.youtube.com/watch?v=l8C_6xXvek4"
       },
       {
         "ep": 64,
         "title": "2024년 7월 14일 주일예배 (로마서 강해 64 - 주권적으로 일하시는 하나님)",
-        "passage": "로마서 강해 64 - 주권적으로 일하시는 하나님",
+        "passage": "로마서 강해 64~주권적으로 일하시는 하나님",
         "url": "https://www.youtube.com/watch?v=T_-SN36HEyI"
       },
       {
         "ep": 65,
         "title": "2024년 7월 21일 주일예배 (로마서 강해 65 - 토기장이와 진흙)",
-        "passage": "로마서 강해 65 - 토기장이와 진흙",
+        "passage": "로마서 강해 65~토기장이와 진흙",
         "url": "https://www.youtube.com/watch?v=bAaMZ8g9rQU"
       },
       {
         "ep": 66,
         "title": "2024년 7월 28일 주일예배 (로마서 강해 66 - 하나님의 선고)",
-        "passage": "로마서 강해 66 - 하나님의 선고",
+        "passage": "로마서 강해 66~하나님의 선고",
         "url": "https://www.youtube.com/watch?v=4mn65_cNb1M"
       },
       {
         "ep": 67,
         "title": "2024년 8월 4일 주일예배 (로마서 강해 67 - 믿음에서 난 의)",
-        "passage": "로마서 강해 67 - 믿음에서 난 의",
+        "passage": "로마서 강해 67~믿음에서 난 의",
         "url": "https://www.youtube.com/watch?v=60rTmeUhqa4"
       },
       {
         "ep": 68,
         "title": "2024년 8월 11일 주일예배 (로마서 강해 68- 참된 열심과 거짓된 열심)",
-        "passage": "로마서 강해 68- 참된 열심과 거짓된 열심",
+        "passage": "로마서 강해 68~참된 열심과 거짓된 열심",
         "url": "https://www.youtube.com/watch?v=-ACWaopTxSo"
       },
       {
         "ep": 69,
         "title": "2024년 8월 18일 주일예배 (로마서 강해 69 - 율법으로 말미암은 의와 믿음으로 말미암은 의)",
-        "passage": "로마서 강해 69 - 율법으로 말미암은 의와 믿음으로 말미암은 의",
+        "passage": "로마서 강해 69~율법으로 말미암은 의와 믿음으로 말미암은 의",
         "url": "https://www.youtube.com/watch?v=uW9y1zSKTOY"
       },
       {
         "ep": 70,
         "title": "2024년 8월 25일 주일예배 (로마서 강해 70- 구원 받을 만한 믿음 (내용))",
-        "passage": "로마서 강해 70- 구원 받을 만한 믿음 (내용",
+        "passage": "로마서 강해 70~구원 받을 만한 믿음 (내용",
         "url": "https://www.youtube.com/watch?v=VDz7Aaz0KOw"
       },
       {
         "ep": 71,
         "title": "2024년 9월 1일 주일예배 (로마서 강해 71 - 구원 받을 만한 믿음 (본질과 성격))",
-        "passage": "로마서 강해 71 - 구원 받을 만한 믿음 (본질과 성격",
+        "passage": "로마서 강해 71~구원 받을 만한 믿음 (본질과 성격",
         "url": "https://www.youtube.com/watch?v=cppIn9k4NVc"
       },
       {
         "ep": 72,
         "title": "2024년 9월 8일 주일예배 (로마서 강해 72 - 구원 받는 믿음 (증거))",
-        "passage": "로마서 강해 72 - 구원 받는 믿음 (증거",
+        "passage": "로마서 강해 72~구원 받는 믿음 (증거",
         "url": "https://www.youtube.com/watch?v=fM-D4CtWU6E"
       },
       {
         "ep": 73,
         "title": "2024년 9월 15일 주일예배 (로마서 강해 73 - 부요하신 그리스도)",
-        "passage": "로마서 강해 73 - 부요하신 그리스도",
+        "passage": "로마서 강해 73~부요하신 그리스도",
         "url": "https://www.youtube.com/watch?v=PwjCKkPAvFE"
       },
       {
         "ep": 74,
         "title": "2024년 9월 22일 주일예배 (로마서 강해 74 - 설교자, 보내심 받은 전령)",
-        "passage": "로마서 강해 74 - 설교자, 보내심 받은 전령",
+        "passage": "로마서 강해 74~설교자, 로마서 보내심 받은 전령",
         "url": "https://www.youtube.com/watch?v=G2R1K1d-h48"
       },
       {
         "ep": 75,
         "title": "2024년 9월 29일 주일예배 (로마서 강해 75 - 믿음이 산출되는 방식)",
-        "passage": "로마서 강해 75 - 믿음이 산출되는 방식",
+        "passage": "로마서 강해 75~믿음이 산출되는 방식",
         "url": "https://www.youtube.com/watch?v=yEY1jok09ZI"
       },
       {
         "ep": 76,
         "title": "2024년 10월 6일 주일예배 (로마서 강해 76 - 믿지 않는 이유들)",
-        "passage": "로마서 강해 76 - 믿지 않는 이유들",
+        "passage": "로마서 강해 76~믿지 않는 이유들",
         "url": "https://www.youtube.com/watch?v=66Z5nhxIgrs"
       },
       {
         "ep": 77,
         "title": "2024년 10월 13일 주일예배 (로마서 강해 77 - 언약에 신실하신 하나님)",
-        "passage": "로마서 강해 77 - 언약에 신실하신 하나님",
+        "passage": "로마서 강해 77~언약에 신실하신 하나님",
         "url": "https://www.youtube.com/watch?v=R0tYgznQdbc"
       },
       {
         "ep": 78,
         "title": "2024년 10월 20일 주일예배 (로마서 강해 78 - 듣지 못하는 귀와 보지 못하는 눈)",
-        "passage": "로마서 강해 78 - 듣지 못하는 귀와 보지 못하는 눈",
+        "passage": "로마서 강해 78~듣지 못하는 귀와 보지 못하는 눈",
         "url": "https://www.youtube.com/watch?v=xjfogkQdR5c"
       },
       {
         "ep": 79,
         "title": "2024년 10월 27일 주일예배 (로마서 강해 79 - 유대인의 실패와 이방인의 부요)",
-        "passage": "로마서 강해 79 - 유대인의 실패와 이방인의 부요",
+        "passage": "로마서 강해 79~유대인의 실패와 이방인의 부요",
         "url": "https://www.youtube.com/watch?v=R9OSyBrpQMM"
       },
       {
         "ep": 80,
         "title": "2024년 11월 3일 주일예배 (로마서 강해 80 - 자랑하지 말라)",
-        "passage": "로마서 강해 80 - 자랑하지 말라",
+        "passage": "로마서 강해 80~자랑하지 말라",
         "url": "https://www.youtube.com/watch?v=3iMRAP1mtQ4"
       },
       {
         "ep": 81,
         "title": "2024년 11월 10일 주일예배 (로마서 강해 81 - 우리에게 달려있지 않은 우리의 구원)",
-        "passage": "로마서 강해 81 - 우리에게 달려있지 않은 우리의 구원",
+        "passage": "로마서 강해 81~우리에게 달려있지 않은 우리의 구원",
         "url": "https://www.youtube.com/watch?v=bsoJx7xqcEk"
       },
       {
         "ep": 82,
         "title": "2024년 11월 17일 주일예배 (로마서 강해 82 - 접붙이실 능력이 있으신 하나님)",
-        "passage": "로마서 강해 82 - 접붙이실 능력이 있으신 하나님",
+        "passage": "로마서 강해 82~접붙이실 능력이 있으신 하나님",
         "url": "https://www.youtube.com/watch?v=JJmfRVl_e5M"
       },
       {
         "ep": 83,
         "title": "2024년 11월 24일 주일예배 (로마서 강해 83 - 송영 받으시기에 합당하신 하나님)",
-        "passage": "로마서 강해 83 - 송영 받으시기에 합당하신 하나님",
+        "passage": "로마서 강해 83~송영 받으시기에 합당하신 하나님",
         "url": "https://www.youtube.com/watch?v=IyoKG9dejZQ"
       }
     ],
@@ -1409,136 +1328,174 @@ window.INITIAL_SERMONS_ARCHIVE = {
     "episodes": [
       {
         "ep": 1,
-        "title": "도르트 신조 첫째 교리 (1~3항) - 인류의 정죄와 하나님의 은혜",
-        "passage": "로마서 1:16~18",
+        "title": "도르트신조 서론 , 첫째 교리 1~5항 - 정죄 받아 마땅한 온 인류",
+        "passage": "로마서 3장 9~22절",
         "search": "열방교회 도르트 신조 인류의 정죄",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=19"
+        "url": "https://www.youtube.com/watch?v=v6HTE1bwpXY&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=19",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 2,
-        "title": "도르트 신조 첫째 교리 (4~6항) - 복음의 선포와 믿음의 기원",
-        "passage": "요한복음 3:16~18",
+        "title": "도르트 신조 첫째 교리 6~7항 - 영원한 작정에 기초한 구원",
+        "passage": "에베소서 1장 3~7절",
         "search": "열방교회 도르트 신조 복음의 선포",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=18"
+        "url": "https://www.youtube.com/watch?v=1fArDpVUkBw&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=18",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 3,
-        "title": "도르트 신조 첫째 교리 (7~8항) - 영원한 선택의 작정",
-        "passage": "디모데후서 1:9~10",
+        "title": "도르트 신조  첫째 교리 8항 - 하나님께 기초한 선택",
+        "passage": "로마서 9장 10~13절",
         "search": "열방교회 도르트 신조 영원한 선택",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=17"
+        "url": "https://www.youtube.com/watch?v=EaJXdAXVtJI&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=17",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 4,
-        "title": "도르트 신조 첫째 교리 (9~11항) - 조건 없는 무조건적 선택",
-        "passage": "에베소서 1:3~6",
+        "title": "도르트 신조  첫째 교리 12~14항 - 선택의 확신",
+        "passage": "베드로후서 1장 10~11절",
         "search": "열방교회 도르트 신조 무조건적 선택",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=16"
+        "url": "https://www.youtube.com/watch?v=Vxj7mZDm3EE&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=16",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 5,
-        "title": "도르트 신조 첫째 교리 (12~14항) - 선택의 확실성과 성도의 위로",
-        "passage": "베드로후서 1:10~11",
+        "title": "도르트 신조  첫째교리 15~16항 - 유기 - 하나님의 정하심!",
+        "passage": "베드로전서 2장 7~10절",
         "search": "열방교회 도르트 신조 선택의 확실성",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=15"
+        "url": "https://www.youtube.com/watch?v=-ISXo8-P16A&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=15",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 6,
-        "title": "도르트 신조 첫째 교리 (15~18항) - 하나님의 유기(버려두심)와 주권",
-        "passage": "로마서 9:17~24",
+        "title": "도르트 신조  첫째 교리 17항 - 너와 네 집이 구원을 받으리라!",
+        "passage": "사도행전 16장 30~32절",
         "search": "열방교회 도르트 신조 유기",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=14"
+        "url": "https://www.youtube.com/watch?v=RSecL0w-bSI&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=14",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 7,
-        "title": "도르트 신조 둘째 교리 (1~2항) - 하나님의 공의와 그리스도의 만족",
-        "passage": "로마서 3:23~26",
+        "title": "도르트 신조  둘째 교리 1~2항 - 속죄의 필요, 원천, 동기",
+        "passage": "로마서 3장 19~26절",
         "search": "열방교회 도르트 신조 하나님의 공의",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=13"
+        "url": "https://www.youtube.com/watch?v=2KCTz9Jzf-s&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=13",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 8,
-        "title": "도르트 신조 둘째 교리 (3~5항) - 속죄의 무한한 가치",
-        "passage": "민수기 21:4~9",
+        "title": "도르트 신조 둘째 교리 3~5항 - 속죄의 무한한 가치",
+        "passage": "민수기 21장 4~9절",
         "search": "열방교회 도르트 신조 속죄의 무한한 가치",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=12"
+        "url": "https://www.youtube.com/watch?v=ErE5EZmmMeA&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=12",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 9,
-        "title": "도르트 신조 둘째 교리 (6~7항) - 바르게 사용하는 '감작'",
-        "passage": "요한복음 5:39~40",
+        "title": "도르트 신조 둘째 교리 6~7항 - 바르게 사용하는 '감히'",
+        "passage": "요한복음 5장 39~40절",
         "search": "열방교회 도르트 신조 감작",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=11"
+        "url": "https://www.youtube.com/watch?v=mN-JWW6pRK4&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=11",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 10,
-        "title": "도르트 신조 둘째 교리 (8~9항) - 믿음의 표징과 보증",
-        "passage": "요한복음 6:35~40",
+        "title": "도르트 신조 둘째 교리 8~9항 - 믿음의 표징과 보증",
+        "passage": "요한복음 6장 35~40절",
         "search": "열방교회 도르트 신조 믿음의 표징",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=10"
+        "url": "https://www.youtube.com/watch?v=F0XoUn8xoa8&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=10",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 11,
-        "title": "도르트 신조 셋째,넷째 교리 (1~5항) - 새 마음의 필요성",
-        "passage": "에스겔 36:24~28, 37",
+        "title": "도르트 신조 셋째,넷째 교리 1~5항 - 새 마음의 필요성",
+        "passage": "에스겔 36장 24~28절, 에스겔 37절",
         "search": "열방교회 도르트 신조 새 마음의 필요성",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=9"
+        "url": "https://www.youtube.com/watch?v=l1NqtHpzkQ8&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=9",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 12,
-        "title": "도르트 신조 셋째,넷째 교리 (6항) - 본성과 율법이 할 수 없는 것",
-        "passage": "로마서 7:1~13",
+        "title": "도르트 신조 셋째,넷째 교리 6항 - 본성과 율법이 할 수 없는 것",
+        "passage": "로마서 7장 1~13절",
         "search": "열방교회 도르트 신조 본성과 율법",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=8"
+        "url": "https://www.youtube.com/watch?v=0SxlTkS906w&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=8",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 13,
-        "title": "도르트 신조 셋째,넷째 교리 (7~10항) - 유효한 부르심",
-        "passage": "마태복음 13:1~9",
+        "title": "도르트 신조 셋째,넷째 교리 7~10항 - 유효한 부르심",
+        "passage": "마태복음 13장 1~9절",
         "search": "열방교회 도르트 신조 유효한 부르심",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=7"
+        "url": "https://www.youtube.com/watch?v=eDRYVJApd7Q&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=7",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 14,
-        "title": "도르트 신조 셋째,넷째 교리 (11~12항) - 중생의 씻음",
-        "passage": "로마서 6:15~18",
+        "title": "도르트 신조 셋째,넷째 교리 11~12항 - 중생의 씻음",
+        "passage": "로마서 6장 15~18절",
         "search": "열방교회 도르트 신조 중생의 씻음",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=6"
+        "url": "https://www.youtube.com/watch?v=Zj_57puRq5o&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=6",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 15,
-        "title": "도르트 신조 셋째,넷째 교리 (13~15항) - 하나님의 선물로서의 믿음",
-        "passage": "에베소서 2:1~10",
+        "title": "도르트 신조 셋째,넷째 교리 13~15항 - 하나님의 선물로서의 믿음",
+        "passage": "에베소서 2장 1~10절",
         "search": "열방교회 도르트 신조 선물로서의 믿음",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=5"
+        "url": "https://www.youtube.com/watch?v=SX-P4h3XHA8&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=5",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 16,
-        "title": "도르트 신조 셋째,넷째 교리 (16~17항) - 의지를 새롭게 하시는 수단",
-        "passage": "사도행전 2:42~47",
+        "title": "도르트 신조 셋째,넷째 교리 16~17항 - 의지를 새롭게 하시는 수단",
+        "passage": "사도행전 2장 42~47절",
         "search": "열방교회 도르트 신조 의지를 새롭게",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=4"
+        "url": "https://www.youtube.com/watch?v=7XFkbnBwM3M&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=4",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 17,
-        "title": "도르트 신조 다섯째 교리 (1~5항) - 온전함을 푯대 삼은 성도들",
-        "passage": "빌립보서 2:12~18",
+        "title": "도르트 신조 다섯째 교리 1~5항 - 온전함을 푯대 삼은 성도들",
+        "passage": "빌립보서 2장 12~18절",
         "search": "열방교회 도르트 신조 온전함을 푯대",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=3"
+        "url": "https://www.youtube.com/watch?v=HPwCH_r86us&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=3",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 18,
-        "title": "도르트 신조 다섯째 교리 (6~8항) - 하나님의 보호하심",
-        "passage": "스바냐 3:9~13",
+        "title": "도르트 신조 다섯째 교리 6~8항 - 하나님의 보호하심",
+        "passage": "스바냐 3장 9~13절",
         "search": "열방교회 도르트 신조 하나님의 보호하심",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=2"
+        "url": "https://www.youtube.com/watch?v=92d7q9TuODg&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=2",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 19,
-        "title": "도르트 신조 다섯째 교리 (9~15항) - 확신, 경건의 동기",
-        "passage": "요한일서 3:1~10",
+        "title": "도르트 신조 다섯째 교리 9~15항 - 확신, 경건의 동기",
+        "passage": "요한일서 3장 1~10절",
         "search": "열방교회 도르트 신조 확신 경건의 동기",
-        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL73sZICcW8jIvkQZjrvVqobz_T_OcHwzW&index=1"
+        "url": "https://www.youtube.com/watch?v=Go4OwdYguN0&list=PL7asZlCcW8JlvkQZjrvVqobz_T_OdHwzW&index=1",
+        "startTime": 0,
+        "pdfUrl": null
       }
     ],
     "count": 19
@@ -1555,183 +1512,223 @@ window.INITIAL_SERMONS_ARCHIVE = {
     "episodes": [
       {
         "ep": 1,
-        "title": "1강 - 도르트 신조 강해 1",
-        "passage": "도르트 신조 1강",
-        "url": "https://www.youtube.com/watch?v=LR-KciQOJlo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=1",
+        "title": "1강 - 누구든지 주의 이름을 부르는 자는",
+        "passage": "로마서 10장 13~15절",
+        "url": "https://www.youtube.com/watch?v=LR-KciQOJlo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=1&t=2842s",
         "videoId": "LR-KciQOJlo",
         "fullTitle": "도르트 신조 강해 1 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2842,
+        "pdfUrl": null
       },
       {
         "ep": 2,
-        "title": "2강 - 도르트 신조 강해 2",
-        "passage": "도르트 신조 2강",
-        "url": "https://www.youtube.com/watch?v=UoXkuhjBduY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=2",
+        "title": "2강 - 구원의 사슬고리",
+        "passage": "로마서 8장 28~30절",
+        "url": "https://www.youtube.com/watch?v=UoXkuhjBduY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=2&t=2945s",
         "videoId": "UoXkuhjBduY",
         "fullTitle": "도르트 신조 강해 2 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2945,
+        "pdfUrl": null
       },
       {
         "ep": 3,
-        "title": "3강 - 도르트 신조 강해 3",
-        "passage": "도르트 신조 3강",
-        "url": "https://www.youtube.com/watch?v=BPcVts5UkGA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=3",
+        "title": "3강 - 하나님의 기쁘신 뜻에 기초한 선택",
+        "passage": "에베소서 1장 4~6절",
+        "url": "https://www.youtube.com/watch?v=BPcVts5UkGA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=3&t=2885s",
         "videoId": "BPcVts5UkGA",
         "fullTitle": "도르트 신조 강해 3 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2885,
+        "pdfUrl": null
       },
       {
         "ep": 4,
-        "title": "4강 - 도르트 신조 강해 4",
-        "passage": "도르트 신조 4강",
-        "url": "https://www.youtube.com/watch?v=nDdIRmwDWOA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=4",
+        "title": "4강 - 선택의 확신",
+        "passage": "베드로후서 1장 10~11절",
+        "url": "https://www.youtube.com/watch?v=nDdIRmwDWOA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=4&t=2808s",
         "videoId": "nDdIRmwDWOA",
         "fullTitle": "도르트 신조 강해 4 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2808,
+        "pdfUrl": null
       },
       {
         "ep": 5,
-        "title": "5강 - 도르트 신조 강해 5",
-        "passage": "도르트 신조 5강",
-        "url": "https://www.youtube.com/watch?v=CAPcXahZSR8&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=5",
+        "title": "5강 - 유기의 작정",
+        "passage": "베드로전서 2장 7~10절",
+        "url": "https://www.youtube.com/watch?v=CAPcXahZSR8&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=5&t=2834s",
         "videoId": "CAPcXahZSR8",
         "fullTitle": "도르트 신조 강해 5 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2834,
+        "pdfUrl": null
       },
       {
         "ep": 6,
-        "title": "6강 - 도르트 신조 강해 6",
-        "passage": "도르트 신조 6강",
-        "url": "https://www.youtube.com/watch?v=s4JIpl2SSUk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=6",
+        "title": "6강 -  영아의 구원",
+        "passage": "고린도전서 7장 14절",
+        "url": "https://www.youtube.com/watch?v=s4JIpl2SSUk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=6&t=2964s",
         "videoId": "s4JIpl2SSUk",
         "fullTitle": "도르트 신조 강해 6 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2964,
+        "pdfUrl": null
       },
       {
         "ep": 7,
-        "title": "7강 - 도르트 신조 강해 7",
-        "passage": "도르트 신조 7강",
-        "url": "https://www.youtube.com/watch?v=V-B93zRak-Y&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=7",
+        "title": "7강 - 그리스도께서 이루신 만족",
+        "passage": "갈라디아서 4장 4~5절",
+        "url": "https://www.youtube.com/watch?v=V-B93zRak-Y&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=7&t=2975s",
         "videoId": "V-B93zRak-Y",
         "fullTitle": "도르트 신조 강해 7 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2975,
+        "pdfUrl": null
       },
       {
         "ep": 8,
-        "title": "8강 - 도르트 신조 강해 8",
-        "passage": "도르트 신조 8강",
-        "url": "https://www.youtube.com/watch?v=pGo-c35_7tw&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=8",
+        "title": "8강 - 누구든지 오라",
+        "passage": "사도행전 17장 29~31절",
+        "url": "https://www.youtube.com/watch?v=pGo-c35_7tw&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=8&t=2780s",
         "videoId": "pGo-c35_7tw",
         "fullTitle": "도르트 신조 강해 8 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2780,
+        "pdfUrl": null
       },
       {
         "ep": 9,
-        "title": "9강 - 도르트 신조 강해 9",
-        "passage": "도르트 신조 9강",
-        "url": "https://www.youtube.com/watch?v=flXpX4d3AVI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=9",
+        "title": "9강 -  믿지 않는 이유",
+        "passage": "요한복음 3장 16~21절",
+        "url": "https://www.youtube.com/watch?v=flXpX4d3AVI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=9&t=3502s",
         "videoId": "flXpX4d3AVI",
         "fullTitle": "도르트 신조 강해 9 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3502,
+        "pdfUrl": null
       },
       {
         "ep": 10,
-        "title": "10강 - 도르트 신조 강해 10",
-        "passage": "도르트 신조 10강",
-        "url": "https://www.youtube.com/watch?v=7E9otUayQKs&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=10",
+        "title": "10강 - 믿음의 표징과 보증",
+        "passage": "요한복음 6장 35~40절",
+        "url": "https://www.youtube.com/watch?v=7E9otUayQKs&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=10&t=2898s",
         "videoId": "7E9otUayQKs",
         "fullTitle": "도르트 신조 강해 10 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2898,
+        "pdfUrl": null
       },
       {
         "ep": 11,
-        "title": "11강 - 도르트 신조 강해 11",
-        "passage": "도르트 신조 11강",
-        "url": "https://www.youtube.com/watch?v=8lpRGHEiH0k&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=11",
+        "title": "11강 -  사람이 거듭나지 아니하면",
+        "passage": "요한복음 3장 1~15절",
+        "url": "https://www.youtube.com/watch?v=8lpRGHEiH0k&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=11&t=3079s",
         "videoId": "8lpRGHEiH0k",
         "fullTitle": "도르트 신조 강해 11 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3079,
+        "pdfUrl": null
       },
       {
         "ep": 12,
-        "title": "12강 - 도르트 신조 강해 12",
-        "passage": "도르트 신조 12강",
-        "url": "https://www.youtube.com/watch?v=aM7EX-KWsao&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=12",
+        "title": "12강 - 율법의 무능함과 복음의 필요",
+        "passage": "디모데전서 1장 15절 율법의 무능함과 복음의 필요",
+        "url": "https://www.youtube.com/watch?v=aM7EX-KWsao&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=12&t=3342s",
         "videoId": "aM7EX-KWsao",
         "fullTitle": "도르트 신조 강해 12 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3342,
+        "pdfUrl": null
       },
       {
         "ep": 13,
-        "title": "13강 - 도르트 신조 강해 13",
-        "passage": "도르트 신조 13강",
-        "url": "https://www.youtube.com/watch?v=DJ2NBOQwReo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=13",
+        "title": "13강 - 유효한 부르심",
+        "passage": "마태복음 13장 1~9절 유효한 부르심",
+        "url": "https://www.youtube.com/watch?v=DJ2NBOQwReo&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=13&t=3062s",
         "videoId": "DJ2NBOQwReo",
         "fullTitle": "도르트 신조 강해 13 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3062,
+        "pdfUrl": null
       },
       {
         "ep": 14,
-        "title": "14강 - 도르트 신조 강해 14",
-        "passage": "도르트 신조 14강",
-        "url": "https://www.youtube.com/watch?v=QxYuygR3qGY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=14",
+        "title": "14강 -  중생의 씻음과 성령의 새롭게 하심",
+        "passage": "디도서 3장 3~8절 중생의 씻음과 성령의 새롭게 하심",
+        "url": "https://www.youtube.com/watch?v=QxYuygR3qGY&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=14&t=2885s",
         "videoId": "QxYuygR3qGY",
         "fullTitle": "도르트 신조 강해 14 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2885,
+        "pdfUrl": null
       },
       {
         "ep": 15,
-        "title": "15강 - 도르트 신조 강해 15",
-        "passage": "도르트 신조 15강",
-        "url": "https://www.youtube.com/watch?v=MNTLklPQ7dk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=15",
+        "title": "15강 -  능력으로 역사하시는 하나님",
+        "passage": "에베소서 3장 20~21절",
+        "url": "https://www.youtube.com/watch?v=MNTLklPQ7dk&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=15&t=2997s",
         "videoId": "MNTLklPQ7dk",
         "fullTitle": "도르트 신조 강해 15 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2997,
+        "pdfUrl": null
       },
       {
         "ep": 16,
-        "title": "16강 - 도르트 신조 강해 16",
-        "passage": "도르트 신조 16강",
-        "url": "https://www.youtube.com/watch?v=dLP2rRkmswI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=16",
+        "title": "16강 - 말씀으로 믿음을 일으키시는 하나님",
+        "passage": "사도행전 16장 11~15절",
+        "url": "https://www.youtube.com/watch?v=dLP2rRkmswI&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=16&t=3198s",
         "videoId": "dLP2rRkmswI",
         "fullTitle": "도르트 신조 강해 16 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3198,
+        "pdfUrl": null
       },
       {
         "ep": 17,
-        "title": "17강 - 도르트 신조 강해 17",
-        "passage": "도르트 신조 17강",
-        "url": "https://www.youtube.com/watch?v=3GP7lzk7zCA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=17",
+        "title": "17강 - 자기 백성을 지키시는 하나님",
+        "passage": "빌립보서 1장 3~6절",
+        "url": "https://www.youtube.com/watch?v=3GP7lzk7zCA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=17&t=3244s",
         "videoId": "3GP7lzk7zCA",
         "fullTitle": "도르트 신조 강해 17 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3244,
+        "pdfUrl": null
       },
       {
         "ep": 18,
-        "title": "18강 - 도르트 신조 강해 18",
-        "passage": "도르트 신조 18강",
-        "url": "https://www.youtube.com/watch?v=VTmWq-3B7CQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=18",
+        "title": "18강 -  하나님의 보호하심",
+        "passage": "스바냐 3장 9~13절",
+        "url": "https://www.youtube.com/watch?v=VTmWq-3B7CQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=18&t=3266s",
         "videoId": "VTmWq-3B7CQ",
         "fullTitle": "도르트 신조 강해 18 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3266,
+        "pdfUrl": null
       },
       {
         "ep": 19,
-        "title": "19강 - 도르트 신조 강해 19",
-        "passage": "도르트 신조 19강",
-        "url": "https://www.youtube.com/watch?v=LXcWo_FSzgQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=19",
+        "title": "19강 - 구원의 충만한 확신",
+        "passage": "디모데후서 1장 12절",
+        "url": "https://www.youtube.com/watch?v=LXcWo_FSzgQ&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=19&t=3372s",
         "videoId": "LXcWo_FSzgQ",
         "fullTitle": "도르트 신조 강해 19 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 3372,
+        "pdfUrl": null
       },
       {
         "ep": 20,
-        "title": "20강 - 도르트 신조 강해 20",
-        "passage": "도르트 신조 20강",
-        "url": "https://www.youtube.com/watch?v=FS6o6LVYzJA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=20",
+        "title": "20강 - 확신, 경건의 동기",
+        "passage": "디도서 2장 11~14절",
+        "url": "https://www.youtube.com/watch?v=FS6o6LVYzJA&list=PLSaHerzUahU_Nh-xRI96b9USB3J8G1PH_&index=20&t=2947s",
         "videoId": "FS6o6LVYzJA",
         "fullTitle": "도르트 신조 강해 20 / 불로열방교회 김진수 목사",
-        "source": "불로열방교회"
+        "source": "불로열방교회",
+        "startTime": 2947,
+        "pdfUrl": null
       }
     ]
   },
@@ -1748,7 +1745,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "1강 - 우리에게 이루어진 일",
-        "passage": "누가복음 1장 1-4절",
+        "passage": "누가복음 1장 1~4절",
         "url": "https://www.youtube.com/watch?v=3Exwvua4SEs&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=1",
         "videoId": "3Exwvua4SEs",
         "fullTitle": "누가복음 1장 1-4절 (우리에게 이루어진 일)"
@@ -1756,7 +1753,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 2,
         "title": "2강 - 하나님의 계획하심과 일하심",
-        "passage": "누가복음 1장 5-80절",
+        "passage": "누가복음 1장 5~80절",
         "url": "https://www.youtube.com/watch?v=IG-2_LGoz-g&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=2",
         "videoId": "IG-2_LGoz-g",
         "fullTitle": "누가복음 1장 5-80절 (하나님의 계획하심과 일하심)"
@@ -1764,7 +1761,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 3,
         "title": "3강 - 다윗의 동네에 오신 예수 그리스도",
-        "passage": "누가복음 2장 1-20절",
+        "passage": "누가복음 2장 1~20절",
         "url": "https://www.youtube.com/watch?v=6fwLnitQxIc&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=3",
         "videoId": "6fwLnitQxIc",
         "fullTitle": "누가복음 2장 1-20절 (다윗의 동네에 오신 예수 그리스도)"
@@ -1772,7 +1769,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 4,
         "title": "4강 - 율법 아래에 오신 예수 그리스도",
-        "passage": "누가복음 2장 21-40절",
+        "passage": "누가복음 2장 21~40절",
         "url": "https://www.youtube.com/watch?v=s7Ge7MUdBJg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=4",
         "videoId": "s7Ge7MUdBJg",
         "fullTitle": "누가복음 2장 21-40절 (율법 아래에 오신 예수 그리스도)"
@@ -1780,7 +1777,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 5,
         "title": "5강 - 아버지 집에 있어야 할 줄을 알지 못하셨나이까",
-        "passage": "누가복음 2장 41-52절",
+        "passage": "누가복음 2장 41~52절",
         "url": "https://www.youtube.com/watch?v=oEaE3stq4s8&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=5",
         "videoId": "oEaE3stq4s8",
         "fullTitle": "누가복음 2장 41-52절 (아버지 집에 있어야 할 줄을 알지 못하셨나이까)"
@@ -1788,7 +1785,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 6,
         "title": "6강 - 광야의 외치는 자의 소리",
-        "passage": "누가복음 3장 1-20절",
+        "passage": "누가복음 3장 1~20절",
         "url": "https://www.youtube.com/watch?v=AK7TQnnDZOg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=6",
         "videoId": "AK7TQnnDZOg",
         "fullTitle": "누가복음 3장 1-20절 (광야의 외치는 자의 소리)"
@@ -1796,7 +1793,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 7,
         "title": "7강 - 기도와 성령에 의한 삶",
-        "passage": "누가복음 3장 21-22절",
+        "passage": "누가복음 3장 21~22절",
         "url": "https://www.youtube.com/watch?v=vumWF8asMUI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=7",
         "videoId": "vumWF8asMUI",
         "fullTitle": "누가복음 3장 21-22절 (기도와 성령에 의한 삶)"
@@ -1804,7 +1801,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 8,
         "title": "8강 - 언약의 성취가 되신 예수님",
-        "passage": "누가복음 3장 23-38절",
+        "passage": "누가복음 3장 23~38절",
         "url": "https://www.youtube.com/watch?v=s0sXdMkPwus&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=8",
         "videoId": "s0sXdMkPwus",
         "fullTitle": "누가복음 3장 23-38절 (언약의 성취가 되신 예수님)"
@@ -1812,7 +1809,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 9,
         "title": "9강 - 시험에서 승리하신 예수님",
-        "passage": "누가복음 4장 1-13절",
+        "passage": "누가복음 4장 1~13절",
         "url": "https://www.youtube.com/watch?v=pO7bF1d-VtU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=9",
         "videoId": "pO7bF1d-VtU",
         "fullTitle": "누가복음 4장 1-13절 (시험에서 승리하신 예수님)"
@@ -1820,7 +1817,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 10,
         "title": "10강 - 우릴 자유케 하시는 예수님",
-        "passage": "누가복음 4장 14-21절",
+        "passage": "누가복음 4장 14~21절",
         "url": "https://www.youtube.com/watch?v=yvWWCJDuxNw&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=10",
         "videoId": "yvWWCJDuxNw",
         "fullTitle": "누가복음 4장 14-21절 (우릴 자유케 하시는 예수님)"
@@ -1828,7 +1825,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 11,
         "title": "11강 - 복음을 배척하는 이유",
-        "passage": "누가복음 4장 22-30절",
+        "passage": "누가복음 4장 22~30절",
         "url": "https://www.youtube.com/watch?v=TmnN-UGP0iI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=11",
         "videoId": "TmnN-UGP0iI",
         "fullTitle": "누가복음 4장 22-30절 (복음을 배척하는 이유)"
@@ -1836,7 +1833,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 12,
         "title": "12강 - 하나님 나라를 가져오신 예수님",
-        "passage": "누가복음 4장 31-44절",
+        "passage": "누가복음 4장 31~44절",
         "url": "https://www.youtube.com/watch?v=naJ1drmZhXk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=12",
         "videoId": "naJ1drmZhXk",
         "fullTitle": "누가복음 4장 31-44절 (하나님 나라를 가져오신 예수님)"
@@ -1844,7 +1841,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 13,
         "title": "13강 - 우리를 부르시는 예수님",
-        "passage": "누가복음 5장 1-11절",
+        "passage": "누가복음 5장 1~11절",
         "url": "https://www.youtube.com/watch?v=R5KmywSLmRE&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=13",
         "videoId": "R5KmywSLmRE",
         "fullTitle": "누가복음 5장 1-11절 (우리를 부르시는 예수님)"
@@ -1852,7 +1849,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 14,
         "title": "14강 - 나병 환자를 고치신 예수님",
-        "passage": "누가복음 5장 12-16절",
+        "passage": "누가복음 5장 12~16절",
         "url": "https://www.youtube.com/watch?v=u-yk9F6-Wzs&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=14",
         "videoId": "u-yk9F6-Wzs",
         "fullTitle": "누가복음 5장 12-16절 (나병 환자를 고치신 예수님)"
@@ -1860,7 +1857,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 15,
         "title": "15강 - 중풍병자를 고치신 예수님",
-        "passage": "누가복음 5장 17-26절",
+        "passage": "누가복음 5장 17~26절",
         "url": "https://www.youtube.com/watch?v=llkdCOViS1U&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=15",
         "videoId": "llkdCOViS1U",
         "fullTitle": "누가복음 5장 17-26절 (중풍병자를 고치신 예수님)"
@@ -1868,7 +1865,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 16,
         "title": "16강 - 죄인을 부르러 오신 예수님",
-        "passage": "누가복음 5장 27-32절",
+        "passage": "누가복음 5장 27~32절",
         "url": "https://www.youtube.com/watch?v=Lpynv7rgSMo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=16",
         "videoId": "Lpynv7rgSMo",
         "fullTitle": "누가복음 5장 27-32절 (죄인을 부르러 오신 예수님)"
@@ -1876,7 +1873,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 17,
         "title": "17강 - 새 언약의 기쁨과 옛 틀의 한계",
-        "passage": "누가복음 5장 33-39절",
+        "passage": "누가복음 5장 33~39절",
         "url": "https://www.youtube.com/watch?v=NB3mbT9S9D0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=17",
         "videoId": "NB3mbT9S9D0",
         "fullTitle": "누가복음 5장 33-39절 (새 언약의 기쁨과 옛 틀의 한계)"
@@ -1884,7 +1881,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 18,
         "title": "18강 - 참된 안식을 주시는 예수님",
-        "passage": "누가복음 6장 1-11절",
+        "passage": "누가복음 6장 1~11절",
         "url": "https://www.youtube.com/watch?v=cvTEL_lcHLk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=18",
         "videoId": "cvTEL_lcHLk",
         "fullTitle": "누가복음 6장 1-11절 (참된 안식을 주시는 예수님)"
@@ -1892,7 +1889,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 19,
         "title": "19강 - 제자를 부르시는 예수님",
-        "passage": "누가복음 6장 12-19절",
+        "passage": "누가복음 6장 12~19절",
         "url": "https://www.youtube.com/watch?v=A5OwfXSHzdo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=19",
         "videoId": "A5OwfXSHzdo",
         "fullTitle": "누가복음 6장 12-19절 (제자를 부르시는 예수님)"
@@ -1900,7 +1897,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 20,
         "title": "20강 - 복과 화를 선포하신 예수님",
-        "passage": "누가복음 6장 20-26절",
+        "passage": "누가복음 6장 20~26절",
         "url": "https://www.youtube.com/watch?v=H7osafe2HVo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=20",
         "videoId": "H7osafe2HVo",
         "fullTitle": "누가복음 6장 20-26절 (복과 화를 선포하신 예수님)"
@@ -1908,7 +1905,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 21,
         "title": "21강 - 원수를 사랑하라",
-        "passage": "누가복음 6장 27-38절",
+        "passage": "누가복음 6장 27~38절",
         "url": "https://www.youtube.com/watch?v=MOgusjVHkX0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=21",
         "videoId": "MOgusjVHkX0",
         "fullTitle": "누가복음 6장 27-38절 (원수를 사랑하라)"
@@ -1916,7 +1913,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 22,
         "title": "22강 - 내 눈 속에 있는 들보",
-        "passage": "누가복음 6장 39-45절",
+        "passage": "누가복음 6장 39~45절",
         "url": "https://www.youtube.com/watch?v=9DwveKdwtJo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=22",
         "videoId": "9DwveKdwtJo",
         "fullTitle": "누가복음 6장 39-45절 (내 눈 속에 있는 들보)"
@@ -1924,7 +1921,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 23,
         "title": "23강 - 열매로 알지니",
-        "passage": "누가복음 6장 42-45절",
+        "passage": "누가복음 6장 42~45절",
         "url": "https://www.youtube.com/watch?v=8fETihK32bA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=23",
         "videoId": "8fETihK32bA",
         "fullTitle": "누가복음 6장 42-45절 (열매로 알지니)"
@@ -1932,7 +1929,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 24,
         "title": "24강 - 듣고 행하는 자와 듣고 행하지 않는 자",
-        "passage": "누가복음 6장 46-49절",
+        "passage": "누가복음 6장 46~49절",
         "url": "https://www.youtube.com/watch?v=vilzvjcIUJ4&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=24",
         "videoId": "vilzvjcIUJ4",
         "fullTitle": "누가복음 6장 46-49절 (듣고 행하는 자와 듣고 행하지 않는 자)"
@@ -1940,7 +1937,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 25,
         "title": "25강 - 2",
-        "passage": "누가복음 6장 46-49절",
+        "passage": "누가복음 6장 46~49절",
         "url": "https://www.youtube.com/watch?v=k5NXWHaSrTQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=25",
         "videoId": "k5NXWHaSrTQ",
         "fullTitle": "누가복음 6장 46-49절 (2) (하나님의 뜻대로 행하는 자)"
@@ -1948,7 +1945,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 26,
         "title": "26강 - 자신은 낮게, 그리스도는 높게",
-        "passage": "누가복음 7장 1-10절",
+        "passage": "누가복음 7장 1~10절",
         "url": "https://www.youtube.com/watch?v=jhR6zVsV-yA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=26",
         "videoId": "jhR6zVsV-yA",
         "fullTitle": "누가복음 7장 1-10절 (자신은 낮게, 그리스도는 높게)"
@@ -1956,7 +1953,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 27,
         "title": "27강 - 죽음에서 해방시키신 예수님",
-        "passage": "누가복음 7장 11-17절",
+        "passage": "누가복음 7장 11~17절",
         "url": "https://www.youtube.com/watch?v=ZJYR-19fahY&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=27",
         "videoId": "ZJYR-19fahY",
         "fullTitle": "누가복음 7장 11-17절 (죽음에서 해방시키신 예수님)"
@@ -1964,7 +1961,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 28,
         "title": "28강 - 나로 인하여 실족하지 아니하는 자가 복이 있도다",
-        "passage": "누가복음 7장 18-23절",
+        "passage": "누가복음 7장 18~23절",
         "url": "https://www.youtube.com/watch?v=NdPU-wQjLhg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=28",
         "videoId": "NdPU-wQjLhg",
         "fullTitle": "누가복음 7장 18-23절 (나로 인하여 실족하지 아니하는 자가 복이 있도다)"
@@ -1972,7 +1969,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 29,
         "title": "29강 - 이 세대의 자녀와 지혜의 자녀",
-        "passage": "누가복음 7장 24-35절",
+        "passage": "누가복음 7장 24~35절",
         "url": "https://www.youtube.com/watch?v=aawlCLdaXgQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=29",
         "videoId": "aawlCLdaXgQ",
         "fullTitle": "누가복음 7장 24-35절 (이 세대의 자녀와 지혜의 자녀)"
@@ -1980,7 +1977,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 30,
         "title": "30강 - 용서가 사랑을 낳는다",
-        "passage": "누가복음 7장 36-50절",
+        "passage": "누가복음 7장 36~50절",
         "url": "https://www.youtube.com/watch?v=myZCqeaDTd8&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=30",
         "videoId": "myZCqeaDTd8",
         "fullTitle": "누가복음 7장 36-50절 (용서가 사랑을 낳는다)"
@@ -1988,7 +1985,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 31,
         "title": "31강 - 하나님 나라의 도래와 초대",
-        "passage": "누가복음 8장 1-3절",
+        "passage": "누가복음 8장 1~3절",
         "url": "https://www.youtube.com/watch?v=HChev6ytXf0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=31",
         "videoId": "HChev6ytXf0",
         "fullTitle": "누가복음 8장 1-3절 (하나님 나라의 도래와 초대)"
@@ -1996,7 +1993,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 32,
         "title": "32강 - 하나님 나라와 씨 뿌리는 비유",
-        "passage": "누가복음 8장 4-15절",
+        "passage": "누가복음 8장 4~15절",
         "url": "https://www.youtube.com/watch?v=5YinbnLmt0Q&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=32",
         "videoId": "5YinbnLmt0Q",
         "fullTitle": "누가복음 8장 4-15절 (하나님 나라와 씨 뿌리는 비유)"
@@ -2004,7 +2001,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 33,
         "title": "33강 - 어떻게 듣는지 스스로 삼가라",
-        "passage": "누가복음 8장 16-18절",
+        "passage": "누가복음 8장 16~18절",
         "url": "https://www.youtube.com/watch?v=cTy3VNM43Os&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=33",
         "videoId": "cTy3VNM43Os",
         "fullTitle": "누가복음 8장 16-18절 (어떻게 듣는지 스스로 삼가라)"
@@ -2012,7 +2009,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 34,
         "title": "34강 - 누가 하나님의 가족들인가?",
-        "passage": "누가복음 8장 19-21절",
+        "passage": "누가복음 8장 19~21절",
         "url": "https://www.youtube.com/watch?v=bhgz8LcWo5k&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=34",
         "videoId": "bhgz8LcWo5k",
         "fullTitle": "누가복음 8장 19-21절 (누가 하나님의 가족들인가?)"
@@ -2020,7 +2017,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 35,
         "title": "35강 - 그가 누구이기에!",
-        "passage": "누가복음 8장 22-25절",
+        "passage": "누가복음 8장 22~25절",
         "url": "https://www.youtube.com/watch?v=oZWRmIdKuTU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=35",
         "videoId": "oZWRmIdKuTU",
         "fullTitle": "누가복음 8장 22-25절 (그가 누구이기에!)"
@@ -2028,7 +2025,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 36,
         "title": "36강 - 광풍을 뚫고 찾아오는 불가항력적인 은혜",
-        "passage": "누가복음 8장 26-39절",
+        "passage": "누가복음 8장 26~39절",
         "url": "https://www.youtube.com/watch?v=UhcKCesBMs0&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=36",
         "videoId": "UhcKCesBMs0",
         "fullTitle": "누가복음 8장 26-39절 (광풍을 뚫고 찾아오는 불가항력적인 은혜)"
@@ -2036,7 +2033,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 37,
         "title": "37강 - 믿기만 하라",
-        "passage": "누가복음 8장 40-56절",
+        "passage": "누가복음 8장 40~56절",
         "url": "https://www.youtube.com/watch?v=P8bseKMZfEQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=37",
         "videoId": "P8bseKMZfEQ",
         "fullTitle": "누가복음 8장 40-56절 (믿기만 하라)"
@@ -2044,7 +2041,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 38,
         "title": "38강 - 하나님 나라의 대사들",
-        "passage": "누가복음 9장 1-6절",
+        "passage": "누가복음 9장 1~6절",
         "url": "https://www.youtube.com/watch?v=FbNLvk5n5hA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=38",
         "videoId": "FbNLvk5n5hA",
         "fullTitle": "누가복음 9장 1-6절 (하나님 나라의 대사들)"
@@ -2052,7 +2049,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 39,
         "title": "39강 - 왕의 소식이 들릴 때",
-        "passage": "누가복음 9장 7-9절",
+        "passage": "누가복음 9장 7~9절",
         "url": "https://www.youtube.com/watch?v=nARckgDAK6M&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=39",
         "videoId": "nARckgDAK6M",
         "fullTitle": "누가복음 9장 7-9절 (왕의 소식이 들릴 때)"
@@ -2060,7 +2057,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 40,
         "title": "40강 - 빈들에서 경험하는 하나님 나라의 잔치",
-        "passage": "누가복음 9장 10-17절",
+        "passage": "누가복음 9장 10~17절",
         "url": "https://www.youtube.com/watch?v=SohDnRC5B1Q&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=40",
         "videoId": "SohDnRC5B1Q",
         "fullTitle": "누가복음 9장 10-17절 (빈들에서 경험하는 하나님 나라의 잔치)"
@@ -2068,7 +2065,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 41,
         "title": "41강 - 예수님의 인격과 사역",
-        "passage": "누가복음 9장 18-22절",
+        "passage": "누가복음 9장 18~22절",
         "url": "https://www.youtube.com/watch?v=DFruAZ9eUng&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=41",
         "videoId": "DFruAZ9eUng",
         "fullTitle": "누가복음 9장 18-22절 (예수님의 인격과 사역)"
@@ -2076,7 +2073,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 42,
         "title": "42강 - 자기를 부인하는 삶",
-        "passage": "누가복음 9장 22-27절",
+        "passage": "누가복음 9장 22~27절",
         "url": "https://www.youtube.com/watch?v=Jsgly16gtPA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=42",
         "videoId": "Jsgly16gtPA",
         "fullTitle": "누가복음 9장 22-27절 (자기를 부인하는 삶)"
@@ -2084,7 +2081,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 43,
         "title": "43강 - 오직 예수 뿐이라",
-        "passage": "누가복음 9장 28-36절",
+        "passage": "누가복음 9장 28~36절",
         "url": "https://www.youtube.com/watch?v=rkbII3TasaU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=43",
         "videoId": "rkbII3TasaU",
         "fullTitle": "누가복음 9장 28-36절 (오직 예수 뿐이라)"
@@ -2092,7 +2089,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 44,
         "title": "44강 - 무능한 죄인, 충분한 그리스도",
-        "passage": "누가복음 9장 37-45절",
+        "passage": "누가복음 9장 37~45절",
         "url": "https://www.youtube.com/watch?v=v9V4Fc6ClYY&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=44",
         "videoId": "v9V4Fc6ClYY",
         "fullTitle": "누가복음 9장 37-45절 (무능한 죄인, 충분한 그리스도)"
@@ -2100,7 +2097,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 45,
         "title": "45강 - 낮아짐의 은혜, 영접의 제자도",
-        "passage": "누가복음 9장 46-48절",
+        "passage": "누가복음 9장 46~48절",
         "url": "https://www.youtube.com/watch?v=TdTRouIn38I&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=45",
         "videoId": "TdTRouIn38I",
         "fullTitle": "누가복음 9장 46-48절 (낮아짐의 은혜, 영접의 제자도)"
@@ -2108,7 +2105,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 46,
         "title": "46강 - 그리스도의 이름이 전파되는 것만으로 당신은 충분합니까?",
-        "passage": "누가복음 9장 49-50절",
+        "passage": "누가복음 9장 49~50절",
         "url": "https://www.youtube.com/watch?v=Qo3Gjyy1J_c&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=46",
         "videoId": "Qo3Gjyy1J_c",
         "fullTitle": "누가복음 9장 49-50절 (그리스도의 이름이 전파되는 것만으로 당신은 충분합니까?)"
@@ -2116,7 +2113,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 47,
         "title": "47강 - 굳은 결심: 심판 대신 죽음을 택하신 사랑",
-        "passage": "누가복음 9장 51-56절",
+        "passage": "누가복음 9장 51~56절",
         "url": "https://www.youtube.com/watch?v=0KVdz-QTOUA&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=47",
         "videoId": "0KVdz-QTOUA",
         "fullTitle": "누가복음 9장 51-56절 (굳은 결심: 심판 대신 죽음을 택하신 사랑)"
@@ -2124,7 +2121,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 48,
         "title": "48강 - 그리스도와 함께 걷는 좁은 길의 행복",
-        "passage": "누가복음 9장 57-61절",
+        "passage": "누가복음 9장 57~61절",
         "url": "https://www.youtube.com/watch?v=OxtoLs5QeuE&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=48",
         "videoId": "OxtoLs5QeuE",
         "fullTitle": "누가복음 9장 57-61절 (그리스도와 함께 걷는 좁은 길의 행복)"
@@ -2132,7 +2129,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 49,
         "title": "49강 - 왕의 전령, 그위대한 사명과 엄중한 책임",
-        "passage": "누가복음 10장 1-16절",
+        "passage": "누가복음 10장 1~16절",
         "url": "https://www.youtube.com/watch?v=-T_NkAdcOeU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=49",
         "videoId": "-T_NkAdcOeU",
         "fullTitle": "누가복음 10장 1-16절 (왕의 전령, 그위대한 사명과 엄중한 책임)"
@@ -2140,7 +2137,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 50,
         "title": "50강 - 내가 행한 일에서 내게 베푸신 은혜로",
-        "passage": "누가복음 10장 17-20절",
+        "passage": "누가복음 10장 17~20절",
         "url": "https://www.youtube.com/watch?v=2DKrNCVkjHk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=50",
         "videoId": "2DKrNCVkjHk",
         "fullTitle": "누가복음 10장 17-20절 (내가 행한 일에서 내게 베푸신 은혜로)"
@@ -2148,7 +2145,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 51,
         "title": "51강 - 예수님의 기쁨과 제자들의 복",
-        "passage": "누가복음 10장 21-24절",
+        "passage": "누가복음 10장 21~24절",
         "url": "https://www.youtube.com/watch?v=DWsR0rHZHng&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=51",
         "videoId": "DWsR0rHZHng",
         "fullTitle": "누가복음 10장 21-24절 (예수님의 기쁨과 제자들의 복)"
@@ -2156,7 +2153,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 52,
         "title": "52강 - 내 이웃이 되신 예수님",
-        "passage": "누가복음 10장 25-37절",
+        "passage": "누가복음 10장 25~37절",
         "url": "https://www.youtube.com/watch?v=SJ1iLdhuTLE&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=52",
         "videoId": "SJ1iLdhuTLE",
         "fullTitle": "누가복음 10장 25-37절 (내 이웃이 되신 예수님)"
@@ -2164,7 +2161,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 53,
         "title": "53강 - 은혜의 보좌 앞에 거하는 삶",
-        "passage": "누가복음 10장 38-42절",
+        "passage": "누가복음 10장 38~42절",
         "url": "https://www.youtube.com/watch?v=iax7y1fMJ8o&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=53",
         "videoId": "iax7y1fMJ8o",
         "fullTitle": "누가복음 10장 38-42절 (은혜의 보좌 앞에 거하는 삶)"
@@ -2172,7 +2169,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 54,
         "title": "54강 - 우리에게 기도를 가르쳐 주소서",
-        "passage": "누가복음 11장 1-4절",
+        "passage": "누가복음 11장 1~4절",
         "url": "https://www.youtube.com/watch?v=xwsFFVDC9qI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=54",
         "videoId": "xwsFFVDC9qI",
         "fullTitle": "누가복음 11장 1-4절 (우리에게 기도를 가르쳐 주소서)"
@@ -2180,7 +2177,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 55,
         "title": "55강 - 염치없는 간청, 신실한 응답",
-        "passage": "누가복음 11장 5-13절",
+        "passage": "누가복음 11장 5~13절",
         "url": "https://www.youtube.com/watch?v=YJ_3z467X58&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=55",
         "videoId": "YJ_3z467X58",
         "fullTitle": "누가복음 11장 5-13절 (염치없는 간청, 신실한 응답)"
@@ -2188,7 +2185,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 56,
         "title": "56강 - 더 강한 자가 다스리는 나라",
-        "passage": "누가복음 11장 14-26절",
+        "passage": "누가복음 11장 14~26절",
         "url": "https://www.youtube.com/watch?v=hWNQhm8va7s&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=56",
         "videoId": "hWNQhm8va7s",
         "fullTitle": "누가복음 11장 14-26절 (더 강한 자가 다스리는 나라)"
@@ -2196,7 +2193,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 57,
         "title": "57강 - 표적을 구하는 세대, 말씀을 듣는 성도",
-        "passage": "누가복음 11장 27-32절",
+        "passage": "누가복음 11장 27~32절",
         "url": "https://www.youtube.com/watch?v=0cQ-RiUd7DY&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=57",
         "videoId": "0cQ-RiUd7DY",
         "fullTitle": "누가복음 11장 27-32절 (표적을 구하는 세대, 말씀을 듣는 성도)"
@@ -2204,7 +2201,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 58,
         "title": "58강 - 위대한 선지자, 닫힌 눈을 여시다",
-        "passage": "누가복음 11장 33-36절",
+        "passage": "누가복음 11장 33~36절",
         "url": "https://www.youtube.com/watch?v=qzr3gz8KtxI&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=58",
         "videoId": "qzr3gz8KtxI",
         "fullTitle": "누가복음 11장 33-36절 (위대한 선지자, 닫힌 눈을 여시다)"
@@ -2212,7 +2209,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 59,
         "title": "59강 - 빈 껍데기 종교를 넘어, 영광스러운 복음으로",
-        "passage": "누가복음 11장 37-44절",
+        "passage": "누가복음 11장 37~44절",
         "url": "https://www.youtube.com/watch?v=kqmHUy5hWps&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=59",
         "videoId": "kqmHUy5hWps",
         "fullTitle": "누가복음 11장 37-44절 (빈 껍데기 종교를 넘어, 영광스러운 복음으로)"
@@ -2220,7 +2217,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 60,
         "title": "60강 - 무거운 짐에서 그리스도의 멍에로",
-        "passage": "누가복음 11장 45-54절",
+        "passage": "누가복음 11장 45~54절",
         "url": "https://www.youtube.com/watch?v=yr8mxT_y0jo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=60",
         "videoId": "yr8mxT_y0jo",
         "fullTitle": "누가복음 11장 45-54절 (무거운 짐에서 그리스도의 멍에로)"
@@ -2228,7 +2225,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 61,
         "title": "61강 - 하나님을 잊은 위선,  하나님을 깊이 생각하는 회개",
-        "passage": "누가복음 12장 1-12절",
+        "passage": "누가복음 12장 1~12절",
         "url": "https://www.youtube.com/watch?v=iW06tpOVBMo&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=61",
         "videoId": "iW06tpOVBMo",
         "fullTitle": "누가복음 12장 1-12절 (하나님을 잊은 위선,  하나님을 깊이 생각하는 회개)"
@@ -2236,50 +2233,68 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 62,
         "title": "62강 - 채워지지 않는 탐욕, 채우시는 그리스도",
-        "passage": "누가복음 12장 13-21절",
+        "passage": "누가복음 12장 13~21절",
         "url": "https://www.youtube.com/watch?v=kAjV-gdMZmg&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=62",
         "videoId": "kAjV-gdMZmg",
         "fullTitle": "누가복음 12장 13-21절 (채워지지 않는 탐욕, 채우시는 그리스도)"
       },
       {
         "ep": 63,
-        "title": "63강 - 2026 08 09 11 44 33",
-        "passage": "누가복음 63강",
+        "title": "63강 - 염려하지 마라, 사랑하시는 아버지께서 다 아시느니라",
+        "passage": "누가복음 12장 22~34절",
         "url": "https://www.youtube.com/watch?v=1QU1eZcPgTk&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=63",
         "videoId": "1QU1eZcPgTk",
-        "fullTitle": "2026 08 09 11 44 33"
+        "fullTitle": "2026 08 09 11 44 33",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 64,
-        "title": "64강 - 2026 08 16 11 33 20",
-        "passage": "누가복음 64강",
+        "title": "64강 - 소유의 주인이 아니라 사명의 청지기입니다",
+        "passage": "누가복음 12장 35~48절",
         "url": "https://www.youtube.com/watch?v=lE3FYZxqba8&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=64",
         "videoId": "lE3FYZxqba8",
-        "fullTitle": "2026 08 16 11 33 20"
+        "fullTitle": "2026 08 16 11 33 20",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 65,
-        "title": "65강 - 2026 08 23 11 42 20",
-        "passage": "누가복음 65강",
+        "title": "65강 - 평화의 왕이 던진 도전",
+        "passage": "누가복음 12장 49~53절",
         "url": "https://www.youtube.com/watch?v=cyaioA3iNJU&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=65",
         "videoId": "cyaioA3iNJU",
-        "fullTitle": "2026 08 23 11 42 20"
+        "fullTitle": "2026 08 23 11 42 20",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 66,
-        "title": "66강 - 2026 08 30 11 37 40",
-        "passage": "누가복음 66강",
+        "title": "66강 - 화해하라! 지옥의 문이 닫히기 전에",
+        "passage": "누가복음 12장 54~59절",
         "url": "https://www.youtube.com/watch?v=4K8nqJs_QNQ&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=66",
         "videoId": "4K8nqJs_QNQ",
-        "fullTitle": "2026 08 30 11 37 40"
+        "fullTitle": "2026 08 30 11 37 40",
+        "startTime": 0,
+        "pdfUrl": null
       },
       {
         "ep": 67,
-        "title": "67강 - 2026 09 06 11 49 25",
-        "passage": "누가복음 67강",
+        "title": "67강 - 심판의 연기, 은혜의 한 해",
+        "passage": "누가복음 13장 1~9절",
         "url": "https://www.youtube.com/watch?v=XlL-ohUpp_Y&list=PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO&index=67",
         "videoId": "XlL-ohUpp_Y",
-        "fullTitle": "2026 09 06 11 49 25"
+        "fullTitle": "2026 09 06 11 49 25",
+        "startTime": 0,
+        "pdfUrl": null
+      },
+      {
+        "ep": 68,
+        "title": "68강 - 구속의 손길, 땅만 바라보던 삶을 일으키시다",
+        "passage": "누가복음 13장 10~17절",
+        "url": "https://www.youtube.com/watch?v=eEFuo0JicZY",
+        "startTime": 0,
+        "pdfUrl": null
       }
     ]
   },
@@ -2295,91 +2310,91 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "옛적에 선지자들로, 이 모든 날 마지막에는 아들로",
-        "passage": "히브리서 1:1~4",
+        "passage": "히브리서 1장 1~4절",
         "search": "불로열방교회 히브리서 1강"
       },
       {
         "ep": 2,
         "title": "천사보다 뛰어난 하나님의 아들",
-        "passage": "히브리서 1:5~14",
+        "passage": "히브리서 1장 5~14절",
         "search": "불로열방교회 히브리서 2강"
       },
       {
         "ep": 3,
         "title": "이같이 큰 구원을 등한히 여기면",
-        "passage": "히브리서 2:1~4",
+        "passage": "히브리서 2장 1~4절",
         "search": "불로열방교회 히브리서 3강"
       },
       {
         "ep": 4,
         "title": "고난을 통하여 온전하게 되신 구원의 창시자",
-        "passage": "히브리서 2:5~18",
+        "passage": "히브리서 2장 5~18절",
         "search": "불로열방교회 히브리서 4강"
       },
       {
         "ep": 5,
         "title": "모세보다 더 영광을 받을 만한 예수",
-        "passage": "히브리서 3:1~6",
+        "passage": "히브리서 3장 1~6절",
         "search": "불로열방교회 히브리서 5강"
       },
       {
         "ep": 6,
         "title": "하나님의 안식에 들어가기를 힘쓰라",
-        "passage": "히브리서 4:1~13",
+        "passage": "히브리서 4장 1~13절",
         "search": "불로열방교회 히브리서 6강"
       },
       {
         "ep": 7,
         "title": "우리의 연약함을 동정하시는 큰 대제사장",
-        "passage": "히브리서 4:14~5:10",
+        "passage": "히브리서 4장 14절~5장 10절",
         "search": "불로열방교회 히브리서 7강"
       },
       {
         "ep": 8,
         "title": "영혼의 닻 같아서 (더 나은 소망)",
-        "passage": "히브리서 6:13~20",
+        "passage": "히브리서 6장 13~20절",
         "search": "불로열방교회 히브리서 8강"
       },
       {
         "ep": 9,
         "title": "멜기세덱의 반차를 따른 영원한 대제사장",
-        "passage": "히브리서 7:1~28",
+        "passage": "히브리서 7장 1~28절",
         "search": "불로열방교회 히브리서 9강"
       },
       {
         "ep": 10,
         "title": "더 좋은 약속으로 세우신 새 언약의 중보자",
-        "passage": "히브리서 8:1~13",
+        "passage": "히브리서 8장 1~13절",
         "search": "불로열방교회 히브리서 10강"
       },
       {
         "ep": 11,
         "title": "그리스도의 피로 이룬 영원한 속죄",
-        "passage": "히브리서 9:11~28",
+        "passage": "히브리서 9장 11~28절",
         "search": "불로열방교회 히브리서 11강"
       },
       {
         "ep": 12,
         "title": "휘장 가운데로 열어 놓으신 새로운 살 길",
-        "passage": "히브리서 10:19~39",
+        "passage": "히브리서 10장 19~39절",
         "search": "불로열방교회 히브리서 12강"
       },
       {
         "ep": 13,
         "title": "믿음은 바라는 것들의 실상이요 (믿음의 선진들)",
-        "passage": "히브리서 11:1~40",
+        "passage": "히브리서 11장 1~40절",
         "search": "불로열방교회 히브리서 13강"
       },
       {
         "ep": 14,
         "title": "믿음의 주요 또 온전하게 하시는 이인 예수를 바라보자",
-        "passage": "히브리서 12:1~17",
+        "passage": "히브리서 12장 1~17절",
         "search": "불로열방교회 히브리서 14강"
       },
       {
         "ep": 15,
         "title": "흔들리지 않는 영원한 나라를 받았은즉",
-        "passage": "히브리서 12:18~13:25",
+        "passage": "히브리서 12장 18절~13장 25절",
         "search": "불로열방교회 히브리서 15강"
       }
     ]
@@ -2404,7 +2419,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 2,
         "title": "2편 - 창세기 1-5장",
-        "passage": "창세기 1:1~5:32",
+        "passage": "창세기 1장 1절~5장 32절",
         "url": "https://www.youtube.com/watch?v=Yrdf_LBc7VQ",
         "videoId": "Yrdf_LBc7VQ",
         "fullTitle": "창세기 1-5장 / 불로 열방교회"
@@ -2412,7 +2427,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 3,
         "title": "3편 - 창세기 6-9장",
-        "passage": "창세기 6:1~9:29",
+        "passage": "창세기 6장 1절~9장 29절",
         "url": "https://www.youtube.com/watch?v=ixDVnkF78Bo",
         "videoId": "ixDVnkF78Bo",
         "fullTitle": "창세기 6-9장 / 불로 열방교회"
@@ -2420,7 +2435,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 4,
         "title": "4편 - 창세기 10장-12장",
-        "passage": "창세기 10:1~12:20",
+        "passage": "창세기 10장 1절~12장 20절",
         "url": "https://www.youtube.com/watch?v=HhxvMfOn2pY",
         "videoId": "HhxvMfOn2pY",
         "fullTitle": "창세기 10장-12장 / 불로 열방교회"
@@ -2428,7 +2443,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 5,
         "title": "5편 - 창세기 12-15장",
-        "passage": "창세기 12:1~15:21",
+        "passage": "창세기 12장 1절~15장 21절",
         "url": "https://www.youtube.com/watch?v=EWJVrAa2gFU",
         "videoId": "EWJVrAa2gFU",
         "fullTitle": "창세기 12-15장 / 불로 열방교회"
@@ -2436,7 +2451,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 6,
         "title": "6편 - 창세기 16-17장",
-        "passage": "창세기 16:1~17:27",
+        "passage": "창세기 16장 1절~17장 27절",
         "url": "https://www.youtube.com/watch?v=LxYauozHewE",
         "videoId": "LxYauozHewE",
         "fullTitle": "창세기 16-17장 / 불로 열방교회"
@@ -2444,7 +2459,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 7,
         "title": "7편 - 창세기 18-19장",
-        "passage": "창세기 18:1~19:38",
+        "passage": "창세기 18장 1절~19장 38절",
         "url": "https://www.youtube.com/watch?v=oKIpl4GawQY",
         "videoId": "oKIpl4GawQY",
         "fullTitle": "창세기 18-19장 / 불로 열방교회"
@@ -2452,7 +2467,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 8,
         "title": "8편 - 창세기 20-22장",
-        "passage": "창세기 20:1~22:24",
+        "passage": "창세기 20장 1절~22장 24절",
         "url": "https://www.youtube.com/watch?v=K8BEHhNfo_I",
         "videoId": "K8BEHhNfo_I",
         "fullTitle": "창세기 20-22장 / 불로 열방교회"
@@ -2460,7 +2475,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 9,
         "title": "9편 - 창세기 23-25장",
-        "passage": "창세기 23:1~25:34",
+        "passage": "창세기 23장 1절~25장 34절",
         "url": "https://www.youtube.com/watch?v=qu77eJjZwqQ",
         "videoId": "qu77eJjZwqQ",
         "fullTitle": "창세기 23-25장 / 불로 열방교회"
@@ -2468,7 +2483,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 10,
         "title": "10편 - 창세기 26-28장",
-        "passage": "창세기 26:1~28:22",
+        "passage": "창세기 26장 1절~28장 22절",
         "url": "https://www.youtube.com/watch?v=O4W1emLvM40",
         "videoId": "O4W1emLvM40",
         "fullTitle": "창세기 26-28장 / 불로 열방교회"
@@ -2476,7 +2491,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 11,
         "title": "11편 - 창세기 29-32장",
-        "passage": "창세기 29:1~32:32",
+        "passage": "창세기 29장 1절~32장 32절",
         "url": "https://www.youtube.com/watch?v=FyiEB3EsVTc",
         "videoId": "FyiEB3EsVTc",
         "fullTitle": "창세기 29-32장 / 불로 열방교회"
@@ -2484,7 +2499,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 12,
         "title": "12편 - 창세기 33-38장",
-        "passage": "창세기 33:1~38:30",
+        "passage": "창세기 33장 1절~38장 30절",
         "url": "https://www.youtube.com/watch?v=RAAKgAruzpA",
         "videoId": "RAAKgAruzpA",
         "fullTitle": "창세기 33-38장 / 불로 열방교회"
@@ -2492,7 +2507,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 13,
         "title": "13편 - 창세기 39-42장",
-        "passage": "창세기 39:1~42:38",
+        "passage": "창세기 39장 1절~42장 38절",
         "url": "https://www.youtube.com/watch?v=MKYXCdwDnew",
         "videoId": "MKYXCdwDnew",
         "fullTitle": "창세기 39-42장 / 불로 열방교회"
@@ -2500,7 +2515,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 14,
         "title": "14편 - 창세기 43-47장",
-        "passage": "창세기 43:1~47:31",
+        "passage": "창세기 43장 1절~47장 31절",
         "url": "https://www.youtube.com/watch?v=e0P6yS-WuxA",
         "videoId": "e0P6yS-WuxA",
         "fullTitle": "창세기 43-47장 / 불로 열방교회"
@@ -2508,7 +2523,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 15,
         "title": "15편 - 창세기 48-50장",
-        "passage": "창세기 48:1~50:26",
+        "passage": "창세기 48장 1절~50장 26절",
         "url": "https://www.youtube.com/watch?v=esM1HHU5xyU",
         "videoId": "esM1HHU5xyU",
         "fullTitle": "창세기 48-50장 / 불로 열방교회"
@@ -2529,91 +2544,91 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "너희는 이 일의 증인이라 (오순절 성령 강림)",
-        "passage": "사도행전 1:1~2:4",
+        "passage": "사도행전 1장 1절~2장 4절",
         "search": "불로열방교회 사도행전 1강"
       },
       {
         "ep": 2,
         "title": "베드로의 오순절 설교와 3천 명의 회개",
-        "passage": "사도행전 2:14~47",
+        "passage": "사도행전 2장 14~47절",
         "search": "불로열방교회 사도행전 2강"
       },
       {
         "ep": 3,
         "title": "은과 금은 내게 없거니와 (성전 미문의 앉은뱅이)",
-        "passage": "사도행전 3:1~26",
+        "passage": "사도행전 3장 1~26절",
         "search": "불로열방교회 사도행전 3강"
       },
       {
         "ep": 4,
         "title": "다른 이로써는 구원을 받을 수 없나니",
-        "passage": "사도행전 4:1~22",
+        "passage": "사도행전 4장 1~22절",
         "search": "불로열방교회 사도행전 4강"
       },
       {
         "ep": 5,
         "title": "스데반의 순교와 영광의 주님",
-        "passage": "사도행전 6:8~7:60",
+        "passage": "사도행전 6장 8절~7장 60절",
         "search": "불로열방교회 사도행전 스데반"
       },
       {
         "ep": 6,
         "title": "빌립 집사와 에디오피아 내시의 세례",
-        "passage": "사도행전 8:26~40",
+        "passage": "사도행전 8장 26~40절",
         "search": "불로열방교회 사도행전 빌립"
       },
       {
         "ep": 7,
         "title": "다메섹 도상의 사울의 회심",
-        "passage": "사도행전 9:1~19",
+        "passage": "사도행전 9장 1~19절",
         "search": "불로열방교회 사도행전 사울"
       },
       {
         "ep": 8,
         "title": "고넬료 가정에 임한 이방인의 성령 강림",
-        "passage": "사도행전 10:1~48",
+        "passage": "사도행전 10장 1~48절",
         "search": "불로열방교회 사도행전 고넬료"
       },
       {
         "ep": 9,
         "title": "안디옥 교회의 파송과 바울의 1차 전도여행",
-        "passage": "사도행전 13:1~14:28",
+        "passage": "사도행전 13장 1절~14장 28절",
         "search": "불로열방교회 사도행전 안디옥"
       },
       {
         "ep": 10,
         "title": "예루살렘 공의회와 이방인 구원의 은혜",
-        "passage": "사도행전 15:1~35",
+        "passage": "사도행전 15장 1~35절",
         "search": "불로열방교회 사도행전 예루살렘"
       },
       {
         "ep": 11,
         "title": "마게도냐 환상과 빌립보 감옥의 간수 (주 예수를 믿으라)",
-        "passage": "사도행전 16:6~34",
+        "passage": "사도행전 16장 6~34절",
         "search": "불로열방교회 사도행전 빌립보"
       },
       {
         "ep": 12,
         "title": "에베소의 말씀 부흥과 두란노 서원",
-        "passage": "사도행전 19:1~20",
+        "passage": "사도행전 19장 1~20절",
         "search": "불로열방교회 사도행전 두란노"
       },
       {
         "ep": 13,
         "title": "밀레도에서 에베소 장로들과의 고별 설교",
-        "passage": "사도행전 20:17~38",
+        "passage": "사도행전 20장 17~38절",
         "search": "불로열방교회 사도행전 밀레도"
       },
       {
         "ep": 14,
         "title": "유라굴로 광풍 속의 바울과 하나님의 보호",
-        "passage": "사도행전 27:1~44",
+        "passage": "사도행전 27장 1~44절",
         "search": "불로열방교회 사도행전 유라굴로"
       },
       {
         "ep": 15,
         "title": "로마에서 거침없이 담대하게 전파된 하나님 나라",
-        "passage": "사도행전 28:16~31",
+        "passage": "사도행전 28장 16~31절",
         "search": "불로열방교회 사도행전 로마"
       }
     ]
@@ -2630,471 +2645,523 @@ window.INITIAL_SERMONS_ARCHIVE = {
     "episodes": [
       {
         "ep": 1,
-        "title": "1강 - 멸망의 도시(장망성)를 떠나다",
-        "passage": "창세기 19:15~17",
-        "url": "https://www.youtube.com/watch?v=kuGnyD5RQl8&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=1",
-        "videoId": "kuGnyD5RQl8",
-        "fullTitle": "금요기도회(20190719) / 천로역정 40장 - '작은 믿음과 큰 믿음' / 마17장 14~20 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=Tno31YZ_0Lo",
+        "videoId": "Tno31YZ_0Lo",
+        "fullTitle": "금요기도회(20181019) / 천로역정 - 1장 영적으로 깨어나는 죄인 / 요한복음 16장 7~8절 / 열방교회 박훈 목사",
+        "title": "1강 - 영적으로 깨어나는 죄인",
+        "passage": "요한복음 16장 7~8절"
       },
       {
         "ep": 2,
-        "title": "2강 - 전도자와 좁은 문을 향한 출발",
-        "passage": "마태복음 7:13~14",
-        "url": "https://www.youtube.com/watch?v=9fT91Ggxr38&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=2",
-        "videoId": "9fT91Ggxr38",
-        "fullTitle": "금요기도회(20190712) / 천로역정 39장 - '무지와 배신자' / 롬 10장 2~3절 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=PeMuwlhuo9Q",
+        "videoId": "PeMuwlhuo9Q",
+        "fullTitle": "금요기도회(20181026) / 천로역정 - 2장 전도자 / 사도행전 8장 29~31절  / 열방교회 박훈 목사 설교",
+        "title": "2강 - 전도자",
+        "passage": "사도행전 8장 29~31절"
       },
       {
         "ep": 3,
-        "title": "3강 - 낙담의 수렁과 유순, 고집",
-        "passage": "시편 40:1~3",
-        "url": "https://www.youtube.com/watch?v=a5hODyYZJOY&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=3",
-        "videoId": "a5hODyYZJOY",
-        "fullTitle": "금요기도회(20190705) / 천로역정 38장 / '기쁨의 산과 목자들' -  시편 119편 71절 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=FwEnYKVJc1E",
+        "videoId": "FwEnYKVJc1E",
+        "fullTitle": "금요기도회(20181102) / 천로역정  3장,4장 다양한 시험들 / 요한복음 6장 66~68절  / 열방교회 박훈 목사 설교",
+        "title": "3강 - 다양한 시험들",
+        "passage": "요한복음 6장 66~68절"
       },
       {
         "ep": 4,
-        "title": "4강 - 세속 현자와 율법의 산",
-        "passage": "갈라디아서 3:10~14",
-        "url": "https://www.youtube.com/watch?v=5FVm4uDuNsQ&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=4",
-        "videoId": "5FVm4uDuNsQ",
-        "fullTitle": "금요기도회(20190628) / 천로역정 37장  '의심의 성과 절망거인'  / 창 32장 1~6절 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=KGd3bLFjMQM",
+        "videoId": "KGd3bLFjMQM",
+        "fullTitle": "금요기도회(20181109) / 천로역정 5장  절망의 수렁 / 시편 40편 1~2절 / 열방교회 박훈 목사 설교",
+        "title": "4강 - 절망의 수렁",
+        "passage": "시편 40장 1~2절"
       },
       {
         "ep": 5,
-        "title": "5강 - 좁은 문과 선의 (은혜의 문)",
-        "passage": "누가복음 13:22~30",
-        "url": "https://www.youtube.com/watch?v=enCGHdy0SB0&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=5",
-        "videoId": "enCGHdy0SB0",
-        "fullTitle": "금요기도회(201906021) / 천로역정 36장   '생명수의 강과 샛길 초원' /고후 12장 1~10절 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=rNLsB7Qn90M",
+        "videoId": "rNLsB7Qn90M",
+        "fullTitle": "금요기도회(20181116) / 천로역정  6장 ; 세상 지혜자 / 롬 8장 5~8절  / 열방교회 박훈 목사 설교",
+        "title": "5강 - 세상 지혜자",
+        "passage": "로마서 8장 5~8절"
       },
       {
         "ep": 6,
-        "title": "6강 - 해석자의 집 (1) - 기름과 불",
-        "passage": "고린도전서 2:9~14",
-        "url": "https://www.youtube.com/watch?v=iLHNHcdNov0&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=6",
-        "videoId": "iLHNHcdNov0",
-        "fullTitle": "금요기도회(201906014) / 천로역정 35장   '데마와 은광' / 딤후 4장 9절,10절 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=ZMR69otae8g",
+        "videoId": "ZMR69otae8g",
+        "fullTitle": "금요기도회(20181123) / 천로역정 7장 : 쉬운 길의 결과 / 렘 18장 15~16절  / 열방교회 박훈 목사 설교",
+        "title": "6강 - 쉬운 길의 결과",
+        "passage": "예레미야 18장 15~16절"
       },
       {
         "ep": 7,
-        "title": "7강 - 해석자의 집 (2) - 쇠창살에 갇힌 사람",
-        "passage": "히브리서 6:4~8",
-        "url": "https://www.youtube.com/watch?v=XUnt-hSmzaw&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=7",
-        "videoId": "XUnt-hSmzaw",
-        "fullTitle": "금요기도회(20190607) / 천로역정 34장   '두 마음의 친구들'  / 누가복음 16장 14~18절 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=8sgJOtwkEi0",
+        "videoId": "8sgJOtwkEi0",
+        "fullTitle": "금요기도회(20181130) / 천로역정 8장 : 전도자의 경계 / 렘 6장 12~15절 / 열방교회 박훈 목사 설교",
+        "title": "7강 - 전도자의 경계",
+        "passage": "예레미야 6장 12~15절"
       },
       {
         "ep": 8,
-        "title": "8강 - 십자가 언덕과 짐 벗겨짐",
-        "passage": "로마서 8:1~4",
-        "url": "https://www.youtube.com/watch?v=ejnUcaqLkAA&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=8",
-        "videoId": "ejnUcaqLkAA",
-        "fullTitle": "금요기도회(20190531) / 천로역정 33장 '두마음' / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=U_nIoBOPli8",
+        "videoId": "U_nIoBOPli8",
+        "fullTitle": "금요기도회(20181207) / 천로역정 9장 - 좁은문 / 마 7장 13~14절 / 열방교회 박훈 목사 설교",
+        "title": "8강 - 좁은 문",
+        "passage": "마태복음 7장 13~14절"
       },
       {
         "ep": 9,
-        "title": "9강 - 세 사람의 잠자는 자 (단순, 나태, 거만)",
-        "passage": "잠언 6:6~11",
-        "url": "https://www.youtube.com/watch?v=kUWC3fM2hSo&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=9",
-        "videoId": "kUWC3fM2hSo",
-        "fullTitle": "금요기도회(20190524) / 천로역정 32장 - 허영의 시장  3편 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=Ru_a9HXv_i8",
+        "videoId": "Ru_a9HXv_i8",
+        "fullTitle": "금요기도회(20181214) / 천로역정 10장 - 해석자의 집(1)  part 1 - 1. 참목자상  / 고전 2장 12~ 14 / 열방교회 박훈 목사 설교",
+        "title": "9강 - 해석자의 집 (1) part 1 참목자상",
+        "passage": "고린도전서 2장 12~14절"
       },
       {
         "ep": 10,
-        "title": "10강 - 허례와 위선 (담을 넘어온 자들)",
-        "passage": "요한복음 10:1~5",
-        "url": "https://www.youtube.com/watch?v=Ll3Ld36PA54&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=10",
-        "videoId": "Ll3Ld36PA54",
-        "fullTitle": "금요기도회(20190517) /  천로역정 31장 - 허영의 시장 2편 / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=_mwXd-sMhjM",
+        "videoId": "_mwXd-sMhjM",
+        "fullTitle": "금요기도회(20181221) / 천로역정 10장 :  해석자의 집 (1) - part 2,3   2.  율법과 복음,  3.  정욕과 인내 / 로마서 7장 7~9",
+        "title": "10강 - 해석자의 집 (1) part 2,3 율법과 복음, 정욕과 인내",
+        "passage": "로마서 7장 7~9절"
       },
       {
         "ep": 11,
-        "title": "11강 - 곤고의 언덕과 잃어버린 두루마리",
-        "passage": "요한계시록 2:4~5",
-        "url": "https://www.youtube.com/watch?v=-lTM1b4JTcs&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=11",
-        "videoId": "-lTM1b4JTcs",
-        "fullTitle": "금요기도회(20190510) / 천로역정 30장 - 허영의 시장 1편 / 박훈목사설교 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=g1k__hpqrj0",
+        "videoId": "g1k__hpqrj0",
+        "fullTitle": "금요기도회(20181228) / 천로역정 11장 : 해석자의 집 (2) -  1. 그리스도의 보존하시는 은혜,  2. 용감한 사나이 (제자도)  / 계  3장 15절",
+        "title": "11강 - 해석자의 집 (2) 그리스도의 보존하시는 은혜, 용감한 사나이",
+        "passage": "요한계시록 3장 15절"
       },
       {
         "ep": 12,
-        "title": "12강 - 아름다운 궁전과 사자들 (교회의 모형)",
-        "passage": "시편 84:1~4",
-        "url": "https://www.youtube.com/watch?v=7Lzx2FdnJwQ&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=12",
-        "videoId": "7Lzx2FdnJwQ",
-        "fullTitle": "금요기도회(20190503) /  천로역정 29장 - 은혜의  효과와 증거 / 박훈목사설교 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=iTn9BZ2AF5Q",
+        "videoId": "iTn9BZ2AF5Q",
+        "fullTitle": "금요기도회(20190104) / 천로역정 12장 - 해석자의 집(3) / 1. 철장에 갇혀 있던 남자타락, 2 . 마지막 심판 / 히 6장 4~6절 / 열방교회 박훈 목사 설교",
+        "title": "12강 - 해석자의 집 (3) 철장에 갇힌 자, 마지막 심판",
+        "passage": "히브리서 6장 4~6절"
       },
       {
         "ep": 13,
-        "title": "13강 - 신중, 분별, 경건, 자선의 성도 교제",
-        "passage": "디모데전서 4:6~10",
-        "url": "https://www.youtube.com/watch?v=mt2FV8lRpRA&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=13",
-        "videoId": "mt2FV8lRpRA",
-        "fullTitle": "금요기도회(20190426) / 천로역정 28장 - '영을 분별하라' / 박훈목사설교 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=WJw--gg6icA",
+        "videoId": "WJw--gg6icA",
+        "fullTitle": "금요기도회(20190111) / 천로역정 13장 - '십자가 체험' / 요 3장 16절 / 열방교회 박훈 목사 설교",
+        "title": "13강 - 십자가 체험",
+        "passage": "요한복음 3장 16절"
       },
       {
         "ep": 14,
-        "title": "14강 - 평화의 방과 하나님의 전신갑주",
-        "passage": "에베소서 6:10~18",
-        "url": "https://www.youtube.com/watch?v=mgO1BfEDrx4&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=14",
-        "videoId": "mgO1BfEDrx4",
-        "fullTitle": "금요기도회(20190419) / 천로역정 27장 - '수다쟁이' / 박훈목사 / 열방교회",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=4youQahGkVc",
+        "videoId": "4youQahGkVc",
+        "fullTitle": "금요기도회(20190118) / 천로역정 14장 - '구원의 은혜에 미치지 못하는 자들' / 잠언 5장 22~23절 / 열방교회 박훈 목사",
+        "title": "14강 - 구원의 은혜에 미치지 못하는 자들",
+        "passage": "잠언 5장 22~23절"
       },
       {
         "ep": 15,
-        "title": "15강 - 겸손의 골짜기와 아볼루온과의 결전",
-        "passage": "야고보서 4:6~10",
-        "url": "https://www.youtube.com/watch?v=MDSyxNCp_Ps&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=15",
-        "videoId": "MDSyxNCp_Ps",
-        "fullTitle": "금요기도회(20190412) / 천로역정 26장 - '불만과 수치' / 빌립보서 4장 11~13절 / 박훈목사설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=0WPejATwKxE",
+        "videoId": "0WPejATwKxE",
+        "fullTitle": "금요기도회(20190125) / 천로역정 15장 - 고난의 언덕 / 사 30장 21 / 열방교회 박훈 목사",
+        "title": "15강 - 고난의 언덕",
+        "passage": "이사야 30장 21절"
       },
       {
         "ep": 16,
-        "title": "16강 - 사망의 음침한 골짜기와 오직 기도",
-        "passage": "시편 23:1~6",
-        "url": "https://www.youtube.com/watch?v=Cj2Cw-tojsQ&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=16",
-        "videoId": "Cj2Cw-tojsQ",
-        "fullTitle": "금요기도회(20190405) / 천로역정 25장 - '유혹들' / 요한일서 2장 15~17절 / 박훈목사설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=gwiO5yas5-I",
+        "videoId": "gwiO5yas5-I",
+        "fullTitle": "금요기도회(20190201) / 천로역정 16장 - 게으름의 결과 / 삼하 12장 9~15절 / 박훈 목사 설교",
+        "title": "16강 - 게으름의 결과",
+        "passage": "사무엘하 12장 9~15절"
       },
       {
         "ep": 17,
-        "title": "17강 - 신실과의 만남과 첫 번째 동행",
-        "passage": "전도서 4:9~12",
-        "url": "https://www.youtube.com/watch?v=xVgu8koX78A&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=17",
-        "videoId": "xVgu8koX78A",
-        "fullTitle": "열방교회 금요기도회(20190329) / 천로역정 24장 - '성실' / 에베소서 4장 29~32절 / 박훈목사설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=kepi54lfJWI",
+        "videoId": "kepi54lfJWI",
+        "fullTitle": "열방교회 금요기도회(20190208) / 천로역정 17장 -  아름다운 궁전 / 고전 4장 6절 / 박훈 목사 설교",
+        "title": "17강 - 아름다운 궁전",
+        "passage": "고린도전서 4장 6절"
       },
       {
         "ep": 18,
-        "title": "18강 - 음녀와 첫 사람 아담의 유혹",
-        "passage": "잠언 5:1~8",
-        "url": "https://www.youtube.com/watch?v=rXtn_AWmETU&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=18",
-        "videoId": "rXtn_AWmETU",
-        "fullTitle": "열방교회 금요기도회(20190322) / 천로역정 23장 - 사망의 음침한 골짜기 2 / 시편 23편 / 박훈목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=g79p7WwJXPw",
+        "videoId": "g79p7WwJXPw",
+        "fullTitle": "열방교회 금요기도회(20190215) / 천로역정 18장 - '진정한 구원의 체험 확인' / 고전 11장 27절~34절 / 박훈 목사",
+        "title": "18강 - 진정한 구원의 체험 확인",
+        "passage": "고린도전서 11장 27~34절"
       },
       {
         "ep": 19,
-        "title": "19강 - 모세와 율법의 채찍 (무자비한 율법)",
-        "passage": "로마서 7:7~12",
-        "url": "https://www.youtube.com/watch?v=KFDIhLx1CXw&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=19",
-        "videoId": "KFDIhLx1CXw",
-        "fullTitle": "열방교회 금요기도회(20190315) / 천로역정 22장 - '사망의 음침한 골짜기 1' / 시편 23편 / 박훈목사설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=erxXWkfuMds",
+        "videoId": "erxXWkfuMds",
+        "fullTitle": "열방교회 금요기도회(20190222) / 천로역정 19장- '뼈아픈 질문들' / 벧전 2장 11절,12절 / 박훈목사설교",
+        "title": "19강 - 뼈아픈 질문들",
+        "passage": "베드로전서 2장 11~12절"
       },
       {
         "ep": 20,
-        "title": "20강 - 수치와의 대결 (부끄러움의 유혹)",
-        "passage": "마가복음 8:34~38",
-        "url": "https://www.youtube.com/watch?v=kIRvtmzkZCo&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=20",
-        "videoId": "kIRvtmzkZCo",
-        "fullTitle": "열방교회 금요기도회(20190308) / 천로역정 21장 -  '영적전투' / 야고보서 4장 7절 / 박훈목사설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=rCFnYMtl5ZE",
+        "videoId": "rCFnYMtl5ZE",
+        "fullTitle": "열방교회 금요기도회(20190301)/ 천로역정 20장 - '교회의 기능' / 엡 4장 13절 / 박훈목사설교",
+        "title": "20강 - 교회의 기능",
+        "passage": "에베소서 4장 13절"
       },
       {
         "ep": 21,
-        "title": "21강 - 수다쟁이(말만 앞서는 자)의 실체",
-        "passage": "마태복음 23:1~7",
-        "url": "https://www.youtube.com/watch?v=rCFnYMtl5ZE&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=21",
-        "videoId": "rCFnYMtl5ZE",
-        "fullTitle": "열방교회 금요기도회(20190301)/ 천로역정 20장 - '교회의 기능' / 엡 4장 13절 / 박훈목사설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=kIRvtmzkZCo",
+        "videoId": "kIRvtmzkZCo",
+        "fullTitle": "열방교회 금요기도회(20190308) / 천로역정 21장 -  '영적전투' / 야고보서 4장 7절 / 박훈목사설교",
+        "title": "21강 - 영적전투",
+        "passage": "야고보서 4장 7절"
       },
       {
         "ep": 22,
-        "title": "22강 - 복음전도자와의 재회와 순교의 예고",
-        "passage": "디모데후서 4:1~8",
-        "url": "https://www.youtube.com/watch?v=erxXWkfuMds&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=22",
-        "videoId": "erxXWkfuMds",
-        "fullTitle": "열방교회 금요기도회(20190222) / 천로역정 19장- '뼈아픈 질문들' / 벧전 2장 11절,12절 / 박훈목사설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=KFDIhLx1CXw",
+        "videoId": "KFDIhLx1CXw",
+        "fullTitle": "열방교회 금요기도회(20190315) / 천로역정 22장 - '사망의 음침한 골짜기 1' / 시편 23편 / 박훈목사설교",
+        "title": "22강 - 사망의 음침한 골짜기 1",
+        "passage": "시편 23장 1~6절"
       },
       {
         "ep": 23,
-        "title": "23강 - 허영의 시장(Vanity Fair) 입성",
-        "passage": "요한일서 2:15~17",
-        "url": "https://www.youtube.com/watch?v=g79p7WwJXPw&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=23",
-        "videoId": "g79p7WwJXPw",
-        "fullTitle": "열방교회 금요기도회(20190215) / 천로역정 18장 - '진정한 구원의 체험 확인' / 고전 11장 27절~34절 / 박훈 목사",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=rXtn_AWmETU",
+        "videoId": "rXtn_AWmETU",
+        "fullTitle": "열방교회 금요기도회(20190322) / 천로역정 23장 - 사망의 음침한 골짜기 2 / 시편 23편 / 박훈목사 설교",
+        "title": "23강 - 사망의 음침한 골짜기 2",
+        "passage": "시편 23장 1~6절"
       },
       {
         "ep": 24,
-        "title": "24강 - 허영의 시장에서 박해와 체포",
-        "passage": "마태복음 5:10~12",
-        "url": "https://www.youtube.com/watch?v=kepi54lfJWI&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=24",
-        "videoId": "kepi54lfJWI",
-        "fullTitle": "열방교회 금요기도회(20190208) / 천로역정 17장 -  아름다운 궁전 / 고전 4장 6절 / 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=xVgu8koX78A",
+        "videoId": "xVgu8koX78A",
+        "fullTitle": "열방교회 금요기도회(20190329) / 천로역정 24장 - '성실' / 에베소서 4장 29~32절 / 박훈목사설교",
+        "title": "24강 - 성실",
+        "passage": "에베소서 4장 29~32절"
       },
       {
         "ep": 25,
-        "title": "25강 - 증오 판사와 거짓 증인들 (선망, 미신, 아첨)",
-        "passage": "요한복음 15:18~25",
-        "url": "https://www.youtube.com/watch?v=gwiO5yas5-I&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=25",
-        "videoId": "gwiO5yas5-I",
-        "fullTitle": "금요기도회(20190201) / 천로역정 16장 - 게으름의 결과 / 삼하 12장 9~15절 / 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=Cj2Cw-tojsQ",
+        "videoId": "Cj2Cw-tojsQ",
+        "fullTitle": "금요기도회(20190405) / 천로역정 25장 - '유혹들' / 요한일서 2장 15~17절 / 박훈목사설교",
+        "title": "25강 - 유혹들",
+        "passage": "요한일서 2장 15~17절"
       },
       {
         "ep": 26,
-        "title": "26강 - 신실의 순교와 하늘 병거",
-        "passage": "사도행전 7:54~60",
-        "url": "https://www.youtube.com/watch?v=0WPejATwKxE&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=26",
-        "videoId": "0WPejATwKxE",
-        "fullTitle": "금요기도회(20190125) / 천로역정 15장 - 고난의 언덕 / 사 30장 21 / 열방교회 박훈 목사",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=MDSyxNCp_Ps",
+        "videoId": "MDSyxNCp_Ps",
+        "fullTitle": "금요기도회(20190412) / 천로역정 26장 - '불만과 수치' / 빌립보서 4장 11~13절 / 박훈목사설교",
+        "title": "26강 - 불만과 수치",
+        "passage": "빌립보서 4장 11~13절"
       },
       {
         "ep": 27,
-        "title": "27강 - 소망과의 새로운 동행 (은혜의 위로)",
-        "passage": "고린도후서 1:3~7",
-        "url": "https://www.youtube.com/watch?v=4youQahGkVc&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=27",
-        "videoId": "4youQahGkVc",
-        "fullTitle": "금요기도회(20190118) / 천로역정 14장 - '구원의 은혜에 미치지 못하는 자들' / 잠언 5장 22~23절 / 열방교회 박훈 목사",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=mgO1BfEDrx4",
+        "videoId": "mgO1BfEDrx4",
+        "fullTitle": "금요기도회(20190419) / 천로역정 27장 - '수다쟁이' / 박훈목사 / 열방교회",
+        "title": "27강 - 수다쟁이",
+        "passage": "잠언 10장 19절"
       },
       {
         "ep": 28,
-        "title": "28강 - 이익을 따르는 자들 (욕심쟁이, 돈 사랑)",
-        "passage": "디모데전서 6:6~10",
-        "url": "https://www.youtube.com/watch?v=WJw--gg6icA&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=28",
-        "videoId": "WJw--gg6icA",
-        "fullTitle": "금요기도회(20190111) / 천로역정 13장 - '십자가 체험' / 요 3장 16절 / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=mt2FV8lRpRA",
+        "videoId": "mt2FV8lRpRA",
+        "fullTitle": "금요기도회(20190426) / 천로역정 28장 - '영을 분별하라' / 박훈목사설교 / 열방교회",
+        "title": "28강 - 영을 분별하라",
+        "passage": "요한일서 4장 1절"
       },
       {
         "ep": 29,
-        "title": "29강 - 은혜의 효과와 증거 / 데마와 은광",
-        "passage": "디모데후서 4:9~10",
-        "url": "https://www.youtube.com/watch?v=iTn9BZ2AF5Q&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=29",
-        "videoId": "iTn9BZ2AF5Q",
-        "fullTitle": "금요기도회(20190104) / 천로역정 12장 - 해석자의 집(3) / 1. 철장에 갇혀 있던 남자타락, 2 . 마지막 심판 / 히 6장 4~6절 / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=7Lzx2FdnJwQ",
+        "videoId": "7Lzx2FdnJwQ",
+        "fullTitle": "금요기도회(20190503) /  천로역정 29장 - 은혜의  효과와 증거 / 박훈목사설교 / 열방교회",
+        "title": "29강 - 은혜의 효과와 증거",
+        "passage": "골로새서 1장 6절"
       },
       {
         "ep": 30,
-        "title": "30강 - 허영의 시장 1편 / 롯의 처 소금 기둥",
-        "passage": "누가복음 17:28~33",
-        "url": "https://www.youtube.com/watch?v=g1k__hpqrj0&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=30",
-        "videoId": "g1k__hpqrj0",
-        "fullTitle": "금요기도회(20181228) / 천로역정 11장 : 해석자의 집 (2) -  1. 그리스도의 보존하시는 은혜,  2. 용감한 사나이 (제자도)  / 계  3장 15절",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=-lTM1b4JTcs",
+        "videoId": "-lTM1b4JTcs",
+        "fullTitle": "금요기도회(20190510) / 천로역정 30장 - 허영의 시장 1편 / 박훈목사설교 / 열방교회",
+        "title": "30강 - 허영의 시장 1편",
+        "passage": "전도서 1장 2절"
       },
       {
         "ep": 31,
-        "title": "31강 - 허영의 시장 2편 / 생명수의 강과 쉼",
-        "passage": "시편 23:1~3",
-        "url": "https://www.youtube.com/watch?v=_mwXd-sMhjM&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=31",
-        "videoId": "_mwXd-sMhjM",
-        "fullTitle": "금요기도회(20181221) / 천로역정 10장 :  해석자의 집 (1) - part 2,3   2.  율법과 복음,  3.  정욕과 인내 / 로마서 7장 7~9",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=Ll3Ld36PA54",
+        "videoId": "Ll3Ld36PA54",
+        "fullTitle": "금요기도회(20190517) /  천로역정 31장 - 허영의 시장 2편 / 박훈목사 / 열방교회",
+        "title": "31강 - 허영의 시장 2편",
+        "passage": "전도서 1장 14절"
       },
       {
         "ep": 32,
-        "title": "32강 - 허영의 시장 3편 / 샛길 초원의 방황",
-        "passage": "잠언 14:12",
-        "url": "https://www.youtube.com/watch?v=Ru_a9HXv_i8&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=32",
-        "videoId": "Ru_a9HXv_i8",
-        "fullTitle": "금요기도회(20181214) / 천로역정 10장 - 해석자의 집(1)  part 1 - 1. 참목자상  / 고전 2장 12~ 14 / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=kUWC3fM2hSo",
+        "videoId": "kUWC3fM2hSo",
+        "fullTitle": "금요기도회(20190524) / 천로역정 32장 - 허영의 시장  3편 / 박훈목사 / 열방교회",
+        "title": "32강 - 허영의 시장 3편",
+        "passage": "요한일서 2장 15절"
       },
       {
         "ep": 33,
-        "title": "33강 - 두 마음 (의심의 시작)",
-        "passage": "야고보서 1:5~8",
-        "url": "https://www.youtube.com/watch?v=U_nIoBOPli8&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=33",
-        "videoId": "U_nIoBOPli8",
-        "fullTitle": "금요기도회(20181207) / 천로역정 9장 - 좁은문 / 마 7장 13~14절 / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=ejnUcaqLkAA",
+        "videoId": "ejnUcaqLkAA",
+        "fullTitle": "금요기도회(20190531) / 천로역정 33장 '두마음' / 박훈목사 / 열방교회",
+        "title": "33강 - 두 마음",
+        "passage": "야고보서 1장 8절"
       },
       {
         "ep": 34,
-        "title": "34강 - 두 미혹의 친구들",
-        "passage": "누가복음 16:14~18",
-        "url": "https://www.youtube.com/watch?v=8sgJOtwkEi0&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=34",
-        "videoId": "8sgJOtwkEi0",
-        "fullTitle": "금요기도회(20181130) / 천로역정 8장 : 전도자의 경계 / 렘 6장 12~15절 / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=XUnt-hSmzaw",
+        "videoId": "XUnt-hSmzaw",
+        "fullTitle": "금요기도회(20190607) / 천로역정 34장   '두 마음의 친구들'  / 누가복음 16장 14~18절 / 박훈목사 / 열방교회",
+        "title": "34강 - 두 마음의 친구들",
+        "passage": "누가복음 16장 14~18절"
       },
       {
         "ep": 35,
-        "title": "35강 - 데마와 은광 (물질의 덫)",
-        "passage": "디모데후서 4:9~10",
-        "url": "https://www.youtube.com/watch?v=ZMR69otae8g&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=35",
-        "videoId": "ZMR69otae8g",
-        "fullTitle": "금요기도회(20181123) / 천로역정 7장 : 쉬운 길의 결과 / 렘 18장 15~16절  / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=iLHNHcdNov0",
+        "videoId": "iLHNHcdNov0",
+        "fullTitle": "금요기도회(201906014) / 천로역정 35장   '데마와 은광' / 딤후 4장 9절,10절 / 박훈목사 / 열방교회",
+        "title": "35강 - 데마와 은광",
+        "passage": "디모데후서 4장 9~10절"
       },
       {
         "ep": 36,
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=enCGHdy0SB0",
+        "videoId": "enCGHdy0SB0",
+        "fullTitle": "금요기도회(201906021) / 천로역정 36장   '생명수의 강과 샛길 초원' /고후 12장 1~10절 / 박훈목사 / 열방교회",
         "title": "36강 - 생명수의 강과 샛길 초원",
-        "passage": "고린도후서 12:1~10",
-        "url": "https://www.youtube.com/watch?v=rNLsB7Qn90M&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=36",
-        "videoId": "rNLsB7Qn90M",
-        "fullTitle": "금요기도회(20181116) / 천로역정  6장 ; 세상 지혜자 / 롬 8장 5~8절  / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "passage": "고린도후서 12장 1~10절"
       },
       {
         "ep": 37,
-        "title": "37강 - 의심의 성과 절망 거인",
-        "passage": "창세기 32:1~6",
-        "url": "https://www.youtube.com/watch?v=KGd3bLFjMQM&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=37",
-        "videoId": "KGd3bLFjMQM",
-        "fullTitle": "금요기도회(20181109) / 천로역정 5장  절망의 수렁 / 시편 40편 1~2절 / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=5FVm4uDuNsQ",
+        "videoId": "5FVm4uDuNsQ",
+        "fullTitle": "금요기도회(20190628) / 천로역정 37장  '의심의 성과 절망거인'  / 창 32장 1~6절 / 박훈목사 / 열방교회",
+        "title": "37강 - 의심의 성과 절망거인",
+        "passage": "창세기 32장 1~6절"
       },
       {
         "ep": 38,
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=a5hODyYZJOY",
+        "videoId": "a5hODyYZJOY",
+        "fullTitle": "금요기도회(20190705) / 천로역정 38장 / '기쁨의 산과 목자들' -  시편 119편 71절 / 박훈목사 / 열방교회",
         "title": "38강 - 기쁨의 산과 목자들",
-        "passage": "시편 119:71",
-        "url": "https://www.youtube.com/watch?v=FwEnYKVJc1E&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=38",
-        "videoId": "FwEnYKVJc1E",
-        "fullTitle": "금요기도회(20181102) / 천로역정  3장,4장 다양한 시험들 / 요한복음 6장 66~68절  / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "passage": "시편 119장 71절"
       },
       {
         "ep": 39,
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=9fT91Ggxr38",
+        "videoId": "9fT91Ggxr38",
+        "fullTitle": "금요기도회(20190712) / 천로역정 39장 - '무지와 배신자' / 롬 10장 2~3절 / 박훈목사 / 열방교회",
         "title": "39강 - 무지와 배신자",
-        "passage": "로마서 10:2~3",
-        "url": "https://www.youtube.com/watch?v=PeMuwlhuo9Q&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=39",
-        "videoId": "PeMuwlhuo9Q",
-        "fullTitle": "금요기도회(20181026) / 천로역정 - 2장 전도자 / 사도행전 8장 29~31절  / 열방교회 박훈 목사 설교",
-        "source": "열방교회유튜브 금요기도회"
+        "passage": "로마서 10장 2~3절"
       },
       {
         "ep": 40,
+        "part": "1부 (1~40강)",
+        "source": "열방교회유튜브 금요기도회",
+        "url": "https://www.youtube.com/watch?v=kuGnyD5RQl8",
+        "videoId": "kuGnyD5RQl8",
+        "fullTitle": "금요기도회(20190719) / 천로역정 40장 - '작은 믿음과 큰 믿음' / 마17장 14~20 / 박훈목사 / 열방교회",
         "title": "40강 - 작은 믿음과 큰 믿음",
-        "passage": "마태복음 17:14~20",
-        "url": "https://www.youtube.com/watch?v=Tno31YZ_0Lo&list=PL7asZlCcW8JlyIHctQ6EjQ_EQW1uUTgWM&index=40",
-        "videoId": "Tno31YZ_0Lo",
-        "fullTitle": "금요기도회(20181019) / 천로역정 - 1장 영적으로 깨어나는 죄인 / 요한복음 16장 7~8절 / 열방교회 박훈 목사",
-        "source": "열방교회유튜브 금요기도회"
+        "passage": "마태복음 17장 14~20절"
       },
       {
         "ep": 41,
         "title": "41강 - 아첨쟁이",
-        "passage": "잠 29:5",
+        "passage": "잠언 29장 5절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=k4TW9EVfywA",
         "videoId": "k4TW9EVfywA",
-        "fullTitle": "천로역정 41장 아첨쟁이 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 41장 아첨쟁이 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 42,
         "title": "42강 - 무신론자",
-        "passage": "시 14:1",
+        "passage": "시편 14장 1절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=W142nHc_hOc",
         "videoId": "W142nHc_hOc",
-        "fullTitle": "천로역정 42장 무신론자 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 42장 무신론자 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 43,
         "title": "43강 - 회심의 체험 1",
-        "passage": "겔 36:26~27",
+        "passage": "에스겔 36장 26~27절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=hLvWkeXlmuE",
         "videoId": "hLvWkeXlmuE",
-        "fullTitle": "천로역정 43장 회심의 체험1 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 43장 회심의 체험1 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 44,
         "title": "44강 - 회심의 체험 2",
-        "passage": "고후 5:17",
+        "passage": "고린도후서 5장 17절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=8PvhJYQBHQY",
         "videoId": "8PvhJYQBHQY",
-        "fullTitle": "천로역정 44장 회심의 체험2 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 44장 회심의 체험2 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 45,
         "title": "45강 - 회심의 체험 3",
-        "passage": "갈 2:20",
+        "passage": "갈라디아서 2장 20절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=RxkV0EBeDeU",
         "videoId": "RxkV0EBeDeU",
-        "fullTitle": "천로역정 45장 회심의 체험3 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 45장 회심의 체험3 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 46,
         "title": "46강 - 무지 (원죄를 부정함)",
-        "passage": "사 64:6",
+        "passage": "이사야 64장 6절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=adFk0tRJhto",
         "videoId": "adFk0tRJhto",
-        "fullTitle": "천로역정 46장 무지원죄를 부정함 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 46장 무지원죄를 부정함 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 47,
         "title": "47강 - 무지 (잘못된 믿음)",
-        "passage": "롬 10:2~4",
+        "passage": "로마서 10장 2~4절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=uLNjH5uYVPk",
         "videoId": "uLNjH5uYVPk",
-        "fullTitle": "천로역정 47장 무지(잘못된 믿음) / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 47장 무지(잘못된 믿음) / 불로열방교회 김진수 목사"
       },
       {
         "ep": 48,
         "title": "48강 - 복음적 두려움 (지혜의 근본)",
-        "passage": "잠 9:10",
+        "passage": "잠언 9장 10절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=LcI3mIodRI8",
         "videoId": "LcI3mIodRI8",
-        "fullTitle": "천로역정 48장 복음적 두려움 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 48장 복음적 두려움 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 49,
         "title": "49강 - 일시적 믿음 (타락하는 이유)",
-        "passage": "히 3:12~14",
+        "passage": "히브리서 3장 12~14절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=jOSBZ9K380U",
         "videoId": "jOSBZ9K380U",
-        "fullTitle": "천로역정 49장 일시적 믿음(타락하는 이유) / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 49장 일시적 믿음(타락하는 이유) / 불로열방교회 김진수 목사"
       },
       {
         "ep": 50,
         "title": "50강 - 쁄라 땅과 죽음의 강",
-        "passage": "사 62:4~5",
+        "passage": "이사야 62장 4~5절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=OV0hzJ2cvGg",
         "videoId": "OV0hzJ2cvGg",
-        "fullTitle": "천로역정 50장 쁄라 땅과 죽음의 강 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 50장 쁄라 땅과 죽음의 강 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 51,
         "title": "51강 - 죽음의 강",
-        "passage": "계 22:1~2",
+        "passage": "요한계시록 22장 1~2절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=7SsSaNAnWhc",
         "videoId": "7SsSaNAnWhc",
-        "fullTitle": "천로역정 51장 죽음의 강 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 51장 죽음의 강 / 불로열방교회 김진수 목사"
       },
       {
         "ep": 52,
         "title": "52강 - 천국 입성과 무지의 최후",
-        "passage": "계 21:1~7",
+        "passage": "요한계시록 21장 1~7절",
+        "part": "2부 (41~52강)",
+        "source": "불로 열방교회 유튜브",
         "url": "https://www.youtube.com/watch?v=6tg0R1kQvzQ",
         "videoId": "6tg0R1kQvzQ",
-        "fullTitle": "천로역정 52장 천국입성과 무지의 최후 / 불로열방교회 김진수 목사",
-        "source": "불로 열방교회 유튜브"
+        "fullTitle": "천로역정 52장 천국입성과 무지의 최후 / 불로열방교회 김진수 목사"
       }
     ]
   },
@@ -3111,7 +3178,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 1,
         "title": "1강 - 그리스도의 복음의 시작",
-        "passage": "마가복음 1:1~11",
+        "passage": "마가복음 1장 1~11절",
         "url": "https://www.youtube.com/watch?v=rU8LJi9Q7ps&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=26",
         "videoId": "rU8LJi9Q7ps",
         "fullTitle": "주일 오전예배(20190113) / '그리스도 복음의 시작' / 마가 1장 1~11절 / 열방교회 박훈 목사 설교",
@@ -3120,7 +3187,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 2,
         "title": "2강 - 지는 것이 아닌 승리",
-        "passage": "마가복음 1:12~13",
+        "passage": "마가복음 1장 12~13절",
         "url": "https://www.youtube.com/watch?v=W1Vtpt0eUM8&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=25",
         "videoId": "W1Vtpt0eUM8",
         "fullTitle": "주일 오전예배(20190120) / '지는 것이 아닌 승리' / 마가 1장 12~13절 / 열방교회 박훈 목사 설교",
@@ -3129,7 +3196,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 3,
         "title": "3강 - 권세있는 새 교훈",
-        "passage": "마가복음 1:21~28",
+        "passage": "마가복음 1장 21~28절",
         "url": "https://www.youtube.com/watch?v=wyh7wMgRR0k&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=24",
         "videoId": "wyh7wMgRR0k",
         "fullTitle": "주일 오전예배(20190210) / '권세있는 새 교훈' / 마가 1장 21~28절 / 열방교회 박훈 목사",
@@ -3138,7 +3205,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 4,
         "title": "4강 - 전도의 목적",
-        "passage": "마가복음 1:29~39",
+        "passage": "마가복음 1장 29~39절",
         "url": "https://www.youtube.com/watch?v=3mfjqZVqB48&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=23",
         "videoId": "3mfjqZVqB48",
         "fullTitle": "열방교회 주일 오전예배(20190217) / '전도의 목적' - 마가 1장 29~39절 / 박훈 목사 설교",
@@ -3147,7 +3214,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 5,
         "title": "5강 - 원하십니까?",
-        "passage": "마가복음 1:40~45",
+        "passage": "마가복음 1장 40~45절",
         "url": "https://www.youtube.com/watch?v=5zGt_a20iHg&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=22",
         "videoId": "5zGt_a20iHg",
         "fullTitle": "주일 오전예배(20190224) / '원하십니까?' / 마가 1장 40~45절 / 열방교회 박훈 목사 설교",
@@ -3156,7 +3223,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 6,
         "title": "6강 - 죄를 사하는 자인가",
-        "passage": "마가복음 2:1~12",
+        "passage": "마가복음 2장 1~12절",
         "url": "https://www.youtube.com/watch?v=LP8i-9s3uPc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=21",
         "videoId": "LP8i-9s3uPc",
         "fullTitle": "주일 오전예배(20190303) / '죄를 사하는 자인가' - 마가 2장 1~12절 / 박훈 목사 설교",
@@ -3165,7 +3232,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 7,
         "title": "7강 - 죄인입니까? 의인입니까?",
-        "passage": "마가복음 2:13~17",
+        "passage": "마가복음 2장 13~17절",
         "url": "https://www.youtube.com/watch?v=6qFnQv-0DHo&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=20",
         "videoId": "6qFnQv-0DHo",
         "fullTitle": "열방교회 주일 오전예배(20190310) / 죄인입니까? 의인입니까? / 마가 2장 13~17절 / 열방교회 박훈 목사",
@@ -3174,7 +3241,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 8,
         "title": "8강 - 의무와 기쁨의 충돌",
-        "passage": "마가복음 2:18~28",
+        "passage": "마가복음 2장 18~28절",
         "url": "https://www.youtube.com/watch?v=K9QN5if0s_0&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=19",
         "videoId": "K9QN5if0s_0",
         "fullTitle": "열방교회 주일 오전예배(20190317) / 의무와 기쁨의 충돌 / 마가 2장 18~28절 / 박훈 목사 설교",
@@ -3183,7 +3250,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 9,
         "title": "9강 - 안식일의 주인 예수",
-        "passage": "마가복음 2:23~3:12",
+        "passage": "마가복음 2장 23절~3장 12절",
         "url": "https://www.youtube.com/watch?v=cJ6UXc58JZ8&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=18",
         "videoId": "cJ6UXc58JZ8",
         "fullTitle": "열방교회 주일 오전예배(20190324) / 안식일의 주인 예수 / 마가 2장 23~28절, 3장 1~12절 / 박훈 목사 설교",
@@ -3192,7 +3259,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 10,
         "title": "10강 - 부르심의 목적",
-        "passage": "마가복음 3:13~19",
+        "passage": "마가복음 3장 13~19절",
         "url": "https://www.youtube.com/watch?v=XiQP-AfHZwY&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=17",
         "videoId": "XiQP-AfHZwY",
         "fullTitle": "열방교회 주일 오전예배(20190331) / 부르심의 목적 - 마가 3장 13~19절 / 박훈 목사 설교",
@@ -3201,7 +3268,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 11,
         "title": "11강 - 성령훼방",
-        "passage": "마가복음 3:20~30",
+        "passage": "마가복음 3장 20~30절",
         "url": "https://www.youtube.com/watch?v=s-zRXLIaxsE&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=16",
         "videoId": "s-zRXLIaxsE",
         "fullTitle": "주일 오전예배(20190407) / 성령훼방 - 마가 3장 20~30절 / 박훈 목사 설교",
@@ -3210,7 +3277,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 12,
         "title": "12강 - 영적인 가족",
-        "passage": "마가복음 3:31~35",
+        "passage": "마가복음 3장 31~35절",
         "url": "https://www.youtube.com/watch?v=2CAe5Gn4L4I&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=15",
         "videoId": "2CAe5Gn4L4I",
         "fullTitle": "주일 오전예배(20190414) / '영적인 가족' - 마가 3장 31~35절 / 박훈 목사 설교",
@@ -3219,7 +3286,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 13,
         "title": "13강 - 네 가지 밭의 비유",
-        "passage": "마가복음 4:1~20",
+        "passage": "마가복음 4장 1~20절",
         "url": "https://www.youtube.com/watch?v=LXIxyrMdnH8&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=14",
         "videoId": "LXIxyrMdnH8",
         "fullTitle": "주일 오전예배(20190421) / '네 가지 밭은 어떠합니까' / 마가 4장 1~20절 / 박훈 목사 설교",
@@ -3228,7 +3295,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 14,
         "title": "14강 - 들으려 하는 자에게 합당한 태도",
-        "passage": "마가복음 4:21~25",
+        "passage": "마가복음 4장 21~25절",
         "url": "https://www.youtube.com/watch?v=h7KZv8Plxbw&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=13",
         "videoId": "h7KZv8Plxbw",
         "fullTitle": "주일 오전예배(20190428) / '들으려 하는 자에게 합당한 태도' / 마가 4장 21~25절 / 열방교회 박훈 목사",
@@ -3237,7 +3304,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 15,
         "title": "15강 - 자라나는 씨",
-        "passage": "마가복음 4:26~29",
+        "passage": "마가복음 4장 26~29절",
         "url": "https://www.youtube.com/watch?v=S2FUpy29vvM&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=12",
         "videoId": "S2FUpy29vvM",
         "fullTitle": "주일 오전예배(20190505) / '자라나는 씨' / 마가 4장 26~29절 / 열방교회 박훈 목사 설교",
@@ -3246,7 +3313,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 16,
         "title": "16강 - 겨자씨와 하나님 나라",
-        "passage": "마가복음 4:30~34",
+        "passage": "마가복음 4장 30~34절",
         "url": "https://www.youtube.com/watch?v=FDmtOa6OJrg&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=11",
         "videoId": "FDmtOa6OJrg",
         "fullTitle": "주일 오전예배(20190512) / '겨자씨와 하나님 나라' / 마가 4장 30~34절 / 열방교회 박훈 목사 설교",
@@ -3255,7 +3322,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 17,
         "title": "17강 - 그가 누구이기에!",
-        "passage": "마가복음 4:35~41",
+        "passage": "마가복음 4장 35~41절",
         "url": "https://www.youtube.com/watch?v=YEY2i91kVdI&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=10",
         "videoId": "YEY2i91kVdI",
         "fullTitle": "주일 오전예배(20190519) / '그가 누구이기에!' / 마가 4장 35~41절 / 열방교회 박훈 목사",
@@ -3264,7 +3331,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 18,
         "title": "18강 - 아무도 제어할 수 없는 자!",
-        "passage": "마가복음 5:1~20",
+        "passage": "마가복음 5장 1~20절",
         "url": "https://www.youtube.com/watch?v=qCWptlLoh7E&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=9",
         "videoId": "qCWptlLoh7E",
         "fullTitle": "주일 오전예배(20190526) / '아무도 제어할 수 없는 자!' / 마가 5장 1~20절 / 열방교회 박훈 목사",
@@ -3273,7 +3340,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 19,
         "title": "19강 - 믿기만 하라!",
-        "passage": "마가복음 5:21~43",
+        "passage": "마가복음 5장 21~43절",
         "url": "https://www.youtube.com/watch?v=m5HaueUKNZM&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=8",
         "videoId": "m5HaueUKNZM",
         "fullTitle": "주일 오전예배(20190602) / '믿기만 하라!' / 마가 5장 21~43절 / 열방교회 박훈 목사",
@@ -3282,7 +3349,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 20,
         "title": "20강 - 배척과 불신",
-        "passage": "마가복음 6:1~6",
+        "passage": "마가복음 6장 1~6절",
         "url": "https://www.youtube.com/watch?v=yhg-4URczQc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=7",
         "videoId": "yhg-4URczQc",
         "fullTitle": "주일 오전예배(20190609) / '배척과 불신' - 마가 6장 1~6절 / 열방교회 박훈 목사",
@@ -3291,7 +3358,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 21,
         "title": "21강 - 하나님 나라 사역의 본질",
-        "passage": "마가복음 6:7~13",
+        "passage": "마가복음 6장 7~13절",
         "url": "https://www.youtube.com/watch?v=nS5S1NLsPPs&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=6",
         "videoId": "nS5S1NLsPPs",
         "fullTitle": "주일 오전예배(20190616) / '하나님 나라 사역의 본질' / 마가 6장 7~13절 / 열방교회 박훈 목사",
@@ -3300,7 +3367,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 22,
         "title": "22강 - 세례 요한의 죽음과 분봉왕 헤롯",
-        "passage": "마가복음 6:14~29",
+        "passage": "마가복음 6장 14~29절",
         "url": "https://www.youtube.com/watch?v=YXnBet0CmLk&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=5",
         "videoId": "YXnBet0CmLk",
         "fullTitle": "주일 오전예배(20190623) / '세례 요한의 죽음과 분봉왕 헤롯' / 마가 6장 14~29절 / 열방교회 박훈 목사",
@@ -3309,7 +3376,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 23,
         "title": "23강 - 먹이시는 그리스도 (오병이어)",
-        "passage": "마가복음 6:30~44",
+        "passage": "마가복음 6장 30~44절",
         "url": "https://www.youtube.com/watch?v=_LuXc3lBdAc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=4",
         "videoId": "_LuXc3lBdAc",
         "fullTitle": "주일 오전예배(20190630) / '먹이시는 그리스도' - 마가 6장 30~44절 / 열방교회 박훈 목사",
@@ -3318,7 +3385,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 24,
         "title": "24강 - 물 위로 걸으신 주",
-        "passage": "마가복음 6:45~52",
+        "passage": "마가복음 6장 45~52절",
         "url": "https://www.youtube.com/watch?v=Tav4TwdZsIc&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=3",
         "videoId": "Tav4TwdZsIc",
         "fullTitle": "주일 오전예배(20190707) / '물 위로 걸으신 주' - 마가 6장 45~52절 / 열방교회 박훈 목사",
@@ -3327,7 +3394,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 25,
         "title": "25강 - 손을 대기만 하면!",
-        "passage": "마가복음 6:53~56",
+        "passage": "마가복음 6장 53~56절",
         "url": "https://www.youtube.com/watch?v=8423sZ8kOcI&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=2",
         "videoId": "8423sZ8kOcI",
         "fullTitle": "주일 오전예배(20190714) / '손을 대기만 하면!' / 마가 6장 53~56절 / 열방교회 박훈 목사",
@@ -3336,7 +3403,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 26,
         "title": "26강 - 참된 것을 방해하는 자들",
-        "passage": "마가복음 7:1~23",
+        "passage": "마가복음 7장 1~23절",
         "url": "https://www.youtube.com/watch?v=mKWdu-RWdO4&list=PL7asZlCcW8JmG6PPi4_nw0S3rrHc82XO0&index=1",
         "videoId": "mKWdu-RWdO4",
         "fullTitle": "주일 오전예배(20190721) / '참된 것을 방해하는 자들' - 마가 7장 1~23절 / 열방교회 박훈 목사",
@@ -3345,7 +3412,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 27,
         "title": "27강 - 부스러기 은혜라도",
-        "passage": "막 7:24~30",
+        "passage": "마가복음 7장 24~30절",
         "url": "https://www.youtube.com/watch?v=uQM9fjNxrOc&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=1",
         "videoId": "uQM9fjNxrOc",
         "fullTitle": "마가복음 강해 / '부스러기 은혜라도' / 막 7:24~30 / 불로열방교회",
@@ -3354,7 +3421,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 28,
         "title": "28강 - 열려라",
-        "passage": "막 7:31~37",
+        "passage": "마가복음 7장 31~37절",
         "url": "https://www.youtube.com/watch?v=BYj_LrkmopU&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=2",
         "videoId": "BYj_LrkmopU",
         "fullTitle": "마가복음 강해 / '열려라' / 막 7:31~37 / 불로열방교회",
@@ -3363,7 +3430,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 29,
         "title": "29강 - 칠병이어의 은혜",
-        "passage": "막 8:1~10",
+        "passage": "마가복음 8장 1~10절",
         "url": "https://www.youtube.com/watch?v=XeZD3jRVqOM&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=3",
         "videoId": "XeZD3jRVqOM",
         "fullTitle": "마가복음 강해 / '칠병이어의 은혜' / 막 8:1~10 / 불로열방교회",
@@ -3372,7 +3439,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 30,
         "title": "30강 - 모든 누룩을 주의하라",
-        "passage": "막 8:11~21",
+        "passage": "마가복음 8장 11~21절",
         "url": "https://www.youtube.com/watch?v=_wT-Lxw9dxk&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=4",
         "videoId": "_wT-Lxw9dxk",
         "fullTitle": "마가복음 강해 / '모든 누룩을 주의하라' / 막 8:11~21 / 불로열방교회",
@@ -3381,7 +3448,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 31,
         "title": "31강 - 다시 만지시는 예수님",
-        "passage": "막 8:22~26",
+        "passage": "마가복음 8장 22~26절",
         "url": "https://www.youtube.com/watch?v=5hSJ210F1Gc&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=5",
         "videoId": "5hSJ210F1Gc",
         "fullTitle": "마가복음 강해 / '다시 만지시는 예수님' / 막 8:22~26 / 불로열방교회",
@@ -3390,7 +3457,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 32,
         "title": "32강 - 너희는 나를 누구라 하느냐",
-        "passage": "막 8:27~38",
+        "passage": "마가복음 8장 27~38절",
         "url": "https://www.youtube.com/watch?v=vaHiohmc7U4&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=6",
         "videoId": "vaHiohmc7U4",
         "fullTitle": "마가복음 강해 / '너희는 나를 누구라 하느냐' / 막 8:27~38 / 불로열방교회",
@@ -3399,7 +3466,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 33,
         "title": "33강 - 나를 따르라",
-        "passage": "막 8:27~9:1",
+        "passage": "마가복음 8장 27절~9장 1절",
         "url": "https://www.youtube.com/watch?v=4Ex840vAtfg&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=7",
         "videoId": "4Ex840vAtfg",
         "fullTitle": "마가복음 강해 / '나를 따르라' / 막 8:27~9:1 / 불로열방교회",
@@ -3408,7 +3475,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 34,
         "title": "34강 - 너희는 그의 말을 들으라",
-        "passage": "막 9:2~13",
+        "passage": "마가복음 9장 2~13절",
         "url": "https://www.youtube.com/watch?v=5gBbACoxGvo&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=8",
         "videoId": "5gBbACoxGvo",
         "fullTitle": "마가복음 강해 / '너희는 그의 말을 들으라' / 막 9:2~13 / 불로열방교회",
@@ -3417,7 +3484,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 35,
         "title": "35강 - 부흥을 위한 준비 1",
-        "passage": "막 9:14~29",
+        "passage": "마가복음 9장 14~29절",
         "url": "https://www.youtube.com/watch?v=2Ha_5OuRXfg&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=9",
         "videoId": "2Ha_5OuRXfg",
         "fullTitle": "마가복음 강해 / '부흥을 위한 준비 1' / 막 9:14~29 / 불로열방교회",
@@ -3426,7 +3493,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 36,
         "title": "36강 - 부흥을 위한 준비 2",
-        "passage": "막 9:28~29",
+        "passage": "마가복음 9장 28~29절",
         "url": "https://www.youtube.com/watch?v=UpB6t_aWXbM&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=10",
         "videoId": "UpB6t_aWXbM",
         "fullTitle": "마가복음 강해 / '부흥을 위한 준비 2' / 막 9:28~29 / 불로열방교회",
@@ -3435,7 +3502,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 37,
         "title": "37강 - 성경대로 죽으시고 부활하신 주",
-        "passage": "막 9:30~32",
+        "passage": "마가복음 9장 30~32절",
         "url": "https://www.youtube.com/watch?v=LBqUdPAdF8o&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=11",
         "videoId": "LBqUdPAdF8o",
         "fullTitle": "마가복음 강해 / '성경대로 죽으시고 부활하신 주' / 막 9:30~32 / 불로열방교회",
@@ -3444,7 +3511,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 38,
         "title": "38강 - 하나님 나라의 질서",
-        "passage": "막 9:33~37",
+        "passage": "마가복음 9장 33~37절",
         "url": "https://www.youtube.com/watch?v=d61WYvGtX4g&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=12",
         "videoId": "d61WYvGtX4g",
         "fullTitle": "마가복음 강해 / '하나님 나라의 질서' / 막 9:33~37 / 불로열방교회",
@@ -3453,7 +3520,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 39,
         "title": "39강 - 소금을 두고 서로 화목하라",
-        "passage": "막 9:38~50",
+        "passage": "마가복음 9장 38~50절",
         "url": "https://www.youtube.com/watch?v=G6o6xUuHmA0&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=13",
         "videoId": "G6o6xUuHmA0",
         "fullTitle": "마가복음 강해 / '소금을 두고 서로 화목하라' / 막 9:38~50 / 불로열방교회",
@@ -3462,7 +3529,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 40,
         "title": "40강 - 둘이 한 몸이 될지니라",
-        "passage": "막 10:1~12",
+        "passage": "마가복음 10장 1~12절",
         "url": "https://www.youtube.com/watch?v=UVDE-dD_CDI&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=14",
         "videoId": "UVDE-dD_CDI",
         "fullTitle": "마가복음 강해 / '둘이 한 몸이 될지니라' / 막 10:1~12 / 불로열방교회",
@@ -3471,7 +3538,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 41,
         "title": "41강 - 하나님의 나라는 이런 자의 것이니라",
-        "passage": "막 10:13~16",
+        "passage": "마가복음 10장 13~16절",
         "url": "https://www.youtube.com/watch?v=JP7ICNMviU4&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=15",
         "videoId": "JP7ICNMviU4",
         "fullTitle": "마가복음 강해 / '하나님의 나라는 이런 자의 것이니라' / 막 10:13~16 / 불로열방교회",
@@ -3480,7 +3547,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 42,
         "title": "42강 - 사람으로는 할 수 없으되 하나님으로서는 다 하실 수 있느니라",
-        "passage": "막 10:17~31",
+        "passage": "마가복음 10장 17~31절",
         "url": "https://www.youtube.com/watch?v=SEYaFn6QUXs&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=16",
         "videoId": "SEYaFn6QUXs",
         "fullTitle": "마가복음 강해 / '사람으로는 할 수 없으되 하나님으로서는 다 하실 수 있느니라' / 막 10:17~31 / 불로열방교회",
@@ -3489,7 +3556,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 43,
         "title": "43강 - 우리 때문에",
-        "passage": "막 10:32~34",
+        "passage": "마가복음 10장 32~34절",
         "url": "https://www.youtube.com/watch?v=t8ETNTP9ZlU&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=17",
         "videoId": "t8ETNTP9ZlU",
         "fullTitle": "마가복음 강해 / '우리 때문에' / 막 10:32~34 / 불로열방교회",
@@ -3498,7 +3565,7 @@ window.INITIAL_SERMONS_ARCHIVE = {
       {
         "ep": 44,
         "title": "44강 - 인자가 오신 목적",
-        "passage": "막 10:35~45",
+        "passage": "마가복음 10장 35~45절",
         "url": "https://www.youtube.com/watch?v=V71pCarfFyw&list=PLSaHerzUahU_Pg9cqCtpln_9h7tzi3Els&index=18",
         "videoId": "V71pCarfFyw",
         "fullTitle": "마가복음 강해 / '인자가 오신 목적' / 막 10:35~45 / 불로열방교회",

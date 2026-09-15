@@ -858,6 +858,95 @@ function closeLectureEditModal() {
   if (modal) modal.classList.remove('active');
 }
 
+function formatScripturePassage(raw) {
+  if (!raw) return '';
+  let s = raw.trim();
+  if (!s) return '';
+
+  const BIBLE_MAP = {
+    '창': '창세기', '출': '출애굽기', '레': '레위기', '민': '민수기', '신': '신명기',
+    '수': '여호수아', '삿': '사사기', '룻': '룻기', '삼상': '사무엘상', '삼하': '사무엘하',
+    '왕상': '열왕기상', '왕하': '열왕기하', '대상': '역대상', '대하': '역대하', '스': '에스라',
+    '느': '느헤미야', '에': '에스더', '욥': '욥기', '시': '시편', '잠': '잠언',
+    '전': '전도서', '아': '아가', '사': '이사야', '렘': '예레미야', '애': '예레미야애가',
+    '겔': '에스겔', '단': '다니엘', '호': '호세아', '욜': '요엘', '암': '아모스',
+    '옵': '오바댜', '욘': '요나', '미': '미가', '나': '나훔', '합': '하박국',
+    '습': '스바냐', '학': '학개', '슥': '스가랴', '말': '말라기',
+    '마': '마태복음', '막': '마가복음', '눅': '누가복음', '요': '요한복음', '행': '사도행전',
+    '롬': '로마서', '고전': '고린도전서', '고후': '고린도후서', '갈': '갈라디아서', '엡': '에베소서',
+    '빌': '빌립보서', '골': '골로새서', '살전': '데살로니가전서', '살후': '데살로니가후서',
+    '딤전': '디모데전서', '딤후': '디모데후서', '딛': '디도서', '몬': '빌레몬서',
+    '히': '히브리서', '약': '야고보서', '벧전': '베드로전서', '벧후': '베드로후서',
+    '요일': '요한일서', '요이': '요한이서', '요삼': '요한삼서', '유': '유다서', '계': '요한계시록'
+  };
+
+  const FULL_NAMES = Object.values(BIBLE_MAP).sort((a, b) => b.length - a.length);
+  const ABBR_NAMES = Object.keys(BIBLE_MAP).sort((a, b) => b.length - a.length);
+
+  s = s.replace(/[\-–—]/g, '~').replace(/\s*~\s*/g, '~').replace(/\s*:\s*/g, ':');
+  const subParts = s.split(/[,;]/).map(p => p.trim()).filter(Boolean);
+  const resSubParts = [];
+  let lastBook = '';
+
+  for (let partBody of subParts) {
+    let currentBook = '';
+    for (let fname of FULL_NAMES) {
+      if (partBody.startsWith(fname)) {
+        currentBook = fname;
+        partBody = partBody.slice(fname.length).trim();
+        break;
+      }
+    }
+    if (!currentBook) {
+      for (let aname of ABBR_NAMES) {
+        const re = new RegExp('^' + aname + '(?=\\s|\\d)');
+        if (re.test(partBody)) {
+          currentBook = BIBLE_MAP[aname];
+          partBody = partBody.replace(re, '').trim();
+          break;
+        }
+      }
+    }
+
+    if (currentBook) lastBook = currentBook;
+    else currentBook = lastBook;
+
+    const mCross = partBody.match(/^(\d+)\s*:\s*(\d+)\s*~\s*(\d+)\s*:\s*(\d+)\s*(?:절)?$/);
+    if (mCross) {
+      let r = `${mCross[1]}장 ${mCross[2]}절~${mCross[3]}장 ${mCross[4]}절`;
+      if (currentBook) r = `${currentBook} ${r}`;
+      resSubParts.push(r);
+      continue;
+    }
+
+    const mColon = partBody.match(/^(\d+)\s*:\s*(\d+(?:~\d+)?)\s*(?:절)?$/);
+    if (mColon) {
+      let r = `${mColon[1]}장 ${mColon[2]}절`;
+      if (currentBook) r = `${currentBook} ${r}`;
+      resSubParts.push(r);
+      continue;
+    }
+
+    partBody = partBody.replace(/(\d+)\s*절\s*~\s*(\d+)\s*절/g, '$1~$2절');
+    partBody = partBody.replace(/(\d+)\s*편\s*(\d+(?:~\d+)?)\s*절?/g, '$1장 $2절');
+    partBody = partBody.replace(/(\d+장\s*\d+절)\s*~\s*(\d+장\s*\d+절)/g, '$1~$2');
+
+    const mNoJeol = partBody.match(/^(\d+)\s*장\s*(\d+(?:~\d+)?)$/);
+    if (mNoJeol) partBody = `${mNoJeol[1]}장 ${mNoJeol[2]}절`;
+
+    const mSingleNoJeol = partBody.match(/^(\d+)\s*장\s*(\d+)$/);
+    if (mSingleNoJeol) partBody = `${mSingleNoJeol[1]}장 ${mSingleNoJeol[2]}절`;
+
+    if (currentBook && !partBody.startsWith(currentBook)) {
+      resSubParts.push(`${currentBook} ${partBody}`.trim());
+    } else {
+      resSubParts.push(partBody.trim());
+    }
+  }
+
+  return resSubParts.join(', ').replace(/\s+/g, ' ').trim();
+}
+
 function handleSaveSiteLecture(e) {
   e.preventDefault();
   const folderKey = document.getElementById('modal-lec-folder-select').value;
@@ -865,7 +954,7 @@ function handleSaveSiteLecture(e) {
   const origEp = document.getElementById('modal-lec-original-ep').value;
   const ep = parseInt(document.getElementById('modal-lec-ep').value);
   const title = document.getElementById('modal-lec-title').value.trim();
-  const passage = document.getElementById('modal-lec-passage').value.trim();
+  const passage = formatScripturePassage(document.getElementById('modal-lec-passage').value.trim());
   let url = document.getElementById('modal-lec-url').value.trim();
   const pdfUrl = document.getElementById('modal-lec-pdf').value.trim();
   const startTimeInput = document.getElementById('modal-lec-starttime');
