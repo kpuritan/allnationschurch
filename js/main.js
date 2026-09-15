@@ -601,18 +601,38 @@ function playArchiveLecture(folderKey, epNumber, isFromHistory = false) {
 
   const startTime = extractStartTime(item.url, item);
   const startParam = startTime > 0 ? `&start=${startTime}` : '';
+  const ytDirectUrl = item.url || `https://www.youtube.com/watch?v=${videoId}`;
 
-  // 클릭 시 즉시 영상 재생 iframe 주입
-  playerWrapper.innerHTML = `
-    <iframe id="archive-player-iframe" 
-      src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1${startParam}" 
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" 
-      allowfullscreen 
-      title="${item.title.replace(/"/g, '&quot;')}">
-    </iframe>
-  `;
+  // 퍼가기 제한 영상(천로역정 1강 등)일 경우 검은 에러창 대신 세련된 안내 및 바로재생 카드 노출
+  if (videoId === 'Tno31YZ_0Lo') {
+    playerWrapper.innerHTML = `
+      <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); width: 100%; height: 100%; min-height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; color: #f8fafc; border-radius: 12px; box-shadow: inset 0 0 40px rgba(0,0,0,0.5);">
+        <div style="font-size: 3rem; margin-bottom: 0.8rem;">🎬</div>
+        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; color: #fbbf24;">${item.title}</h3>
+        <p style="font-size: 0.95rem; color: #94a3b8; margin-bottom: 1.5rem;">📖 ${item.passage || ''} · 박훈 담임목사</p>
+        <p style="font-size: 0.88rem; color: #cbd5e1; max-width: 500px; margin-bottom: 1.8rem; line-height: 1.6; background: rgba(255,255,255,0.07); padding: 12px 18px; border-radius: 8px;">
+          💡 이 영상은 유튜브 정책상 외부 재생이 제한되어 있어 <strong>YouTube에서 바로 시청</strong>하실 수 있습니다.
+        </p>
+        <a href="${ytDirectUrl}" target="_blank" rel="noopener noreferrer" 
+           style="background: #e11d48; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 30px; font-weight: 800; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4); transition: transform 0.2s;"
+           onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          <span>▶️</span> YouTube에서 천로역정 1강 바로 시청하기 ↗
+        </a>
+      </div>
+    `;
+  } else {
+    // 일반 영상은 iframe으로 자동 재생
+    playerWrapper.innerHTML = `
+      <iframe id="archive-player-iframe" 
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1${startParam}" 
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen 
+        title="${item.title.replace(/"/g, '&quot;')}">
+      </iframe>
+    `;
+  }
 
   playerArea.style.display = 'block';
   playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
