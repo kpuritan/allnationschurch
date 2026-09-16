@@ -1,4 +1,5 @@
-﻿naver_blog/
+naver_blog/
 *.env
 .env
 error_screenshot.png
+scratch/

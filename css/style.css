@@ -4281,10 +4281,354 @@ body.admin-logged-in {
   transition: transform 0.2s ease;
 }
 
-.article-post-card:hover .article-post-read-link {
-  color: #b45309;
-  transform: translateX(4px);
+/* ==========================================================
+   📱 모바일 & PC 스마트 폴더 바로가기 허브 스타일 (Folder Navigation Grid)
+   ========================================================== */
+.section-folder-hub {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 3.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
 }
+
+.folder-hub-header {
+  margin-bottom: 2.2rem;
+  text-align: center;
+}
+
+.hub-tag {
+  display: inline-block;
+  background: rgba(197, 155, 39, 0.15);
+  color: #b45309;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 0.6rem;
+}
+
+.hub-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 850;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.hub-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  word-break: keep-all;
+}
+
+.folder-category-block {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.folder-cat-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.cat-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-bible { background: #2563eb; }
+.dot-reformed { background: var(--accent-gold); }
+
+.folder-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.folder-card-btn {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.folder-card-btn:hover {
+  background: #ffffff;
+  border-color: var(--accent-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(25, 42, 69, 0.08);
+}
+
+.folder-card-btn:active {
+  transform: scale(0.98);
+}
+
+.folder-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.bg-icon-ot { background: #eff6ff; color: #1d4ed8; }
+.bg-icon-nt { background: #f0fdf4; color: #15803d; }
+.bg-icon-doctrine { background: #fef2f2; color: #b91c1c; }
+.bg-icon-special { background: #faf5ff; color: #7e22ce; }
+.bg-icon-puritan { background: #fffbeb; color: #b45309; }
+.bg-icon-meditation { background: #f0fdfa; color: #0f766e; }
+.bg-icon-confession { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
+.bg-icon-worship { background: #fefce8; color: #a16207; }
+.bg-icon-map { background: #ecfdf5; color: #047857; }
+
+.folder-card-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.folder-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #475569;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+
+.badge-hot {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.badge-gold {
+  background: rgba(197, 155, 39, 0.2);
+  color: #b45309;
+}
+
+.badge-teal {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.folder-card-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.3px;
+}
+
+.folder-card-sub {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.folder-arrow-icon {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.folder-card-btn:hover .folder-arrow-icon {
+  color: var(--accent-gold);
+  transform: translateX(3px);
+}
+
+.card-highlight-gold {
+  background: linear-gradient(135deg, #fffdfa 0%, #fef8eb 100%);
+  border-color: rgba(197, 155, 39, 0.35);
+}
+
+.card-highlight-teal {
+  background: linear-gradient(135deg, #fafffd 0%, #f0fdf9 100%);
+  border-color: rgba(20, 184, 166, 0.35);
+}
+
+/* ==========================================================
+   📱 모바일 화면 최적화 반응형 미디어 쿼리 (Mobile-First Polish)
+   ========================================================== */
+@media (max-width: 992px) {
+  .folder-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 홈 폴더 허브 */
+  .section-folder-hub {
+    padding: 2.2rem 0;
+  }
+  .folder-hub-header {
+    margin-bottom: 1.5rem;
+    text-align: left;
+    padding: 0 4px;
+  }
+  .hub-title {
+    font-size: 1.45rem;
+  }
+  .hub-desc {
+    font-size: 0.88rem;
+  }
+  .folder-category-block {
+    padding: 1.2rem;
+    border-radius: 14px;
+  }
+  .folder-grid-container {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .folder-card-btn {
+    padding: 0.95rem 1rem;
+    border-radius: 12px;
+  }
+  .folder-card-icon-wrap {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 1.2rem;
+  }
+  .folder-card-title {
+    font-size: 0.98rem;
+  }
+  .folder-card-sub {
+    font-size: 0.8rem;
+  }
+
+  /* 말씀 강해 탭 목록: 모바일에서 부드러운 가로 터치 스크롤 & 큰 터치 영역 */
+  .sermon-tabs-wrapper {
+    margin-bottom: 1.2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+  .sermon-tabs-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  .sermon-tab-item {
+    padding: 10px 16px;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    border-radius: 25px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* 말씀 강해 설교 카드 그리드: 모바일 1열 카드 형태로 시원시원한 가독성 */
+  .sermon-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+  .sermon-card-item {
+    border-radius: 12px;
+  }
+  .sermon-card-title {
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+  .sermon-filter-row {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+  .sermon-search-box {
+    max-width: 100%;
+  }
+
+  /* 신앙고백서 탭: 모바일 2열 또는 가로 스와이프 */
+  .conf-tabs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .conf-tab-btn {
+    padding: 11px 10px;
+    font-size: 0.85rem;
+    min-height: 48px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* 모바일 아티클 리더 모달 최적화 */
+  .article-reader-box {
+    width: 96% !important;
+    max-height: 92vh !important;
+    border-radius: 14px !important;
+  }
+  .article-reader-header {
+    padding: 1.2rem !important;
+  }
+  #article-reader-title {
+    font-size: 1.25rem !important;
+  }
+  .article-reader-body {
+    padding: 1.3rem !important;
+  }
+  #article-reader-content {
+    font-size: 0.98rem !important;
+    line-height: 1.95 !important;
+  }
+
+  /* 모바일 하단 바 높이 및 여백 확보 */
+  body {
+    padding-bottom: 72px;
+  }
+  .mobile-app-bottom-bar {
+    height: 60px;
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.12);
+  }
+  .mobile-tab-item {
+    padding: 5px 0;
+  }
+  .mobile-tab-icon {
+    font-size: 1.2rem;
+  }
+  .mobile-tab-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+}
+
 
 
 

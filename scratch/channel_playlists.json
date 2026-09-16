@@ -1,6 +1,24 @@
-[
-  {
-    "playlistId": "PLGGrICFBWKOw",
-    "title": "키보드 단축키"
-  }
-]
+{
+  "channelId": "UCo-QE3G4iBFylPhW7itPCJg",
+  "playlists": [
+    {
+      "id": "PLGGrICFBWKOw",
+      "title": "키보드 단축키"
+    }
+  ],
+  "all_pids": [
+    "PLILNT2B9vlE4",
+    "PLSaHerzUahU9CiDvvlaVi1COU-FCGN2gy",
+    "PLLdmcUOPXWu4",
+    "PLGGrICFBWKOw",
+    "PLU5NyzeDDbBE",
+    "PLSaHerzUahU8v5Slp-vfW4wWwASBO2ZWo",
+    "PLSaHerzUahU84h3V5Du1lqbRY-UElKRON",
+    "PLSaHerzUahU_0qEFA-6WKwfccjV90KAXo",
+    "PLSaHerzUahU96C8HYgXIh6yDt9t2DTYVc",
+    "PLSaHerzUahU9fjseZG2u53g7sTtN-vDkd",
+    "PLUrRviE0x2gs",
+    "PLSaHerzUahU8Ndpzao9fYfhjz051EGYVO",
+    "PLSaHerzUahU_NQbOVeFf4-nsRnXY_I3Sx"
+  ]
+}

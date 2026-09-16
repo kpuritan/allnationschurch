@@ -202,8 +202,8 @@ const ARCHIVE_FOLDERS = [
   { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '📁', bgClass: 'bg-ot' },
   { key: 'luke', title: '누가복음 강해', count: '67강', icon: '📁', bgClass: 'bg-nt' },
   { key: 'mark', title: '마가복음 강해', count: '44강', icon: '📁', bgClass: 'bg-nt' },
-  { key: 'puritan', title: '청교도 설교 (저자별)', count: '16편', icon: '📖', bgClass: 'bg-special' },
-  { key: 'meditation', title: '짧은 묵상 글', count: '5편', icon: '✍️', bgClass: 'bg-special' }
+  { key: 'puritan', title: '청교도 설교 (저자별)', count: '20편', icon: '📖', bgClass: 'bg-special' },
+  { key: 'meditation', title: '개혁주의 짧은 묵상', count: '12편', icon: '✍️', bgClass: 'bg-special' }
 ];
 
 let currentFolderKey = 'ot';
@@ -484,11 +484,14 @@ function renderArchiveFolderContent(folderKey, query) {
     const authors = [
       { id: 'all', name: '전체 저자' },
       { id: '찰스 스펄전', name: '찰스 스펄전' },
-      { id: '존 번연', name: '존 번연' },
-      { id: '토마스 왓슨', name: '토마스 왓슨' },
       { id: '존 오웬', name: '존 오웬' },
-      { id: '리처드 백스터', name: '리처드 백스터' },
-      { id: '조나단 에드워즈', name: '조나단 에드워즈' }
+      { id: '토마스 왓슨', name: '토마스 왓슨' },
+      { id: '리처드 십스', name: '리처드 십스' },
+      { id: '존 플라벨', name: '존 플라벨' },
+      { id: '토마스 브룩스', name: '토마스 브룩스' },
+      { id: '존 번연', name: '존 번연' },
+      { id: '조나단 에드워즈', name: '조나단 에드워즈' },
+      { id: '리처드 백스터', name: '리처드 백스터' }
     ];
 
     authorFilterHtml = `
