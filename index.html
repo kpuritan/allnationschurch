@@ -8,7 +8,7 @@
   <title>불로 열방교회 | 대한예수교장로회(백석)</title>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=20260917_01">
+  <link rel="stylesheet" href="css/style.css?v=20260917_02">
   
   <!-- Data Bundles (오프라인/로컬/웹 호환 즉시 로드) -->
   <script src="data/sermons_data.js?v=20260917_01"></script>
@@ -412,8 +412,24 @@
         <div class="sermon-page-header">
           <h2 class="sermon-page-title">📖 말씀 강해 영상</h2>
           <p class="sermon-page-desc">
-            원하시는 강해 시리즈를 탭에서 선택하시면 설교 영상을 바로 시청하실 수 있습니다.
+            원하시는 강해 분류(구약, 복음서, 서신서·교리)를 선택하여 체계적으로 시청하실 수 있습니다.
           </p>
+        </div>
+
+        <!-- 0. 카테고리 대분류 필터 (구약 / 복음서 / 서신서·교리 / 전체) -->
+        <div class="sermon-cat-filter-wrap">
+          <button type="button" class="sermon-cat-btn active" data-cat="all" onclick="selectSermonCategory('all')">
+            🌟 전체 시리즈
+          </button>
+          <button type="button" class="sermon-cat-btn" data-cat="ot" onclick="selectSermonCategory('ot')">
+            📜 구약 강해
+          </button>
+          <button type="button" class="sermon-cat-btn" data-cat="gospel" onclick="selectSermonCategory('gospel')">
+            ✝️ 복음서 강해
+          </button>
+          <button type="button" class="sermon-cat-btn" data-cat="epistle" onclick="selectSermonCategory('epistle')">
+            📖 서신서·교리·신앙
+          </button>
         </div>
 
         <!-- 1. 가로 시리즈 탭 목록 (직관적인 탭 바) -->
@@ -945,38 +961,10 @@
     </div>
   </div>
 
-  <!-- ================= 📱 모바일 앱 전용 고정 하단 탭 바 ================= -->
-  <nav id="mobile-app-bottom-bar" class="mobile-app-bottom-bar" aria-label="모바일 하단 메뉴">
-    <a href="#home" class="mobile-tab-item active" data-page="home" onclick="navigateToPage('home'); return false;">
-      <span class="mobile-tab-icon">🏠</span>
-      <span class="mobile-tab-label">홈</span>
-    </a>
-    <a href="#sermons" class="mobile-tab-item" data-page="sermons" onclick="navigateToPage('sermons'); return false;">
-      <span class="mobile-tab-icon">📖</span>
-      <span class="mobile-tab-label">말씀강해</span>
-    </a>
-    <a href="#sermons/puritan" class="mobile-tab-item" data-page="puritan" onclick="navigateToPage('sermons', 'puritan'); return false;">
-      <span class="mobile-tab-icon">📜</span>
-      <span class="mobile-tab-label">청교도</span>
-    </a>
-    <a href="#sermons/meditation" class="mobile-tab-item" data-page="meditation" onclick="navigateToPage('sermons', 'meditation'); return false;">
-      <span class="mobile-tab-icon">✍️</span>
-      <span class="mobile-tab-label">짧은묵상</span>
-    </a>
-    <a href="#confessions" class="mobile-tab-item" data-page="confessions" onclick="navigateToPage('confessions'); return false;">
-      <span class="mobile-tab-icon">🏛️</span>
-      <span class="mobile-tab-label">신앙고백</span>
-    </a>
-    <a href="#worship" class="mobile-tab-item" data-page="worship" onclick="navigateToPage('worship'); return false;">
-      <span class="mobile-tab-icon">⏰</span>
-      <span class="mobile-tab-label">예배·헌금</span>
-    </a>
-  </nav>
-
   <!-- YouTube IFrame API -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Scripts -->
-  <script src="js/blog-rss.js?v=20260916_01"></script>
-  <script src="js/main.js?v=20260917_01"></script>
+  <script src="js/blog-rss.js?v=20260917_02"></script>
+  <script src="js/main.js?v=20260917_02"></script>
 </body>
 </html>

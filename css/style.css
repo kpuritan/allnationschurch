@@ -1351,10 +1351,10 @@ img {
 }
 
 /* ==========================================================
-   📱 모바일 앱 전용 하단 고정 탭 바 (App Bottom Bar)
+   📱 모바일 화면 최적화 (Hero 숨김 & 직관적 메뉴 바로 표시)
    ========================================================== */
 .mobile-app-bottom-bar {
-  display: none;
+  display: none !important;
 }
 .gnb-mobile-header {
   display: none;
@@ -1364,62 +1364,14 @@ img {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  /* 모바일에서 파란색 히어로 영역 숨기고 6개 메뉴 그리드가 즉시 노출되도록 설정 */
+  .hero-slider {
+    display: none !important;
   }
-
-  .mobile-app-bottom-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: calc(60px + env(safe-area-inset-bottom, 0px));
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    background: rgba(15, 28, 48, 0.97);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(197, 155, 39, 0.35);
-    z-index: 9999;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  .section-home-menu-grid {
+    padding: 1.2rem 0 2.5rem !important;
   }
-
-  .mobile-tab-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    height: 100%;
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.72rem;
-    font-weight: 700;
-    gap: 3px;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
-  }
-
-  .mobile-tab-icon {
-    font-size: 1.25rem;
-    line-height: 1;
-    transition: transform 0.2s ease;
-  }
-
-  .mobile-tab-item.active {
-    color: #f7d274;
-  }
-
-  .mobile-tab-item.active .mobile-tab-icon {
-    transform: translateY(-2px) scale(1.15);
-  }
-
-  .mobile-tab-item:active {
-    transform: scale(0.92);
-  }
+}
 
   .header-main {
     height: 64px;
@@ -2240,6 +2192,62 @@ img {
   color: var(--text-muted);
 }
 
+/* 0. 강해 카테고리 대분류 필터 바 */
+.sermon-cat-filter-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.sermon-cat-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+  word-break: keep-all;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sermon-cat-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.sermon-cat-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(25, 42, 69, 0.25);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .sermon-cat-filter-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+  .sermon-cat-btn {
+    padding: 9px 8px;
+    font-size: 0.84rem;
+    justify-content: center;
+  }
+}
+
 /* 1. 상단 가로 시리즈 탭 목록 */
 .sermon-tabs-wrapper {
   background: #ffffff;
@@ -2433,6 +2441,7 @@ img {
   display: flex;
   align-items: baseline;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .archive-current-title {
@@ -2442,12 +2451,15 @@ img {
   color: var(--primary);
   margin: 0;
   letter-spacing: -0.3px;
+  word-break: keep-all !important;
+  white-space: nowrap;
 }
 
 .archive-item-count {
   font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent-gold);
+  white-space: nowrap;
 }
 
 .sermon-search-box {
@@ -2710,6 +2722,11 @@ img {
     gap: 0.8rem;
     padding: 1rem;
   }
+  .archive-current-title {
+    font-size: 1.2rem;
+    white-space: normal;
+    word-break: keep-all !important;
+  }
   .sermon-search-box {
     max-width: 100%;
   }
@@ -2717,7 +2734,6 @@ img {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-}
   .admin-top-bar {
     padding: 6px 10px;
     height: auto;
@@ -3087,12 +3103,12 @@ body.admin-logged-in {
 
 @media (max-width: 768px) {
   .bgm-simple-widget {
-    bottom: calc(68px + env(safe-area-inset-bottom, 0px));
-    right: 14px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
   }
   .btn-bgm-simple {
-    padding: 6px 13px;
-    font-size: 0.78rem;
+    padding: 7px 14px;
+    font-size: 0.82rem;
     gap: 6px;
   }
 }
@@ -3104,23 +3120,27 @@ body.admin-logged-in {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
+  flex-wrap: nowrap;
 }
 
 .about-tab-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 12px 28px;
+  padding: 11px 24px;
   border-radius: 30px;
   background: #ffffff;
   border: 2px solid var(--border-color);
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
+  white-space: nowrap !important;
+  word-break: keep-all !important;
 }
 
 .about-tab-btn:hover {
@@ -3134,6 +3154,32 @@ body.admin-logged-in {
   border-color: var(--primary);
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(25, 42, 69, 0.25);
+}
+
+@media (max-width: 768px) {
+  .about-subtab-bar {
+    gap: 8px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding: 0 2px;
+  }
+  .about-tab-btn {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 0.85rem;
+    gap: 5px;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-tab-btn {
+    padding: 9px 4px;
+    font-size: 0.76rem;
+    gap: 3px;
+  }
 }
 
 .about-subview {
@@ -4397,24 +4443,6 @@ body.admin-logged-in {
     line-height: 1.95 !important;
   }
 
-  /* 모바일 하단 바 높이 및 여백 확보 */
-  body {
-    padding-bottom: 72px;
-  }
-  .mobile-app-bottom-bar {
-    height: 60px;
-    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.12);
-  }
-  .mobile-tab-item {
-    padding: 5px 0;
-  }
-  .mobile-tab-icon {
-    font-size: 1.2rem;
-  }
-  .mobile-tab-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-  }
 }
 
 

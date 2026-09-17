@@ -190,27 +190,55 @@ const UNIFIED_FOLDER_SVG = `
 `;
 
 const ARCHIVE_FOLDERS = [
-  { key: 'ot', title: '구약성경 권별 개관설교', count: '39편', icon: '📁', bgClass: 'bg-ot' },
-  { key: 'john', title: '요한복음 강해', count: '20강', icon: '📁', bgClass: 'bg-nt', thumb: 'images/john_gospel.jpg' },
-  { key: 'romans', title: '로마서 강해 (1-11장)', count: '31강', icon: '📁', bgClass: 'bg-nt' },
-  { key: 'dort', title: '도르트 신조', count: '19편', icon: '📁', bgClass: 'bg-doctrine' },
-  { key: 'dort_review', title: '다시보는 도르트 신조', count: '20편', icon: '📁', bgClass: 'bg-doctrine' },
-  { key: 'pilgrim', title: '천로역정 완주 강해', count: '52강', icon: '📁', bgClass: 'bg-special', thumb: 'images/pilgrims_progress.jpg' },
-  { key: 'commandments', title: '십계명 강해', count: '10편', icon: '📁', bgClass: 'bg-doctrine' },
-  { key: 'exodus', title: '출애굽기 강해', count: '22편', icon: '📁', bgClass: 'bg-ot' },
-  { key: 'genesis_classic', title: '창세기 강해 (13편)', count: '13편', icon: '📁', bgClass: 'bg-ot' },
-  { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '📁', bgClass: 'bg-ot' },
-  { key: 'luke', title: '누가복음 강해', count: '67강', icon: '📁', bgClass: 'bg-nt' },
-  { key: 'mark', title: '마가복음 강해', count: '44강', icon: '📁', bgClass: 'bg-nt' },
-  { key: 'puritan', title: '청교도 설교 (저자별)', count: '20편', icon: '📖', bgClass: 'bg-special' },
-  { key: 'meditation', title: '개혁주의 짧은 묵상', count: '12편', icon: '✍️', bgClass: 'bg-special' }
+  { key: 'ot', title: '구약성경 권별 개관설교', count: '39편', icon: '📁', category: 'ot', bgClass: 'bg-ot' },
+  { key: 'genesis_classic', title: '창세기 강해 (13편)', count: '13편', icon: '📁', category: 'ot', bgClass: 'bg-ot' },
+  { key: 'genesis', title: '창세기 설교 (15편)', count: '15편', icon: '📁', category: 'ot', bgClass: 'bg-ot' },
+  { key: 'exodus', title: '출애굽기 강해', count: '22편', icon: '📁', category: 'ot', bgClass: 'bg-ot' },
+  { key: 'mark', title: '마가복음 강해', count: '44강', icon: '📁', category: 'gospel', bgClass: 'bg-nt' },
+  { key: 'luke', title: '누가복음 강해', count: '67강', icon: '📁', category: 'gospel', bgClass: 'bg-nt' },
+  { key: 'john', title: '요한복음 강해', count: '20강', icon: '📁', category: 'gospel', bgClass: 'bg-nt', thumb: 'images/john_gospel.jpg' },
+  { key: 'romans', title: '로마서 강해 (1-11장)', count: '31강', icon: '📁', category: 'epistle', bgClass: 'bg-nt' },
+  { key: 'commandments', title: '십계명 강해', count: '10편', icon: '📁', category: 'epistle', bgClass: 'bg-doctrine' },
+  { key: 'dort', title: '도르트 신조', count: '19편', icon: '📁', category: 'epistle', bgClass: 'bg-doctrine' },
+  { key: 'dort_review', title: '다시보는 도르트 신조', count: '20편', icon: '📁', category: 'epistle', bgClass: 'bg-doctrine' },
+  { key: 'pilgrim', title: '천로역정 완주 강해', count: '52강', icon: '📁', category: 'epistle', bgClass: 'bg-special', thumb: 'images/pilgrims_progress.jpg' },
+  { key: 'puritan', title: '청교도 설교 (저자별)', count: '20편', icon: '📖', category: 'puritan', bgClass: 'bg-special' },
+  { key: 'meditation', title: '개혁주의 짧은 묵상', count: '12편', icon: '✍️', category: 'meditation', bgClass: 'bg-special' }
 ];
 
 let currentFolderKey = 'ot';
+let currentSermonCat = 'all';
 let currentPuritanAuthor = 'all';
 let archiveDataCache = null;
 let pilgrimDataCache = null;
 let activeFoldersList = ARCHIVE_FOLDERS;
+
+function selectSermonCategory(cat) {
+  currentSermonCat = cat;
+
+  // 카테고리 탭 버튼 active 클래스 반영
+  document.querySelectorAll('.sermon-cat-btn').forEach(btn => {
+    if (btn.getAttribute('data-cat') === cat) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // 하위 시리즈 탭 목록 다시 렌더링
+  renderArchiveFolderSidebar();
+
+  // 현재 선택된 시리즈가 변경된 카테고리에 속하지 않으면 해당 카테고리의 첫번째 시리즈 자동 선택
+  const effective = getEffectiveFolders().filter(f => f.key !== 'puritan' && f.key !== 'meditation');
+  const matched = (cat === 'all') ? effective : effective.filter(f => f.category === cat);
+
+  if (matched.length > 0) {
+    const isCurrentInMatched = matched.some(f => f.key === currentFolderKey);
+    if (!isCurrentInMatched) {
+      selectArchiveFolder(matched[0].key);
+    }
+  }
+}
 
 function getEffectiveFolders() {
   const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1');
@@ -293,7 +321,12 @@ function renderArchiveFolderSidebar() {
   ` : '';
 
   // 말씀 강해 탭에는 성경 강해 시리즈만 표시 (청교도 설교와 짧은 묵상 글은 상단 독립 대메뉴)
-  const displayFolders = activeFoldersList.filter(f => f.key !== 'puritan' && f.key !== 'meditation');
+  let displayFolders = activeFoldersList.filter(f => f.key !== 'puritan' && f.key !== 'meditation');
+
+  // 카테고리 필터 적용
+  if (currentSermonCat && currentSermonCat !== 'all') {
+    displayFolders = displayFolders.filter(f => f.category === currentSermonCat);
+  }
 
   folderListEl.innerHTML = addFolderBtnHtml + displayFolders.map(f => {
     let epCount = f.count || '0편';
@@ -405,6 +438,20 @@ async function selectArchiveFolder(folderKey, isFromHistory = false) {
 
   // 강해 카테고리 탭 전환 시 상단 TV 플레이어를 닫고 깨끗한 목록 상태로 초기화
   closeArchivePlayer(true);
+
+  // 선택된 폴더가 현재 카테고리 필터와 다를 경우 카테고리 자동 동기화
+  const found = getEffectiveFolders().find(f => f.key === folderKey);
+  if (found && found.category && currentSermonCat !== 'all' && currentSermonCat !== found.category) {
+    currentSermonCat = found.category;
+    document.querySelectorAll('.sermon-cat-btn').forEach(btn => {
+      if (btn.getAttribute('data-cat') === currentSermonCat) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    renderArchiveFolderSidebar();
+  }
 
   document.querySelectorAll('.archive-folder-item, .sermon-tab-item').forEach(el => {
     if (el.getAttribute('data-fkey') === folderKey) {
