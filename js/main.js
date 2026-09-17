@@ -241,7 +241,10 @@ function selectSermonCategory(cat) {
 }
 
 function getEffectiveFolders() {
-  const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1');
+  if (localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1')) {
+    localStorage.removeItem('ALLNATIONS_ADMIN_DATA_V1');
+  }
+  const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V2');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
@@ -374,13 +377,21 @@ async function loadArchiveData() {
     console.warn('sermons_archive fetch skipped/fallback to bundle', e);
   }
 
-  const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V1');
+  const saved = localStorage.getItem('ALLNATIONS_ADMIN_DATA_V2');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
       if (parsed.archive) {
         archiveDataCache = archiveDataCache || {};
         for (const k of Object.keys(parsed.archive)) {
+          // puritan 및 meditation은 저장소 공식 최신 데이터가 더 풍성하므로, 사용자가 관리자 모드로 추가한 경우가 아니면 덮어쓰지 않음
+          if (k === 'puritan' || k === 'meditation') {
+            if (archiveDataCache[k] && archiveDataCache[k].episodes && parsed.archive[k].episodes) {
+              if (parsed.archive[k].episodes.length < archiveDataCache[k].episodes.length) {
+                continue; // 최신 데이터 유지
+              }
+            }
+          }
           archiveDataCache[k] = parsed.archive[k];
         }
       }
@@ -422,7 +433,7 @@ function saveEffectiveData() {
     archive: archiveDataCache,
     updatedAt: new Date().toISOString()
   };
-  localStorage.setItem('ALLNATIONS_ADMIN_DATA_V1', JSON.stringify(payload));
+  localStorage.setItem('ALLNATIONS_ADMIN_DATA_V2', JSON.stringify(payload));
 }
 
 async function selectArchiveFolder(folderKey, isFromHistory = false) {
