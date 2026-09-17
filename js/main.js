@@ -202,7 +202,7 @@ const ARCHIVE_FOLDERS = [
   { key: 'dort', title: '도르트 신조', count: '19편', icon: '📁', category: 'epistle', bgClass: 'bg-doctrine' },
   { key: 'dort_review', title: '다시보는 도르트 신조', count: '20편', icon: '📁', category: 'epistle', bgClass: 'bg-doctrine' },
   { key: 'pilgrim', title: '천로역정 완주 강해', count: '52강', icon: '📁', category: 'epistle', bgClass: 'bg-special', thumb: 'images/pilgrims_progress.jpg' },
-  { key: 'puritan', title: '청교도 설교 (저자별)', count: '20편', icon: '📖', category: 'puritan', bgClass: 'bg-special' },
+  { key: 'puritan', title: '청교도 설교 (저자별)', count: '26편', icon: '📖', category: 'puritan', bgClass: 'bg-special' },
   { key: 'meditation', title: '개혁주의 짧은 묵상', count: '12편', icon: '✍️', category: 'meditation', bgClass: 'bg-special' }
 ];
 
@@ -528,22 +528,23 @@ function renderArchiveFolderContent(folderKey, query) {
   // 청교도 설교일 때만 저자별 필터 바 생성 (일반 말씀 강해일 때는 절대 생성 안 함)
   let authorFilterHtml = '';
   if (folderKey === 'puritan') {
+    const rawEpisodes = (archiveDataCache && archiveDataCache['puritan'] && archiveDataCache['puritan'].episodes) || [];
+    const authorSet = new Set();
+    rawEpisodes.forEach(ep => {
+      if (ep.author) {
+        const cleanName = ep.author.split('(')[0].trim();
+        if (cleanName) authorSet.add(cleanName);
+      }
+    });
+
     const authors = [
       { id: 'all', name: '전체 저자' },
-      { id: '찰스 스펄전', name: '찰스 스펄전' },
-      { id: '존 오웬', name: '존 오웬' },
-      { id: '토마스 왓슨', name: '토마스 왓슨' },
-      { id: '리처드 십스', name: '리처드 십스' },
-      { id: '존 플라벨', name: '존 플라벨' },
-      { id: '토마스 브룩스', name: '토마스 브룩스' },
-      { id: '존 번연', name: '존 번연' },
-      { id: '조나단 에드워즈', name: '조나단 에드워즈' },
-      { id: '리처드 백스터', name: '리처드 백스터' }
+      ...Array.from(authorSet).map(name => ({ id: name, name }))
     ];
 
     authorFilterHtml = `
-      <div class="puritan-author-filter-bar" style="grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.2rem; padding: 12px 16px; background: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: var(--shadow-sm); align-items: center;">
-        <span style="font-size: 0.88rem; font-weight: 800; color: var(--accent-gold); margin-right: 6px;">👤 청교도 저자별 선택:</span>
+      <div class="puritan-author-filter-bar" style="grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.2rem; padding: 14px 18px; background: #ffffff; border: 1px solid var(--border-color); border-radius: 14px; box-shadow: var(--shadow-sm); align-items: center;">
+        <span style="font-size: 0.88rem; font-weight: 800; color: var(--accent-gold); margin-right: 6px;">👤 청교도·개혁주의 저자별:</span>
         ${authors.map(a => `
           <button type="button" class="btn-author-tag ${currentPuritanAuthor === a.id ? 'active' : ''}" onclick="selectPuritanAuthor('${a.id}')">
             ${a.id === 'all' ? '🌐 ' : '👤 '}${a.name}
@@ -553,7 +554,7 @@ function renderArchiveFolderContent(folderKey, query) {
     `;
 
     if (currentPuritanAuthor !== 'all') {
-      episodes = episodes.filter(ep => ep.author === currentPuritanAuthor);
+      episodes = episodes.filter(ep => ep.author && ep.author.includes(currentPuritanAuthor));
     }
   }
 
@@ -710,6 +711,108 @@ function renderArchiveFolderContent(folderKey, query) {
   }).join('');
 }
 
+let currentArticleFontSize = 1.05;
+
+function adjustArticleFontSize(delta) {
+  const contentEl = document.getElementById('article-reader-content');
+  if (!contentEl) return;
+  if (delta === 0) {
+    currentArticleFontSize = 1.05;
+  } else {
+    currentArticleFontSize = Math.max(0.9, Math.min(1.4, currentArticleFontSize + delta * 0.1));
+  }
+  contentEl.style.fontSize = `${currentArticleFontSize.toFixed(2)}rem`;
+}
+
+function formatArticleContentHtml(text) {
+  if (!text) return '<p>등록된 본문 내용이 없습니다.</p>';
+  
+  const escapeHtml = (str) => {
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  };
+
+  const lines = text.split('\n');
+  let html = '';
+  let inList = false;
+
+  for (let line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += '<div class="reader-spacer" style="height: 12px;"></div>';
+      continue;
+    }
+
+    // 본문 강해 및 설교 전문 시작 표기
+    if (trimmed.includes('[본문 강해') || trimmed.includes('[설교 전문]')) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `<div class="reader-intro-badge" style="display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.85rem; font-weight: 800; padding: 4px 12px; border-radius: 6px; margin-bottom: 1.2rem; border-left: 3px solid #0284c7;">📖 ${escapeHtml(trimmed)}</div>`;
+    }
+    // 대제목 (■ 서론, ■ 1., ■ 결론 등)
+    else if (trimmed.startsWith('■')) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `
+        <div class="reader-section-header" style="margin: 2.2rem 0 1rem 0; padding-bottom: 8px; border-bottom: 2px solid rgba(197,155,39,0.25);">
+          <h4 style="font-size: 1.28rem; font-weight: 850; color: var(--primary); margin: 0; line-height: 1.5; word-break: keep-all; display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--accent-gold); font-size: 1.1rem;">■</span>
+            ${escapeHtml(trimmed.slice(1).trim())}
+          </h4>
+        </div>
+      `;
+    }
+    // 강조 콜아웃 (★ 보배로운 치료책 등)
+    else if (trimmed.startsWith('★')) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `
+        <div class="reader-callout-box" style="background: #fefce8; border-left: 4px solid var(--accent-gold); padding: 1.1rem 1.4rem; border-radius: 8px; margin: 1.2rem 0; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <strong style="color: #854d0e; font-size: 1.05rem; display: block; margin-bottom: 4px;">★ ${escapeHtml(trimmed.slice(1).trim())}</strong>
+        </div>
+      `;
+    }
+    // 소주제 번호 목록 (1. , 2. 등)
+    else if (/^[0-9]+\.\s+/.test(trimmed) && trimmed.length < 80) {
+      if (inList) { html += '</ul>'; inList = false; }
+      const numMatch = trimmed.match(/^[0-9]+/)[0];
+      const titleText = trimmed.replace(/^[0-9]+\.\s*/, '');
+      html += `
+        <h5 class="reader-sub-title" style="font-size: 1.12rem; font-weight: 800; color: #1e293b; margin: 1.6rem 0 0.6rem 0; line-height: 1.5; display: flex; align-items: center; gap: 8px;">
+          <span style="background: var(--primary); color: #ffffff; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0;">${numMatch}</span>
+          <span>${escapeHtml(titleText)}</span>
+        </h5>
+      `;
+    }
+    // 불릿 리스트 (- 또는 1) 등)
+    else if (trimmed.startsWith('- ') || /^[0-9]+\)\s+/.test(trimmed)) {
+      if (!inList) {
+        html += '<ul class="reader-list" style="margin: 0.8rem 0 1.2rem 0; padding-left: 1.6rem; line-height: 1.95; color: #334155;">';
+        inList = true;
+      }
+      const itemText = trimmed.startsWith('- ') ? trimmed.slice(2) : trimmed;
+      html += `<li style="margin-bottom: 6px; font-size: 1.02rem; word-break: keep-all;">${escapeHtml(itemText)}</li>`;
+    }
+    // 일반 본문 단락
+    else {
+      if (inList) { html += '</ul>'; inList = false; }
+      // 따옴표 인용구 감지
+      if (trimmed.startsWith('"') && trimmed.endsWith('"') && trimmed.length < 150) {
+        html += `
+          <div class="reader-quote-box" style="background: #f8fafc; border-left: 4px solid var(--accent-gold); padding: 1rem 1.4rem; border-radius: 8px; margin: 1.2rem 0; font-style: italic; color: #1e293b; font-size: 1.05rem; font-weight: 700; line-height: 1.8; word-break: keep-all;">
+            ${escapeHtml(trimmed)}
+          </div>
+        `;
+      } else {
+        html += `<p class="reader-paragraph" style="margin-bottom: 1.1rem; line-height: 2.05; color: #334155; font-size: inherit; word-break: keep-all; text-align: justify;">${escapeHtml(trimmed)}</p>`;
+      }
+    }
+  }
+
+  if (inList) { html += '</ul>'; }
+  return html;
+}
+
 /**
  * 📖 청교도 설교 & 짧은 묵상 글 전문 읽기 모달 오픈
  */
@@ -731,7 +834,11 @@ function openTextArticleReader(folderKey, epNumber) {
   if (authorEl) authorEl.textContent = item.author ? `저자: ${item.author}` : (folderKey === 'meditation' ? '불로 열방교회 묵상' : '');
   if (titleEl) titleEl.textContent = item.title;
   if (passageEl) passageEl.textContent = item.passage ? `📖 성경 본문: ${item.passage}` : '';
-  if (contentEl) contentEl.textContent = item.content || item.desc || '등록된 본문 내용이 없습니다.';
+  
+  if (contentEl) {
+    contentEl.innerHTML = formatArticleContentHtml(item.content || item.desc);
+    contentEl.style.fontSize = `${currentArticleFontSize}rem`;
+  }
 
   if (modal) {
     modal.classList.add('active');
