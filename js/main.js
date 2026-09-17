@@ -936,6 +936,31 @@ function formatArticleContentHtml(text) {
   return html;
 }
 
+let currentArticleFontSize = 1.05;
+
+function adjustArticleFontSize(delta) {
+  if (delta === 0) {
+    currentArticleFontSize = 1.05;
+  } else if (delta > 0) {
+    currentArticleFontSize = Math.min(1.6, Math.round((currentArticleFontSize + 0.12) * 100) / 100);
+  } else {
+    currentArticleFontSize = Math.max(0.85, Math.round((currentArticleFontSize - 0.12) * 100) / 100);
+  }
+
+  const contentEl = document.getElementById('article-reader-content');
+  if (contentEl) {
+    contentEl.style.fontSize = `${currentArticleFontSize}rem`;
+  }
+
+  // 글자 크기 조절 버튼 색상 피드백
+  const btns = document.querySelectorAll('.reader-font-controls button');
+  if (btns.length === 3) {
+    btns[0].style.color = currentArticleFontSize < 1.05 ? '#f7d274' : '#fff';
+    btns[1].style.color = currentArticleFontSize === 1.05 ? '#f7d274' : '#fff';
+    btns[2].style.color = currentArticleFontSize > 1.05 ? '#f7d274' : '#fff';
+  }
+}
+
 /**
  * 📖 청교도 설교 & 짧은 묵상 글 전문 읽기 모달 오픈
  */

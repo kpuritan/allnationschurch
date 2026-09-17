@@ -4868,23 +4868,58 @@ body.admin-logged-in {
     box-sizing: border-box !important;
   }
 
-  /* 모바일 아티클 리더 모달 최적화 */
+  /* 모바일 아티클 리더 모달 최적화: 본문 영역 80%+ 극대화 */
   .article-reader-box {
     width: 96% !important;
-    max-height: 92vh !important;
+    height: 94vh !important;
+    max-height: 94vh !important;
+    display: flex !important;
+    flex-direction: column !important;
     border-radius: 14px !important;
+    overflow: hidden !important;
   }
   .article-reader-header {
-    padding: 1.2rem !important;
+    flex-shrink: 0 !important;
+    padding: 0.75rem 0.95rem !important;
+    border-radius: 14px 14px 0 0 !important;
+  }
+  .article-reader-meta-row {
+    gap: 4px !important;
+  }
+  #article-reader-badge {
+    font-size: 0.72rem !important;
+    padding: 2px 7px !important;
+  }
+  #article-reader-author {
+    font-size: 0.78rem !important;
+  }
+  .article-reader-source-chip {
+    display: none !important;
   }
   #article-reader-title {
-    font-size: 1.25rem !important;
+    font-size: 1.05rem !important;
+    margin: 2px 0 1px 0 !important;
+    line-height: 1.3 !important;
+  }
+  #article-reader-passage {
+    font-size: 0.78rem !important;
+  }
+  .reader-font-controls {
+    padding: 2px 4px !important;
+    gap: 2px !important;
+  }
+  .reader-font-controls button {
+    font-size: 0.76rem !important;
+    padding: 2px 5px !important;
   }
   .article-reader-body {
-    padding: 1.3rem !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding: 1.1rem 1rem 2rem 1rem !important;
+    -webkit-overflow-scrolling: touch;
   }
   #article-reader-content {
-    font-size: 0.98rem !important;
+    font-size: 1rem !important;
     line-height: 1.95 !important;
   }
 

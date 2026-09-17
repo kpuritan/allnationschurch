@@ -8,11 +8,11 @@
   <title>불로 열방교회 | 대한예수교장로회(백석)</title>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=20260917_10">
+  <link rel="stylesheet" href="css/style.css?v=20260917_11">
   
   <!-- Data Bundles (오프라인/로컬/웹 호환 즉시 로드) -->
-  <script src="data/sermons_data.js?v=20260917_10"></script>
-  <script src="data/confessions_data.js?v=20260917_10"></script>
+  <script src="data/sermons_data.js?v=20260917_11"></script>
+  <script src="data/confessions_data.js?v=20260917_11"></script>
   
   <!-- Security & Referrer Policy (YouTube 플레이어 오류 153 방지) -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -980,28 +980,28 @@
 
   <!-- ================= 📖 청교도 설교 & 짧은 묵상 글 리더 모달 ================= -->
   <div id="modal-article-reader" class="site-modal-overlay">
-    <div class="site-modal-box article-reader-box" style="max-width: 820px; width: 92%; max-height: 90vh; overflow-y: auto; border-radius: 18px; border: 1px solid rgba(197,155,39,0.3); padding: 0; box-shadow: 0 20px 40px rgba(15,23,42,0.3);">
-      <div class="site-modal-header article-reader-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 1.6rem 2rem; border-radius: 17px 17px 0 0; display: flex; justify-content: space-between; align-items: flex-start; position: sticky; top: 0; z-index: 10;">
-        <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; padding-right: 15px;">
-          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-            <span id="article-reader-badge" style="background: rgba(197, 155, 39, 0.3); color: #f7d274; font-size: 0.8rem; font-weight: 800; padding: 3px 12px; border-radius: 20px;">📖 청교도 명설교</span>
+    <div class="site-modal-box article-reader-box" style="max-width: 840px; width: 92%; height: 90vh; max-height: 90vh; display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; border: 1px solid rgba(197,155,39,0.3); padding: 0; box-shadow: 0 20px 50px rgba(15,23,42,0.35);">
+      <div class="site-modal-header article-reader-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 1.2rem 1.6rem; border-radius: 17px 17px 0 0; display: flex; justify-content: space-between; align-items: flex-start; flex-shrink: 0; position: sticky; top: 0; z-index: 10;">
+        <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; padding-right: 12px; min-width: 0;">
+          <div class="article-reader-meta-row" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <span id="article-reader-badge" style="background: rgba(197, 155, 39, 0.3); color: #f7d274; font-size: 0.8rem; font-weight: 800; padding: 3px 10px; border-radius: 20px;">📖 청교도 명설교</span>
             <span id="article-reader-author" style="font-size: 0.88rem; color: #cbd5e1; font-weight: 700;"></span>
-            <span style="font-size: 0.76rem; background: rgba(255,255,255,0.15); color: #e2e8f0; padding: 2px 8px; border-radius: 4px;">출처: Monergism Digital Library</span>
+            <span class="article-reader-source-chip" style="font-size: 0.74rem; background: rgba(255,255,255,0.15); color: #e2e8f0; padding: 2px 8px; border-radius: 4px;">출처: Monergism Digital Library</span>
           </div>
-          <h3 id="article-reader-title" style="font-size: 1.45rem; font-weight: 850; color: #ffffff; margin-top: 4px; line-height: 1.4; word-break: keep-all;"></h3>
-          <div id="article-reader-passage" style="font-size: 0.92rem; color: #fef08a; font-weight: 700;"></div>
+          <h3 id="article-reader-title" style="font-size: 1.35rem; font-weight: 850; color: #ffffff; margin-top: 3px; line-height: 1.35; word-break: keep-all;"></h3>
+          <div id="article-reader-passage" style="font-size: 0.88rem; color: #fef08a; font-weight: 700;"></div>
         </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
           <!-- 글자 크기 조절 버튼들 -->
-          <div class="reader-font-controls" style="display: flex; gap: 4px; background: rgba(255,255,255,0.12); padding: 4px 6px; border-radius: 8px;">
+          <div class="reader-font-controls" style="display: flex; gap: 3px; background: rgba(255,255,255,0.14); padding: 4px 6px; border-radius: 8px;">
             <button type="button" onclick="adjustArticleFontSize(-1)" title="글자 작게" style="background: none; border: none; color: #fff; font-size: 0.82rem; font-weight: 800; padding: 2px 6px; cursor: pointer; border-radius: 4px;">가-</button>
             <button type="button" onclick="adjustArticleFontSize(0)" title="글자 기본" style="background: none; border: none; color: #f7d274; font-size: 0.82rem; font-weight: 800; padding: 2px 6px; cursor: pointer; border-radius: 4px;">기본</button>
             <button type="button" onclick="adjustArticleFontSize(1)" title="글자 크게" style="background: none; border: none; color: #fff; font-size: 0.82rem; font-weight: 800; padding: 2px 6px; cursor: pointer; border-radius: 4px;">가+</button>
           </div>
-          <button class="site-modal-close" onclick="closeArticleReaderModal()" style="color: #fff; font-size: 1.4rem; background: rgba(255,255,255,0.15); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer;">✕</button>
+          <button class="site-modal-close" onclick="closeArticleReaderModal()" style="color: #fff; font-size: 1.3rem; background: rgba(255,255,255,0.18); border: none; border-radius: 50%; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; cursor: pointer;">✕</button>
         </div>
       </div>
-      <div class="site-modal-body article-reader-body" style="padding: 2.2rem; background: #ffffff;">
+      <div class="site-modal-body article-reader-body" style="padding: 1.8rem 2.2rem; background: #ffffff; flex: 1; overflow-y: auto;">
         <div id="article-reader-content" style="font-size: 1.05rem; line-height: 2.1; color: #1e293b; word-break: keep-all; font-family: var(--font-body);">
         </div>
         <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
@@ -1046,7 +1046,7 @@
   <!-- YouTube IFrame API -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Scripts -->
-  <script src="js/blog-rss.js?v=20260917_10"></script>
-  <script src="js/main.js?v=20260917_10"></script>
+  <script src="js/blog-rss.js?v=20260917_11"></script>
+  <script src="js/main.js?v=20260917_11"></script>
 </body>
 </html>
