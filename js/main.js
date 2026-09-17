@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 말씀 강해 아카이브 시스템 초기화
-  initSermonsArchive();
+  initArchiveSystem();
 
   // 5대 신앙고백서 탭 초기화
-  initConfessionTabs();
+  initConfessionsView();
 
   // BGM 플레이어 초기화 시도
   initBgmPlayer();
@@ -313,6 +313,27 @@ function updateSiteAdminUI() {
   renderArchiveFolderSidebar();
   renderArchiveFolderContent(currentFolderKey, '');
 }
+
+function handleInitialRoute() {
+  const hash = window.location.hash ? window.location.hash.replace(/^#/, '').trim() : '';
+  if (!hash || hash === 'home') {
+    navigateToPage('home', null, true);
+    return;
+  }
+  const parts = hash.split('/');
+  const pageId = parts[0];
+  const subKey = parts[1] || null;
+  navigateToPage(pageId, subKey, true);
+}
+
+// 브라우저 뒤로가기 / 앞으로가기 지원
+window.addEventListener('popstate', (e) => {
+  if (e.state && e.state.pageId) {
+    navigateToPage(e.state.pageId, e.state.subFolderKey, true);
+  } else {
+    handleInitialRoute();
+  }
+});
 
 async function initArchiveSystem() {
   closeArchivePlayer(true);
