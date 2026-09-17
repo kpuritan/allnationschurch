@@ -4301,6 +4301,9 @@ body.admin-logged-in {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  transition: transform 0.2s ease;
+}
+
 .article-post-card:hover .article-post-read-link {
   transform: translateX(4px);
 }
@@ -4426,32 +4429,49 @@ body.admin-logged-in {
 @media (max-width: 768px) {
   /* 메인 홈 6대 바로가기 그리드: 모바일 2열 정렬 */
   .section-home-menu-grid {
-    padding: 1.8rem 0 3.5rem;
+    padding: 1.2rem 0.8rem 3rem !important;
+    background: #f8fafc;
   }
   .main-menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 6px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+    padding: 0 !important;
+    max-width: 100% !important;
   }
   .main-menu-card {
-    padding: 1.5rem 0.8rem;
-    min-height: 145px;
-    border-radius: 14px;
-    border-width: 1.5px;
+    background: #ffffff !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 18px !important;
+    padding: 1.6rem 0.6rem !important;
+    min-height: 155px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+    text-decoration: none !important;
   }
   .menu-card-icon-box {
-    font-size: 1.85rem;
-    margin-bottom: 0.45rem;
+    font-size: 2.2rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .menu-card-title {
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.2rem !important;
+    font-weight: 850 !important;
+    color: var(--primary, #192a45) !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.3 !important;
   }
   .menu-card-title .title-sub-location {
-    font-size: 0.95rem;
+    font-size: 1rem !important;
+    color: var(--accent-gold-dark, #a16207) !important;
+    font-weight: 800 !important;
   }
   .menu-card-desc {
-    font-size: 0.76rem;
+    font-size: 0.8rem !important;
+    color: #64748b !important;
   }
 
   /* 말씀 강해 탭 목록: 모바일에서 부드러운 가로 터치 스크롤 & 큰 터치 영역 */
