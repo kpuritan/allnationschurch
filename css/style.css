@@ -2681,6 +2681,215 @@ img {
   color: #fff;
 }
 
+/* ==========================================================
+   📜 청교도/묵상 전용 독립 헤더
+   ========================================================== */
+.article-page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeInSubview 0.3s ease;
+}
+
+/* ==========================================================
+   📋 설교 목록 고밀도 컴팩트 리스트 뷰 (한 화면 5~10편 표시)
+   ========================================================== */
+.sermon-compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.sermon-compact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.sermon-compact-row:hover {
+  background: #f8fafc;
+  border-color: var(--accent-gold);
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(25, 42, 69, 0.08);
+}
+
+.sermon-compact-row.playing {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);
+}
+
+.sermon-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.sermon-row-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sermon-row-ep-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 42, 69, 0.08);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sermon-compact-row.playing .sermon-row-ep-badge {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.sermon-row-title {
+  font-size: 1rem;
+  font-weight: 750;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sermon-compact-row:hover .sermon-row-title {
+  color: var(--primary);
+}
+
+.sermon-compact-row.playing .sermon-row-title {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+
+.sermon-row-sub {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+.sermon-row-passage {
+  color: #0284c7;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sermon-row-speaker {
+  white-space: nowrap;
+  color: #64748b;
+}
+
+.sermon-row-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-sermon-row-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  color: var(--primary);
+  border: 1px solid #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.sermon-compact-row:hover .btn-sermon-row-play {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+.sermon-compact-row.playing .btn-sermon-row-play {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.play-icon-triangle {
+  font-size: 0.75rem;
+}
+
+.badge-pdf-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #10b981;
+  color: #ffffff !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.badge-pdf-pill:hover {
+  background: #059669;
+}
+
+.badge-author-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(197, 155, 39, 0.15);
+  color: #b45309;
+  font-weight: 800;
+  font-size: 0.74rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.row-admin-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 4px;
+}
+
+.btn-row-edit, .btn-row-del {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.btn-row-edit:hover { background: #e0f2fe; }
+.btn-row-del:hover { background: #fee2e2; }
+
 @media (max-width: 1024px) {
   .sermon-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2696,24 +2905,28 @@ img {
     font-size: 1.6rem;
   }
   .sermon-tabs-wrapper {
-    padding: 8px 10px;
+    padding: 10px 12px;
     border-radius: 12px;
   }
+  /* 모바일 시리즈 탭 목록: 가로 스크롤 제거 및 세로 나열 */
   .sermon-tabs-list {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 4px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .sermon-tabs-list::-webkit-scrollbar {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    overflow-x: visible;
+    padding: 0;
   }
   .sermon-tab-item {
-    padding: 7px 14px;
-    font-size: 0.84rem;
-    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 15px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    box-sizing: border-box;
+    white-space: normal;
   }
   .sermon-filter-row {
     flex-direction: column;
@@ -2732,6 +2945,31 @@ img {
   .sermon-cards-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  /* 모바일 설교 목록 컴팩트 행 (한 화면 5~10편 표시) */
+  .sermon-compact-row {
+    padding: 9px 12px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+  .sermon-row-title {
+    font-size: 0.92rem;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .sermon-row-sub {
+    font-size: 0.76rem;
+    gap: 8px;
+  }
+  .btn-sermon-row-play {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+  .btn-sermon-row-play .play-label {
+    display: none;
   }
   .admin-top-bar {
     padding: 6px 10px;
@@ -4474,39 +4712,36 @@ body.admin-logged-in {
     color: #64748b !important;
   }
 
-  /* 말씀 강해 탭 목록: 모바일에서 부드러운 가로 터치 스크롤 & 큰 터치 영역 */
+  /* 말씀 강해 탭 목록: 모바일 세로 1열 나열 */
   .sermon-tabs-wrapper {
     margin-bottom: 1.2rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px;
+    padding: 10px 12px;
   }
   .sermon-tabs-list {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 8px;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+    overflow-x: visible !important;
+    padding: 0 !important;
   }
   .sermon-tab-item {
-    padding: 10px 16px;
-    font-size: 0.92rem;
-    white-space: nowrap;
-    border-radius: 25px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
+    padding: 11px 15px !important;
+    font-size: 0.92rem !important;
+    border-radius: 10px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
   }
 
-  /* 말씀 강해 설교 카드 그리드: 모바일 1열 카드 형태로 시원시원한 가독성 */
+  /* 말씀 강해 설교 카드 및 컴팩트 리스트: 모바일 고밀도 가독성 */
   .sermon-cards-grid {
     grid-template-columns: 1fr;
     gap: 1.1rem;
-  }
-  .sermon-card-item {
-    border-radius: 12px;
-  }
-  .sermon-card-title {
-    font-size: 1.05rem;
-    line-height: 1.45;
   }
   .sermon-filter-row {
     padding: 1rem;
@@ -4518,19 +4753,31 @@ body.admin-logged-in {
     max-width: 100%;
   }
 
-  /* 신앙고백서 탭: 모바일 2열 또는 가로 스와이프 */
+  /* 신앙고백서 탭: 모바일 1열 전체 너비 (글자 잘림 및 스크롤 완전 해결) */
   .conf-tabs-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    gap: 8px !important;
+    padding: 0 !important;
+  }
+  .conf-tabs-list li {
+    width: 100% !important;
   }
   .conf-tab-btn {
-    padding: 11px 10px;
-    font-size: 0.85rem;
-    min-height: 48px;
-    border-radius: 10px;
-    text-align: center;
-    justify-content: center;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 13px 16px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    text-align: left !important;
+    white-space: normal !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
   }
 
   /* 모바일 아티클 리더 모달 최적화 */

@@ -492,12 +492,42 @@ function renderArchiveFolderContent(folderKey, query) {
   const gridEl = document.getElementById('archive-video-grid');
   if (!gridEl) return;
 
+  const isArticleFolder = (folderKey === 'puritan' || folderKey === 'meditation');
+  const sermonHeader = document.querySelector('.sermon-page-header');
+  const catFilter = document.querySelector('.sermon-cat-filter-wrap');
+  const tabsWrapper = document.querySelector('.sermon-tabs-wrapper');
+  const articleHeader = document.getElementById('article-page-header');
+
+  // 청교도 설교 / 짧은 묵상 글 모드일 때는 상단 동영상 헤더/카테고리/시리즈 탭 바를 완전히 숨김
+  if (isArticleFolder) {
+    if (sermonHeader) sermonHeader.style.display = 'none';
+    if (catFilter) catFilter.style.display = 'none';
+    if (tabsWrapper) tabsWrapper.style.display = 'none';
+    if (articleHeader) {
+      articleHeader.style.display = 'block';
+      const mainTitle = document.getElementById('article-page-main-title');
+      const mainDesc = document.getElementById('article-page-main-desc');
+      if (folderKey === 'puritan') {
+        if (mainTitle) mainTitle.textContent = '📜 청교도 명설교 아카이브';
+        if (mainDesc) mainDesc.textContent = '16~17세기 청교도 신앙 거장들의 깊이 있는 설교 전문을 한국어로 읽고 묵상하실 수 있습니다.';
+      } else {
+        if (mainTitle) mainTitle.textContent = '✍️ 개혁주의 짧은 묵상 글';
+        if (mainDesc) mainDesc.textContent = '성도들의 일상과 신앙의 여정에 깊은 영적 유익을 주는 개혁주의 묵상 글입니다.';
+      }
+    }
+  } else {
+    if (sermonHeader) sermonHeader.style.display = 'block';
+    if (catFilter) catFilter.style.display = '';
+    if (tabsWrapper) tabsWrapper.style.display = 'block';
+    if (articleHeader) articleHeader.style.display = 'none';
+  }
+
   let folderMeta = null;
   if (folderKey === 'puritan') {
     folderMeta = {
       key: 'puritan',
       title: '청교도 명설교 아카이브 (저자별)',
-      count: '16편',
+      count: '26편',
       icon: '📖',
       bgClass: 'bg-special'
     };
@@ -505,7 +535,7 @@ function renderArchiveFolderContent(folderKey, query) {
     folderMeta = {
       key: 'meditation',
       title: '짧은 묵상 글 아카이브',
-      count: '5편',
+      count: '12편',
       icon: '✍️',
       bgClass: 'bg-special'
     };
@@ -595,9 +625,8 @@ function renderArchiveFolderContent(folderKey, query) {
       titleEl.textContent = folderMeta.title;
     }
   }
-  const isArticleFolder = (folderKey === 'puritan' || folderKey === 'meditation');
   if (countEl) {
-    countEl.textContent = isArticleFolder ? `총 ${episodes.length}편의 글` : `총 ${episodes.length}개 말씀 영상`;
+    countEl.textContent = isArticleFolder ? `총 ${episodes.length}편의 글` : `총 ${episodes.length}개 말씀`;
   }
 
   // 관리자 모드 시 [➕ 현재 폴더에 설교/글 등록] 버튼 바 생성
@@ -607,7 +636,7 @@ function renderArchiveFolderContent(folderKey, query) {
     adminAddBarHtml = `
       <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.9rem 1.4rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
         <span style="font-weight: 700; color: #0369a1; font-size: 0.92rem;">
-          ⚙️ '${folderMeta.title}' 시리즈에 새 ${itemTypeName}을 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
+          ⚙️ '${folderMeta.title}' 시리즈에 새 ${itemTypeName}을 등록하거나 아래 목록에서 즉시 수정/삭제할 수 있습니다.
         </span>
         <button type="button" onclick="openLectureAddModal('${folderKey}')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none; padding: 7px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">
           ➕ 새 ${itemTypeName} 등록
@@ -617,8 +646,9 @@ function renderArchiveFolderContent(folderKey, query) {
   }
 
   if (episodes.length === 0) {
+    gridEl.className = 'sermon-compact-list';
     gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted);">
+      <div style="text-align: center; padding: 3.5rem 1.5rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted); width: 100%;">
         <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">${isArticleFolder ? '등록된 글이 없습니다.' : '등록된 설교 영상이 없습니다.'}</p>
         <p style="font-size: 0.9rem; margin-top: 6px;">선택하신 저자 또는 검색어를 확인해 보세요.</p>
       </div>
@@ -626,8 +656,9 @@ function renderArchiveFolderContent(folderKey, query) {
     return;
   }
 
-  // 📖 청교도 설교 & 짧은 묵상 글: 텍스트 아티클 리더 카드 렌더링 (동영상 X)
+  // 📖 청교도 설교 & 짧은 묵상 글: 텍스트 아티클 카드 그리드 렌더링
   if (isArticleFolder) {
+    gridEl.className = 'sermon-cards-grid';
     gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + episodes.map((item, idx) => {
       const epSafeParam = encodeURIComponent(String(item.ep));
       const authorDisplay = item.author ? `👤 ${item.author}` : (folderKey === 'meditation' ? '✍️ 묵상' : '👤 청교도 거장');
@@ -659,63 +690,43 @@ function renderArchiveFolderContent(folderKey, query) {
     return;
   }
 
-  // 🎬 일반 성경 강해: 동영상 썸네일 카드 그리드 렌더링
+  // 🎬 일반 성경 강해: 한 화면에 5~10편이 한눈에 보이는 고밀도 컴팩트 리스트 뷰 렌더링
+  gridEl.className = 'sermon-compact-list';
   gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + episodes.map((item, idx) => {
-    let videoId = extractYouTubeId(item.url);
-    if (!videoId && folderMeta.playlistUrl) {
-      videoId = extractYouTubeId(folderMeta.playlistUrl);
-    }
-
-    let thumbHtml = '';
-    if (item.thumb) {
-      thumbHtml = `<img src="${item.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
-    } else if (folderMeta.thumb) {
-      thumbHtml = `<img src="${folderMeta.thumb}" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy">`;
-    } else if (videoId) {
-      thumbHtml = `<img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" alt="${item.title}" class="sermon-card-thumb-img card-thumb-img" loading="lazy" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/mqdefault.jpg'">`;
-    } else {
-      thumbHtml = `
-        <div class="sermon-card-placeholder card-thumb-placeholder ${folderMeta.bgClass || 'bg-ot'}">
-          <span class="sermon-card-series-tag thumb-topic-tag">${folderMeta.title}</span>
-          <span class="sermon-card-ep-tag thumb-korean-tag">${item.ep}강 ${item.passage ? '· ' + item.passage : ''}</span>
-        </div>
-      `;
-    }
-
-    const pdfBadge = item.pdfUrl ? `<span style="background:#10b981; color:#fff; font-size:0.75rem; padding:3px 8px; border-radius:4px; font-weight:700; white-space:nowrap;">📄 교재</span>` : '';
-    const authorBadge = item.author ? `<span style="background: rgba(197, 155, 39, 0.15); color: #b45309; font-weight: 800; font-size: 0.76rem; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">👤 ${item.author}</span>` : '';
+    const pdfBadge = item.pdfUrl ? `<a href="${item.pdfUrl}" target="_blank" rel="noopener noreferrer" class="badge-pdf-pill" onclick="event.stopPropagation()">📄 교재</a>` : '';
+    const authorBadge = item.author ? `<span class="badge-author-pill">👤 ${item.author}</span>` : '';
 
     const epSafeParam = encodeURIComponent(String(item.ep));
     const adminActionsHtml = isAdmin ? `
-      <div class="card-admin-actions" onclick="event.stopPropagation()">
-        <button type="button" class="btn-card-edit" onclick="openLectureEditModal('${folderKey}', decodeURIComponent('${epSafeParam}'))">✏️ 수정</button>
-        <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">🗑️ 삭제</button>
+      <div class="row-admin-actions" onclick="event.stopPropagation()">
+        <button type="button" class="btn-row-edit" onclick="openLectureEditModal('${folderKey}', decodeURIComponent('${epSafeParam}'))" title="수정">✏️</button>
+        <button type="button" class="btn-row-del" onclick="handleDeleteSiteLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))" title="삭제">🗑️</button>
       </div>
     ` : '';
 
-    const speakerDisplay = item.author ? `👤 ${item.author}` : (folderKey === 'meditation' ? '✍️ 묵상' : '👤 박훈 담임목사');
-    const epBadgeDisplay = folderKey === 'meditation' ? `${item.ep}편` : (item.author ? `${item.ep}강` : `${item.ep}강`);
+    const speakerDisplay = item.author ? `👤 ${item.author}` : '👤 박훈 담임목사';
+    const epBadgeDisplay = (typeof item.ep === 'number' || /^\d+$/.test(item.ep)) ? `${item.ep}강` : `${item.ep}`;
 
     return `
-      <div class="sermon-card-item video-thumb-card" onclick="playArchiveLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">
-        ${adminActionsHtml}
-        <div class="sermon-card-thumb-wrap card-thumb-wrap">
-          ${thumbHtml}
-          <div class="sermon-play-badge play-btn-circle">▶</div>
-          <span class="sermon-thumb-ep-badge">${epBadgeDisplay}</span>
+      <div class="sermon-compact-row" id="sermon-row-${folderKey}-${item.ep}" onclick="playArchiveLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">
+        <div class="sermon-row-main">
+          <div class="sermon-row-header">
+            <span class="sermon-row-ep-badge">${epBadgeDisplay}</span>
+            <h4 class="sermon-row-title">${item.title}</h4>
+            ${pdfBadge}
+            ${authorBadge}
+          </div>
+          <div class="sermon-row-sub">
+            <span class="sermon-row-passage">${item.passage ? '📖 ' + item.passage : ''}</span>
+            <span class="sermon-row-speaker">${speakerDisplay}</span>
+          </div>
         </div>
-        <div class="sermon-card-body card-body">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 0.6rem;">
-            <h4 class="sermon-card-title card-title" title="${item.title}">${item.title}</h4>
-            <div style="display: flex; gap: 4px; align-items: center;">
-              ${authorBadge}
-              ${pdfBadge}
-            </div>
-          </div>
-          <div class="sermon-card-meta card-meta-row">
-            <span class="sermon-card-speaker card-author">${speakerDisplay}</span>
-            <span class="sermon-card-passage card-passage">📖 ${item.passage || epBadgeDisplay}</span>
-          </div>
+        <div class="sermon-row-action">
+          <button type="button" class="btn-sermon-row-play">
+            <span class="play-icon-triangle">▶</span>
+            <span class="play-label">시청</span>
+          </button>
+          ${adminActionsHtml}
         </div>
       </div>
     `;
@@ -997,6 +1008,13 @@ function playArchiveLecture(folderKey, epNumber, isFromHistory = false) {
       title="${item.title.replace(/"/g, '&quot;')}">
     </iframe>
   `;
+
+  // 현재 재생 중인 행(row) 시각적 하이라이트 활성화
+  document.querySelectorAll('.sermon-compact-row').forEach(row => row.classList.remove('playing'));
+  const targetRow = document.getElementById(`sermon-row-${folderKey}-${item.ep}`);
+  if (targetRow) {
+    targetRow.classList.add('playing');
+  }
 
   playerArea.style.display = 'block';
   playerArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
