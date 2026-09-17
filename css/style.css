@@ -3926,6 +3926,11 @@ body.admin-logged-in {
   color: #ffffff;
 }
 
+.conf-q-badge.badge-heidelberg {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+}
+
 .conf-q-text {
   font-size: 1.32rem;
   font-weight: 800;

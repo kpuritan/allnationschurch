@@ -2052,9 +2052,9 @@ function renderConfessionMindmap(data) {
 
   const nodes = data.mindmapNodes || [];
   const nodesHtml = nodes.map(node => {
-    const isActive = currentConfessionTagFilter === node.tag;
+    const isActive = currentConfessionTagFilter === node.id || currentConfessionTagFilter === node.tag;
     return `
-      <button type="button" class="mindmap-node-chip ${isActive ? 'active' : ''}" onclick="filterConfessionsByTag('${node.tag}')">
+      <button type="button" class="mindmap-node-chip ${isActive ? 'active' : ''}" onclick="filterConfessionsByTag('${node.id}')">
         <span>📌</span> ${node.label} <span class="mindmap-node-range">${node.range}</span>
       </button>
     `;
@@ -2063,8 +2063,8 @@ function renderConfessionMindmap(data) {
   treeEl.innerHTML = allChip + nodesHtml;
 }
 
-function filterConfessionsByTag(tag) {
-  currentConfessionTagFilter = tag;
+function filterConfessionsByTag(tagOrId) {
+  currentConfessionTagFilter = tagOrId;
   if (!window.REFORMED_CONFESSIONS_DATA) return;
   const data = window.REFORMED_CONFESSIONS_DATA[currentConfessionDocKey];
   renderConfessionMindmap(data);
@@ -2091,16 +2091,32 @@ function renderConfessionItems(data) {
   if (!container || !data) return;
 
   let list = data.items || [];
+  const activeNode = (data.mindmapNodes || []).find(n => n.id === currentConfessionTagFilter || n.tag === currentConfessionTagFilter);
 
-  // 1. 태그 필터
+  // 1. 마인드맵 노드 / 범위 필터
   if (currentConfessionTagFilter !== 'all') {
-    list = list.filter(item => item.category === currentConfessionTagFilter || (item.tag && item.tag.includes(currentConfessionTagFilter)));
+    if (activeNode) {
+      if (activeNode.startNum !== undefined && activeNode.endNum !== undefined) {
+        list = list.filter(item => typeof item.num === 'number' && item.num >= activeNode.startNum && item.num <= activeNode.endNum);
+      } else if (activeNode.startChapter !== undefined && activeNode.endChapter !== undefined) {
+        list = list.filter(item => {
+          const chNum = parseInt(String(item.chapter || '').replace(/[^0-9]/g, ''), 10);
+          return !isNaN(chNum) && chNum >= activeNode.startChapter && chNum <= activeNode.endChapter;
+        });
+      } else if (activeNode.matchCodes) {
+        list = list.filter(item => activeNode.matchCodes.includes(item.code));
+      } else if (activeNode.tag) {
+        list = list.filter(item => item.category === activeNode.tag || (item.tag && item.tag.includes(activeNode.tag)) || (item.category && item.category.includes(activeNode.tag)));
+      }
+    } else {
+      list = list.filter(item => item.category === currentConfessionTagFilter || (item.tag && item.tag.includes(currentConfessionTagFilter)));
+    }
   }
 
   // 2. 검색어 필터
   if (currentConfessionSearchQuery) {
     list = list.filter(item => {
-      const numStr = String(item.num || '') + '문 ' + String(item.num || '') + '장 ' + (item.chapter || '') + ' ' + (item.code || '');
+      const numStr = String(item.num || '') + '문 ' + String(item.num || '') + '장 ' + (item.chapter || '') + ' ' + (item.code || '') + ' ' + (item.lordsDay || '');
       const qStr = item.q || item.title || '';
       const aStr = item.a || '';
       const scriptStr = item.scriptures || '';
@@ -2112,7 +2128,13 @@ function renderConfessionItems(data) {
 
   if (countEl) countEl.textContent = `총 ${list.length}개 문항`;
   if (headingEl) {
-    headingEl.textContent = currentConfessionTagFilter === 'all' ? `${data.title} 문항 목록` : `[${currentConfessionTagFilter}] 문항 목록`;
+    if (currentConfessionTagFilter === 'all') {
+      headingEl.textContent = `${data.title} 문항 목록`;
+    } else if (activeNode) {
+      headingEl.textContent = `[${activeNode.label}] 문항 목록`;
+    } else {
+      headingEl.textContent = `[${currentConfessionTagFilter}] 문항 목록`;
+    }
   }
 
   if (list.length === 0) {
@@ -2128,8 +2150,21 @@ function renderConfessionItems(data) {
 
   container.innerHTML = list.map(item => {
     const isTulip = item.code !== undefined;
-    const badgeText = isTulip ? `TULIP [${item.code}]` : (item.chapter ? `${item.chapter}` : `제 ${item.num}문`);
-    const badgeClass = isTulip ? 'conf-q-badge badge-tulip' : 'conf-q-badge';
+    let badgeText = '';
+    let badgeClass = 'conf-q-badge';
+
+    if (isTulip) {
+      badgeText = `TULIP [${item.code}]`;
+      badgeClass = 'conf-q-badge badge-tulip';
+    } else if (item.lordsDay && item.num) {
+      badgeText = `${item.lordsDay} · 제 ${item.num}문`;
+      badgeClass = 'conf-q-badge badge-heidelberg';
+    } else if (item.chapter) {
+      badgeText = `${item.chapter}`;
+    } else if (item.num) {
+      badgeText = `제 ${item.num}문`;
+    }
+
     const questionText = item.q || item.title;
 
     const scriptureHtml = item.scriptures ? `
