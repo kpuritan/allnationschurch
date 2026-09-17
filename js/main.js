@@ -155,15 +155,25 @@ function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
 
   // 6. 각 페이지별 서브 탭 / 폴더 핸들링
   if (pageId === 'sermons') {
-    if (subFolderKey) {
+    closeArchivePlayer(true);
+    if (!subFolderKey) {
+      currentSermonCat = 'all';
+      document.querySelectorAll('.sermon-cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === 'all') {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderArchiveFolderSidebar();
+      selectArchiveFolder('ot', isFromHistory);
+    } else {
       if (subFolderKey === 'news') {
         const newsSection = document.getElementById('sermons-news');
         if (newsSection) newsSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         selectArchiveFolder(subFolderKey, isFromHistory);
       }
-    } else {
-      selectArchiveFolder('ot', isFromHistory);
     }
   } else if (pageId === 'puritan') {
     closeArchivePlayer(true);
@@ -475,6 +485,8 @@ async function selectArchiveFolder(folderKey, isFromHistory = false) {
         btn.classList.remove('active');
       }
     });
+    renderArchiveFolderSidebar();
+  } else {
     renderArchiveFolderSidebar();
   }
 

@@ -2349,6 +2349,34 @@ img {
   color: #ffffff;
 }
 
+@media (max-width: 768px) {
+  .sermon-tabs-wrapper {
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border-radius: 14px;
+  }
+  .sermon-tabs-list {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sermon-tab-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 16px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+  }
+  .sermon-tab-item .tab-folder-title {
+    flex: 1;
+    text-align: left;
+    margin-left: 8px;
+    font-weight: 700;
+  }
+}
+
 /* 2. 상단 비디오 플레이어 */
 .archive-top-player {
   margin-bottom: 2.2rem;
