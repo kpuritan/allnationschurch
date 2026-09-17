@@ -8,11 +8,11 @@
   <title>불로 열방교회 | 대한예수교장로회(백석)</title>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=20260917_07">
+  <link rel="stylesheet" href="css/style.css?v=20260917_08">
   
   <!-- Data Bundles (오프라인/로컬/웹 호환 즉시 로드) -->
-  <script src="data/sermons_data.js?v=20260917_07"></script>
-  <script src="data/confessions_data.js?v=20260917_07"></script>
+  <script src="data/sermons_data.js?v=20260917_08"></script>
+  <script src="data/confessions_data.js?v=20260917_08"></script>
   
   <!-- Security & Referrer Policy (YouTube 플레이어 오류 153 방지) -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -78,6 +78,13 @@
           <span class="logo-sub">대한예수교장로회총회(백석)</span>
         </div>
       </a>
+
+      <!-- 데스크톱 우측 빠른 메인메뉴 복귀 버튼 -->
+      <div class="header-desktop-right">
+        <a href="#home" class="btn-desktop-home-nav" onclick="navigateToPage('home'); return false;">
+          <span>🏠</span> 메인 메뉴
+        </a>
+      </div>
 
       <!-- GNB (대메뉴 & 드롭다운 서브메뉴: 탭 페이지 전환 방식) -->
       <nav class="gnb-menu">
@@ -185,22 +192,7 @@
 
   <!-- ================= 1. 홈 페이지 뷰 (Page Home) ================= -->
   <div id="page-home" class="page-view active">
-    <!-- Hero Section -->
-    <section class="hero-slider">
-      <div class="hero-inner">
-        <span class="hero-tag">All Nations Presbyterian Church</span>
-        <h1 class="hero-heading">
-          하나님의 영광을 위하여,<br>
-          <span>오직 성경과 십자가 복음</span>으로 서는 교회
-        </h1>
-        <p class="hero-desc">
-          믿음의 선조들이 남긴 신앙고백서를 통해 성경을 바르게 해석하고 삶에 적용합니다.<br>
-          예수님을 알아가고 예수님을 믿고 예수님을 힘입어 영생을 누리시기를 축복합니다.
-        </p>
-      </div>
-    </section>
-
-    <!-- 📱 메인 6대 바로가기 메뉴 그리드 (사용자 맞춤 2x3 카드 레이아웃) -->
+    <!-- 🏛️ 메인 6대 바로가기 바둑판 메뉴 그리드 (가로 3개 x 세로 2개) -->
     <section class="section section-home-menu-grid">
       <div class="container">
         <div class="main-menu-grid">
@@ -981,7 +973,7 @@
   <!-- YouTube IFrame API -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Scripts -->
-  <script src="js/blog-rss.js?v=20260917_07"></script>
-  <script src="js/main.js?v=20260917_07"></script>
+  <script src="js/blog-rss.js?v=20260917_08"></script>
+  <script src="js/main.js?v=20260917_08"></script>
 </body>
 </html>
