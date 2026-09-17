@@ -855,18 +855,6 @@ function renderArchiveFolderContent(folderKey, query) {
   }).join('');
 }
 
-let currentArticleFontSize = 1.05;
-
-function adjustArticleFontSize(delta) {
-  const contentEl = document.getElementById('article-reader-content');
-  if (!contentEl) return;
-  if (delta === 0) {
-    currentArticleFontSize = 1.05;
-  } else {
-    currentArticleFontSize = Math.max(0.9, Math.min(1.4, currentArticleFontSize + delta * 0.1));
-  }
-  contentEl.style.fontSize = `${currentArticleFontSize.toFixed(2)}rem`;
-}
 
 function formatArticleContentHtml(text) {
   if (!text) return '<p>등록된 본문 내용이 없습니다.</p>';
