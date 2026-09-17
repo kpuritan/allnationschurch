@@ -1538,16 +1538,19 @@ function onBgmPlayerError(event) {
 function onBgmPlayerStateChange(event) {
   const disc = document.getElementById('bgm-disc');
   const toggleBtn = document.getElementById('btn-bgm-toggle');
+  const statusText = document.getElementById('bgm-status-text');
 
   if (event.data === YT.PlayerState.PLAYING) {
     isBgmPlaying = true;
     bgmHasStarted = true;
     if (disc) disc.classList.add('spinning');
-    if (toggleBtn) toggleBtn.textContent = '⏸';
+    if (toggleBtn) toggleBtn.classList.add('playing');
+    if (statusText) statusText.textContent = 'BGM ON';
   } else {
     isBgmPlaying = false;
     if (disc) disc.classList.remove('spinning');
-    if (toggleBtn) toggleBtn.textContent = '▶';
+    if (toggleBtn) toggleBtn.classList.remove('playing');
+    if (statusText) statusText.textContent = 'BGM OFF';
   }
 }
 

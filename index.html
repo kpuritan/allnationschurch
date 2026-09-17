@@ -8,7 +8,7 @@
   <title>불로 열방교회 | 대한예수교장로회(백석)</title>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=20260916_03">
+  <link rel="stylesheet" href="css/style.css?v=20260917_01">
   
   <!-- Data Bundles (오프라인/로컬/웹 호환 즉시 로드) -->
   <script src="data/sermons_data.js?v=20260916_02"></script>
@@ -200,195 +200,52 @@
       </div>
     </section>
 
-    <!-- 📱 모바일/PC 스마트 폴더 바로가기 허브 (버튼식 터치 폴더 그리드) -->
-    <section class="section section-folder-hub">
+    <!-- 📱 메인 6대 바로가기 메뉴 그리드 (사용자 맞춤 2x3 카드 레이아웃) -->
+    <section class="section section-home-menu-grid">
       <div class="container">
-        <div class="folder-hub-header">
-          <div class="folder-hub-title-box">
-            <span class="hub-tag">EASY NAVIGATION</span>
-            <h2 class="hub-title">📂 말씀 강해 &amp; 신앙 콘텐츠 폴더</h2>
-            <p class="hub-desc">원하시는 폴더 버튼을 터치하시면 해당 강해와 자료로 바로 이동합니다.</p>
-          </div>
+        <div class="main-menu-grid">
+          <!-- 1. 교회소개 -->
+          <a href="#about" class="main-menu-card" onclick="navigateToPage('about'); return false;">
+            <div class="menu-card-icon-box">🏛️</div>
+            <h3 class="menu-card-title">교회소개</h3>
+            <p class="menu-card-desc">교회 비전 &amp; 목회철학</p>
+          </a>
+
+          <!-- 2. 말씀강해 -->
+          <a href="#sermons" class="main-menu-card" onclick="navigateToPage('sermons'); return false;">
+            <div class="menu-card-icon-box">📖</div>
+            <h3 class="menu-card-title">말씀강해</h3>
+            <p class="menu-card-desc">성경 66권 강해 설교</p>
+          </a>
+
+          <!-- 3. 청교도설교 -->
+          <a href="#sermons/puritan" class="main-menu-card" onclick="navigateToPage('sermons', 'puritan'); return false;">
+            <div class="menu-card-icon-box">📜</div>
+            <h3 class="menu-card-title">청교도설교</h3>
+            <p class="menu-card-desc">믿음의 선조 아카이브</p>
+          </a>
+
+          <!-- 4. 짧은 묵상글 -->
+          <a href="#sermons/meditation" class="main-menu-card" onclick="navigateToPage('sermons', 'meditation'); return false;">
+            <div class="menu-card-icon-box">✍️</div>
+            <h3 class="menu-card-title">짧은 묵상글</h3>
+            <p class="menu-card-desc">은혜의 샘 신앙 에세이</p>
+          </a>
+
+          <!-- 5. 신앙고백서 -->
+          <a href="#confessions" class="main-menu-card" onclick="navigateToPage('confessions'); return false;">
+            <div class="menu-card-icon-box">📚</div>
+            <h3 class="menu-card-title">신앙고백서</h3>
+            <p class="menu-card-desc">소요리문답·도르트신조</p>
+          </a>
+
+          <!-- 6. 예배.헌금안내 + 오시는 길 -->
+          <a href="#worship" class="main-menu-card" onclick="navigateToPage('worship'); return false;">
+            <div class="menu-card-icon-box">⏰</div>
+            <h3 class="menu-card-title">예배.헌금안내<br><span class="title-sub-location">+ 오시는 길</span></h3>
+            <p class="menu-card-desc">예배 시간 &amp; 위치 안내</p>
+          </a>
         </div>
-
-        <!-- 1. 성경 강해 시리즈 폴더 그리드 -->
-        <div class="folder-category-block">
-          <div class="folder-cat-label">
-            <span class="cat-dot dot-bible"></span>
-            <span>📖 성경 강해 설교 폴더</span>
-          </div>
-          <div class="folder-grid-container">
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'ot');">
-              <div class="folder-card-icon-wrap bg-icon-ot">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">구약 39권</span>
-                <h4 class="folder-card-title">구약성경 권별설교</h4>
-                <p class="folder-card-sub">창세기부터 말라기까지 개관</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'john');">
-              <div class="folder-card-icon-wrap bg-icon-nt">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge badge-hot">20강 완주</span>
-                <h4 class="folder-card-title">요한복음 강해</h4>
-                <p class="folder-card-sub">생명의 떡과 생명수의 복음</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'romans');">
-              <div class="folder-card-icon-wrap bg-icon-nt">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">31강</span>
-                <h4 class="folder-card-title">로마서 강해</h4>
-                <p class="folder-card-sub">이신칭의와 구원의 영광 (1-11장)</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'mark');">
-              <div class="folder-card-icon-wrap bg-icon-nt">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">44강</span>
-                <h4 class="folder-card-title">마가복음 강해</h4>
-                <p class="folder-card-sub">종으로 오신 예수 그리스도</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'luke');">
-              <div class="folder-card-icon-wrap bg-icon-nt">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">67강</span>
-                <h4 class="folder-card-title">누가복음 강해</h4>
-                <p class="folder-card-sub">잃어버린 자를 찾아 구원하심</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'exodus');">
-              <div class="folder-card-icon-wrap bg-icon-ot">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">22편</span>
-                <h4 class="folder-card-title">출애굽기 강해</h4>
-                <p class="folder-card-sub">구속의 은혜와 광야의 순례</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'genesis_classic');">
-              <div class="folder-card-icon-wrap bg-icon-ot">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">13편</span>
-                <h4 class="folder-card-title">창세기 강해</h4>
-                <p class="folder-card-sub">천지창조와 족장들의 언약</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'commandments');">
-              <div class="folder-card-icon-wrap bg-icon-doctrine">📁</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">10편 전편</span>
-                <h4 class="folder-card-title">십계명 강해</h4>
-                <p class="folder-card-sub">하나님의 거룩한 율법과 사랑</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. 교리·청교도·신앙고백 폴더 그리드 -->
-        <div class="folder-category-block" style="margin-top: 2rem;">
-          <div class="folder-cat-label">
-            <span class="cat-dot dot-reformed"></span>
-            <span>🏛️ 개혁신앙 · 청교도 · 신앙고백서 폴더</span>
-          </div>
-          <div class="folder-grid-container">
-            <div class="folder-card-btn card-highlight-gold" onclick="navigateToPage('sermons', 'puritan');">
-              <div class="folder-card-icon-wrap bg-icon-puritan">📜</div>
-              <div class="folder-card-info">
-                <span class="folder-badge badge-gold">Monergism 번역</span>
-                <h4 class="folder-card-title">청교도 명설교 아카이브</h4>
-                <p class="folder-card-sub">스펄전·오웬·왓슨·십스 20편</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn card-highlight-teal" onclick="navigateToPage('sermons', 'meditation');">
-              <div class="folder-card-icon-wrap bg-icon-meditation">✍️</div>
-              <div class="folder-card-info">
-                <span class="folder-badge badge-teal">은혜의 샘</span>
-                <h4 class="folder-card-title">개혁주의 짧은 묵상</h4>
-                <p class="folder-card-sub">영혼을 깨우는 12편 신앙 에세이</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('confessions', 'shorter');">
-              <div class="folder-card-icon-wrap bg-icon-confession">📜</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">107문 완비</span>
-                <h4 class="folder-card-title">소요리문답 학습</h4>
-                <p class="folder-card-sub">웨스트민스터 표준 요리문답</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('confessions', 'confession');">
-              <div class="folder-card-icon-wrap bg-icon-confession">📜</div>
-              <div class="folder-card-info">
-                <span class="folder-badge badge-hot">33장 전편 완비</span>
-                <h4 class="folder-card-title">웨스트민스터 신앙고백</h4>
-                <p class="folder-card-sub">성경관부터 최후심판까지 33장</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'dort');">
-              <div class="folder-card-icon-wrap bg-icon-doctrine">🌷</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">19편</span>
-                <h4 class="folder-card-title">도르트 신조 강해</h4>
-                <p class="folder-card-sub">구원의 5대 은혜 (TULIP)</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('sermons', 'pilgrim');">
-              <div class="folder-card-icon-wrap bg-icon-special">🏰</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">52강 완주</span>
-                <h4 class="folder-card-title">천로역정 완주 강해</h4>
-                <p class="folder-card-sub">존 번연의 거룩한 순례의 길</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('worship');">
-              <div class="folder-card-icon-wrap bg-icon-worship">⏰</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">예배·모임</span>
-                <h4 class="folder-card-title">예배 시간 &amp; 온라인 헌금</h4>
-                <p class="folder-card-sub">주일 11시 / 수 19:30 / 금 21시</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-
-            <div class="folder-card-btn" onclick="navigateToPage('location');">
-              <div class="folder-card-icon-wrap bg-icon-map">📍</div>
-              <div class="folder-card-info">
-                <span class="folder-badge">오시는 길</span>
-                <h4 class="folder-card-title">교회 위치 &amp; 길찾기</h4>
-                <p class="folder-card-sub">인천 서구 불로동 793-1</p>
-              </div>
-              <span class="folder-arrow-icon">➔</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   </div>
@@ -916,31 +773,12 @@
     </div>
   </footer>
 
-  <!-- ================= 🎵 BGM 찬양 플레이어 위젯 ================= -->
-  <div id="bgm-player-widget" class="bgm-player-widget">
-    <div class="bgm-disc" id="bgm-disc" onclick="toggleBgmPlay()" title="찬양 재생 / 일시정지">
-      <span>✝️</span>
-    </div>
-    <div class="bgm-info">
-      <div class="bgm-tag">
-        <span>● LIVE PRAISE</span>
-        <span>배경 찬양</span>
-      </div>
-      <div class="bgm-title" id="bgm-title-text" title="잠들며 듣는 찬송가 / 깊은잠 잔잔한 찬양">
-        [Deep Sleep] 잠들며 듣는 찬송가
-      </div>
-    </div>
-    <div class="bgm-controls">
-      <button type="button" class="bgm-btn btn-play-pause" id="btn-bgm-toggle" onclick="toggleBgmPlay()" title="재생/일시정지">
-        ▶
-      </button>
-      <button type="button" class="bgm-btn" id="btn-bgm-mute" onclick="toggleBgmMute()" title="음소거">
-        🔊
-      </button>
-      <button type="button" class="bgm-minimize-btn" onclick="toggleBgmWidget()" title="플레이어 최소화/펼치기">
-        ✕
-      </button>
-    </div>
+  <!-- ================= 🎵 BGM 찬양 플레이어 위젯 (간단한 ON/OFF 토글) ================= -->
+  <div id="bgm-player-widget" class="bgm-simple-widget">
+    <button type="button" class="btn-bgm-simple" id="btn-bgm-toggle" onclick="toggleBgmPlay()" title="배경 찬양 ON/OFF">
+      <span class="bgm-disc-mini" id="bgm-disc">🎵</span>
+      <span class="bgm-status-text" id="bgm-status-text">BGM OFF</span>
+    </button>
   </div>
   
   <!-- 숨겨진 YouTube BGM Iframe 컨테이너 (오프스크린 표준 크기로 API 차단 방지) -->
@@ -1139,6 +977,6 @@
   <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Scripts -->
   <script src="js/blog-rss.js?v=20260916_01"></script>
-  <script src="js/main.js?v=20260916_04"></script>
+  <script src="js/main.js?v=20260917_01"></script>
 </body>
 </html>
