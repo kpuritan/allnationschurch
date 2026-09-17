@@ -110,6 +110,15 @@ function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
   // 레거시 ministry 링크 호환
   if (pageId === 'ministry') pageId = 'confessions';
 
+  // 청교도 설교 및 짧은 묵상 글 독립 페이지 리다이렉트
+  if (pageId === 'sermons' && subFolderKey === 'puritan') {
+    pageId = 'puritan';
+    subFolderKey = null;
+  } else if (pageId === 'sermons' && subFolderKey === 'meditation') {
+    pageId = 'meditation';
+    subFolderKey = null;
+  }
+
   // 1. 모든 페이지 뷰 숨기기
   const pages = document.querySelectorAll('.page-view');
   pages.forEach(p => {
@@ -154,9 +163,14 @@ function navigateToPage(pageId, subFolderKey, isFromHistory = false) {
         selectArchiveFolder(subFolderKey, isFromHistory);
       }
     } else {
-      // 상단 "말씀 강해" 클릭 시 구약성경 개관설교('ot')를 명확하게 기본 선택
       selectArchiveFolder('ot', isFromHistory);
     }
+  } else if (pageId === 'puritan') {
+    closeArchivePlayer(true);
+    renderPuritanArticles('');
+  } else if (pageId === 'meditation') {
+    closeArchivePlayer(true);
+    renderMeditationArticles('');
   } else if (pageId === 'about') {
     closeArchivePlayer(true);
     if (subFolderKey) {
@@ -481,69 +495,224 @@ async function selectArchiveFolder(folderKey, isFromHistory = false) {
 
 function selectPuritanAuthor(authorId) {
   currentPuritanAuthor = authorId;
-  const searchInput = document.getElementById('archive-search-input');
+  const searchInput = document.getElementById('puritan-search-input');
   const q = searchInput ? searchInput.value.trim() : '';
-  renderArchiveFolderContent('puritan', q);
+  renderPuritanArticles(q);
+}
+
+function handlePuritanSearch(query) {
+  renderPuritanArticles(query.trim());
+}
+
+function handleMeditationSearch(query) {
+  renderMeditationArticles(query.trim());
+}
+
+async function renderPuritanArticles(query = '') {
+  await loadArchiveData();
+  const filterContainer = document.getElementById('puritan-author-filter-container');
+  const countEl = document.getElementById('puritan-item-count');
+  const gridEl = document.getElementById('puritan-article-grid');
+  if (!gridEl) return;
+
+  const isAdmin = isSiteAdminLoggedIn();
+  let episodes = (archiveDataCache && archiveDataCache['puritan'] && archiveDataCache['puritan'].episodes) || [];
+
+  // 저자 목록 추출
+  const authorSet = new Set();
+  episodes.forEach(ep => {
+    if (ep.author) {
+      const cleanName = ep.author.split('(')[0].trim();
+      if (cleanName) authorSet.add(cleanName);
+    }
+  });
+
+  const authors = [
+    { id: 'all', name: '전체 저자' },
+    ...Array.from(authorSet).map(name => ({ id: name, name }))
+  ];
+
+  if (filterContainer) {
+    filterContainer.innerHTML = `
+      <div class="puritan-author-filter-bar" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.2rem; padding: 14px 18px; background: #ffffff; border: 1px solid var(--border-color); border-radius: 14px; box-shadow: var(--shadow-sm); align-items: center;">
+        <span style="font-size: 0.88rem; font-weight: 800; color: var(--accent-gold); margin-right: 6px;">👤 청교도·개혁주의 저자별:</span>
+        ${authors.map(a => `
+          <button type="button" class="btn-author-tag ${currentPuritanAuthor === a.id ? 'active' : ''}" onclick="selectPuritanAuthor('${a.id}')">
+            ${a.id === 'all' ? '🌐 ' : '👤 '}${a.name}
+          </button>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  // 저자 필터링
+  if (currentPuritanAuthor !== 'all') {
+    episodes = episodes.filter(ep => ep.author && ep.author.includes(currentPuritanAuthor));
+  }
+
+  // 검색어 필터링
+  if (query) {
+    const q = query.toLowerCase();
+    episodes = episodes.filter(ep =>
+      ep.title.toLowerCase().includes(q) ||
+      (ep.author && ep.author.toLowerCase().includes(q)) ||
+      (ep.passage && ep.passage.toLowerCase().includes(q)) ||
+      (ep.content && ep.content.toLowerCase().includes(q)) ||
+      (ep.desc && ep.desc.toLowerCase().includes(q))
+    );
+  }
+
+  if (countEl) {
+    countEl.textContent = `총 ${episodes.length}편의 글`;
+  }
+
+  // 관리자 빠른 등록 바
+  let adminAddBarHtml = '';
+  if (isAdmin) {
+    adminAddBarHtml = `
+      <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.9rem 1.4rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <span style="font-weight: 700; color: #0369a1; font-size: 0.92rem;">
+          ⚙️ 청교도 명설교에 새 설교문을 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
+        </span>
+        <button type="button" onclick="openLectureAddModal('puritan')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none; padding: 7px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">
+          ➕ 새 설교문 등록
+        </button>
+      </div>
+    `;
+  }
+
+  if (episodes.length === 0) {
+    gridEl.innerHTML = adminAddBarHtml + `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted);">
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">등록된 글이 없습니다.</p>
+        <p style="font-size: 0.9rem; margin-top: 6px;">선택하신 저자 또는 검색어를 확인해 보세요.</p>
+      </div>
+    `;
+    return;
+  }
+
+  gridEl.innerHTML = adminAddBarHtml + episodes.map((item, idx) => {
+    const epSafeParam = encodeURIComponent(String(item.ep));
+    const authorDisplay = item.author ? `👤 ${item.author}` : '👤 청교도 거장';
+    const snippet = item.desc || (item.content ? item.content.slice(0, 130) + '...' : '본문 말씀을 묵상하며 은혜를 나눕니다.');
+
+    const adminActionsHtml = isAdmin ? `
+      <div class="card-admin-actions" onclick="event.stopPropagation()">
+        <button type="button" class="btn-card-edit" onclick="openLectureEditModal('puritan', decodeURIComponent('${epSafeParam}'))">✏️ 수정</button>
+        <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('puritan', decodeURIComponent('${epSafeParam}'))">🗑️ 삭제</button>
+      </div>
+    ` : '';
+
+    return `
+      <div class="article-post-card" onclick="openTextArticleReader('puritan', decodeURIComponent('${epSafeParam}'))">
+        ${adminActionsHtml}
+        <div class="article-card-top">
+          <span class="article-author-chip">${authorDisplay}</span>
+          <span class="article-passage-chip">📖 ${item.passage || ''}</span>
+        </div>
+        <h4 class="article-post-title">${item.title}</h4>
+        <p class="article-post-snippet">${snippet}</p>
+        <div class="article-post-footer">
+          <span class="article-post-read-link">📖 전문 읽기 &amp; 묵상하기 ➔</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function renderMeditationArticles(query = '') {
+  await loadArchiveData();
+  const countEl = document.getElementById('meditation-item-count');
+  const gridEl = document.getElementById('meditation-article-grid');
+  if (!gridEl) return;
+
+  const isAdmin = isSiteAdminLoggedIn();
+  let episodes = (archiveDataCache && archiveDataCache['meditation'] && archiveDataCache['meditation'].episodes) || [];
+
+  if (query) {
+    const q = query.toLowerCase();
+    episodes = episodes.filter(ep =>
+      ep.title.toLowerCase().includes(q) ||
+      (ep.passage && ep.passage.toLowerCase().includes(q)) ||
+      (ep.content && ep.content.toLowerCase().includes(q)) ||
+      (ep.desc && ep.desc.toLowerCase().includes(q))
+    );
+  }
+
+  if (countEl) {
+    countEl.textContent = `총 ${episodes.length}편의 글`;
+  }
+
+  let adminAddBarHtml = '';
+  if (isAdmin) {
+    adminAddBarHtml = `
+      <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.9rem 1.4rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <span style="font-weight: 700; color: #0369a1; font-size: 0.92rem;">
+          ⚙️ 짧은 묵상 글에 새 글을 등록하거나 아래 카드에서 즉시 수정/삭제할 수 있습니다.
+        </span>
+        <button type="button" onclick="openLectureAddModal('meditation')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none; padding: 7px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">
+          ➕ 새 묵상 글 등록
+        </button>
+      </div>
+    `;
+  }
+
+  if (episodes.length === 0) {
+    gridEl.innerHTML = adminAddBarHtml + `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted);">
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">등록된 글이 없습니다.</p>
+        <p style="font-size: 0.9rem; margin-top: 6px;">검색어를 확인해 보세요.</p>
+      </div>
+    `;
+    return;
+  }
+
+  gridEl.innerHTML = adminAddBarHtml + episodes.map((item, idx) => {
+    const epSafeParam = encodeURIComponent(String(item.ep));
+    const snippet = item.desc || (item.content ? item.content.slice(0, 130) + '...' : '본문 말씀을 묵상하며 은혜를 나눕니다.');
+
+    const adminActionsHtml = isAdmin ? `
+      <div class="card-admin-actions" onclick="event.stopPropagation()">
+        <button type="button" class="btn-card-edit" onclick="openLectureEditModal('meditation', decodeURIComponent('${epSafeParam}'))">✏️ 수정</button>
+        <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('meditation', decodeURIComponent('${epSafeParam}'))">🗑️ 삭제</button>
+      </div>
+    ` : '';
+
+    return `
+      <div class="article-post-card" onclick="openTextArticleReader('meditation', decodeURIComponent('${epSafeParam}'))">
+        ${adminActionsHtml}
+        <div class="article-card-top">
+          <span class="article-author-chip" style="background: rgba(14, 165, 233, 0.12); color: #0284c7;">✍️ 묵상</span>
+          <span class="article-passage-chip">📖 ${item.passage || ''}</span>
+        </div>
+        <h4 class="article-post-title">${item.title}</h4>
+        <p class="article-post-snippet">${snippet}</p>
+        <div class="article-post-footer">
+          <span class="article-post-read-link">📖 전문 읽기 &amp; 묵상하기 ➔</span>
+        </div>
+      </div>
+    `;
+  }).join('');
 }
 
 function renderArchiveFolderContent(folderKey, query) {
+  // 만약 puritan이나 meditation 키로 호출된 경우 독립 렌더러로 위임
+  if (folderKey === 'puritan') {
+    renderPuritanArticles(query);
+    return;
+  }
+  if (folderKey === 'meditation') {
+    renderMeditationArticles(query);
+    return;
+  }
+
   const titleEl = document.getElementById('archive-current-title');
   const countEl = document.getElementById('archive-item-count');
   const gridEl = document.getElementById('archive-video-grid');
   if (!gridEl) return;
 
-  const isArticleFolder = (folderKey === 'puritan' || folderKey === 'meditation');
-  const sermonHeader = document.querySelector('.sermon-page-header');
-  const catFilter = document.querySelector('.sermon-cat-filter-wrap');
-  const tabsWrapper = document.querySelector('.sermon-tabs-wrapper');
-  const articleHeader = document.getElementById('article-page-header');
-
-  // 청교도 설교 / 짧은 묵상 글 모드일 때는 상단 동영상 헤더/카테고리/시리즈 탭 바를 완전히 숨김
-  if (isArticleFolder) {
-    if (sermonHeader) sermonHeader.style.display = 'none';
-    if (catFilter) catFilter.style.display = 'none';
-    if (tabsWrapper) tabsWrapper.style.display = 'none';
-    if (articleHeader) {
-      articleHeader.style.display = 'block';
-      const mainTitle = document.getElementById('article-page-main-title');
-      const mainDesc = document.getElementById('article-page-main-desc');
-      if (folderKey === 'puritan') {
-        if (mainTitle) mainTitle.textContent = '📜 청교도 명설교 아카이브';
-        if (mainDesc) mainDesc.textContent = '16~17세기 청교도 신앙 거장들의 깊이 있는 설교 전문을 한국어로 읽고 묵상하실 수 있습니다.';
-      } else {
-        if (mainTitle) mainTitle.textContent = '✍️ 개혁주의 짧은 묵상 글';
-        if (mainDesc) mainDesc.textContent = '성도들의 일상과 신앙의 여정에 깊은 영적 유익을 주는 개혁주의 묵상 글입니다.';
-      }
-    }
-  } else {
-    if (sermonHeader) sermonHeader.style.display = 'block';
-    if (catFilter) catFilter.style.display = '';
-    if (tabsWrapper) tabsWrapper.style.display = 'block';
-    if (articleHeader) articleHeader.style.display = 'none';
-  }
-
-  let folderMeta = null;
-  if (folderKey === 'puritan') {
-    folderMeta = {
-      key: 'puritan',
-      title: '청교도 명설교 아카이브 (저자별)',
-      count: '26편',
-      icon: '📖',
-      bgClass: 'bg-special'
-    };
-  } else if (folderKey === 'meditation') {
-    folderMeta = {
-      key: 'meditation',
-      title: '짧은 묵상 글 아카이브',
-      count: '12편',
-      icon: '✍️',
-      bgClass: 'bg-special'
-    };
-  } else {
-    const folders = getEffectiveFolders();
-    folderMeta = folders.find(f => f.key === folderKey) || folders[0] || ARCHIVE_FOLDERS[0];
-  }
-
+  const folders = getEffectiveFolders();
+  const folderMeta = folders.find(f => f.key === folderKey) || folders[0] || ARCHIVE_FOLDERS[0];
   const isAdmin = isSiteAdminLoggedIn();
 
   let episodes = [];
@@ -566,39 +735,6 @@ function renderArchiveFolderContent(folderKey, query) {
     seriesTitle = s.title;
   }
 
-  // 청교도 설교일 때만 저자별 필터 바 생성 (일반 말씀 강해일 때는 절대 생성 안 함)
-  let authorFilterHtml = '';
-  if (folderKey === 'puritan') {
-    const rawEpisodes = (archiveDataCache && archiveDataCache['puritan'] && archiveDataCache['puritan'].episodes) || [];
-    const authorSet = new Set();
-    rawEpisodes.forEach(ep => {
-      if (ep.author) {
-        const cleanName = ep.author.split('(')[0].trim();
-        if (cleanName) authorSet.add(cleanName);
-      }
-    });
-
-    const authors = [
-      { id: 'all', name: '전체 저자' },
-      ...Array.from(authorSet).map(name => ({ id: name, name }))
-    ];
-
-    authorFilterHtml = `
-      <div class="puritan-author-filter-bar" style="grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.2rem; padding: 14px 18px; background: #ffffff; border: 1px solid var(--border-color); border-radius: 14px; box-shadow: var(--shadow-sm); align-items: center;">
-        <span style="font-size: 0.88rem; font-weight: 800; color: var(--accent-gold); margin-right: 6px;">👤 청교도·개혁주의 저자별:</span>
-        ${authors.map(a => `
-          <button type="button" class="btn-author-tag ${currentPuritanAuthor === a.id ? 'active' : ''}" onclick="selectPuritanAuthor('${a.id}')">
-            ${a.id === 'all' ? '🌐 ' : '👤 '}${a.name}
-          </button>
-        `).join('')}
-      </div>
-    `;
-
-    if (currentPuritanAuthor !== 'all') {
-      episodes = episodes.filter(ep => ep.author && ep.author.includes(currentPuritanAuthor));
-    }
-  }
-
   // 검색어 필터링
   if (query) {
     const q = query.toLowerCase();
@@ -613,86 +749,39 @@ function renderArchiveFolderContent(folderKey, query) {
   }
 
   if (titleEl) {
-    if (folderKey === 'puritan') {
-      if (currentPuritanAuthor !== 'all') {
-        titleEl.textContent = `청교도 설교 [${currentPuritanAuthor}]`;
-      } else {
-        titleEl.textContent = `청교도 명설교 아카이브 (저자별)`;
-      }
-    } else if (folderKey === 'meditation') {
-      titleEl.textContent = `짧은 묵상 글 아카이브`;
-    } else {
-      titleEl.textContent = folderMeta.title;
-    }
+    titleEl.textContent = folderMeta.title;
   }
   if (countEl) {
-    countEl.textContent = isArticleFolder ? `총 ${episodes.length}편의 글` : `총 ${episodes.length}개 말씀`;
+    countEl.textContent = `총 ${episodes.length}개 말씀 영상`;
   }
 
-  // 관리자 모드 시 [➕ 현재 폴더에 설교/글 등록] 버튼 바 생성
+  // 관리자 모드 시 [➕ 현재 폴더에 설교 등록] 버튼 바
   let adminAddBarHtml = '';
   if (isAdmin) {
-    const itemTypeName = isArticleFolder ? '글' : '설교 영상';
     adminAddBarHtml = `
       <div class="admin-quick-add-bar" style="grid-column: 1 / -1; background: #e0f2fe; border: 1px dashed #0284c7; padding: 0.9rem 1.4rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
         <span style="font-weight: 700; color: #0369a1; font-size: 0.92rem;">
-          ⚙️ '${folderMeta.title}' 시리즈에 새 ${itemTypeName}을 등록하거나 아래 목록에서 즉시 수정/삭제할 수 있습니다.
+          ⚙️ '${folderMeta.title}' 시리즈에 새 설교 영상을 등록하거나 아래 목록에서 즉시 수정/삭제할 수 있습니다.
         </span>
         <button type="button" onclick="openLectureAddModal('${folderKey}')" class="admin-bar-btn" style="background: #0284c7; color: #fff; border: none; padding: 7px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">
-          ➕ 새 ${itemTypeName} 등록
+          ➕ 새 설교 영상 등록
         </button>
       </div>
     `;
   }
 
   if (episodes.length === 0) {
-    gridEl.className = 'sermon-compact-list';
-    gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + `
+    gridEl.innerHTML = adminAddBarHtml + `
       <div style="text-align: center; padding: 3.5rem 1.5rem; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; color: var(--text-muted); width: 100%;">
-        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">${isArticleFolder ? '등록된 글이 없습니다.' : '등록된 설교 영상이 없습니다.'}</p>
-        <p style="font-size: 0.9rem; margin-top: 6px;">선택하신 저자 또는 검색어를 확인해 보세요.</p>
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark);">등록된 설교 영상이 없습니다.</p>
+        <p style="font-size: 0.9rem; margin-top: 6px;">선택하신 시리즈 또는 검색어를 확인해 보세요.</p>
       </div>
     `;
     return;
   }
 
-  // 📖 청교도 설교 & 짧은 묵상 글: 텍스트 아티클 카드 그리드 렌더링
-  if (isArticleFolder) {
-    gridEl.className = 'sermon-cards-grid';
-    gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + episodes.map((item, idx) => {
-      const epSafeParam = encodeURIComponent(String(item.ep));
-      const authorDisplay = item.author ? `👤 ${item.author}` : (folderKey === 'meditation' ? '✍️ 묵상' : '👤 청교도 거장');
-      const snippet = item.desc || (item.content ? item.content.slice(0, 130) + '...' : '본문 말씀을 묵상하며 은혜를 나눕니다.');
-
-      // 관리자 수정/삭제 버튼
-      const adminActionsHtml = isAdmin ? `
-        <div class="card-admin-actions" onclick="event.stopPropagation()">
-          <button type="button" class="btn-card-edit" onclick="openLectureEditModal('${folderKey}', decodeURIComponent('${epSafeParam}'))">✏️ 수정</button>
-          <button type="button" class="btn-card-del" onclick="handleDeleteSiteLecture('${folderKey}', decodeURIComponent('${epSafeParam}'))">🗑️ 삭제</button>
-        </div>
-      ` : '';
-
-      return `
-        <div class="article-post-card" onclick="openTextArticleReader('${folderKey}', decodeURIComponent('${epSafeParam}'))">
-          ${adminActionsHtml}
-          <div class="article-card-top">
-            <span class="article-author-chip">${authorDisplay}</span>
-            <span class="article-passage-chip">📖 ${item.passage || ''}</span>
-          </div>
-          <h4 class="article-post-title">${item.title}</h4>
-          <p class="article-post-snippet">${snippet}</p>
-          <div class="article-post-footer">
-            <span class="article-post-read-link">📖 전문 읽기 &amp; 묵상하기 ➔</span>
-          </div>
-        </div>
-      `;
-    }).join('');
-    return;
-  }
-
   // 🎬 일반 성경 강해: 한 화면에 5~10편이 한눈에 보이는 고밀도 컴팩트 리스트 뷰 렌더링
-  gridEl.className = 'sermon-compact-list';
-  gridEl.innerHTML = authorFilterHtml + adminAddBarHtml + episodes.map((item, idx) => {
+  gridEl.innerHTML = adminAddBarHtml + episodes.map((item, idx) => {
     const pdfBadge = item.pdfUrl ? `<a href="${item.pdfUrl}" target="_blank" rel="noopener noreferrer" class="badge-pdf-pill" onclick="event.stopPropagation()">📄 교재</a>` : '';
     const authorBadge = item.author ? `<span class="badge-author-pill">👤 ${item.author}</span>` : '';
 

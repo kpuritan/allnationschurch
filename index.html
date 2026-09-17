@@ -151,11 +151,11 @@
         </div>
 
         <div class="gnb-item">
-          <a href="#sermons/puritan" class="gnb-link" onclick="navigateToPage('sermons', 'puritan'); return false;">📖 청교도 설교</a>
+          <a href="#puritan" class="gnb-link" onclick="navigateToPage('puritan'); return false;">📖 청교도 설교</a>
         </div>
 
         <div class="gnb-item">
-          <a href="#sermons/meditation" class="gnb-link" onclick="navigateToPage('sermons', 'meditation'); return false;">✍️ 짧은 묵상 글</a>
+          <a href="#meditation" class="gnb-link" onclick="navigateToPage('meditation'); return false;">✍️ 짧은 묵상 글</a>
         </div>
 
         <div class="gnb-item">
@@ -225,14 +225,14 @@
           </a>
 
           <!-- 3. 청교도설교 -->
-          <a href="#sermons/puritan" class="main-menu-card" onclick="navigateToPage('sermons', 'puritan'); return false;">
+          <a href="#puritan" class="main-menu-card" onclick="navigateToPage('puritan'); return false;">
             <div class="menu-card-icon-box">📜</div>
             <h3 class="menu-card-title">청교도설교</h3>
             <p class="menu-card-desc">믿음의 선조 아카이브</p>
           </a>
 
           <!-- 4. 짧은 묵상글 -->
-          <a href="#sermons/meditation" class="main-menu-card" onclick="navigateToPage('sermons', 'meditation'); return false;">
+          <a href="#meditation" class="main-menu-card" onclick="navigateToPage('meditation'); return false;">
             <div class="menu-card-icon-box">✍️</div>
             <h3 class="menu-card-title">짧은 묵상글</h3>
             <p class="menu-card-desc">은혜의 샘 신앙 에세이</p>
@@ -414,14 +414,6 @@
   <div id="page-sermons" class="page-view">
     <section id="sermon-videos" class="section section-sermons">
       <div class="container">
-        <!-- 청교도 및 묵상 글 전용 독립 헤더 (기본 숨김) -->
-        <div class="article-page-header" id="article-page-header" style="display:none;">
-          <h2 class="sermon-page-title" id="article-page-main-title">📜 청교도 명설교 아카이브</h2>
-          <p class="sermon-page-desc" id="article-page-main-desc">
-            16~17세기 청교도 신앙 거장들의 깊이 있는 설교 전문을 한국어로 읽고 묵상하실 수 있습니다.
-          </p>
-        </div>
-
         <!-- 간결한 상단 타이틀 -->
         <div class="sermon-page-header">
           <h2 class="sermon-page-title">📖 말씀 강해 영상</h2>
@@ -479,8 +471,75 @@
           </div>
         </div>
 
-        <!-- 4. 설교 카드 목록 그리드 -->
-        <div class="sermon-cards-grid" id="archive-video-grid">
+        <!-- 4. 설교 목록 컴팩트 리스트 -->
+        <div class="sermon-compact-list" id="archive-video-grid">
+          <!-- JS 동적 렌더링 -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= 3-1. 청교도 명설교 페이지 뷰 (Page Puritan) ================= -->
+  <div id="page-puritan" class="page-view">
+    <section id="puritan-section" class="section section-bg-subtle">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag" style="background: rgba(197, 155, 39, 0.15); color: var(--accent-gold-dark); font-weight: 800; padding: 4px 12px; border-radius: 20px; font-size: 0.82rem;">Puritan Archive</span>
+          <h2 class="section-title" style="font-size: 2rem; margin: 0.6rem 0 0.4rem 0;">📜 청교도 명설교 아카이브</h2>
+          <p class="section-desc" style="color: var(--text-muted); font-size: 1rem;">
+            16~17세기 청교도 신앙 거장들의 깊이 있는 설교 전문을 한국어로 완역하여 읽고 묵상하실 수 있습니다.
+          </p>
+        </div>
+
+        <!-- 저자별 필터 태그 바 -->
+        <div id="puritan-author-filter-container">
+          <!-- JS 동적 렌더링 -->
+        </div>
+
+        <!-- 검색창 및 현재 글 수 안내 -->
+        <div class="sermon-filter-row">
+          <div class="sermon-folder-info">
+            <h3 class="archive-current-title" id="puritan-current-title">청교도 명설교 아카이브</h3>
+            <span class="archive-item-count" id="puritan-item-count">총 26편의 글</span>
+          </div>
+          <div class="sermon-search-box">
+            <input type="text" id="puritan-search-input" placeholder="🔍 설교 제목, 저자, 성경 본문 검색 (예: 존 오웬, 리처드 십스, 시편)..." oninput="handlePuritanSearch(this.value)" />
+          </div>
+        </div>
+
+        <!-- 글 카드 그리드 -->
+        <div class="sermon-cards-grid" id="puritan-article-grid">
+          <!-- JS 동적 렌더링 -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= 3-2. 짧은 묵상 글 페이지 뷰 (Page Meditation) ================= -->
+  <div id="page-meditation" class="page-view">
+    <section id="meditation-section" class="section section-bg-subtle">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag" style="background: rgba(14, 165, 233, 0.15); color: #0284c7; font-weight: 800; padding: 4px 12px; border-radius: 20px; font-size: 0.82rem;">Daily Meditation</span>
+          <h2 class="section-title" style="font-size: 2rem; margin: 0.6rem 0 0.4rem 0;">✍️ 개혁주의 짧은 묵상 글</h2>
+          <p class="section-desc" style="color: var(--text-muted); font-size: 1rem;">
+            성도들의 일상과 신앙의 여정에 깊은 영적 유익을 주는 개혁주의 신앙 묵상 글입니다.
+          </p>
+        </div>
+
+        <!-- 검색창 및 현재 글 수 안내 -->
+        <div class="sermon-filter-row">
+          <div class="sermon-folder-info">
+            <h3 class="archive-current-title" id="meditation-current-title">짧은 묵상 글 아카이브</h3>
+            <span class="archive-item-count" id="meditation-item-count">총 12편의 글</span>
+          </div>
+          <div class="sermon-search-box">
+            <input type="text" id="meditation-search-input" placeholder="🔍 묵상 제목, 성경 본문 검색 (예: 우물가, 환난 날, 섭리)..." oninput="handleMeditationSearch(this.value)" />
+          </div>
+        </div>
+
+        <!-- 묵상 글 카드 그리드 -->
+        <div class="sermon-cards-grid" id="meditation-article-grid">
           <!-- JS 동적 렌더링 -->
         </div>
       </div>
